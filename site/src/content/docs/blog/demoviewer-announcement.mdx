@@ -1,0 +1,306 @@
+---
+title: 'DemoViewer.NET v0.10.1: a free, offline CS2 demo app you can build on'
+date: 2026-11-05T12:00:00Z
+excerpt: DemoViewer.NET is a free, open-source desktop app for CS2 demos with stats that show their working, highlights, a 2D replay you can draw on, and an extension SDK. v0.10.1 is out for Windows, Linux and Apple Silicon Macs.
+---
+
+import { Image } from 'astro:assets';
+import { withBase } from '../../../lib/urls';
+import heroPoster from '../../../assets/blog/demoviewer/hero-poster.jpg';
+import aimBoard from '../../../assets/blog/demoviewer/aim-board.png';
+import ruleHighlight from '../../../assets/blog/demoviewer/rule-a-highlight.png';
+import ruleAuthoring from '../../../assets/blog/demoviewer/rule-b-authoring.png';
+import ruleEditPoster from '../../../assets/blog/demoviewer/rule-edit-poster.jpg';
+import ruleEditAfter from '../../../assets/blog/demoviewer/rule-edit-after.png';
+import playerOverview from '../../../assets/blog/demoviewer/player-overview.png';
+import stratBook from '../../../assets/blog/demoviewer/strat-book.png';
+import themeDark from '../../../assets/blog/demoviewer/theme-dark.png';
+import themeHighContrast from '../../../assets/blog/demoviewer/theme-high-contrast.png';
+import updatesToggle from '../../../assets/blog/demoviewer/updates-toggle.png';
+import parser from '../../../assets/blog/demoviewer/parser.png';
+import liveSyncPoster from '../../../assets/blog/demoviewer/livesync-poster.jpg';
+import reelPoster from '../../../assets/blog/demoviewer/reel-poster.jpg';
+
+export const media = (file) => withBase(`/blog/demoviewer/${file}`);
+
+<figure class="dv-media">
+	<video src={media('hero-screen.mp4')} poster={heroPoster.src} width="1920" height="1080" autoplay muted loop playsinline controls preload="metadata">
+		Your browser can't play this video. <a href={media('hero-screen.mp4')}>Download the clip (MP4)</a>.
+	</video>
+	<figcaption>The 2D replay of IEM Beijing 2026, FaZe vs Falcons on Ancient. A red circle pinned to Twistzz follows him through a round-16 retake into a 3K, then the clip is exported with the drawing and HUD burned in.</figcaption>
+</figure>
+
+I've been building DemoViewer.NET for about 18 months. Most of that time it lived in a private repo. The code has been public on GitHub since August, but this is the first time I've announced it anywhere, because I wanted it to be worth your time before I asked for any.
+
+
+It's a desktop app for CS2 demos. Point it at your replays folder, or open any `.dem`, and you get stats that show their working, highlights, a 2D replay you can draw on, clips you can export, and a view of one player across every demo you have. It's free and open source (MIT), and it runs on your own machine with no account and no upload. v0.10.1 is out for Windows x64 and Linux x64 (AppImage). There's also an Apple Silicon Mac build, signed and notarized, but it gets the least testing.
+
+## What you get when you open a demo
+
+**Stats that show their working.** The scoreboard has K/D/A, ADR, KAST, weapon breakdowns and per-round detail. There's also a rating column based on the community's HLTV 2.0-style formula; it isn't HLTV's current rating. Beside it is an aim board:
+
+- counter-strafe %, Linear % (shots fired while moving) and spray, measured from where your bullets actually went
+- first-bullet accuracy, preaim, crosshair travel and flick error
+- time to shoot, time to damage, reaction and time to kill
+
+Every rate has a count column showing how many shots it was measured over. That matters: when two tools disagree by 30 points on your counter-strafing, they usually agree about the shots and disagree about which shots to count. So the board ships both readings. CS % is clean counter-strafes over the shots where you attempted one. CS All % is clean counter-strafes over every bullet you fired.
+
+<figure class="dv-media">
+	<a href={aimBoard.src} title="Open full size"><Image src={aimBoard} alt="The Stats tab's Accuracy group for FaZe vs Falcons on Ancient: one row per player with Acc %, HS Acc %, HS Dmg %, CS %, CS All %, Linear %, First Bullet %, Spotted Acc %, Spray Acc % and CS Attempts columns, grouped by team with team totals." /></a>
+	<figcaption>The Accuracy columns. CS % and CS All % sit side by side, and the CS Attempts column shows how many shots each rate was measured over. Twistzz's 67.4 CS % is 26.4 when every bullet counts.</figcaption>
+</figure>
+
+The visibility-based columns need each map's collision geometry, which I bake for 10 maps: Ancient, Anubis, Cache, Dust2, Inferno, Mirage, Nuke, Overpass, Train and Vertigo. On other maps those columns show "no data" rather than a zero that looks like a score.
+
+**Highlights.** There are 44 highlight types, each with the tick it happened on. They include aces, 1v2 to 1v5 clutches, collaterals, no-scopes, wallbangs and deep wallbangs, through-smoke kills, ninja defuses, eco frags and spray transfers, plus a lowlights lane for the rounds you'd rather forget. The Reels tab lets you collect clips from across your matches.
+
+**A 2D replay you can draw on.** It's a top-down replay with a timeline you can scrub, with round bands and kill and bomb markers. Click a player's card to follow them. On Nuke and Vertigo the view follows them between floors.
+
+The pen is the part I use most. Ink can stay put, pin to the demo clock, or pin to a player so it moves with them. Export the ten seconds worth showing your team with the drawings and HUD burned in. GIF works with nothing else installed. For WebM on Windows, the app can download a pinned LGPL build of ffmpeg, but only when you click the button and accept its licence. MP4 needs an ffmpeg you install yourself.
+
+**Your whole library.** The Library reads your demo folders in the background and knows each demo by its content, so moving a file doesn't throw away its analysis. Player Overview follows one player across every demo you have: match history, trends, maps and sides, teammates, head-to-head, aim quality and personal bests. Its percentiles compare a player with the others in *your* library, not a global population.
+
+<figure class="dv-media">
+	<a href={playerOverview.src} title="Open full size"><Image src={playerOverview} alt="Player Overview for Twistzz across 42 demos: a match history table with date, map, score, K-D-A, ADR, HS, KAST and rating per match, and a Maps and sides panel with a card per map showing matches, win rate, K/D, ADR and rating, plus CT and T side totals." /></a>
+	<figcaption>Player Overview for Twistzz across the 42 demos in one library: match history on the left, maps and sides on the right.</figcaption>
+</figure>
+
+**Strat Book (beta), for teams and coaches.** It comes in the box, and one switch turns it off. Situation Search finds rounds by where players stood, the Round Tagger suggests tags such as execute, fake or opener, and the Utility Book builds grenade lineups from your own demos. It's the newest part of the app, so tell me what breaks.
+
+<figure class="dv-media">
+	<a href={stratBook.src} title="Open full size"><Image src={stratBook} alt="The Strat Book's Situations page: a round index over 49 of 59 demos, a de_ancient map with CT 1-5 and T 1-5 slots to place on it, and filters for side, buy, phase, clock, man count, score, opponent, date and source." /></a>
+	<figcaption>Strat Book (beta): Situation Search on Ancient, where you place players on the map and search the indexed rounds.</figcaption>
+</figure>
+
+## What it doesn't do yet
+
+- **It reads `.dem` files only.** It can't download demos from share codes, FACEIT or HLTV, and it doesn't open compressed demos, so unpack those first.
+- **Radar and visibility stats cover 10 maps.** Other maps get the scoreboard and highlights, but not the sight-based columns or a radar.
+- **Windows builds aren't signed yet.** SmartScreen asks you to click "More info", then "Run anyway". The Mac build is signed with a Developer ID and notarized by Apple, so it opens normally.
+- **Mac support is Apple Silicon only,** and that build gets the least testing.
+- **The installer is 150-170 MB,** because it carries the .NET runtime and the map assets.
+- **No economy (buy-type) view or global benchmarks yet,** and the browser build isn't hosted.
+
+## Every number is a rule
+
+This is the idea the rest of the app hangs on. Stats and highlights aren't buried in code. They're YAML rulesets, and 21 of them ship in the repo's `rules/` folder for anyone to read. Here's the 1v3 clutch as it ships in `rules/highlights_clutch.rules.yaml` (two excerpts from the file; the highlight's title template is left out):
+
+```yaml
+stats:
+  clutch_1v3_round:
+    flag: true
+    on: round_won
+    where: "enrich.clutch.was_clutch_won && enrich.clutch.winner_slot == player.slot && round.clutch.size == 3"
+    per: round
+
+highlights:
+  clutch_1v3:
+    when: clutch_1v3_round
+    per: round
+    score: 90
+```
+
+The stat is a per-round flag: the player won a clutch they entered against three enemies. The highlight fires on it.
+
+<figure class="dv-media">
+	<a href={ruleHighlight.src} title="Open full size"><Image src={ruleHighlight} alt="Match Overview for FaZe vs Falcons on Ancient, 3-13, with the highlights list expanded for Twistzz, including '3K (round 16)'." /></a>
+	<figcaption>Twistzz's round-16 3K, the moment from the clip above, in Match Overview's highlights.</figcaption>
+</figure>
+
+<figure class="dv-media">
+	<a href={ruleAuthoring.src} title="Open full size"><Image src={ruleAuthoring} alt="The Authoring tab with highlights_multikill.rules.yaml open, showing the ace, quad_kill and triple_kill highlights (triple_kill: when enemy_kills_round at least 3, per round, score 55) and the Evaluate result: a scoreboard of aces, quads and triples per player for the open demo." /></a>
+	<figcaption>The rule that produced it: <code>triple_kill</code> in <code>rules/highlights_multikill.rules.yaml</code>, evaluated against the open demo in the Authoring tab.</figcaption>
+</figure>
+
+If you think a stat or highlight should work differently, copy the ruleset into your user rules folder and change it. Giving it the same id as a shipped ruleset replaces that ruleset, a new id adds to the shipped ones, and `enabled: false` turns one off. The Rule Workbench in the app edits rules with completion and validation against the schema. The Analysis tab shows the rule graph that ran for a player, with breakpoints, so you can see why a rule did or didn't fire. The rules language belongs to CS2DemoKit and is documented in its rules authoring guide.
+
+<figure class="dv-media">
+	<video src={media('rule-edit.mp4')} poster={ruleEditPoster.src} width="1920" height="1080" muted loop playsinline controls preload="metadata">
+		Your browser can't play this video. <a href={media('rule-edit.mp4')}>Download the clip (MP4)</a>.
+	</video>
+	<figcaption>Changing a rule and re-running it. In <code>highlights_rapid.rules.yaml</code>, the <code>double_burst</code> window ("2 kills in a blink") goes from <code>"3s"</code> to <code>"20s"</code>, Evaluate runs it against the open demo, and <code>rapid_double</code> goes from 10 fires to 18. Nothing is saved.</figcaption>
+</figure>
+
+<figure class="dv-media">
+	<a href={ruleEditAfter.src} title="Open full size"><Image src={ruleEditAfter} alt="The Authoring tab after the edit: highlights_rapid.rules.yaml with double_burst's window set to 20s, and the result panel reading 'rapid_double (highlight, 18 fires)' with the tick, round and player of each fire." /></a>
+	<figcaption>After the edit: <code>rapid_double</code> fires 18 times on this demo.</figcaption>
+</figure>
+
+There's no AI in the app. Every number comes from a rule you can read.
+
+## Built to be built on
+
+This section is for developers. It's also the part I most want people to read.
+
+**The extension SDK.** It's four packages on NuGet:
+
+- `DemoViewer.NET.Extensions.Sdk` (2.1.2)
+- `DemoViewer.NET.Extensions.Sdk.Ui`
+- `DemoViewer.NET.Playback2D.Scene`
+- `DemoViewer.NET.Modules.Abstractions`
+
+An extension is a .NET 10 class library that references the SDK and nothing else of the app's. It can add:
+
+- tabs, hub sections and status-strip chips
+- a pass that runs on every demo the Library visits, off the same single parse everything else reads
+- rulesets whose tables become library facts
+- settings pages, Library filters and per-demo badges, and buttons on Match Overview
+- in the 2D view: map layers, map tools, timeline lanes, panels, toolbar items, mode toggles and key bindings
+
+The public surface is about 4,700 entries across the four packages. Analyzers track all of it, so a breaking change can't slip into a release unnoticed.
+
+**Proof that it's enough.** The Strat Book is a real, sizeable extension, and it builds against the public SDK alone, with no reference to the app; a test enforces that. `samples/Extensions/HelloExtension` is a small extension that touches several of the extension points, and CI builds it against the packed NuGet packages on every run.
+
+**Highlight detection.** Detection is rules, so a better detector can be a ruleset in your user folder, a ruleset bundled with an extension, or a pull request to `rules/` that everyone gets.
+
+**Highlight capture.** In-app capture is the 2D export, rendered in the background, and extensions get the same export through the SDK. In-game capture goes through Reels and CS2VideoGenerator, which is MIT-licensed and also lives in CS2OpenDev. The "In-game features" section below says exactly what that does to your CS2 install.
+
+**Themes.** A theme is a JSON file: choose Light or Dark as a base and override any of the app's colour tokens. That covers the panels, the 2D canvas, the analysis graph and the syntax highlighter. You don't have to write the JSON by hand: Settings > Theme > Customize… copies any theme and lets you change every colour with a live preview, and can apply it to the whole app while you edit. Or drop a file in your themes folder and click Reload themes, with no restart. A theme from an older version that's missing newer colours falls back to its base theme instead of failing. Themes are parsed as data, so a theme file can't run code. The full token catalogue is in `docs/ui/theme-token-catalog.md`, and complete examples of the four built-in themes are in `samples/Themes`.
+
+<figure class="dv-media">
+	<video src={media('theme-switch.mp4')} poster={themeDark.src} width="1920" height="1080" muted loop playsinline controls preload="metadata">
+		Your browser can't play this video. <a href={media('theme-switch.mp4')}>Download the clip (MP4)</a>.
+	</video>
+	<figcaption>The same live 2D Playback frame switched through Dark, High Contrast and Light and back to Dark, with no restart.</figcaption>
+</figure>
+
+<figure class="dv-media">
+	<a href={themeHighContrast.src} title="Open full size"><Image src={themeHighContrast} alt="The 2D Playback tab in the High Contrast theme: the Ancient map with player markers, the annotation toolbar, the round timeline and the player cards, with brighter text and borders than the Dark theme." /></a>
+	<figcaption>The High Contrast theme, one of the four built-in themes.</figcaption>
+</figure>
+
+**`dv2d`.** A command-line tool that renders, exports and benchmarks the 2D scene with no UI (a CI test checks it never loads one). It's handy for reproducible stills and for testing a map layer without launching the app.
+
+**The developer tabs.** The Parser tab takes any frame down to the message, byte range and `.proto` field that decoded it. The Entity tab shows any entity at any tick. Both are hidden if you pick the Consumer profile; Settings turns them back on.
+
+<figure class="dv-media">
+	<a href={parser.src} title="Open full size"><Image src={parser} alt="The Parser tab: a list of frames on the left, the selected DEM_Packet frame's 14 inner messages as cards in the middle (svc_UserCmds, net_Tick, svc_PacketEntities and a GE_Source1LegacyGameEvent), and the raw bytes and the normalized bitstream in hex panes on the right." /></a>
+	<figcaption>The Parser tab: one packet frame broken into its inner messages, with the raw and decompressed bytes alongside.</figcaption>
+</figure>
+
+### Extension security
+
+Extensions are .NET code that runs inside the app with the same rights as the app. There's no sandbox. Here's what is in place:
+
+- Only extensions signed with my publisher key count as verified.
+- Anything else loads only if you turn on "Allow unverified and potentially dangerous extensions" in Settings, which is off by default.
+- A broken signature never loads, and nobody else can claim an id in the app's reserved namespace.
+- An extension that keeps faulting is switched off for the session.
+- `--safe-mode` starts the app with no extensions at all.
+
+:::caution
+Installing a third-party extension is a manual folder copy for now. I'll keep making the security model as strong as I can, but running unverified third-party extensions is at your own risk. Treat one like any other program you download.
+:::
+
+## Built on CS2OpenDev, and an invitation
+
+DemoViewer.NET doesn't parse demos itself. It lives in CS2OpenDev (github.com/CS2OpenDev), an organisation I started as a home for this project and for free, MIT-licensed CS2 infrastructure, and sits on the org's libraries:
+
+
+- **CS2DemoKit:** the demo parser and the rule-based analysis engine. Every stat and highlight in the app runs on it.
+- **CS2OpenDev-SDK:** typed C# access to CS2's entity schemas, on NuGet.
+- **CS2OpenDev-SchemaTracker:** pulls schemas, protobufs, ConVars, commands and game events out of each CS2 build.
+- **CS2OpenDev-Docs:** the developer reference generated from that output, with community notes.
+- **CS2VideoGenerator:** drives CS2 itself for Live Sync and in-game reels.
+
+All of the libraries and tools that make DemoViewer.NET work are free and open source.
+
+The org's standards, from [its introduction post](https://cs2opendev.github.io/CS2OpenDev-Docs/blog/cs2opendev-organization/), are the ones I hold this app to: say what a tool can't do, back performance claims with measurements, and never fill in a plausible value when the real one can't be recovered.
+
+A lot of CS2 tools have been released or announced over the past year, and some do one thing really well. Most of the ones I tried fell short for what I wanted somewhere: my demos had to go to a server, the useful parts needed an account or subscription, I couldn't see how a number was worked out, or I couldn't extend it. And nearly all of us, me included, started by writing a demo parser from scratch.
+
+So here's my offer. If you're building a CS2 tool, whether it's a stats site, a coaching tool, a lineup finder or a highlight bot, consider joining CS2OpenDev and building it on DemoViewer.NET instead of beside it. The app is in the org alongside the libraries, so it's one place to contribute. Your stat can be a ruleset, your view can be an extension, and your parser fix can go into CS2DemoKit, where every tool downstream gets it. I'd much rather a handful of us maintain one solid base than each keep our own parser alive through every CS2 update. Open an issue or a discussion on any of the repos and say hi.
+
+## Performance
+
+I've spent a lot of this project on speed and memory, because a demo tool you have to wait on is one you stop using. These numbers are from the published release notes, measured on my benchmark demos:
+
+- **One parse per demo (0.9.0).** Library scoring, highlights, round facts, the Strat Book index, suggested tags and the grenade walk used to read each demo separately. Now they share one pass. A library sweep got 26-48% faster, and opening a demo got 21-38% faster.
+- **Analysis (0.7.2).** Parsing got about 25% faster, evaluation about 13% faster, and total allocation dropped by a third to a half against 0.7.1. That's the median of three runs across nine demos.
+- **The 2D view** draws each frame as a single Skia operation that allocates nothing per frame. CI times the renderer on every build and fails the build if it goes over its frame-time budget.
+
+These are relative numbers; I only compare runs measured side by side. The work isn't finished, and optimisation will keep going release by release.
+
+
+## Offline by default, always
+
+DemoViewer.NET is offline by default, and that won't change. It sends no telemetry, analytics or crash reports. Parsing, analysis, playback and export work with the network unplugged. The in-app error report copies to your clipboard and sends nothing.
+
+On its own, it checks GitHub for updates to the app and its bundled extension, and that's all. At launch an installed copy checks for an app update and, if there is one, fetches its release notes; it downloads only when you click. After an update it fetches that version's notes once. When you open Settings, at most once an hour, it checks for an update to the bundled Strat Book. Turn off "Check for updates automatically" in Settings > Updates and it makes neither check until you click Check. Everything else that goes online is something you choose: the ffmpeg download, the beta channel (off by default), starting CS2 through Live Sync or Reels, and links that open in your browser. That's how it will stay. Any online feature added to the core app will need you to opt in or give explicit one-time permission.
+
+<figure class="dv-media">
+	<a href={updatesToggle.src} title="Open full size"><Image src={updatesToggle} alt="Settings > Updates in v0.10.1: the current version, a 'Check for updates automatically' toggle with the caption 'When this is off, the app only checks for app and extension updates when you click Check', a 'Subscribe to beta releases' toggle that is off, and a Check for updates button." /></a>
+	<figcaption>Settings &gt; Updates. With "Check for updates automatically" off, the app only checks when you click Check.</figcaption>
+</figure>
+
+## In-game features, plainly
+
+Two optional features drive CS2 itself:
+
+- **Live Sync** seeks a running CS2 to the tick you're looking at, so you can check a moment in-engine. It's off until you enable it in Settings.
+- **In-game reels** record highlight clips from the game. Reels only start CS2 when you press Generate.
+
+<figure class="dv-media dv-wide">
+	<video src={media('livesync.mp4')} poster={liveSyncPoster.src} width="1920" height="540" muted loop playsinline controls preload="metadata">
+		Your browser can't play this video. <a href={media('livesync.mp4')}>Download the clip (MP4)</a>.
+	</video>
+	<figcaption>Live Sync on the same round: DemoViewer.NET on the left, CS2 on the right. CS2 starts on Twistzz. Clicking NiKo's card in DemoViewer switches CS2 to NiKo; after he dies, clicking Twistzz's card switches it back, and both play the retake through to the bomb going off. The server's chat line is blurred.</figcaption>
+</figure>
+
+<figure class="dv-media">
+	<video src={media('reel.mp4')} poster={reelPoster.src} width="1280" height="720" muted loop playsinline controls preload="metadata">
+		Your browser can't play this video. <a href={media('reel.mp4')}>Download the clip (MP4)</a>.
+	</video>
+	<figcaption>An in-game reel of the same 3K: Add clips, narrow to Twistzz's triple kill, stage it and press Generate. CS2 records the clip through to the bomb going off (1080p60, shown here at 720p) and closes, and the job strip reports it done. The server's chat line is blurred.</figcaption>
+</figure>
+
+Both use CS2VideoGenerator. To work, they:
+
+- temporarily patch your CS2 install: they copy a plugin into the game folder and edit `gameinfo.gi` and a cfg file, after backing up those files and your CS2 settings
+- launch CS2 with `-insecure`, which **turns VAC off for that session**
+
+The app tells you this before the first launch, with what it changes, and keeps a one-line reminder next to the launch button. The changes are restored when the session ends. If the app or CS2 stops while the install is patched, the next start cleans up the leftovers it can prove are safe to undo and tells you, and asks you about anything else.
+
+:::caution
+Don't play on VAC-secured servers from a modified install. If in doubt, verify your game files in Steam.
+:::
+
+Reading demos never touches your game; only these two features do. They're built for Windows, Linux is untested, and they don't run on macOS.
+
+## How it was built
+
+I've used AI and LLM tools while building this, and I'd rather say so up front than have someone find it. I mostly used them on the UI layout code and to write tests: there are 5,000+ test methods, golden-image tests on the 2D renderer and a frame-time gate in CI. The core libraries were written by hand, and that's where I spent most of my time refining and validating; AI helped me spot issues along the way. It's still more than 18 months of my own work: designing it, testing it against real demos, and throwing out what didn't hold up.
+
+
+The public history starts in August 2026, when I imported the project as a single commit to make the repo public at 0.7.0, which is why `git log` looks young. If you'd rather judge the work than trust me, the repo has over 5,000 test methods, golden-image tests and a frame-time gate for the 2D renderer, and analyzers that stop the SDK's public API changing silently.
+
+## Free, and staying free
+
+DemoViewer.NET is free and open source, and the version you run on your own machine will stay that way, with no exceptions.
+
+One honest caveat about the future: some people would rather not keep demos on their own PC. If I ever build a hosted option for them, real servers and storage cost real money every month, and that cost would need covering somehow. That's a bridge I'll cross if I get there, and I'll be open about it when I do. It would never take anything away from the local app.
+
+## Pre-1.0, and what 1.0 means
+
+This is v0.10.1 of the app, and it's pre-1.0. Expect things to change between releases.
+
+**v1.0.0 of the app** will be the release where every contract that extensions build on is locked:
+
+- the extension SDK surface
+- the rule format
+- the theme tokens
+- the extension manifest and the file formats extensions read and write
+
+If you're wondering why the SDK is already at 2.1.2 while the app is at 0.10.1: the SDK packages have their own version line and already follow semantic versioning, so a breaking SDK change bumps the SDK's major version. The app's 1.0.0 is a separate promise, that the whole set of extension points stops moving. Until then I'll document every breaking change.
+
+## Get it, and get involved
+
+- **Download:** [github.com/CS2OpenDev/DemoViewer.NET/releases](https://github.com/CS2OpenDev/DemoViewer.NET/releases). There's a Windows x64 installer, a Linux x64 AppImage and a signed Apple Silicon `.pkg`. The app updates itself and asks first. Every file has a SHA-256 in `SHA256SUMS` and a build provenance attestation; `gh attestation verify` checks it was built by the repo's release workflow and hasn't changed since (the README shows how).
+- **Source:** [github.com/CS2OpenDev/DemoViewer.NET](https://github.com/CS2OpenDev/DemoViewer.NET)
+- **SDK:** `DemoViewer.NET.Extensions.Sdk` on NuGet, with the README and HelloExtension sample in the repo.
+- **Libraries:** [github.com/CS2OpenDev](https://github.com/CS2OpenDev)
+- **Bugs:** app issues go to DemoViewer.NET. Parsing and stat-correctness issues go to [CS2DemoKit](https://github.com/CS2OpenDev/CS2DemoKit/issues), since that's where the fix lands. "This number looks wrong" issues are welcome; include the demo if you can.
+
+Thanks to the projects this stands on: Avalonia, SkiaSharp, Velopack, perfect-freehand, the Inter font, ANGLE and the SteamDatabase protobufs. Thanks also to CS Demo Manager, which has kept a free desktop option alive for CS players for years.
+
+*Counter-Strike and Counter-Strike 2 are trademarks of Valve Corporation. DemoViewer.NET is not affiliated with, endorsed by, or supported by Valve.*
