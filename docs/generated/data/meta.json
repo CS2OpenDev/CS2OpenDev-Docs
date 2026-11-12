@@ -1,13 +1,13 @@
 {
-  "build_id": "26445667",
+  "build_id": "26598758",
   "counts": {
     "classes": 3458,
-    "commands": 1138,
-    "convars": 4050,
+    "commands": 1141,
+    "convars": 4063,
     "entity_classes": 354,
     "enums": 617,
     "events": 289,
-    "fields": 18695,
+    "fields": 18699,
     "game_modes": 16,
     "items": 2060,
     "maps": 23,
@@ -257,8 +257,8 @@
   "note": "classes/enums/fields count distinct top-level entity names and their own declared fields; the modules[] list additionally counts client/server twin records (duplicates), so summing its per-module classes/enums can exceed the top-level totals above.",
   "platform": "windows-x86_64",
   "schema_version": "0.13.0",
-  "steam_date": "2026-11-05",
-  "steam_manifest_utc": "2026-11-05T00:10:12Z",
+  "steam_date": "2026-11-11",
+  "steam_manifest_utc": "2026-11-11T18:33:14Z",
   "tool_commit": "056455e9fe3921148e8b38581d7a7e45fd28e2cf",
   "tool_version": "0.13.0"
 }

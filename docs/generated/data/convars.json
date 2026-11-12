@@ -4344,17 +4344,17 @@
       "value_type": "Bool"
     },
     {
-      "default": "3",
+      "default": "0.125000",
       "flags": [
         "hidden",
         "release"
       ],
-      "help": "Maximum number of ticks the clock is allowed to drift before the client snaps its clock to the server's.",
+      "help": "Maximum duration the client clock is allowed to drift from server snapshots, before the client snaps its clock to the latest server snapshot received",
       "max": null,
       "min": 0,
-      "name": "cl_clockdrift_max_ticks",
+      "name": "cl_clockdrift_max_secs",
       "prefix": "cl",
-      "value_type": "Int32"
+      "value_type": "Float32"
     },
     {
       "default": "false",
@@ -7360,6 +7360,19 @@
       "name": "cl_observed_bot_crosshair",
       "prefix": "cl",
       "value_type": "Int32"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "defensive",
+        "developmentonly"
+      ],
+      "help": "When an entity is decoded from a baseline plus a wire delta, merge the two and decode once (true), or decode the baseline and then the delta as two passes (false, the old behaviour, which can invoke change callbacks with baseline values for an entity that already exists).",
+      "max": null,
+      "min": null,
+      "name": "cl_packetentities_merge_before_decode",
+      "prefix": "cl",
+      "value_type": "Bool"
     },
     {
       "default": "",
@@ -32431,6 +32444,136 @@
       "value_type": "Float32"
     },
     {
+      "default": "20.000000",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "Seconds for the melted frost to dry",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_frost_dry_time",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
+      "default": "-1",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "Frost on players, weapons and chickens: -1 = the map's (info_map_parameters frostenabled), 0 = off, 1 = on (outdoors; melts indoors)",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_frost_force",
+      "prefix": "r",
+      "value_type": "Int32"
+    },
+    {
+      "default": "10.000000",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "Seconds outdoors for frost to grow to full",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_frost_grow_time",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.330000",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "Frost: where the barrel heat sits, from the shell eject (0) to the muzzle (1)",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_frost_heat_barrel_position",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
+      "default": "20.000000",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "Frost: seconds for a hot barrel to cool down",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_frost_heat_cool_time",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
+      "default": "1.000000",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "Frost: seconds after a molotov is lit before its rag starts to heat (the flame shows a moment after)",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_frost_heat_light_delay",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
+      "default": "10.000000",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "Frost: seconds for a lit molotov's rag to reach full heat",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_frost_heat_light_time",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.050000",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "Frost: barrel heat per shot (1 = hot enough to clear the whole barrel)",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_frost_heat_per_shot",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
+      "default": "128.000000",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "Frost: distance under cover (no sky) over which the cold fades out (indoors)",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_frost_indoor_distance",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
+      "default": "10.000000",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "Seconds indoors for full frost to melt",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_frost_melt_time",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
       "default": "true",
       "flags": [
         "clientdll",
@@ -32974,6 +33117,20 @@
       "max": null,
       "min": null,
       "name": "r_csgo_outline_glow_scaledenom",
+      "prefix": "r",
+      "value_type": "Int32"
+    },
+    {
+      "default": "1",
+      "flags": [
+        "clientdll",
+        "defensive",
+        "developmentonly"
+      ],
+      "help": "Parallax occlusion mapping (Advanced Video setting): 0 = off, 1 = on",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_parallax",
       "prefix": "r",
       "value_type": "Int32"
     },
@@ -49172,19 +49329,6 @@
       "value_type": "Bool"
     },
     {
-      "default": "1024",
-      "flags": [
-        "defensive",
-        "developmentonly"
-      ],
-      "help": "Max number of messages that can be queued in a netchan receive buffer for an ordinary connection from a client.",
-      "max": null,
-      "min": null,
-      "name": "sv_recvbuf_messages",
-      "prefix": "sv",
-      "value_type": "Int32"
-    },
-    {
       "default": "false",
       "flags": [
         "cheat",
@@ -53799,6 +53943,20 @@
       "value_type": "Int32"
     },
     {
+      "default": "0",
+      "flags": [
+        "clientdll",
+        "defensive",
+        "developmentonly"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "videocfg_parallax_detail",
+      "prefix": "videocfg",
+      "value_type": "Int32"
+    },
+    {
       "default": "1",
       "flags": [
         "clientdll",
@@ -54715,6 +54873,18 @@
       "value_type": "Bool"
     },
     {
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "help": "Let demo playback and the game rules start, dump and stop the vprof lite profiler on their own.  The vprof_lite_start, vprof_lite_stop and vprof_lite_dump commands set this to 0 so that a script can drive the profiler itself.",
+      "max": null,
+      "min": null,
+      "name": "vprof_lite_auto",
+      "prefix": "vprof",
+      "value_type": "Bool"
+    },
+    {
       "default": "false",
       "flags": [
         "clientdll",
@@ -55341,7 +55511,7 @@
     },
     {
       "command_count": 344,
-      "convar_count": 1918,
+      "convar_count": 1930,
       "description": "Registered by the client binary (client.dll).",
       "name": "clientdll"
     },
@@ -55352,8 +55522,8 @@
       "name": "commandline_enforced"
     },
     {
-      "command_count": 333,
-      "convar_count": 1157,
+      "command_count": 336,
+      "convar_count": 1159,
       "description": "",
       "name": "defensive"
     },
@@ -55364,8 +55534,8 @@
       "name": "demo"
     },
     {
-      "command_count": 443,
-      "convar_count": 1907,
+      "command_count": 446,
+      "convar_count": 1919,
       "description": "Present only in development builds; stripped or inert in shipping builds.",
       "name": "developmentonly"
     },
@@ -55437,7 +55607,7 @@
     },
     {
       "command_count": 199,
-      "convar_count": 1080,
+      "convar_count": 1081,
       "description": "Present in release/shipping builds, not just internal ones.",
       "name": "release"
     },

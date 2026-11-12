@@ -8,9 +8,9 @@ kind: class
 
 # C_Hostage
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
-**Kind:** class · **Size:** 5056 bytes (`0x13c0`) · **Align:** 8 · **Module:** client
+**Kind:** class · **Size:** 5048 bytes (`0x13b8`) · **Align:** 8 · **Module:** client
 
 **Inherits from:** [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md)
 
@@ -34,7 +34,7 @@ classDiagram
 
 ## Memory layout
 
-179 fields (23 declared here, 156 inherited). Offsets are absolute from the object base.
+178 fields (22 declared here, 156 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -208,12 +208,11 @@ classDiagram
 | `0x1354` | `m_flRescueStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0x1358` | `m_flGrabSuccessTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0x135c` | `m_flDropStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x1360` | `m_flDeadOrRescuedTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x1368` | `m_blinkTimer` | [CountdownTimer](../client/CountdownTimer.md) |  |  |
-| `0x1380` | `m_lookAt` | VectorWS |  |  |
-| `0x1390` | `m_lookAroundTimer` | [CountdownTimer](../client/CountdownTimer.md) |  |  |
-| `0x13a8` | `m_isInit` | bool |  |  |
-| `0x13a9` | `m_eyeAttachment` | [AttachmentHandle_t](../modellib/AttachmentHandle_t.md) |  |  |
-| `0x13aa` | `m_chestAttachment` | [AttachmentHandle_t](../modellib/AttachmentHandle_t.md) |  |  |
-| `0x13b0` | `m_pPredictionOwner` | [CBasePlayerController](../client/CBasePlayerController.md)* |  |  |
-| `0x13b8` | `m_fNewestAlphaThinkTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x1360` | `m_blinkTimer` | [CountdownTimer](../client/CountdownTimer.md) |  |  |
+| `0x1378` | `m_lookAt` | VectorWS |  |  |
+| `0x1388` | `m_lookAroundTimer` | [CountdownTimer](../client/CountdownTimer.md) |  |  |
+| `0x13a0` | `m_isInit` | bool |  |  |
+| `0x13a1` | `m_eyeAttachment` | [AttachmentHandle_t](../modellib/AttachmentHandle_t.md) |  |  |
+| `0x13a2` | `m_chestAttachment` | [AttachmentHandle_t](../modellib/AttachmentHandle_t.md) |  |  |
+| `0x13a8` | `m_pPredictionOwner` | [CBasePlayerController](../client/CBasePlayerController.md)* |  |  |
+| `0x13b0` | `m_fNewestAlphaThinkTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |

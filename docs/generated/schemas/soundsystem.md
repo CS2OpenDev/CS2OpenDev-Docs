@@ -5,7 +5,7 @@ module: soundsystem
 
 # Module: soundsystem
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/soundsystem.md)
 

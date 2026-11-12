@@ -8,9 +8,9 @@ kind: class
 
 # CMapInfo
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
-**Kind:** class · **Size:** 1240 bytes (`0x4d8`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 1248 bytes (`0x4e0`) · **Align:** 8 · **Module:** server
 
 **Twin:** [CMapInfo (client)](../client/CMapInfo.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-103 fields (15 declared here, 88 inherited). Offsets are absolute from the object base.
+104 fields (16 declared here, 88 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -134,3 +134,4 @@ classDiagram
 | `0x4cc` | `m_flEnvPuddleRippleDirection` | float32 |  |  |
 | `0x4d0` | `m_flEnvWetnessCoverage` | float32 |  |  |
 | `0x4d4` | `m_flEnvWetnessDryingAmount` | float32 |  |  |
+| `0x4d8` | `m_bFrostEnabled` | bool |  |  |

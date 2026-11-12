@@ -8,7 +8,7 @@ kind: class
 
 # CWeaponP90
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 4768 bytes (`0x12a0`) · **Align:** 16 · **Module:** server
 

@@ -4,24 +4,35 @@ title: Changelog
 
 # Build Changelog
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
-Difference between build **26393695** and **26445667** (`windows-x86_64`), grouped by data family.
+Difference between build **26445667** and **26598758** (`windows-x86_64`), grouped by data family.
 
 Families diffed: `classes`, `enums`, `convars`, `commands`, `engine_constants`, `cs_script_api`, `entity_io`.
 
-## cs_script_api (+14 / −0 / ~9)
-
-**Added:** `CSPlayerController.GetControlledBotPawn#0`, `CSPlayerController.IsControllingBot#0`, `CSPlayerPawn.Reset#0`, `Entity.FireInput#0`, `EntityKeyValue`, `IEntities`, `IEntities.ConnectOutput#0`, `IEntities.DisconnectOutput#0`, `IEntities.FindByClass#0`, `IEntities.FindByName#0`, `IEntities.FireInput#0`, `IEntities.Spawn#0`, `IPointScript.OnBotControl#0`, `export:Entities`
+## classes (+0 / −0 / ~6)
 
 | Entry | Field changes |
 |-------|---------------|
-| `IPointScript.ConnectOutput#0` | deprecated: `false` → `true`; doc: `Connect the output of an entity to a callback. The return value is a connection id that can be used in `DisconnectOutput`` →  |
-| `IPointScript.DisconnectOutput#0` | deprecated: `false` → `true`; doc: `Find entities by name.` →  |
-| `IPointScript.EntFireAtName#0` | deprecated: `false` → `true`; doc: `Fire the input on all targets matching the specified names.` →  |
-| `IPointScript.EntFireAtTarget#0` | deprecated: `false` → `true`; doc: `Fire the input on the specified target.` →  |
-| `IPointScript.FindEntitiesByClass#0` | deprecated: `false` → `true`; doc: `Find entities of the specified class name.` →  |
-| `IPointScript.FindEntitiesByName#0` | deprecated: `false` → `true`; doc: `Find entities matching the specified name.` →  |
-| `IPointScript.FindEntityByClass#0` | deprecated: `false` → `true`; doc: `Find the first entity of the specified class name.` →  |
-| `IPointScript.FindEntityByName#0` | deprecated: `false` → `true`; doc: `Find the first entity matching the specified name.` →  |
-| `IPointScript.Precache#0` | doc: `Loads resources on the server and clients to avoid hitches when later referenced. Supports .vmdl, .vpcf, .vmat, and .vsnd resources.` → `Loads resources on the server and clients to avoid hitches when later referenced. `resources` supports .vmdl, .vpcf, .vmat, and .vsnd resources. `entities` takes entity class names or subclass names.`; signature: `Precache(config: { resources: string[] }): CSPrecache &#124; undefined` → `Precache(config: { resources?: string[], entities?: string[] }): CSPrecache &#124; undefined` |
+| `!GlobalTypes/CNmAimCSNode::CDefinition` | field_count: `11` → `12` |
+| `!GlobalTypes/CNmGraphDocAimCSNode` | field_count: `3` → `4` |
+| `!GlobalTypes/EventClientPollNetworking_t` | field_count: `1` → `2` |
+| `client.dll/CMapInfo` | field_count: `15` → `16` |
+| `client.dll/C_Hostage` | field_count: `23` → `22` |
+| `server.dll/CMapInfo` | field_count: `15` → `16` |
+
+## convars (+15 / −2 / ~0)
+
+**Added:** `cl_clockdrift_max_secs`, `cl_packetentities_merge_before_decode`, `r_csgo_frost_dry_time`, `r_csgo_frost_force`, `r_csgo_frost_grow_time`, `r_csgo_frost_heat_barrel_position`, `r_csgo_frost_heat_cool_time`, `r_csgo_frost_heat_light_delay`, `r_csgo_frost_heat_light_time`, `r_csgo_frost_heat_per_shot`, `r_csgo_frost_indoor_distance`, `r_csgo_frost_melt_time`, `r_csgo_parallax`, `videocfg_parallax_detail`, `vprof_lite_auto`
+
+**Removed:** `cl_clockdrift_max_ticks`, `sv_recvbuf_messages`
+
+## commands (+3 / −0 / ~0)
+
+**Added:** `vprof_lite_dump`, `vprof_lite_start`, `vprof_lite_stop`
+
+## entity_io (+0 / −0 / ~1)
+
+| Entry | Field changes |
+|-------|---------------|
+| `info_map_parameters` | keyvalue:frostenabled:  → `boolean` |

@@ -8,9 +8,9 @@ kind: class
 
 # C_WeaponP90
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
-**Kind:** class · **Size:** 8016 bytes (`0x1f50`) · **Align:** 16 · **Module:** client
+**Kind:** class · **Size:** 8080 bytes (`0x1f90`) · **Align:** 16 · **Module:** client
 
 **Inherits from:** [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md)
 
@@ -208,69 +208,69 @@ classDiagram
 | `0x1928` | `m_iClip1` | int32 | [C_BasePlayerWeapon](../client/C_BasePlayerWeapon.md) |  |
 | `0x192c` | `m_iClip2` | int32 | [C_BasePlayerWeapon](../client/C_BasePlayerWeapon.md) |  |
 | `0x1930` | `m_pReserveAmmo` | int32[2] | [C_BasePlayerWeapon](../client/C_BasePlayerWeapon.md) |  |
-| `0x19a8` | `m_iWeaponGameplayAnimState` | [WeaponGameplayAnimState](../server/WeaponGameplayAnimState.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x19ac` | `m_flWeaponGameplayAnimStateTimestamp` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x19b0` | `m_flInspectCancelCompleteTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x19b4` | `m_bInspectPending` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x19b5` | `m_bInspectShouldLoop` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x19e0` | `m_nLastEmptySoundCmdNum` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x19e4` | `m_bFireOnEmpty` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x19e8` | `m_OnPlayerPickup` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a00` | `m_weaponMode` | [CSWeaponMode](../server/CSWeaponMode.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a04` | `m_flTurningInaccuracyDelta` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a08` | `m_vecTurningInaccuracyEyeDirLast` | Vector | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a14` | `m_flTurningInaccuracy` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a18` | `m_fAccuracyPenalty` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a1c` | `m_flLastAccuracyUpdateTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a20` | `m_fAccuracySmoothedForZoom` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a24` | `m_iRecoilIndex` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a28` | `m_flRecoilIndex` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a2c` | `m_bBurstMode` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a30` | `m_flLastBurstModeChangeTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a34` | `m_nPostponeFireReadyTicks` | [GameTick_t](../entity2/GameTick_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a38` | `m_flPostponeFireReadyFrac` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a3c` | `m_bInReload` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a40` | `m_nDeployTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a44` | `m_flAttackHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a48` | `m_flDroppedAtTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a50` | `m_bIsHauledBack` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a51` | `m_bSilencerOn` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a54` | `m_flTimeSilencerSwitchComplete` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a58` | `m_bIsInStealthReload` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a59` | `m_bInSilentReloadSection` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a5c` | `m_flStealthReloadHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a60` | `m_bReloadHeldSinceStart` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a64` | `m_flWeaponActionPlaybackRate` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a68` | `m_iOriginalTeamNumber` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a6c` | `m_iMostRecentTeamNumber` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a70` | `m_bDroppedNearBuyZone` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1a74` | `m_flNextAttackRenderTimeOffset` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b20` | `m_bClearWeaponIdentifyingUGC` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b21` | `m_bVisualsDataSet` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b22` | `m_bUIWeapon` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b24` | `m_nCustomEconReloadEventId` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b30` | `m_bCanBePickedUp` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b34` | `m_nextPrevOwnerUseTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b38` | `m_hPrevOwner` | CHandle< [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) > | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b3c` | `m_nDropTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b40` | `m_bWasActiveWeaponWhenDropped` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b64` | `m_donated` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b68` | `m_fLastShotTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b6c` | `m_bWasOwnedByCT` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b6d` | `m_bWasOwnedByTerrorist` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b70` | `m_flNextClientFireBulletTime` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1b74` | `m_flNextClientFireBulletTime_Repredict` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1bd0` | `m_IronSightController` | [C_IronSightController](../client/C_IronSightController.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1c80` | `m_iIronSightMode` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1cf8` | `m_flLastLOSTraceFailureTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1d58` | `m_flWatTickOffset` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1d6c` | `m_flLastShakeTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
-| `0x1f20` | `m_zoomLevel` | int32 | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
-| `0x1f24` | `m_iBurstShotsRemaining` | int32 | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
-| `0x1f28` | `m_iSilencerBodygroup` | int32 | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
-| `0x1f38` | `m_silencedModelIndex` | int32 | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
-| `0x1f3c` | `m_inPrecache` | bool | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
-| `0x1f3d` | `m_bNeedsBoltAction` | bool | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
-| `0x1f40` | `m_nRevolverCylinderIdx` | int32 | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
+| `0x19e8` | `m_iWeaponGameplayAnimState` | [WeaponGameplayAnimState](../server/WeaponGameplayAnimState.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x19ec` | `m_flWeaponGameplayAnimStateTimestamp` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x19f0` | `m_flInspectCancelCompleteTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x19f4` | `m_bInspectPending` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x19f5` | `m_bInspectShouldLoop` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a20` | `m_nLastEmptySoundCmdNum` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a24` | `m_bFireOnEmpty` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a28` | `m_OnPlayerPickup` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a40` | `m_weaponMode` | [CSWeaponMode](../server/CSWeaponMode.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a44` | `m_flTurningInaccuracyDelta` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a48` | `m_vecTurningInaccuracyEyeDirLast` | Vector | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a54` | `m_flTurningInaccuracy` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a58` | `m_fAccuracyPenalty` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a5c` | `m_flLastAccuracyUpdateTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a60` | `m_fAccuracySmoothedForZoom` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a64` | `m_iRecoilIndex` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a68` | `m_flRecoilIndex` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a6c` | `m_bBurstMode` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a70` | `m_flLastBurstModeChangeTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a74` | `m_nPostponeFireReadyTicks` | [GameTick_t](../entity2/GameTick_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a78` | `m_flPostponeFireReadyFrac` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a7c` | `m_bInReload` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a80` | `m_nDeployTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a84` | `m_flAttackHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a88` | `m_flDroppedAtTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a90` | `m_bIsHauledBack` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a91` | `m_bSilencerOn` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a94` | `m_flTimeSilencerSwitchComplete` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a98` | `m_bIsInStealthReload` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a99` | `m_bInSilentReloadSection` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1a9c` | `m_flStealthReloadHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1aa0` | `m_bReloadHeldSinceStart` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1aa4` | `m_flWeaponActionPlaybackRate` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1aa8` | `m_iOriginalTeamNumber` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1aac` | `m_iMostRecentTeamNumber` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1ab0` | `m_bDroppedNearBuyZone` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1ab4` | `m_flNextAttackRenderTimeOffset` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1b60` | `m_bClearWeaponIdentifyingUGC` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1b61` | `m_bVisualsDataSet` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1b62` | `m_bUIWeapon` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1b64` | `m_nCustomEconReloadEventId` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1b70` | `m_bCanBePickedUp` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1b74` | `m_nextPrevOwnerUseTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1b78` | `m_hPrevOwner` | CHandle< [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) > | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1b7c` | `m_nDropTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1b80` | `m_bWasActiveWeaponWhenDropped` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1ba4` | `m_donated` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1ba8` | `m_fLastShotTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1bac` | `m_bWasOwnedByCT` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1bad` | `m_bWasOwnedByTerrorist` | bool | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1bb0` | `m_flNextClientFireBulletTime` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1bb4` | `m_flNextClientFireBulletTime_Repredict` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1c10` | `m_IronSightController` | [C_IronSightController](../client/C_IronSightController.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1cc0` | `m_iIronSightMode` | int32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1d38` | `m_flLastLOSTraceFailureTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1d98` | `m_flWatTickOffset` | float32 | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1dac` | `m_flLastShakeTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSWeaponBase](../client/C_CSWeaponBase.md) |  |
+| `0x1f60` | `m_zoomLevel` | int32 | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
+| `0x1f64` | `m_iBurstShotsRemaining` | int32 | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
+| `0x1f68` | `m_iSilencerBodygroup` | int32 | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
+| `0x1f78` | `m_silencedModelIndex` | int32 | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
+| `0x1f7c` | `m_inPrecache` | bool | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
+| `0x1f7d` | `m_bNeedsBoltAction` | bool | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
+| `0x1f80` | `m_nRevolverCylinderIdx` | int32 | [C_CSWeaponBaseGun](../client/C_CSWeaponBaseGun.md) |  |
 
 **Also inherits (secondary base classes):** [IHasAttributes](../server/IHasAttributes.md) — additional-base fields sit at a shifted offset the schema does not record; see each base's own page for its layout.

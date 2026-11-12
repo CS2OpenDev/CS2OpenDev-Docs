@@ -8,9 +8,9 @@ kind: class
 
 # C_Chicken
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
-**Kind:** class · **Size:** 7072 bytes (`0x1ba0`) · **Align:** 16 · **Module:** client
+**Kind:** class · **Size:** 7120 bytes (`0x1bd0`) · **Align:** 16 · **Module:** client
 
 **Inherits from:** [C_DynamicProp](../client/C_DynamicProp.md), [IHasAttributes](../server/IHasAttributes.md)
 
@@ -249,6 +249,6 @@ classDiagram
 | `0x1ad8` | `m_bAttributesInitialized` | bool |  |  |
 | `0x1adc` | `m_hWaterWakeParticles` | [ParticleIndex_t](../server/ParticleIndex_t.md) |  |  |
 | `0x1ae0` | `m_bIsPreviewModel` | bool |  |  |
-| `0x1b68` | `m_bSpawnDyingParticles` | bool |  |  |
+| `0x1b98` | `m_bSpawnDyingParticles` | bool |  |  |
 
 **Also inherits (secondary base classes):** [IHasAttributes](../server/IHasAttributes.md) — additional-base fields sit at a shifted offset the schema does not record; see each base's own page for its layout.

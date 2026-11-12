@@ -5,7 +5,7 @@ module: server
 
 # Module: server
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/server.md)
 
@@ -427,7 +427,7 @@ module: server
 | [CLogicRelay](server/CLogicRelay.md) | class | 1248 | 7 | [CLogicalEntity](server/CLogicalEntity.md) |
 | [CLogicScript](server/CLogicScript.md) | class | 1192 | 0 | [CPointEntity](server/CPointEntity.md) |
 | [CLogicalEntity](server/CLogicalEntity.md) | class | 1192 | 0 | [CServerOnlyEntity](server/CServerOnlyEntity.md) |
-| [CMapInfo](server/CMapInfo.md) | class | 1240 | 15 | [CPointEntity](server/CPointEntity.md) |
+| [CMapInfo](server/CMapInfo.md) | class | 1248 | 16 | [CPointEntity](server/CPointEntity.md) |
 | [CMapSharedEnvironment](server/CMapSharedEnvironment.md) | class | 1208 | 1 | [CLogicalEntity](server/CLogicalEntity.md) |
 | [CMapVetoPickController](server/CMapVetoPickController.md) | class | 3752 | 24 | [CBaseEntity](server/CBaseEntity.md) |
 | [CMarkupSearchHelper](server/CMarkupSearchHelper.md) | class | 688 | 7 |  |
@@ -469,8 +469,8 @@ module: server
 | [CNetworkVelocityVector](server/CNetworkVelocityVector.md) | class | 40 | 3 |  |
 | [CNetworkViewOffsetVector](server/CNetworkViewOffsetVector.md) | class | 40 | 3 |  |
 | [CNetworkedSequenceOperation](server/CNetworkedSequenceOperation.md) | class | 40 | 8 |  |
-| [CNmAimCSNode::CDefinition](server/CNmAimCSNode.CDefinition.md) | class | 56 | 11 | [CNmPassthroughNode::CDefinition](animlib/CNmPassthroughNode.CDefinition.md) |
-| [CNmAimCSTask](server/CNmAimCSTask.md) | class | 304 | 0 | [CNmPoseTask](animlib/CNmPoseTask.md) |
+| [CNmAimCSNode::CDefinition](server/CNmAimCSNode.CDefinition.md) | class | 56 | 12 | [CNmPassthroughNode::CDefinition](animlib/CNmPassthroughNode.CDefinition.md) |
+| [CNmAimCSTask](server/CNmAimCSTask.md) | class | 496 | 0 | [CNmPoseTask](animlib/CNmPoseTask.md) |
 | [CNmEventConsumer](server/CNmEventConsumer.md) | class | 176 | 0 |  |
 | [CNmEventConsumerAttributes](server/CNmEventConsumerAttributes.md) | class | 176 | 0 | [CNmEventConsumer](server/CNmEventConsumer.md) |
 | [CNmEventConsumerBodyGroup](server/CNmEventConsumerBodyGroup.md) | class | 176 | 0 | [CNmEventConsumer](server/CNmEventConsumer.md) |

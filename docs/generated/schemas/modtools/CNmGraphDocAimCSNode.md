@@ -8,7 +8,7 @@ kind: class
 
 # CNmGraphDocAimCSNode
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 280 bytes (`0x118`) · **Align:** 8 · **Module:** modtools
 
@@ -24,7 +24,7 @@ classDiagram
 
 ## Memory layout
 
-11 fields (3 declared here, 8 inherited). Offsets are absolute from the object base.
+12 fields (4 declared here, 8 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -39,6 +39,7 @@ classDiagram
 | `0x108` | `m_flActionBlendTimeSeconds` | float32 |  |  |
 | `0x10c` | `m_flHandIKBlendInTimeSeconds` | float32 |  |  |
 | `0x110` | `m_flPlantingBlendTimeSeconds` | float32 |  |  |
+| `0x114` | `m_flTransitionBlendTimeSeconds` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -132,6 +133,7 @@ classDiagram
 	],
 	&quot;m_flActionBlendTimeSeconds&quot;: 0.400000,
 	&quot;m_flHandIKBlendInTimeSeconds&quot;: 0.300000,
-	&quot;m_flPlantingBlendTimeSeconds&quot;: 0.200000
+	&quot;m_flPlantingBlendTimeSeconds&quot;: 0.200000,
+	&quot;m_flTransitionBlendTimeSeconds&quot;: 0.300000
 }</pre>
 </details>

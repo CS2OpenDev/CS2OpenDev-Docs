@@ -8,7 +8,7 @@ kind: class
 
 # CNmAimCSNode::CDefinition
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 8 · **Module:** server
 
@@ -25,7 +25,7 @@ classDiagram
 
 ## Memory layout
 
-13 fields (11 declared here, 2 inherited). Offsets are absolute from the object base.
+14 fields (12 declared here, 2 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -42,6 +42,7 @@ classDiagram
 | `0x28` | `m_flHandIKBlendInTimeSeconds` | float32 |  |  |
 | `0x2c` | `m_flActionBlendTimeSeconds` | float32 |  |  |
 | `0x30` | `m_flPlantingBlendTimeSeconds` | float32 |  |  |
+| `0x34` | `m_flTransitionBlendTimeSeconds` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -59,6 +60,7 @@ classDiagram
 	&quot;m_nCrouchWeightNodeIdx&quot;: -1,
 	&quot;m_flHandIKBlendInTimeSeconds&quot;: 0.000000,
 	&quot;m_flActionBlendTimeSeconds&quot;: 0.000000,
-	&quot;m_flPlantingBlendTimeSeconds&quot;: 0.000000
+	&quot;m_flPlantingBlendTimeSeconds&quot;: 0.000000,
+	&quot;m_flTransitionBlendTimeSeconds&quot;: 0.000000
 }</pre>
 </details>

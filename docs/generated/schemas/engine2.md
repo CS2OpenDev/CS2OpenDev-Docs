@@ -5,7 +5,7 @@ module: engine2
 
 # Module: engine2
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/engine2.md)
 
@@ -24,7 +24,7 @@ module: engine2
 | [EventClientOutput_t](engine2/EventClientOutput_t.md) | class | 56 | 5 |  |
 | [EventClientPauseSimulate_t](engine2/EventClientPauseSimulate_t.md) | class | 48 | 0 | [EventSimulate_t](engine2/EventSimulate_t.md) |
 | [EventClientPollInput_t](engine2/EventClientPollInput_t.md) | class | 48 | 2 |  |
-| [EventClientPollNetworking_t](engine2/EventClientPollNetworking_t.md) | class | 4 | 1 |  |
+| [EventClientPollNetworking_t](engine2/EventClientPollNetworking_t.md) | class | 8 | 2 |  |
 | [EventClientPostAdvanceTick_t](engine2/EventClientPostAdvanceTick_t.md) | class | 64 | 0 | [EventPostAdvanceTick_t](engine2/EventPostAdvanceTick_t.md) |
 | [EventClientPostOutput_t](engine2/EventClientPostOutput_t.md) | class | 64 | 5 |  |
 | [EventClientPostSimulate_t](engine2/EventClientPostSimulate_t.md) | class | 48 | 0 | [EventSimulate_t](engine2/EventSimulate_t.md) |

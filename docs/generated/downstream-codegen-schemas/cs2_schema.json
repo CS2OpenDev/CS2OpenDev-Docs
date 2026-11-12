@@ -1,11 +1,11 @@
 {
   "schema_format_version": "2.2",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
-  "build_id": 26445667,
+  "build_id": 26598758,
   "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-11-05",
-  "version_time": "2026-11-05T00:10:12Z",
+  "version_date": "2026-11-11",
+  "version_time": "2026-11-11T18:33:14Z",
   "classes": [
     {
       "alignment": 255,
@@ -87296,7 +87296,7 @@
         {
           "metadata": [],
           "name": "m_bSpawnDyingParticles",
-          "offset": "13027",
+          "offset": "13026",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -141152,6 +141152,19 @@
             "name": "float32"
           },
           "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bFrostEnabled",
+          "offset": "1584",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
         }
       ],
       "flags": 353,
@@ -141169,7 +141182,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 3,
-      "size": "1584",
+      "size": "1592",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -141371,6 +141384,19 @@
             "name": "float32"
           },
           "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bFrostEnabled",
+          "offset": "1240",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
         }
       ],
       "flags": 353,
@@ -141388,7 +141414,7 @@
       ],
       "projectName": "server",
       "singleInheritanceDepth": 3,
-      "size": "1240",
+      "size": "1248",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/hierarchy/"
     },
@@ -161658,6 +161684,19 @@
             "name": "float32"
           },
           "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flTransitionBlendTimeSeconds",
+          "offset": "52",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
         }
       ],
       "flags": 262433,
@@ -161665,7 +161704,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CNmAimCSNode::CDefinition\",\n\t\"m_nNodeIdx\": -1,\n\t\"m_nChildNodeIdx\": -1,\n\t\"m_nVerticalAngleNodeIdx\": -1,\n\t\"m_nHorizontalAngleNodeIdx\": -1,\n\t\"m_nWeaponCategoryNodeIdx\": -1,\n\t\"m_nWeaponTypeNodeIdx\": -1,\n\t\"m_nWeaponActionNodeIdx\": -1,\n\t\"m_nWeaponDropNodeIdx\": -1,\n\t\"m_nIsDefusingNodeIdx\": -1,\n\t\"m_nCrouchWeightNodeIdx\": -1,\n\t\"m_flHandIKBlendInTimeSeconds\": 0.000000,\n\t\"m_flActionBlendTimeSeconds\": 0.000000,\n\t\"m_flPlantingBlendTimeSeconds\": 0.000000\n}",
+          "value": "{\n\t\"_class\": \"CNmAimCSNode::CDefinition\",\n\t\"m_nNodeIdx\": -1,\n\t\"m_nChildNodeIdx\": -1,\n\t\"m_nVerticalAngleNodeIdx\": -1,\n\t\"m_nHorizontalAngleNodeIdx\": -1,\n\t\"m_nWeaponCategoryNodeIdx\": -1,\n\t\"m_nWeaponTypeNodeIdx\": -1,\n\t\"m_nWeaponActionNodeIdx\": -1,\n\t\"m_nWeaponDropNodeIdx\": -1,\n\t\"m_nIsDefusingNodeIdx\": -1,\n\t\"m_nCrouchWeightNodeIdx\": -1,\n\t\"m_flHandIKBlendInTimeSeconds\": 0.000000,\n\t\"m_flActionBlendTimeSeconds\": 0.000000,\n\t\"m_flPlantingBlendTimeSeconds\": 0.000000,\n\t\"m_flTransitionBlendTimeSeconds\": 0.000000\n}",
           "value_parsed": {
             "_class": "CNmAimCSNode::CDefinition",
             "m_nNodeIdx": -1,
@@ -161680,7 +161719,8 @@
             "m_nCrouchWeightNodeIdx": -1,
             "m_flHandIKBlendInTimeSeconds": 0.0,
             "m_flActionBlendTimeSeconds": 0.0,
-            "m_flPlantingBlendTimeSeconds": 0.0
+            "m_flPlantingBlendTimeSeconds": 0.0,
+            "m_flTransitionBlendTimeSeconds": 0.0
           }
         }
       ],
@@ -161719,7 +161759,7 @@
       ],
       "projectName": "server",
       "singleInheritanceDepth": 1,
-      "size": "304",
+      "size": "496",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/hierarchy/"
     },
@@ -171149,6 +171189,19 @@
             "name": "float32"
           },
           "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flTransitionBlendTimeSeconds",
+          "offset": "276",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
         }
       ],
       "flags": 262433,
@@ -171156,7 +171209,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CNmGraphDocAimCSNode\",\n\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\"m_name\": \"\",\n\t\"m_floatingComment\": \"\",\n\t\"m_position\":\n\t[\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_pChildGraph\": null,\n\t\"m_pSecondaryGraph\": null,\n\t\"m_inputPins\":\n\t[\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Input\",\n\t\t\t\"m_type\": \"Pose\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Horizontal Aim Angle\",\n\t\t\t\"m_type\": \"Float\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Vertical Aim Angle\",\n\t\t\t\"m_type\": \"Float\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Weapon Category\",\n\t\t\t\"m_type\": \"ID\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Weapon Type\",\n\t\t\t\"m_type\": \"ID\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Weapon Action\",\n\t\t\t\"m_type\": \"ID\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Weapon Drop\",\n\t\t\t\"m_type\": \"Float\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Crouch Weight\",\n\t\t\t\"m_type\": \"Float\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Is Defusing\",\n\t\t\t\"m_type\": \"Bool\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t}\n\t],\n\t\"m_outputPins\":\n\t[\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Result\",\n\t\t\t\"m_type\": \"Pose\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": true\n\t\t}\n\t],\n\t\"m_flActionBlendTimeSeconds\": 0.400000,\n\t\"m_flHandIKBlendInTimeSeconds\": 0.300000,\n\t\"m_flPlantingBlendTimeSeconds\": 0.200000\n}",
+          "value": "{\n\t\"_class\": \"CNmGraphDocAimCSNode\",\n\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\"m_name\": \"\",\n\t\"m_floatingComment\": \"\",\n\t\"m_position\":\n\t[\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_pChildGraph\": null,\n\t\"m_pSecondaryGraph\": null,\n\t\"m_inputPins\":\n\t[\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Input\",\n\t\t\t\"m_type\": \"Pose\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Horizontal Aim Angle\",\n\t\t\t\"m_type\": \"Float\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Vertical Aim Angle\",\n\t\t\t\"m_type\": \"Float\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Weapon Category\",\n\t\t\t\"m_type\": \"ID\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Weapon Type\",\n\t\t\t\"m_type\": \"ID\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Weapon Action\",\n\t\t\t\"m_type\": \"ID\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Weapon Drop\",\n\t\t\t\"m_type\": \"Float\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Crouch Weight\",\n\t\t\t\"m_type\": \"Float\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t},\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Is Defusing\",\n\t\t\t\"m_type\": \"Bool\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": false\n\t\t}\n\t],\n\t\"m_outputPins\":\n\t[\n\t\t{\n\t\t\t\"m_ID\": <HIDDEN FOR DIFF>,\n\t\t\t\"m_name\": \"Result\",\n\t\t\t\"m_type\": \"Pose\",\n\t\t\t\"m_bIsDynamicPin\": false,\n\t\t\t\"m_bAllowMultipleOutConnections\": true\n\t\t}\n\t],\n\t\"m_flActionBlendTimeSeconds\": 0.400000,\n\t\"m_flHandIKBlendInTimeSeconds\": 0.300000,\n\t\"m_flPlantingBlendTimeSeconds\": 0.200000,\n\t\"m_flTransitionBlendTimeSeconds\": 0.300000\n}",
           "value_parsed": {
             "_class": "CNmGraphDocAimCSNode",
             "m_ID": null,
@@ -171244,7 +171297,8 @@
             ],
             "m_flActionBlendTimeSeconds": 0.4,
             "m_flHandIKBlendInTimeSeconds": 0.3,
-            "m_flPlantingBlendTimeSeconds": 0.2
+            "m_flPlantingBlendTimeSeconds": 0.2,
+            "m_flTransitionBlendTimeSeconds": 0.3
           }
         }
       ],
@@ -281805,7 +281859,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -283020,7 +283074,7 @@
         {
           "metadata": [],
           "name": "m_bClientPredictDelete",
-          "offset": "7968",
+          "offset": "8032",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -283033,7 +283087,7 @@
         {
           "metadata": [],
           "name": "m_bRedraw",
-          "offset": "7969",
+          "offset": "8033",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -283046,7 +283100,7 @@
         {
           "metadata": [],
           "name": "m_bIsHeldByPlayer",
-          "offset": "7970",
+          "offset": "8034",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -283059,7 +283113,7 @@
         {
           "metadata": [],
           "name": "m_bPinPulled",
-          "offset": "7971",
+          "offset": "8035",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -283072,7 +283126,7 @@
         {
           "metadata": [],
           "name": "m_bJumpThrow",
-          "offset": "7972",
+          "offset": "8036",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -283085,7 +283139,7 @@
         {
           "metadata": [],
           "name": "m_bThrowAnimating",
-          "offset": "7973",
+          "offset": "8037",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -283098,7 +283152,7 @@
         {
           "metadata": [],
           "name": "m_fThrowTime",
-          "offset": "7976",
+          "offset": "8040",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -283111,7 +283165,7 @@
         {
           "metadata": [],
           "name": "m_flThrowStrength",
-          "offset": "7984",
+          "offset": "8048",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -283124,7 +283178,7 @@
         {
           "metadata": [],
           "name": "m_fDropTime",
-          "offset": "8104",
+          "offset": "8168",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -283137,7 +283191,7 @@
         {
           "metadata": [],
           "name": "m_fPinPullTime",
-          "offset": "8108",
+          "offset": "8172",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -283150,7 +283204,7 @@
         {
           "metadata": [],
           "name": "m_bJustPulledPin",
-          "offset": "8112",
+          "offset": "8176",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -283163,7 +283217,7 @@
         {
           "metadata": [],
           "name": "m_nNextHoldTick",
-          "offset": "8116",
+          "offset": "8180",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -283176,7 +283230,7 @@
         {
           "metadata": [],
           "name": "m_flNextHoldFrac",
-          "offset": "8120",
+          "offset": "8184",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -283189,7 +283243,7 @@
         {
           "metadata": [],
           "name": "m_hSwitchToWeaponAfterThrow",
-          "offset": "8124",
+          "offset": "8188",
           "type": {
             "atomicCategory": "ATOMIC_T",
             "category": "ATOMIC",
@@ -283222,7 +283276,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 7,
-      "size": "8160",
+      "size": "8224",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -288378,7 +288432,7 @@
         {
           "metadata": [],
           "name": "m_activeLightParticleIndex",
-          "offset": "7968",
+          "offset": "8032",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -288391,7 +288445,7 @@
         {
           "metadata": [],
           "name": "m_eActiveLightEffect",
-          "offset": "7972",
+          "offset": "8036",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_ENUM",
@@ -288404,7 +288458,7 @@
         {
           "metadata": [],
           "name": "m_bStartedArming",
-          "offset": "7976",
+          "offset": "8040",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -288417,7 +288471,7 @@
         {
           "metadata": [],
           "name": "m_fArmedTime",
-          "offset": "7980",
+          "offset": "8044",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -288430,7 +288484,7 @@
         {
           "metadata": [],
           "name": "m_bBombPlacedAnimation",
-          "offset": "7984",
+          "offset": "8048",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -288443,7 +288497,7 @@
         {
           "metadata": [],
           "name": "m_bIsPlantingViaUse",
-          "offset": "7985",
+          "offset": "8049",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -288456,7 +288510,7 @@
         {
           "metadata": [],
           "name": "m_entitySpottedState",
-          "offset": "7992",
+          "offset": "8056",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -288469,7 +288523,7 @@
         {
           "metadata": [],
           "name": "m_nSpotRules",
-          "offset": "8016",
+          "offset": "8080",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -288482,7 +288536,7 @@
         {
           "metadata": [],
           "name": "m_bPlayedArmingBeeps",
-          "offset": "8020",
+          "offset": "8084",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -288502,7 +288556,7 @@
         {
           "metadata": [],
           "name": "m_bBombPlanted",
-          "offset": "8027",
+          "offset": "8091",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -288528,7 +288582,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 7,
-      "size": "8032",
+      "size": "8096",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -289274,7 +289328,7 @@
         {
           "metadata": [],
           "name": "m_animgraphCharacterModeString",
-          "offset": "14112",
+          "offset": "14160",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -289287,7 +289341,7 @@
         {
           "metadata": [],
           "name": "m_flInitialModelScale",
-          "offset": "14120",
+          "offset": "14168",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -289313,7 +289367,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "14288",
+      "size": "14336",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -289336,7 +289390,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 9,
-      "size": "14288",
+      "size": "14336",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -289629,7 +289683,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 9,
-      "size": "14288",
+      "size": "14336",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -291764,7 +291818,7 @@
         {
           "metadata": [],
           "name": "m_iRetakesOffering",
-          "offset": "5976",
+          "offset": "6024",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291777,7 +291831,7 @@
         {
           "metadata": [],
           "name": "m_iRetakesOfferingCard",
-          "offset": "5980",
+          "offset": "6028",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291790,7 +291844,7 @@
         {
           "metadata": [],
           "name": "m_bRetakesHasDefuseKit",
-          "offset": "5984",
+          "offset": "6032",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291803,7 +291857,7 @@
         {
           "metadata": [],
           "name": "m_bRetakesMVPLastRound",
-          "offset": "5985",
+          "offset": "6033",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291816,7 +291870,7 @@
         {
           "metadata": [],
           "name": "m_iRetakesMVPBoostItem",
-          "offset": "5988",
+          "offset": "6036",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291829,7 +291883,7 @@
         {
           "metadata": [],
           "name": "m_RetakesMVPBoostExtraUtility",
-          "offset": "5992",
+          "offset": "6040",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_ENUM",
@@ -291842,7 +291896,7 @@
         {
           "metadata": [],
           "name": "m_bNeedToReApplyGloves",
-          "offset": "5997",
+          "offset": "6045",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291855,7 +291909,7 @@
         {
           "metadata": [],
           "name": "m_EconGloves",
-          "offset": "6000",
+          "offset": "6048",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -291868,7 +291922,7 @@
         {
           "metadata": [],
           "name": "m_nEconGlovesChanged",
-          "offset": "7456",
+          "offset": "7504",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291881,7 +291935,7 @@
         {
           "metadata": [],
           "name": "m_bMustSyncRagdollState",
-          "offset": "7457",
+          "offset": "7505",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291894,7 +291948,7 @@
         {
           "metadata": [],
           "name": "m_nRagdollDamageBone",
-          "offset": "7460",
+          "offset": "7508",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291907,7 +291961,7 @@
         {
           "metadata": [],
           "name": "m_vRagdollDamageForce",
-          "offset": "7464",
+          "offset": "7512",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -291920,7 +291974,7 @@
         {
           "metadata": [],
           "name": "m_szRagdollDamageWeaponName",
-          "offset": "7476",
+          "offset": "7524",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -291940,7 +291994,7 @@
         {
           "metadata": [],
           "name": "m_bRagdollDamageHeadshot",
-          "offset": "7540",
+          "offset": "7588",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291953,7 +292007,7 @@
         {
           "metadata": [],
           "name": "m_vRagdollServerOrigin",
-          "offset": "7544",
+          "offset": "7592",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -291966,7 +292020,7 @@
         {
           "metadata": [],
           "name": "m_lastLandTime",
-          "offset": "7556",
+          "offset": "7604",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -291979,7 +292033,7 @@
         {
           "metadata": [],
           "name": "m_bOnGroundLastTick",
-          "offset": "7560",
+          "offset": "7608",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291992,7 +292046,7 @@
         {
           "metadata": [],
           "name": "m_hHudModelArms",
-          "offset": "7592",
+          "offset": "7640",
           "type": {
             "atomicCategory": "ATOMIC_T",
             "category": "ATOMIC",
@@ -292012,7 +292066,7 @@
         {
           "metadata": [],
           "name": "m_qDeathEyeAngles",
-          "offset": "7596",
+          "offset": "7644",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292025,7 +292079,7 @@
         {
           "metadata": [],
           "name": "m_bLeftHanded",
-          "offset": "7608",
+          "offset": "7656",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292038,7 +292092,7 @@
         {
           "metadata": [],
           "name": "m_fSwitchedHandednessTime",
-          "offset": "7612",
+          "offset": "7660",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -292051,7 +292105,7 @@
         {
           "metadata": [],
           "name": "m_flViewmodelOffsetX",
-          "offset": "7616",
+          "offset": "7664",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292064,7 +292118,7 @@
         {
           "metadata": [],
           "name": "m_flViewmodelOffsetY",
-          "offset": "7620",
+          "offset": "7668",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292077,7 +292131,7 @@
         {
           "metadata": [],
           "name": "m_flViewmodelOffsetZ",
-          "offset": "7624",
+          "offset": "7672",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292090,7 +292144,7 @@
         {
           "metadata": [],
           "name": "m_flViewmodelFOV",
-          "offset": "7628",
+          "offset": "7676",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292103,7 +292157,7 @@
         {
           "metadata": [],
           "name": "m_vecPlayerPatchEconIndices",
-          "offset": "7632",
+          "offset": "7680",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -292123,7 +292177,7 @@
         {
           "metadata": [],
           "name": "m_GunGameImmunityColor",
-          "offset": "7704",
+          "offset": "7752",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292136,7 +292190,7 @@
         {
           "metadata": [],
           "name": "m_vecBulletHitModels",
-          "offset": "7784",
+          "offset": "7832",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -292163,123 +292217,6 @@
         {
           "metadata": [],
           "name": "m_bIsWalking",
-          "offset": "7808",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_entitySpottedState",
-          "offset": "7816",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "client.dll",
-            "name": "EntitySpottedState_t"
-          },
-          "typeModule": "client.dll"
-        },
-        {
-          "metadata": [],
-          "name": "m_bIsScoped",
-          "offset": "7840",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bResumeZoom",
-          "offset": "7841",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bIsDefusing",
-          "offset": "7842",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bIsGrabbingHostage",
-          "offset": "7843",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iBlockingUseActionInProgress",
-          "offset": "7844",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_ENUM",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "CSPlayerBlockingUseAction_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_flEmitSoundTime",
-          "offset": "7848",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTime_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_flEmitSoundTime_Client",
-          "offset": "7852",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTime_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_bInNoDefuseArea",
           "offset": "7856",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -292292,163 +292229,111 @@
         },
         {
           "metadata": [],
-          "name": "m_nWhichBombZone",
-          "offset": "7860",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iShotsFired",
+          "name": "m_entitySpottedState",
           "offset": "7864",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
+            "category": "DECLARED_CLASS",
             "count": "0",
-            "module": "",
-            "name": "int32"
+            "module": "client.dll",
+            "name": "EntitySpottedState_t"
           },
-          "typeModule": ""
+          "typeModule": "client.dll"
         },
         {
           "metadata": [],
-          "name": "m_flFlinchStack",
-          "offset": "7868",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flVelocityModifier",
-          "offset": "7872",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bWaitForNoAttack",
-          "offset": "7876",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_ignoreLadderJumpTime",
-          "offset": "7880",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bKilledByHeadshot",
-          "offset": "7885",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_ArmorValue",
+          "name": "m_bIsScoped",
           "offset": "7888",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
             "count": "0",
             "module": "",
-            "name": "int32"
+            "name": "bool"
           },
           "typeModule": ""
         },
         {
           "metadata": [],
-          "name": "m_unCurrentEquipmentValue",
+          "name": "m_bResumeZoom",
+          "offset": "7889",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bIsDefusing",
+          "offset": "7890",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bIsGrabbingHostage",
+          "offset": "7891",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_iBlockingUseActionInProgress",
           "offset": "7892",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
+            "category": "DECLARED_ENUM",
             "count": "0",
-            "module": "",
-            "name": "uint16"
+            "module": "!GlobalTypes",
+            "name": "CSPlayerBlockingUseAction_t"
           },
-          "typeModule": ""
+          "typeModule": "!GlobalTypes"
         },
         {
           "metadata": [],
-          "name": "m_unRoundStartEquipmentValue",
-          "offset": "7894",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "uint16"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_unFreezetimeEndEquipmentValue",
+          "name": "m_flEmitSoundTime",
           "offset": "7896",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
+            "category": "DECLARED_CLASS",
             "count": "0",
-            "module": "",
-            "name": "uint16"
+            "module": "!GlobalTypes",
+            "name": "GameTime_t"
           },
-          "typeModule": ""
+          "typeModule": "!GlobalTypes"
         },
         {
           "metadata": [],
-          "name": "m_nLastKillerIndex",
+          "name": "m_flEmitSoundTime_Client",
           "offset": "7900",
           "type": {
-            "atomicCategory": "ATOMIC_PLAIN",
-            "category": "ATOMIC",
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_CLASS",
             "count": "0",
-            "module": "",
-            "name": "CEntityIndex"
+            "module": "!GlobalTypes",
+            "name": "GameTime_t"
           },
-          "typeModule": ""
+          "typeModule": "!GlobalTypes"
         },
         {
           "metadata": [],
-          "name": "m_bOldIsScoped",
+          "name": "m_bInNoDefuseArea",
           "offset": "7904",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -292461,8 +292346,177 @@
         },
         {
           "metadata": [],
+          "name": "m_nWhichBombZone",
+          "offset": "7908",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_iShotsFired",
+          "offset": "7912",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flFlinchStack",
+          "offset": "7916",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flVelocityModifier",
+          "offset": "7920",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bWaitForNoAttack",
+          "offset": "7924",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_ignoreLadderJumpTime",
+          "offset": "7928",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bKilledByHeadshot",
+          "offset": "7933",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_ArmorValue",
+          "offset": "7936",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_unCurrentEquipmentValue",
+          "offset": "7940",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "uint16"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_unRoundStartEquipmentValue",
+          "offset": "7942",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "uint16"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_unFreezetimeEndEquipmentValue",
+          "offset": "7944",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "uint16"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_nLastKillerIndex",
+          "offset": "7948",
+          "type": {
+            "atomicCategory": "ATOMIC_PLAIN",
+            "category": "ATOMIC",
+            "count": "0",
+            "module": "",
+            "name": "CEntityIndex"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bOldIsScoped",
+          "offset": "7952",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
           "name": "m_bHasDeathInfo",
-          "offset": "7905",
+          "offset": "7953",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292475,7 +292529,7 @@
         {
           "metadata": [],
           "name": "m_flDeathInfoTime",
-          "offset": "7908",
+          "offset": "7956",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292488,7 +292542,7 @@
         {
           "metadata": [],
           "name": "m_vecDeathInfoOrigin",
-          "offset": "7912",
+          "offset": "7960",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292501,7 +292555,7 @@
         {
           "metadata": [],
           "name": "m_grenadeParameterStashTime",
-          "offset": "7968",
+          "offset": "8016",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -292514,7 +292568,7 @@
         {
           "metadata": [],
           "name": "m_bGrenadeParametersStashed",
-          "offset": "7972",
+          "offset": "8020",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292527,7 +292581,7 @@
         {
           "metadata": [],
           "name": "m_angStashedShootAngles",
-          "offset": "7976",
+          "offset": "8024",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292540,7 +292594,7 @@
         {
           "metadata": [],
           "name": "m_vecStashedGrenadeThrowPosition",
-          "offset": "7988",
+          "offset": "8036",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292553,7 +292607,7 @@
         {
           "metadata": [],
           "name": "m_vecStashedGrenadeThrowPawnCenter",
-          "offset": "8000",
+          "offset": "8048",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292566,7 +292620,7 @@
         {
           "metadata": [],
           "name": "m_vecStashedVelocity",
-          "offset": "8012",
+          "offset": "8060",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292579,7 +292633,7 @@
         {
           "metadata": [],
           "name": "m_flInterpolatedInaccuracy",
-          "offset": "8024",
+          "offset": "8072",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292592,7 +292646,7 @@
         {
           "metadata": [],
           "name": "m_bShouldAutobuyDMWeapons",
-          "offset": "13568",
+          "offset": "13616",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292605,7 +292659,7 @@
         {
           "metadata": [],
           "name": "m_fImmuneToGunGameDamageTime",
-          "offset": "13572",
+          "offset": "13620",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -292618,7 +292672,7 @@
         {
           "metadata": [],
           "name": "m_bGunGameImmunity",
-          "offset": "13576",
+          "offset": "13624",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292631,7 +292685,7 @@
         {
           "metadata": [],
           "name": "m_fImmuneToGunGameDamageTimeLast",
-          "offset": "13580",
+          "offset": "13628",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -292644,7 +292698,7 @@
         {
           "metadata": [],
           "name": "m_flBigHeadScale",
-          "offset": "13584",
+          "offset": "13632",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292657,7 +292711,7 @@
         {
           "metadata": [],
           "name": "m_fMolotovDamageTime",
-          "offset": "13588",
+          "offset": "13636",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292670,7 +292724,7 @@
         {
           "metadata": [],
           "name": "m_nPlayerInfernoBodyFx",
-          "offset": "13704",
+          "offset": "13752",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -292683,7 +292737,7 @@
         {
           "metadata": [],
           "name": "m_angEyeAngles",
-          "offset": "13824",
+          "offset": "13872",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292696,7 +292750,7 @@
         {
           "metadata": [],
           "name": "m_arrOldEyeAnglesTimes",
-          "offset": "13968",
+          "offset": "14016",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -292716,7 +292770,7 @@
         {
           "metadata": [],
           "name": "m_arrOldEyeAngles",
-          "offset": "13984",
+          "offset": "14032",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -292736,7 +292790,7 @@
         {
           "metadata": [],
           "name": "m_angEyeAnglesVelocity",
-          "offset": "14032",
+          "offset": "14080",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292749,7 +292803,7 @@
         {
           "metadata": [],
           "name": "m_iIDEntIndex",
-          "offset": "14044",
+          "offset": "14092",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292762,7 +292816,7 @@
         {
           "metadata": [],
           "name": "m_delayTargetIDTimer",
-          "offset": "14048",
+          "offset": "14096",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -292775,7 +292829,7 @@
         {
           "metadata": [],
           "name": "m_iTargetItemEntIdx",
-          "offset": "14072",
+          "offset": "14120",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292788,7 +292842,7 @@
         {
           "metadata": [],
           "name": "m_iOldIDEntIndex",
-          "offset": "14076",
+          "offset": "14124",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292801,7 +292855,7 @@
         {
           "metadata": [],
           "name": "m_holdTargetIDTimer",
-          "offset": "14080",
+          "offset": "14128",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -292827,7 +292881,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 7,
-      "size": "14112",
+      "size": "14160",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -293592,7 +293646,7 @@
         {
           "metadata": [],
           "name": "m_iWeaponGameplayAnimState",
-          "offset": "6568",
+          "offset": "6632",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_ENUM",
@@ -293605,7 +293659,7 @@
         {
           "metadata": [],
           "name": "m_flWeaponGameplayAnimStateTimestamp",
-          "offset": "6572",
+          "offset": "6636",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -293618,7 +293672,7 @@
         {
           "metadata": [],
           "name": "m_flInspectCancelCompleteTime",
-          "offset": "6576",
+          "offset": "6640",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -293631,7 +293685,7 @@
         {
           "metadata": [],
           "name": "m_bInspectPending",
-          "offset": "6580",
+          "offset": "6644",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -293644,7 +293698,7 @@
         {
           "metadata": [],
           "name": "m_bInspectShouldLoop",
-          "offset": "6581",
+          "offset": "6645",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -293657,7 +293711,7 @@
         {
           "metadata": [],
           "name": "m_nLastEmptySoundCmdNum",
-          "offset": "6624",
+          "offset": "6688",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -293670,7 +293724,7 @@
         {
           "metadata": [],
           "name": "m_bFireOnEmpty",
-          "offset": "6628",
+          "offset": "6692",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -293683,7 +293737,7 @@
         {
           "metadata": [],
           "name": "m_OnPlayerPickup",
-          "offset": "6632",
+          "offset": "6696",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -293696,7 +293750,7 @@
         {
           "metadata": [],
           "name": "m_weaponMode",
-          "offset": "6656",
+          "offset": "6720",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_ENUM",
@@ -293709,7 +293763,7 @@
         {
           "metadata": [],
           "name": "m_flTurningInaccuracyDelta",
-          "offset": "6660",
+          "offset": "6724",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -293722,7 +293776,7 @@
         {
           "metadata": [],
           "name": "m_vecTurningInaccuracyEyeDirLast",
-          "offset": "6664",
+          "offset": "6728",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -293735,7 +293789,7 @@
         {
           "metadata": [],
           "name": "m_flTurningInaccuracy",
-          "offset": "6676",
+          "offset": "6740",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -293748,7 +293802,7 @@
         {
           "metadata": [],
           "name": "m_fAccuracyPenalty",
-          "offset": "6680",
+          "offset": "6744",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -293761,227 +293815,6 @@
         {
           "metadata": [],
           "name": "m_flLastAccuracyUpdateTime",
-          "offset": "6684",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTime_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_fAccuracySmoothedForZoom",
-          "offset": "6688",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iRecoilIndex",
-          "offset": "6692",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flRecoilIndex",
-          "offset": "6696",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bBurstMode",
-          "offset": "6700",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flLastBurstModeChangeTime",
-          "offset": "6704",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTime_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_nPostponeFireReadyTicks",
-          "offset": "6708",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTick_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_flPostponeFireReadyFrac",
-          "offset": "6712",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bInReload",
-          "offset": "6716",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_nDeployTick",
-          "offset": "6720",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTick_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_flAttackHoldStartTime",
-          "offset": "6724",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTime_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_flDroppedAtTime",
-          "offset": "6728",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTime_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_bIsHauledBack",
-          "offset": "6736",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bSilencerOn",
-          "offset": "6737",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flTimeSilencerSwitchComplete",
-          "offset": "6740",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTime_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_bIsInStealthReload",
-          "offset": "6744",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bInSilentReloadSection",
-          "offset": "6745",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flStealthReloadHoldStartTime",
           "offset": "6748",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -293994,8 +293827,229 @@
         },
         {
           "metadata": [],
-          "name": "m_bReloadHeldSinceStart",
+          "name": "m_fAccuracySmoothedForZoom",
           "offset": "6752",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_iRecoilIndex",
+          "offset": "6756",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flRecoilIndex",
+          "offset": "6760",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bBurstMode",
+          "offset": "6764",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flLastBurstModeChangeTime",
+          "offset": "6768",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_CLASS",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "GameTime_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_nPostponeFireReadyTicks",
+          "offset": "6772",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_CLASS",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "GameTick_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_flPostponeFireReadyFrac",
+          "offset": "6776",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bInReload",
+          "offset": "6780",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_nDeployTick",
+          "offset": "6784",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_CLASS",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "GameTick_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_flAttackHoldStartTime",
+          "offset": "6788",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_CLASS",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "GameTime_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_flDroppedAtTime",
+          "offset": "6792",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_CLASS",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "GameTime_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_bIsHauledBack",
+          "offset": "6800",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bSilencerOn",
+          "offset": "6801",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flTimeSilencerSwitchComplete",
+          "offset": "6804",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_CLASS",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "GameTime_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_bIsInStealthReload",
+          "offset": "6808",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bInSilentReloadSection",
+          "offset": "6809",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flStealthReloadHoldStartTime",
+          "offset": "6812",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_CLASS",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "GameTime_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_bReloadHeldSinceStart",
+          "offset": "6816",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294008,7 +294062,7 @@
         {
           "metadata": [],
           "name": "m_flWeaponActionPlaybackRate",
-          "offset": "6756",
+          "offset": "6820",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294021,7 +294075,7 @@
         {
           "metadata": [],
           "name": "m_iOriginalTeamNumber",
-          "offset": "6760",
+          "offset": "6824",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294034,7 +294088,7 @@
         {
           "metadata": [],
           "name": "m_iMostRecentTeamNumber",
-          "offset": "6764",
+          "offset": "6828",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294047,7 +294101,7 @@
         {
           "metadata": [],
           "name": "m_bDroppedNearBuyZone",
-          "offset": "6768",
+          "offset": "6832",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294060,7 +294114,7 @@
         {
           "metadata": [],
           "name": "m_flNextAttackRenderTimeOffset",
-          "offset": "6772",
+          "offset": "6836",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294073,7 +294127,7 @@
         {
           "metadata": [],
           "name": "m_bClearWeaponIdentifyingUGC",
-          "offset": "6944",
+          "offset": "7008",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294086,7 +294140,7 @@
         {
           "metadata": [],
           "name": "m_bVisualsDataSet",
-          "offset": "6945",
+          "offset": "7009",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294099,7 +294153,7 @@
         {
           "metadata": [],
           "name": "m_bUIWeapon",
-          "offset": "6946",
+          "offset": "7010",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294112,7 +294166,7 @@
         {
           "metadata": [],
           "name": "m_nCustomEconReloadEventId",
-          "offset": "6948",
+          "offset": "7012",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294125,7 +294179,7 @@
         {
           "metadata": [],
           "name": "m_bCanBePickedUp",
-          "offset": "6960",
+          "offset": "7024",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294138,7 +294192,7 @@
         {
           "metadata": [],
           "name": "m_nextPrevOwnerUseTime",
-          "offset": "6964",
+          "offset": "7028",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -294151,7 +294205,7 @@
         {
           "metadata": [],
           "name": "m_hPrevOwner",
-          "offset": "6968",
+          "offset": "7032",
           "type": {
             "atomicCategory": "ATOMIC_T",
             "category": "ATOMIC",
@@ -294171,7 +294225,7 @@
         {
           "metadata": [],
           "name": "m_nDropTick",
-          "offset": "6972",
+          "offset": "7036",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -294184,7 +294238,7 @@
         {
           "metadata": [],
           "name": "m_bWasActiveWeaponWhenDropped",
-          "offset": "6976",
+          "offset": "7040",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294197,7 +294251,7 @@
         {
           "metadata": [],
           "name": "m_donated",
-          "offset": "7012",
+          "offset": "7076",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294210,7 +294264,7 @@
         {
           "metadata": [],
           "name": "m_fLastShotTime",
-          "offset": "7016",
+          "offset": "7080",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -294223,7 +294277,7 @@
         {
           "metadata": [],
           "name": "m_bWasOwnedByCT",
-          "offset": "7020",
+          "offset": "7084",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294236,7 +294290,7 @@
         {
           "metadata": [],
           "name": "m_bWasOwnedByTerrorist",
-          "offset": "7021",
+          "offset": "7085",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294249,7 +294303,7 @@
         {
           "metadata": [],
           "name": "m_flNextClientFireBulletTime",
-          "offset": "7024",
+          "offset": "7088",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294262,7 +294316,7 @@
         {
           "metadata": [],
           "name": "m_flNextClientFireBulletTime_Repredict",
-          "offset": "7028",
+          "offset": "7092",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294275,7 +294329,7 @@
         {
           "metadata": [],
           "name": "m_IronSightController",
-          "offset": "7120",
+          "offset": "7184",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -294288,7 +294342,7 @@
         {
           "metadata": [],
           "name": "m_iIronSightMode",
-          "offset": "7296",
+          "offset": "7360",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294301,7 +294355,7 @@
         {
           "metadata": [],
           "name": "m_flLastLOSTraceFailureTime",
-          "offset": "7416",
+          "offset": "7480",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -294314,7 +294368,7 @@
         {
           "metadata": [],
           "name": "m_flWatTickOffset",
-          "offset": "7512",
+          "offset": "7576",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294327,7 +294381,7 @@
         {
           "metadata": [],
           "name": "m_flLastShakeTime",
-          "offset": "7532",
+          "offset": "7596",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -294353,7 +294407,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 6,
-      "size": "7968",
+      "size": "8032",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -294364,7 +294418,7 @@
         {
           "metadata": [],
           "name": "m_zoomLevel",
-          "offset": "7968",
+          "offset": "8032",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294377,7 +294431,7 @@
         {
           "metadata": [],
           "name": "m_iBurstShotsRemaining",
-          "offset": "7972",
+          "offset": "8036",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294390,7 +294444,7 @@
         {
           "metadata": [],
           "name": "m_iSilencerBodygroup",
-          "offset": "7976",
+          "offset": "8040",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294403,7 +294457,7 @@
         {
           "metadata": [],
           "name": "m_silencedModelIndex",
-          "offset": "7992",
+          "offset": "8056",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294416,7 +294470,7 @@
         {
           "metadata": [],
           "name": "m_inPrecache",
-          "offset": "7996",
+          "offset": "8060",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294429,7 +294483,7 @@
         {
           "metadata": [],
           "name": "m_bNeedsBoltAction",
-          "offset": "7997",
+          "offset": "8061",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294442,7 +294496,7 @@
         {
           "metadata": [],
           "name": "m_nRevolverCylinderIdx",
-          "offset": "8000",
+          "offset": "8064",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294468,7 +294522,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 7,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -294491,7 +294545,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 7,
-      "size": "7968",
+      "size": "8032",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -294594,7 +294648,7 @@
         {
           "metadata": [],
           "name": "m_bSpawnDyingParticles",
-          "offset": "7016",
+          "offset": "7064",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -294625,7 +294679,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 7,
-      "size": "7072",
+      "size": "7120",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -295568,7 +295622,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -295591,7 +295645,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8160",
+      "size": "8224",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -301108,7 +301162,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8160",
+      "size": "8224",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -302369,7 +302423,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8160",
+      "size": "8224",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -302655,21 +302709,8 @@
         },
         {
           "metadata": [],
-          "name": "m_flDeadOrRescuedTime",
-          "offset": "4960",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTime_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
           "name": "m_blinkTimer",
-          "offset": "4968",
+          "offset": "4960",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -302682,7 +302723,7 @@
         {
           "metadata": [],
           "name": "m_lookAt",
-          "offset": "4992",
+          "offset": "4984",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -302695,7 +302736,7 @@
         {
           "metadata": [],
           "name": "m_lookAroundTimer",
-          "offset": "5008",
+          "offset": "5000",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -302708,7 +302749,7 @@
         {
           "metadata": [],
           "name": "m_isInit",
-          "offset": "5032",
+          "offset": "5024",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -302721,7 +302762,7 @@
         {
           "metadata": [],
           "name": "m_eyeAttachment",
-          "offset": "5033",
+          "offset": "5025",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -302734,7 +302775,7 @@
         {
           "metadata": [],
           "name": "m_chestAttachment",
-          "offset": "5034",
+          "offset": "5026",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -302747,7 +302788,7 @@
         {
           "metadata": [],
           "name": "m_pPredictionOwner",
-          "offset": "5040",
+          "offset": "5032",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "PTR",
@@ -302767,7 +302808,7 @@
         {
           "metadata": [],
           "name": "m_fNewestAlphaThinkTime",
-          "offset": "5048",
+          "offset": "5040",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -302793,7 +302834,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 5,
-      "size": "5056",
+      "size": "5048",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -347792,7 +347833,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 9,
-      "size": "8160",
+      "size": "8224",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -348625,7 +348666,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "7984",
+      "size": "8048",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -348686,7 +348727,7 @@
         {
           "metadata": [],
           "name": "m_bFirstAttack",
-          "offset": "7968",
+          "offset": "8032",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -348712,7 +348753,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 7,
-      "size": "7984",
+      "size": "8048",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -349748,7 +349789,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8160",
+      "size": "8224",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -485664,7 +485705,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8160",
+      "size": "8224",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488291,7 +488332,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488314,7 +488355,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488325,7 +488366,7 @@
         {
           "metadata": [],
           "name": "m_bSequenceInProgress",
-          "offset": "7968",
+          "offset": "8032",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -488338,7 +488379,7 @@
         {
           "metadata": [],
           "name": "m_bRedraw",
-          "offset": "7969",
+          "offset": "8033",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -488364,7 +488405,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 7,
-      "size": "7984",
+      "size": "8048",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488387,7 +488428,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488398,7 +488439,7 @@
         {
           "metadata": [],
           "name": "m_bMagazineRemoved",
-          "offset": "8016",
+          "offset": "8080",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -488424,7 +488465,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8032",
+      "size": "8096",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488447,7 +488488,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488470,7 +488511,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488493,7 +488534,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488516,7 +488557,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488539,7 +488580,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488562,7 +488603,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488585,7 +488626,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488608,7 +488649,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488631,7 +488672,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488654,7 +488695,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488677,7 +488718,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488700,7 +488741,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488723,7 +488764,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488746,7 +488787,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488769,7 +488810,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488792,7 +488833,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "7968",
+      "size": "8032",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488815,7 +488856,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488838,7 +488879,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488861,7 +488902,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488884,7 +488925,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488907,7 +488948,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488930,7 +488971,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488953,7 +488994,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488976,7 +489017,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "7968",
+      "size": "8032",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -488987,7 +489028,7 @@
         {
           "metadata": [],
           "name": "m_fFireTime",
-          "offset": "8016",
+          "offset": "8080",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -489000,7 +489041,7 @@
         {
           "metadata": [],
           "name": "m_nLastAttackTick",
-          "offset": "8020",
+          "offset": "8084",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -489026,7 +489067,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8032",
+      "size": "8096",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -489049,7 +489090,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -489072,7 +489113,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -489095,7 +489136,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "8016",
+      "size": "8080",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -489118,7 +489159,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "7968",
+      "size": "8032",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -498738,16 +498779,24 @@
     {
       "alignment": 255,
       "cppName": "EventClientPollNetworking_t",
-      "effectiveBuiltin": {
-        "builtin": "int32",
-        "elementCount": "1",
-        "elementWidth": 4
-      },
       "fields": [
         {
           "metadata": [],
           "name": "m_nTickCount",
           "offset": "0",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_nTotalTicks",
+          "offset": "4",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -498767,7 +498816,7 @@
       "parents": [],
       "projectName": "engine2",
       "singleInheritanceDepth": 0,
-      "size": "4",
+      "size": "8",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/engine2/hierarchy/"
     },

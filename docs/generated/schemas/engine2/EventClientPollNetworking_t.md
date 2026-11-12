@@ -8,14 +8,15 @@ kind: class
 
 # EventClientPollNetworking_t
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
-**Kind:** class · **Size:** 4 bytes (`0x4`) · **Align:** n/a (unspecified) · **Module:** engine2
+**Kind:** class · **Size:** 8 bytes (`0x8`) · **Align:** n/a (unspecified) · **Module:** engine2
 
 ## Memory layout
 
-1 field (1 declared here, 0 inherited). Offsets are absolute from the object base.
+2 fields (2 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_nTickCount` | int32 |  |  |
+| `0x4` | `m_nTotalTicks` | int32 |  |  |

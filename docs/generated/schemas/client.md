@@ -5,7 +5,7 @@ module: client
 
 # Module: client
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/client.md)
 
@@ -132,7 +132,7 @@ module: client
 | [CLightComponent](client/CLightComponent.md) | class | 496 | 84 | [CEntityComponent](entity2/CEntityComponent.md) |
 | [CLogicRelay](client/CLogicRelay.md) | class | 1592 | 7 | [CLogicalEntity](client/CLogicalEntity.md) |
 | [CLogicalEntity](client/CLogicalEntity.md) | class | 1536 | 0 | [C_BaseEntity](client/C_BaseEntity.md) |
-| [CMapInfo](client/CMapInfo.md) | class | 1584 | 15 | [C_PointEntity](client/C_PointEntity.md) |
+| [CMapInfo](client/CMapInfo.md) | class | 1592 | 16 | [C_PointEntity](client/C_PointEntity.md) |
 | [CModelState](client/CModelState.md) | class | 688 | 14 |  |
 | [CNetworkedSequenceOperation](client/CNetworkedSequenceOperation.md) | class | 40 | 8 |  |
 | [CNoiseStreamData](client/CNoiseStreamData.md) | class | 80 | 1 |  |
@@ -175,11 +175,11 @@ module: client
 | [CTimeline](client/CTimeline.md) | class | 552 | 7 | [IntervalTimer](client/IntervalTimer.md) |
 | [CTriggerFan](client/CTriggerFan.md) | class | 4576 | 9 | [C_BaseTrigger](client/C_BaseTrigger.md) |
 | [CWaterSplasher](client/CWaterSplasher.md) | class | 4248 | 0 | [C_BaseModelEntity](client/C_BaseModelEntity.md) |
-| [C_AK47](client/C_AK47.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_AK47](client/C_AK47.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
 | [C_AttributeContainer](client/C_AttributeContainer.md) | class | 1552 | 3 | [CAttributeManager](client/CAttributeManager.md) |
 | [C_BarnLight](client/C_BarnLight.md) | class | 5032 | 76 | [C_BaseModelEntity](client/C_BaseModelEntity.md) |
 | [C_BaseButton](client/C_BaseButton.md) | class | 4264 | 3 | [C_BaseToggle](client/C_BaseToggle.md) |
-| [C_BaseCSGrenade](client/C_BaseCSGrenade.md) | class | 8160 | 14 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
+| [C_BaseCSGrenade](client/C_BaseCSGrenade.md) | class | 8224 | 14 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
 | [C_BaseCSGrenadeProjectile](client/C_BaseCSGrenadeProjectile.md) | class | 4936 | 16 | [C_BaseGrenade](client/C_BaseGrenade.md) |
 | [C_BaseClientUIEntity](client/C_BaseClientUIEntity.md) | class | 4296 | 4 | [C_BaseModelEntity](client/C_BaseModelEntity.md) |
 | [C_BaseCombatCharacter](client/C_BaseCombatCharacter.md) | class | 4848 | 6 | [CBaseAnimGraph](client/CBaseAnimGraph.md) |
@@ -198,7 +198,7 @@ module: client
 | [C_Breakable](client/C_Breakable.md) | class | 4248 | 0 | [C_BaseModelEntity](client/C_BaseModelEntity.md) |
 | [C_BreakableProp](client/C_BreakableProp.md) | class | 5088 | 29 | [CBaseProp](client/CBaseProp.md) |
 | [C_BulletHitModel](client/C_BulletHitModel.md) | class | 4792 | 6 | [CBaseAnimGraph](client/CBaseAnimGraph.md) |
-| [C_C4](client/C_C4.md) | class | 8032 | 10 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
+| [C_C4](client/C_C4.md) | class | 8096 | 10 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
 | [C_CS2HudModelAddon](client/C_CS2HudModelAddon.md) | class | 4912 | 0 | [C_LateUpdatedAnimating](client/C_LateUpdatedAnimating.md) |
 | [C_CS2HudModelArms](client/C_CS2HudModelArms.md) | class | 5216 | 0 | [C_CS2HudModelBase](client/C_CS2HudModelBase.md) |
 | [C_CS2HudModelBase](client/C_CS2HudModelBase.md) | class | 4944 | 0 | [C_LateUpdatedAnimating](client/C_LateUpdatedAnimating.md) |
@@ -215,15 +215,15 @@ module: client
 | [C_CSGO_MapPreviewCameraPathNode](client/C_CSGO_MapPreviewCameraPathNode.md) | class | 1616 | 10 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_CSGO_PreviewModel](client/C_CSGO_PreviewModel.md) | class | 6328 | 4 | [CBaseAnimGraph](client/CBaseAnimGraph.md) |
 | [C_CSGO_PreviewModelAlias_csgo_item_previewmodel](client/C_CSGO_PreviewModelAlias_csgo_item_previewmodel.md) | class | 6328 | 0 | [C_CSGO_PreviewModel](client/C_CSGO_PreviewModel.md) |
-| [C_CSGO_PreviewPlayer](client/C_CSGO_PreviewPlayer.md) | class | 14288 | 2 | [C_CSPlayerPawn](client/C_CSPlayerPawn.md) |
-| [C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel](client/C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel.md) | class | 14288 | 0 | [C_CSGO_PreviewPlayer](client/C_CSGO_PreviewPlayer.md) |
+| [C_CSGO_PreviewPlayer](client/C_CSGO_PreviewPlayer.md) | class | 14336 | 2 | [C_CSPlayerPawn](client/C_CSPlayerPawn.md) |
+| [C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel](client/C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel.md) | class | 14336 | 0 | [C_CSGO_PreviewPlayer](client/C_CSGO_PreviewPlayer.md) |
 | [C_CSGO_TeamIntroCharacterPosition](client/C_CSGO_TeamIntroCharacterPosition.md) | class | 7448 | 0 | [C_CSGO_TeamPreviewCharacterPosition](client/C_CSGO_TeamPreviewCharacterPosition.md) |
 | [C_CSGO_TeamIntroCounterTerroristPosition](client/C_CSGO_TeamIntroCounterTerroristPosition.md) | class | 7448 | 0 | [C_CSGO_TeamIntroCharacterPosition](client/C_CSGO_TeamIntroCharacterPosition.md) |
 | [C_CSGO_TeamIntroTerroristPosition](client/C_CSGO_TeamIntroTerroristPosition.md) | class | 7448 | 0 | [C_CSGO_TeamIntroCharacterPosition](client/C_CSGO_TeamIntroCharacterPosition.md) |
 | [C_CSGO_TeamPreviewCamera](client/C_CSGO_TeamPreviewCamera.md) | class | 1680 | 1 | [C_CSGO_MapPreviewCameraPath](client/C_CSGO_MapPreviewCameraPath.md) |
 | [C_CSGO_TeamPreviewCameraBone](client/C_CSGO_TeamPreviewCameraBone.md) | class | 1680 | 0 | [C_CSGO_TeamPreviewCamera](client/C_CSGO_TeamPreviewCamera.md) |
 | [C_CSGO_TeamPreviewCharacterPosition](client/C_CSGO_TeamPreviewCharacterPosition.md) | class | 7448 | 9 | [C_BaseEntity](client/C_BaseEntity.md) |
-| [C_CSGO_TeamPreviewModel](client/C_CSGO_TeamPreviewModel.md) | class | 14288 | 0 | [C_CSGO_PreviewPlayer](client/C_CSGO_PreviewPlayer.md) |
+| [C_CSGO_TeamPreviewModel](client/C_CSGO_TeamPreviewModel.md) | class | 14336 | 0 | [C_CSGO_PreviewPlayer](client/C_CSGO_PreviewPlayer.md) |
 | [C_CSGO_TeamSelectCamera](client/C_CSGO_TeamSelectCamera.md) | class | 1680 | 0 | [C_CSGO_TeamPreviewCamera](client/C_CSGO_TeamPreviewCamera.md) |
 | [C_CSGO_TeamSelectCharacterPosition](client/C_CSGO_TeamSelectCharacterPosition.md) | class | 7448 | 0 | [C_CSGO_TeamPreviewCharacterPosition](client/C_CSGO_TeamPreviewCharacterPosition.md) |
 | [C_CSGO_TeamSelectCounterTerroristPosition](client/C_CSGO_TeamSelectCounterTerroristPosition.md) | class | 7448 | 0 | [C_CSGO_TeamSelectCharacterPosition](client/C_CSGO_TeamSelectCharacterPosition.md) |
@@ -236,21 +236,21 @@ module: client
 | [C_CSMinimapBoundary](client/C_CSMinimapBoundary.md) | class | 1536 | 0 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_CSObserverPawn](client/C_CSObserverPawn.md) | class | 5488 | 1 | [C_CSPlayerPawnBase](client/C_CSPlayerPawnBase.md) |
 | [C_CSPetPlacement](client/C_CSPetPlacement.md) | class | 1536 | 0 | [C_BaseEntity](client/C_BaseEntity.md) |
-| [C_CSPlayerPawn](client/C_CSPlayerPawn.md) | class | 14112 | 105 | [C_CSPlayerPawnBase](client/C_CSPlayerPawnBase.md) |
+| [C_CSPlayerPawn](client/C_CSPlayerPawn.md) | class | 14160 | 105 | [C_CSPlayerPawnBase](client/C_CSPlayerPawnBase.md) |
 | [C_CSPlayerPawnBase](client/C_CSPlayerPawnBase.md) | class | 5480 | 26 | [C_BasePlayerPawn](client/C_BasePlayerPawn.md) |
 | [C_CSPlayerResource](client/C_CSPlayerResource.md) | class | 1688 | 10 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_CSTeam](client/C_CSTeam.md) | class | 2408 | 10 | [C_Team](client/C_Team.md) |
-| [C_CSWeaponBase](client/C_CSWeaponBase.md) | class | 7968 | 57 | [C_BasePlayerWeapon](client/C_BasePlayerWeapon.md) |
-| [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) | class | 8016 | 7 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
-| [C_CSWeaponBaseShotgun](client/C_CSWeaponBaseShotgun.md) | class | 7968 | 0 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
-| [C_Chicken](client/C_Chicken.md) | class | 7072 | 7 | [C_DynamicProp](client/C_DynamicProp.md), [IHasAttributes](server/IHasAttributes.md) |
+| [C_CSWeaponBase](client/C_CSWeaponBase.md) | class | 8032 | 57 | [C_BasePlayerWeapon](client/C_BasePlayerWeapon.md) |
+| [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) | class | 8080 | 7 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
+| [C_CSWeaponBaseShotgun](client/C_CSWeaponBaseShotgun.md) | class | 8032 | 0 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
+| [C_Chicken](client/C_Chicken.md) | class | 7120 | 7 | [C_DynamicProp](client/C_DynamicProp.md), [IHasAttributes](server/IHasAttributes.md) |
 | [C_ClientRagdoll](client/C_ClientRagdoll.md) | class | 4864 | 14 | [CBaseAnimGraph](client/CBaseAnimGraph.md) |
 | [C_ColorCorrection](client/C_ColorCorrection.md) | class | 2120 | 18 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_ColorCorrectionVolume](client/C_ColorCorrectionVolume.md) | class | 5032 | 9 | [C_BaseTrigger](client/C_BaseTrigger.md) |
 | [C_CommandContext](client/C_CommandContext.md) | class | 168 | 2 |  |
 | [C_CsmFovOverride](client/C_CsmFovOverride.md) | class | 1552 | 2 | [C_BaseEntity](client/C_BaseEntity.md) |
-| [C_DEagle](client/C_DEagle.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_DecoyGrenade](client/C_DecoyGrenade.md) | class | 8160 | 0 | [C_BaseCSGrenade](client/C_BaseCSGrenade.md) |
+| [C_DEagle](client/C_DEagle.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_DecoyGrenade](client/C_DecoyGrenade.md) | class | 8224 | 0 | [C_BaseCSGrenade](client/C_BaseCSGrenade.md) |
 | [C_DecoyProjectile](client/C_DecoyProjectile.md) | class | 4984 | 3 | [C_BaseCSGrenadeProjectile](client/C_BaseCSGrenadeProjectile.md) |
 | [C_DynamicLight](client/C_DynamicLight.md) | class | 4288 | 7 | [C_BaseModelEntity](client/C_BaseModelEntity.md) |
 | [C_DynamicProp](client/C_DynamicProp.md) | class | 5296 | 25 | [C_BreakableProp](client/C_BreakableProp.md) |
@@ -281,7 +281,7 @@ module: client
 | [C_EnvWindShared](client/C_EnvWindShared.md) | class | 248 | 15 |  |
 | [C_FireCrackerBlast](client/C_FireCrackerBlast.md) | class | 34464 | 0 | [C_Inferno](client/C_Inferno.md) |
 | [C_Fish](client/C_Fish.md) | class | 4952 | 23 | [CBaseAnimGraph](client/CBaseAnimGraph.md) |
-| [C_Flashbang](client/C_Flashbang.md) | class | 8160 | 0 | [C_BaseCSGrenade](client/C_BaseCSGrenade.md) |
+| [C_Flashbang](client/C_Flashbang.md) | class | 8224 | 0 | [C_BaseCSGrenade](client/C_BaseCSGrenade.md) |
 | [C_FlashbangProjectile](client/C_FlashbangProjectile.md) | class | 4936 | 0 | [C_BaseCSGrenadeProjectile](client/C_BaseCSGrenadeProjectile.md) |
 | [C_FogController](client/C_FogController.md) | class | 1648 | 3 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_FootstepControl](client/C_FootstepControl.md) | class | 4496 | 2 | [C_BaseTrigger](client/C_BaseTrigger.md) |
@@ -298,12 +298,12 @@ module: client
 | [C_GameRulesProxy](client/C_GameRulesProxy.md) | class | 1536 | 0 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_GlobalLight](client/C_GlobalLight.md) | class | 2800 | 1 | [C_BaseEntity](client/C_BaseEntity.md), [CGlobalLightBase](client/CGlobalLightBase.md) |
 | [C_GradientFog](client/C_GradientFog.md) | class | 1688 | 16 | [C_BaseEntity](client/C_BaseEntity.md) |
-| [C_HEGrenade](client/C_HEGrenade.md) | class | 8160 | 0 | [C_BaseCSGrenade](client/C_BaseCSGrenade.md) |
+| [C_HEGrenade](client/C_HEGrenade.md) | class | 8224 | 0 | [C_BaseCSGrenade](client/C_BaseCSGrenade.md) |
 | [C_HEGrenadeProjectile](client/C_HEGrenadeProjectile.md) | class | 4936 | 0 | [C_BaseCSGrenadeProjectile](client/C_BaseCSGrenadeProjectile.md) |
 | [C_HandleTest](client/C_HandleTest.md) | class | 1544 | 2 | [C_BaseEntity](client/C_BaseEntity.md) |
-| [C_Hostage](client/C_Hostage.md) | class | 5056 | 23 | [C_BaseCombatCharacter](client/C_BaseCombatCharacter.md) |
+| [C_Hostage](client/C_Hostage.md) | class | 5048 | 22 | [C_BaseCombatCharacter](client/C_BaseCombatCharacter.md) |
 | [C_HostageCarriableProp](client/C_HostageCarriableProp.md) | class | 4720 | 0 | [CBaseAnimGraph](client/CBaseAnimGraph.md) |
-| [C_IncendiaryGrenade](client/C_IncendiaryGrenade.md) | class | 8160 | 0 | [C_MolotovGrenade](client/C_MolotovGrenade.md) |
+| [C_IncendiaryGrenade](client/C_IncendiaryGrenade.md) | class | 8224 | 0 | [C_MolotovGrenade](client/C_MolotovGrenade.md) |
 | [C_Inferno](client/C_Inferno.md) | class | 34464 | 24 | [C_BaseModelEntity](client/C_BaseModelEntity.md) |
 | [C_InfoInstructorHintHostageRescueZone](client/C_InfoInstructorHintHostageRescueZone.md) | class | 1536 | 0 | [C_PointEntity](client/C_PointEntity.md) |
 | [C_InfoLadderDismount](client/C_InfoLadderDismount.md) | class | 1536 | 0 | [C_BaseEntity](client/C_BaseEntity.md) |
@@ -311,9 +311,9 @@ module: client
 | [C_IronSightController](client/C_IronSightController.md) | class | 176 | 13 |  |
 | [C_Item](client/C_Item.md) | class | 6680 | 1 | [C_EconEntity](client/C_EconEntity.md) |
 | [C_ItemDogtags](client/C_ItemDogtags.md) | class | 6688 | 2 | [C_Item](client/C_Item.md) |
-| [C_Item_Healthshot](client/C_Item_Healthshot.md) | class | 7984 | 0 | [C_WeaponBaseItem](client/C_WeaponBaseItem.md) |
+| [C_Item_Healthshot](client/C_Item_Healthshot.md) | class | 8048 | 0 | [C_WeaponBaseItem](client/C_WeaponBaseItem.md) |
 | [C_KeychainModule](client/C_KeychainModule.md) | class | 4728 | 2 | [C_CS2WeaponModuleBase](client/C_CS2WeaponModuleBase.md) |
-| [C_Knife](client/C_Knife.md) | class | 7984 | 1 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
+| [C_Knife](client/C_Knife.md) | class | 8048 | 1 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
 | [C_LateUpdatedAnimating](client/C_LateUpdatedAnimating.md) | class | 4896 | 0 | [CBaseAnimGraph](client/CBaseAnimGraph.md) |
 | [C_LightDirectionalEntity](client/C_LightDirectionalEntity.md) | class | 4256 | 0 | [C_LightEntity](client/C_LightEntity.md) |
 | [C_LightEntity](client/C_LightEntity.md) | class | 4256 | 1 | [C_BaseModelEntity](client/C_BaseModelEntity.md) |
@@ -324,7 +324,7 @@ module: client
 | [C_MapPreviewParticleSystem](client/C_MapPreviewParticleSystem.md) | class | 5736 | 0 | [C_ParticleSystem](client/C_ParticleSystem.md) |
 | [C_MapVetoPickController](client/C_MapVetoPickController.md) | class | 3912 | 17 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_ModelPointEntity](client/C_ModelPointEntity.md) | class | 4248 | 0 | [C_BaseModelEntity](client/C_BaseModelEntity.md) |
-| [C_MolotovGrenade](client/C_MolotovGrenade.md) | class | 8160 | 0 | [C_BaseCSGrenade](client/C_BaseCSGrenade.md) |
+| [C_MolotovGrenade](client/C_MolotovGrenade.md) | class | 8224 | 0 | [C_BaseCSGrenade](client/C_BaseCSGrenade.md) |
 | [C_MolotovProjectile](client/C_MolotovProjectile.md) | class | 4976 | 1 | [C_BaseCSGrenadeProjectile](client/C_BaseCSGrenadeProjectile.md) |
 | [C_Multimeter](client/C_Multimeter.md) | class | 4720 | 1 | [CBaseAnimGraph](client/CBaseAnimGraph.md) |
 | [C_MultiplayRules](client/C_MultiplayRules.md) | class | 64 | 0 | [C_GameRules](client/C_GameRules.md) |
@@ -372,7 +372,7 @@ module: client
 | [C_SkyCamera](client/C_SkyCamera.md) | class | 1696 | 4 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_SkyCameraVolume](client/C_SkyCameraVolume.md) | class | 1624 | 11 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_SkyCameraVolumeTarget](client/C_SkyCameraVolumeTarget.md) | class | 1552 | 2 | [C_BaseEntity](client/C_BaseEntity.md) |
-| [C_SmokeGrenade](client/C_SmokeGrenade.md) | class | 8160 | 0 | [C_BaseCSGrenade](client/C_BaseCSGrenade.md) |
+| [C_SmokeGrenade](client/C_SmokeGrenade.md) | class | 8224 | 0 | [C_BaseCSGrenade](client/C_BaseCSGrenade.md) |
 | [C_SmokeGrenadeProjectile](client/C_SmokeGrenadeProjectile.md) | class | 5376 | 11 | [C_BaseCSGrenadeProjectile](client/C_BaseCSGrenadeProjectile.md) |
 | [C_SoundAreaEntityBase](client/C_SoundAreaEntityBase.md) | class | 1576 | 4 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_SoundAreaEntityOrientedBox](client/C_SoundAreaEntityOrientedBox.md) | class | 1600 | 2 | [C_SoundAreaEntityBase](client/C_SoundAreaEntityBase.md) |
@@ -411,40 +411,40 @@ module: client
 | [C_TriggerVolume](client/C_TriggerVolume.md) | class | 4248 | 0 | [C_BaseModelEntity](client/C_BaseModelEntity.md) |
 | [C_VoteController](client/C_VoteController.md) | class | 1592 | 7 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_WaterBullet](client/C_WaterBullet.md) | class | 4712 | 0 | [CBaseAnimGraph](client/CBaseAnimGraph.md) |
-| [C_WeaponAWP](client/C_WeaponAWP.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponAug](client/C_WeaponAug.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponBaseItem](client/C_WeaponBaseItem.md) | class | 7984 | 2 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
-| [C_WeaponBizon](client/C_WeaponBizon.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponCZ75a](client/C_WeaponCZ75a.md) | class | 8032 | 1 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponElite](client/C_WeaponElite.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponFamas](client/C_WeaponFamas.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponFiveSeven](client/C_WeaponFiveSeven.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponG3SG1](client/C_WeaponG3SG1.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponGalilAR](client/C_WeaponGalilAR.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponGlock](client/C_WeaponGlock.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponHKP2000](client/C_WeaponHKP2000.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponM249](client/C_WeaponM249.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponM4A1](client/C_WeaponM4A1.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponM4A1Silencer](client/C_WeaponM4A1Silencer.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponMAC10](client/C_WeaponMAC10.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponMP5SD](client/C_WeaponMP5SD.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponMP7](client/C_WeaponMP7.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponMP9](client/C_WeaponMP9.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponMag7](client/C_WeaponMag7.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponNOVA](client/C_WeaponNOVA.md) | class | 7968 | 0 | [C_CSWeaponBaseShotgun](client/C_CSWeaponBaseShotgun.md) |
-| [C_WeaponNegev](client/C_WeaponNegev.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponP250](client/C_WeaponP250.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponP90](client/C_WeaponP90.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponRevolver](client/C_WeaponRevolver.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponSCAR20](client/C_WeaponSCAR20.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponSG556](client/C_WeaponSG556.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponSSG08](client/C_WeaponSSG08.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponSawedoff](client/C_WeaponSawedoff.md) | class | 7968 | 0 | [C_CSWeaponBaseShotgun](client/C_CSWeaponBaseShotgun.md) |
-| [C_WeaponTaser](client/C_WeaponTaser.md) | class | 8032 | 2 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponTec9](client/C_WeaponTec9.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponUMP45](client/C_WeaponUMP45.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponUSPSilencer](client/C_WeaponUSPSilencer.md) | class | 8016 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
-| [C_WeaponXM1014](client/C_WeaponXM1014.md) | class | 7968 | 0 | [C_CSWeaponBaseShotgun](client/C_CSWeaponBaseShotgun.md) |
+| [C_WeaponAWP](client/C_WeaponAWP.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponAug](client/C_WeaponAug.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponBaseItem](client/C_WeaponBaseItem.md) | class | 8048 | 2 | [C_CSWeaponBase](client/C_CSWeaponBase.md) |
+| [C_WeaponBizon](client/C_WeaponBizon.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponCZ75a](client/C_WeaponCZ75a.md) | class | 8096 | 1 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponElite](client/C_WeaponElite.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponFamas](client/C_WeaponFamas.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponFiveSeven](client/C_WeaponFiveSeven.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponG3SG1](client/C_WeaponG3SG1.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponGalilAR](client/C_WeaponGalilAR.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponGlock](client/C_WeaponGlock.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponHKP2000](client/C_WeaponHKP2000.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponM249](client/C_WeaponM249.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponM4A1](client/C_WeaponM4A1.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponM4A1Silencer](client/C_WeaponM4A1Silencer.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponMAC10](client/C_WeaponMAC10.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponMP5SD](client/C_WeaponMP5SD.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponMP7](client/C_WeaponMP7.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponMP9](client/C_WeaponMP9.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponMag7](client/C_WeaponMag7.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponNOVA](client/C_WeaponNOVA.md) | class | 8032 | 0 | [C_CSWeaponBaseShotgun](client/C_CSWeaponBaseShotgun.md) |
+| [C_WeaponNegev](client/C_WeaponNegev.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponP250](client/C_WeaponP250.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponP90](client/C_WeaponP90.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponRevolver](client/C_WeaponRevolver.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponSCAR20](client/C_WeaponSCAR20.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponSG556](client/C_WeaponSG556.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponSSG08](client/C_WeaponSSG08.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponSawedoff](client/C_WeaponSawedoff.md) | class | 8032 | 0 | [C_CSWeaponBaseShotgun](client/C_CSWeaponBaseShotgun.md) |
+| [C_WeaponTaser](client/C_WeaponTaser.md) | class | 8096 | 2 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponTec9](client/C_WeaponTec9.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponUMP45](client/C_WeaponUMP45.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponUSPSilencer](client/C_WeaponUSPSilencer.md) | class | 8080 | 0 | [C_CSWeaponBaseGun](client/C_CSWeaponBaseGun.md) |
+| [C_WeaponXM1014](client/C_WeaponXM1014.md) | class | 8032 | 0 | [C_CSWeaponBaseShotgun](client/C_CSWeaponBaseShotgun.md) |
 | [C_World](client/C_World.md) | class | 4248 | 0 | [C_BaseModelEntity](client/C_BaseModelEntity.md) |
 | [C_WorldModelGloves](client/C_WorldModelGloves.md) | class | 4720 | 0 | [CBaseAnimGraph](client/CBaseAnimGraph.md) |
 | [C_fogplayerparams_t](client/C_fogplayerparams_t.md) | class | 64 | 14 |  |

@@ -4,14 +4,14 @@ title: Schema History
 
 # Schema History
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
 Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.md) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
 
 - **Platform:** `windows-x86_64` (the canonical render; windows is a strict **superset** in class coverage — historical Windows-only tool binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts — while shared classes differ in offsets/sizes per platform)
-- **Baseline build:** `10832117` · **Latest build:** `26445667`
+- **Baseline build:** `10832117` · **Latest build:** `26598758`
 - **Artifact schema version:** `0.13.0` (SchemaTracker's `schemas/schema_evolution.proto` family)
-- **Transitions:** 404 total, **156 with structural changes** (248 no-op builds)
+- **Transitions:** 405 total, **157 with structural changes** (248 no-op builds)
 - **Full per-field history:** the portable [`field_history.json`](downstream-codegen-schemas/field_history.json) carries first/last-seen and the type history for every `(class, field)` across all builds.  Its `[firstSeenBuild, lastSeenBuild]` interval is a presence **hull**, not continuous presence — a field can be absent for intermediate builds with no trace there; exact presence replays from the transitions below.
 
 To bring an instance captured under build *X* forward to build *Y*, apply each transition in `[X, Y)` in order.  Every op carries both endpoints, so the same chain replays backward.
@@ -35,6 +35,7 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 | Transition | Date | Classes +/−/~ | Enums +/−/~ | Field ops |
 |------------|------|---------------|-------------|-----------|
+| `26445667` → `26598758` | 2026-11-11 | 0 / 0 / 62 | 0 / 0 / 0 | 189 |
 | `26393695` → `26445667` | 2026-11-05 | 0 / 0 / 2 | 0 / 0 / 0 | 1 |
 | `26334290` → `26393695` | 2026-11-03 | 0 / 0 / 1 | 0 / 0 / 0 | 5 |
 | `26144732` → `26281801` | 2026-10-28 | 0 / 0 / 8 | 0 / 0 / 1 | 179 |
@@ -194,6 +195,76 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 ## Most recent structural changes
 
+### `26445667` → `26598758`
+
+*Steam manifests created `2026-11-05T00:10:12Z` → `2026-11-11T18:33:14Z`*
+
+**Classes changed (62):**
+
+| Class | Field ops | Layout |
+|-------|-----------|--------|
+| `!GlobalTypes/CNmAimCSNode::CDefinition` | ＋field×1, meta×1 | — |
+| `!GlobalTypes/CNmAimCSTask` | — | resize 304→496 |
+| `!GlobalTypes/CNmGraphDocAimCSNode` | ＋field×1, meta×1 | — |
+| `!GlobalTypes/EventClientPollNetworking_t` | ＋field×1 | resize 4→8 |
+| `client.dll/CMapInfo` | ＋field×1 | resize 1584→1592 |
+| `client.dll/C_AK47` | — | resize 8016→8080 |
+| `client.dll/C_BaseCSGrenade` | ~offset×14 | resize 8160→8224 |
+| `client.dll/C_C4` | ~offset×10 | resize 8032→8096 |
+| `client.dll/C_CSGO_PreviewPlayer` | ~offset×2 | resize 14288→14336 |
+| `client.dll/C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel` | — | resize 14288→14336 |
+| `client.dll/C_CSGO_TeamPreviewModel` | — | resize 14288→14336 |
+| `client.dll/C_CSPlayerPawn` | ~offset×77 | resize 14112→14160 |
+| `client.dll/C_CSWeaponBase` | ~offset×57 | resize 7968→8032 |
+| `client.dll/C_CSWeaponBaseGun` | ~offset×7 | resize 8016→8080 |
+| `client.dll/C_CSWeaponBaseShotgun` | — | resize 7968→8032 |
+| `client.dll/C_Chicken` | ~offset×1 | resize 7072→7120 |
+| `client.dll/C_DEagle` | — | resize 8016→8080 |
+| `client.dll/C_DecoyGrenade` | — | resize 8160→8224 |
+| `client.dll/C_Flashbang` | — | resize 8160→8224 |
+| `client.dll/C_HEGrenade` | — | resize 8160→8224 |
+| `client.dll/C_Hostage` | ~offset×8, −field×1 | resize 5056→5048 |
+| `client.dll/C_IncendiaryGrenade` | — | resize 8160→8224 |
+| `client.dll/C_Item_Healthshot` | — | resize 7984→8048 |
+| `client.dll/C_Knife` | ~offset×1 | resize 7984→8048 |
+| `client.dll/C_MolotovGrenade` | — | resize 8160→8224 |
+| `client.dll/C_SmokeGrenade` | — | resize 8160→8224 |
+| `client.dll/C_WeaponAWP` | — | resize 8016→8080 |
+| `client.dll/C_WeaponAug` | — | resize 8016→8080 |
+| `client.dll/C_WeaponBaseItem` | ~offset×2 | resize 7984→8048 |
+| `client.dll/C_WeaponBizon` | — | resize 8016→8080 |
+| `client.dll/C_WeaponCZ75a` | ~offset×1 | resize 8032→8096 |
+| `client.dll/C_WeaponElite` | — | resize 8016→8080 |
+| `client.dll/C_WeaponFamas` | — | resize 8016→8080 |
+| `client.dll/C_WeaponFiveSeven` | — | resize 8016→8080 |
+| `client.dll/C_WeaponG3SG1` | — | resize 8016→8080 |
+| `client.dll/C_WeaponGalilAR` | — | resize 8016→8080 |
+| `client.dll/C_WeaponGlock` | — | resize 8016→8080 |
+| `client.dll/C_WeaponHKP2000` | — | resize 8016→8080 |
+| `client.dll/C_WeaponM249` | — | resize 8016→8080 |
+| `client.dll/C_WeaponM4A1` | — | resize 8016→8080 |
+| `client.dll/C_WeaponM4A1Silencer` | — | resize 8016→8080 |
+| `client.dll/C_WeaponMAC10` | — | resize 8016→8080 |
+| `client.dll/C_WeaponMP5SD` | — | resize 8016→8080 |
+| `client.dll/C_WeaponMP7` | — | resize 8016→8080 |
+| `client.dll/C_WeaponMP9` | — | resize 8016→8080 |
+| `client.dll/C_WeaponMag7` | — | resize 8016→8080 |
+| `client.dll/C_WeaponNOVA` | — | resize 7968→8032 |
+| `client.dll/C_WeaponNegev` | — | resize 8016→8080 |
+| `client.dll/C_WeaponP250` | — | resize 8016→8080 |
+| `client.dll/C_WeaponP90` | — | resize 8016→8080 |
+| `client.dll/C_WeaponRevolver` | — | resize 8016→8080 |
+| `client.dll/C_WeaponSCAR20` | — | resize 8016→8080 |
+| `client.dll/C_WeaponSG556` | — | resize 8016→8080 |
+| `client.dll/C_WeaponSSG08` | — | resize 8016→8080 |
+| `client.dll/C_WeaponSawedoff` | — | resize 7968→8032 |
+| `client.dll/C_WeaponTaser` | ~offset×2 | resize 8032→8096 |
+| `client.dll/C_WeaponTec9` | — | resize 8016→8080 |
+| `client.dll/C_WeaponUMP45` | — | resize 8016→8080 |
+| `client.dll/C_WeaponUSPSilencer` | — | resize 8016→8080 |
+| `client.dll/C_WeaponXM1014` | — | resize 7968→8032 |
+| … | _2 more changed classes — see `field_history.json`_ | |
+
 ### `26393695` → `26445667`
 
 *Steam manifests created `2026-11-03T00:27:26Z` → `2026-11-05T00:10:12Z`*
@@ -214,20 +285,3 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 | Class | Field ops | Layout |
 |-------|-----------|--------|
 | `server.dll/CCSGameRules` | ＋field×1, ~offset×4 | — |
-
-### `26144732` → `26281801`
-
-*Steam manifests created `2026-10-22T21:24:50Z` → `2026-10-28T20:59:18Z`*
-
-**Classes changed (8):**
-
-| Class | Field ops | Layout |
-|-------|-----------|--------|
-| `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
-| `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
-| `client.dll/C_CSGameRules` | ＋field×1, ~offset×36 | resize 20320→20328 |
-| `client.dll/C_CSPlayerPawn` | ＋field×1, −field×1, paired×1, cand×1 | — |
-| `client.dll/C_CSWeaponBase` | ＋field×2, −field×2, paired×2, cand×2 | — |
-| `server.dll/CCSGameRules` | ＋field×1, ~offset×127 | resize 70728→70736 |
-| `server.dll/CCSPlayerPawn` | ＋field×1, −field×1, paired×1, cand×1 | — |
-| `server.dll/CCSWeaponBase` | ＋field×2, ~offset×1, −field×3, paired×2, cand×3 | — |

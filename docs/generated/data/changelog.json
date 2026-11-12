@@ -3,8 +3,69 @@
     {
       "added": [],
       "added_count": 0,
-      "changed": [],
-      "changed_count": 0,
+      "changed": [
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "12",
+              "old_value": "11"
+            }
+          ],
+          "name": "!GlobalTypes/CNmAimCSNode::CDefinition"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "4",
+              "old_value": "3"
+            }
+          ],
+          "name": "!GlobalTypes/CNmGraphDocAimCSNode"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "2",
+              "old_value": "1"
+            }
+          ],
+          "name": "!GlobalTypes/EventClientPollNetworking_t"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "16",
+              "old_value": "15"
+            }
+          ],
+          "name": "client.dll/CMapInfo"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "22",
+              "old_value": "23"
+            }
+          ],
+          "name": "client.dll/C_Hostage"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "16",
+              "old_value": "15"
+            }
+          ],
+          "name": "server.dll/CMapInfo"
+        }
+      ],
+      "changed_count": 6,
       "family": "classes",
       "removed": [],
       "removed_count": 0,
@@ -21,18 +82,41 @@
       "truncated": false
     },
     {
-      "added": [],
-      "added_count": 0,
+      "added": [
+        "cl_clockdrift_max_secs",
+        "cl_packetentities_merge_before_decode",
+        "r_csgo_frost_dry_time",
+        "r_csgo_frost_force",
+        "r_csgo_frost_grow_time",
+        "r_csgo_frost_heat_barrel_position",
+        "r_csgo_frost_heat_cool_time",
+        "r_csgo_frost_heat_light_delay",
+        "r_csgo_frost_heat_light_time",
+        "r_csgo_frost_heat_per_shot",
+        "r_csgo_frost_indoor_distance",
+        "r_csgo_frost_melt_time",
+        "r_csgo_parallax",
+        "videocfg_parallax_detail",
+        "vprof_lite_auto"
+      ],
+      "added_count": 15,
       "changed": [],
       "changed_count": 0,
       "family": "convars",
-      "removed": [],
-      "removed_count": 0,
+      "removed": [
+        "cl_clockdrift_max_ticks",
+        "sv_recvbuf_messages"
+      ],
+      "removed_count": 2,
       "truncated": false
     },
     {
-      "added": [],
-      "added_count": 0,
+      "added": [
+        "vprof_lite_dump",
+        "vprof_lite_start",
+        "vprof_lite_stop"
+      ],
+      "added_count": 3,
       "changed": [],
       "changed_count": 0,
       "family": "commands",
@@ -51,161 +135,10 @@
       "truncated": false
     },
     {
-      "added": [
-        "CSPlayerController.GetControlledBotPawn#0",
-        "CSPlayerController.IsControllingBot#0",
-        "CSPlayerPawn.Reset#0",
-        "Entity.FireInput#0",
-        "EntityKeyValue",
-        "IEntities",
-        "IEntities.ConnectOutput#0",
-        "IEntities.DisconnectOutput#0",
-        "IEntities.FindByClass#0",
-        "IEntities.FindByName#0",
-        "IEntities.FireInput#0",
-        "IEntities.Spawn#0",
-        "IPointScript.OnBotControl#0",
-        "export:Entities"
-      ],
-      "added_count": 14,
-      "changed": [
-        {
-          "field_changes": [
-            {
-              "field": "deprecated",
-              "new_value": "true",
-              "old_value": "false"
-            },
-            {
-              "field": "doc",
-              "new_value": "",
-              "old_value": "Connect the output of an entity to a callback. The return value is a connection id that can be used in `DisconnectOutput`"
-            }
-          ],
-          "name": "IPointScript.ConnectOutput#0"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "deprecated",
-              "new_value": "true",
-              "old_value": "false"
-            },
-            {
-              "field": "doc",
-              "new_value": "",
-              "old_value": "Find entities by name."
-            }
-          ],
-          "name": "IPointScript.DisconnectOutput#0"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "deprecated",
-              "new_value": "true",
-              "old_value": "false"
-            },
-            {
-              "field": "doc",
-              "new_value": "",
-              "old_value": "Fire the input on all targets matching the specified names."
-            }
-          ],
-          "name": "IPointScript.EntFireAtName#0"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "deprecated",
-              "new_value": "true",
-              "old_value": "false"
-            },
-            {
-              "field": "doc",
-              "new_value": "",
-              "old_value": "Fire the input on the specified target."
-            }
-          ],
-          "name": "IPointScript.EntFireAtTarget#0"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "deprecated",
-              "new_value": "true",
-              "old_value": "false"
-            },
-            {
-              "field": "doc",
-              "new_value": "",
-              "old_value": "Find entities of the specified class name."
-            }
-          ],
-          "name": "IPointScript.FindEntitiesByClass#0"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "deprecated",
-              "new_value": "true",
-              "old_value": "false"
-            },
-            {
-              "field": "doc",
-              "new_value": "",
-              "old_value": "Find entities matching the specified name."
-            }
-          ],
-          "name": "IPointScript.FindEntitiesByName#0"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "deprecated",
-              "new_value": "true",
-              "old_value": "false"
-            },
-            {
-              "field": "doc",
-              "new_value": "",
-              "old_value": "Find the first entity of the specified class name."
-            }
-          ],
-          "name": "IPointScript.FindEntityByClass#0"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "deprecated",
-              "new_value": "true",
-              "old_value": "false"
-            },
-            {
-              "field": "doc",
-              "new_value": "",
-              "old_value": "Find the first entity matching the specified name."
-            }
-          ],
-          "name": "IPointScript.FindEntityByName#0"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "doc",
-              "new_value": "Loads resources on the server and clients to avoid hitches when later referenced.\n`resources` supports .vmdl, .vpcf, .vmat, and .vsnd resources.\n`entities` takes entity class names or subclass names.",
-              "old_value": "Loads resources on the server and clients to avoid hitches when later referenced.\nSupports .vmdl, .vpcf, .vmat, and .vsnd resources."
-            },
-            {
-              "field": "signature",
-              "new_value": "Precache(config: { resources?: string[], entities?: string[] }): CSPrecache | undefined",
-              "old_value": "Precache(config: { resources: string[] }): CSPrecache | undefined"
-            }
-          ],
-          "name": "IPointScript.Precache#0"
-        }
-      ],
-      "changed_count": 9,
+      "added": [],
+      "added_count": 0,
+      "changed": [],
+      "changed_count": 0,
       "family": "cs_script_api",
       "removed": [],
       "removed_count": 0,
@@ -214,17 +147,28 @@
     {
       "added": [],
       "added_count": 0,
-      "changed": [],
-      "changed_count": 0,
+      "changed": [
+        {
+          "field_changes": [
+            {
+              "field": "keyvalue:frostenabled",
+              "new_value": "boolean",
+              "old_value": ""
+            }
+          ],
+          "name": "info_map_parameters"
+        }
+      ],
+      "changed_count": 1,
       "family": "entity_io",
       "removed": [],
       "removed_count": 0,
       "truncated": false
     }
   ],
-  "from_build": "26393695",
+  "from_build": "26445667",
   "no_changes": false,
   "platform": "windows-x86_64",
-  "schema_history_anchor": "26393695-26445667",
-  "to_build": "26445667"
+  "schema_history_anchor": "26445667-26598758",
+  "to_build": "26598758"
 }

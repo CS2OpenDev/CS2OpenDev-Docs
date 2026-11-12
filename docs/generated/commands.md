@@ -4,7 +4,7 @@ title: Commands
 
 # Console Commands
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
 All console commands extracted from CS2.
 
@@ -735,7 +735,7 @@ All console commands extracted from CS2.
 | `plant_bomb` | `gamedll` `cheat` | Plant a bomb where the player is looking. |
 | `play` | `server_can_execute` | Play a sound. |
 | `playcast` | `release` | Play a broadcast |
-| `playdemo` | `release` `autocomplete` | Play a recorded demo file (.dem ). |
+| `playdemo` | `release` `autocomplete` | Play a recorded demo file (.dem ).  Options: start=&lt;tick&gt; end=&lt;tick&gt; timescale=&lt;float&gt; (run with no arguments for details). |
 | `player_ping` | `gamedll` `client_can_execute` | Creates a ping notification where the player is looking. |
 | `playsound` | `developmentonly` `defensive` `autocomplete` | playsound &lt;soundname&gt; |
 | `playsoundscape` | `clientdll` `cheat` `autocomplete` | Forces a soundscape to play |
@@ -1120,6 +1120,9 @@ All console commands extracted from CS2.
 | `vprof_generate_report` | `developmentonly` `defensive` | Generate a report to the console. |
 | `vprof_generate_report_budget` | `developmentonly` `defensive` | Generate a report to the console based on budget group. |
 | `vprof_generate_report_hierarchy` | `developmentonly` `defensive` | Generate a report to the console. |
+| `vprof_lite_dump` | `developmentonly` `defensive` | vprof_lite_dump [filename] [stop=1]<br>Write the vprof lite budget group statistics as CSV, then stop the profiler and clear its data.<br>stop=0 leaves the profiler running with its data.  The default filename is vprof_lite.csv in the mod directory;<br>an absolute path is used as given.  Sets vprof_lite_auto 0, so the game will not stop or dump the profiler on its own. |
+| `vprof_lite_start` | `developmentonly` `defensive` | vprof_lite_start [clear=1]<br>Start the vprof lite profiler, clearing any data it holds.  clear=0 keeps the data and continues adding to it.<br>Sets vprof_lite_auto 0, so the game will not stop or dump the profiler on its own. |
+| `vprof_lite_stop` | `developmentonly` `defensive` | vprof_lite_stop [clear=1]<br>Stop the vprof lite profiler and clear its data.  clear=0 keeps the data, for engine_frametime_print_report or vprof_lite_dump.<br>Sets vprof_lite_auto 0, so the game will not start the profiler on its own. |
 | `vprof_loadhitstore_scale` | `developmentonly` `hidden` | Scale used when displaying load-hit-stores (0 = use default) |
 | `vprof_off` | `developmentonly` `defensive` | Disable vprof |
 | `vprof_on` | `developmentonly` `defensive` | Enable vprof |

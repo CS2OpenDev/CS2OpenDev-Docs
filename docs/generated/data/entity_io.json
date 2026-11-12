@@ -1,6 +1,6 @@
 {
   "base_class_count": 76,
-  "build_id": "26445667",
+  "build_id": "26598758",
   "classes": [
     {
       "bases": [
@@ -44168,6 +44168,16 @@
           "flags": [],
           "name": "envwetnessdryingamount",
           "type": "float"
+        },
+        {
+          "choices": [],
+          "declared_in": "info_map_parameters",
+          "default_value": "0",
+          "description": "Players, weapons and chickens frost over outdoors (traces to the sky), and melt indoors.",
+          "display_name": "Player frost enabled",
+          "flags": [],
+          "name": "frostenabled",
+          "type": "boolean"
         }
       ],
       "name": "info_map_parameters",

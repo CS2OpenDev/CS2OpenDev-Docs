@@ -34963,6 +34963,39 @@
               "default": "",
               "description": "",
               "label": "optional",
+              "name": "cpu_num_logical",
+              "notes": "",
+              "number": 5,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "cpu_num_performance",
+              "notes": "",
+              "number": 6,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "cpu_num_efficiency",
+              "notes": "",
+              "number": 7,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
               "name": "ram_physical_total_mb",
               "notes": "",
               "number": 21,
@@ -35065,6 +35098,17 @@
               "name": "backbuffer_height",
               "notes": "",
               "number": 52,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "thread_pool_workers",
+              "notes": "",
+              "number": 61,
               "type": "uint32",
               "type_file": null,
               "type_kind": "scalar"

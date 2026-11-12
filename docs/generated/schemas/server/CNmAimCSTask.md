@@ -8,9 +8,9 @@ kind: class
 
 # CNmAimCSTask
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
-**Kind:** class · **Size:** 304 bytes (`0x130`) · **Align:** 16 · **Module:** server
+**Kind:** class · **Size:** 496 bytes (`0x1f0`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CNmPoseTask](../animlib/CNmPoseTask.md)
 
@@ -23,4 +23,4 @@ classDiagram
 
 ## Memory layout
 
-No schema-visible fields (304 bytes of opaque storage).
+No schema-visible fields (496 bytes of opaque storage).

@@ -27,7 +27,7 @@ upstream record count from `surface_properties.json`
 materials in `surfaces.json`'s `materials[]` (which is smaller, since the
 same material can have several rows).
 
-## protobufs.json (1793.0 KB)
+## protobufs.json (1794.2 KB)
 
 `files[]`: one entry per `.proto` file (`name`, `stem`, `package`, `imports`,
 overlay `description`/`notes`). `messages[]` and `enums[]` on each file are
@@ -90,7 +90,7 @@ than guessed at.
 `network.json` performs a second, separate join using these same rules
 against the RTTI-recovered id tables -- see below.
 
-## convars.json (1214.4 KB) / commands.json (288.6 KB)
+## convars.json (1218.9 KB) / commands.json (290.1 KB)
 
 `convars[]`/`commands[]`: `name`, `default` (convars only), `value_type`
 (convars only, e.g. `Float32`/`Int32`/`Bool`/`String`), `min`/`max` (convars
@@ -236,7 +236,7 @@ Which enum feeds which channel/id range:
 | `GameEvents` | 200, 213-214, 450-453 | `EBaseGameEvents`, `ECsgoGameEvents` |
 | `Demo stream` | 0-19, 64 | `EDemoCommands` |
 
-## changelog.json (6.2 KB)
+## changelog.json (3.9 KB)
 
 For the one build-pair transition the current artifact set carries: every
 family is always listed (with `added_count`/`removed_count`/`changed_count`,
@@ -245,7 +245,7 @@ across the whole transition (which it is on this build), and
 `schema_history_anchor` links to the matching transition's anchor in
 `schema-history.json`.
 
-## schema-history.json (168.7 KB)
+## schema-history.json (193.4 KB)
 
 `transitions[]`: every recorded transition (from/to build, dates, op
 counts, `anchor`, `is_empty`). `detail[]`: full per-class field-op detail
@@ -274,7 +274,7 @@ the engine member it pairs with by name and whether the two values agree
 every `IPointScript.On*` method with the game events the overlay pairs it
 with; `mapped` is `false` for a hook the overlay does not list.
 
-## entity_io.json (4568.7 KB)
+## entity_io.json (4569.1 KB)
 
 Hammer's entity definitions from SchemaTracker's `entity_io.json` (the
 build's FGD files, root `game/csgo/csgo.fgd`). `classes[]` holds the

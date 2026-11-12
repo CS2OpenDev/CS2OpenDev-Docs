@@ -3,6 +3,1068 @@
   "breaking": [],
   "detail": [
     {
+      "anchor": "26445667-26598758",
+      "class_pair_candidates_count": 0,
+      "classes_added": [],
+      "classes_changed": [
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CNmAimCSNode::CDefinition",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CNmAimCSTask",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "304",
+            "to": "496"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CNmGraphDocAimCSNode",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "!GlobalTypes/EventClientPollNetworking_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "4",
+            "to": "8"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/CMapInfo",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "1584",
+            "to": "1592"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_AK47",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 14
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_BaseCSGrenade",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8160",
+            "to": "8224"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 10
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_C4",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8032",
+            "to": "8096"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 2
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_CSGO_PreviewPlayer",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "14288",
+            "to": "14336"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "14288",
+            "to": "14336"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_CSGO_TeamPreviewModel",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "14288",
+            "to": "14336"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 77
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_CSPlayerPawn",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "14112",
+            "to": "14160"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 57
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_CSWeaponBase",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "7968",
+            "to": "8032"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 7
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_CSWeaponBaseGun",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_CSWeaponBaseShotgun",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "7968",
+            "to": "8032"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_Chicken",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "7072",
+            "to": "7120"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_DEagle",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_DecoyGrenade",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8160",
+            "to": "8224"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_Flashbang",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8160",
+            "to": "8224"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_HEGrenade",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8160",
+            "to": "8224"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 8,
+            "REMOVE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_Hostage",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "5056",
+            "to": "5048"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_IncendiaryGrenade",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8160",
+            "to": "8224"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_Item_Healthshot",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "7984",
+            "to": "8048"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_Knife",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "7984",
+            "to": "8048"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_MolotovGrenade",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8160",
+            "to": "8224"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_SmokeGrenade",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8160",
+            "to": "8224"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponAWP",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponAug",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 2
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponBaseItem",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "7984",
+            "to": "8048"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponBizon",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponCZ75a",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8032",
+            "to": "8096"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponElite",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponFamas",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponFiveSeven",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponG3SG1",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponGalilAR",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponGlock",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponHKP2000",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponM249",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponM4A1",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponM4A1Silencer",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponMAC10",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponMP5SD",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponMP7",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponMP9",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponMag7",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponNOVA",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "7968",
+            "to": "8032"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponNegev",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponP250",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponP90",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponRevolver",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponSCAR20",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponSG556",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponSSG08",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponSawedoff",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "7968",
+            "to": "8032"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 2
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponTaser",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8032",
+            "to": "8096"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponTec9",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponUMP45",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponUSPSilencer",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "8016",
+            "to": "8080"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_WeaponXM1014",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "7968",
+            "to": "8032"
+          },
+          "static_field_ops": 0
+        }
+      ],
+      "classes_changed_total": 62,
+      "classes_changed_truncated": true,
+      "classes_removed": [],
+      "field_move_candidates_count": 0,
+      "from_build": "26445667",
+      "from_date": "2026-11-05",
+      "to_build": "26598758",
+      "to_date": "2026-11-11"
+    },
+    {
       "anchor": "26393695-26445667",
       "class_pair_candidates_count": 0,
       "classes_added": [],
@@ -81,161 +1143,9 @@
       "from_date": "2026-10-30",
       "to_build": "26393695",
       "to_date": "2026-11-03"
-    },
-    {
-      "anchor": "26144732-26281801",
-      "class_pair_candidates_count": 0,
-      "classes_added": [],
-      "classes_changed": [
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {},
-          "flags_changed": false,
-          "meta_ops": 1,
-          "metadata_only": false,
-          "name": "!GlobalTypes/dynpitchvol_base_t",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {},
-          "flags_changed": false,
-          "meta_ops": 1,
-          "metadata_only": false,
-          "name": "!GlobalTypes/dynpitchvol_t",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "ADD": 1,
-            "OFFSET_CHANGE": 36
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "client.dll/C_CSGameRules",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "20320",
-            "to": "20328"
-          },
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "ADD": 1,
-            "REMOVE": 1
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "client.dll/C_CSPlayerPawn",
-          "pair_candidates": 1,
-          "paired_evidence": 1,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "ADD": 2,
-            "REMOVE": 2
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "client.dll/C_CSWeaponBase",
-          "pair_candidates": 2,
-          "paired_evidence": 2,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "ADD": 1,
-            "OFFSET_CHANGE": 127
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "server.dll/CCSGameRules",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "70728",
-            "to": "70736"
-          },
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "ADD": 1,
-            "REMOVE": 1
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "server.dll/CCSPlayerPawn",
-          "pair_candidates": 1,
-          "paired_evidence": 1,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "ADD": 2,
-            "OFFSET_CHANGE": 1,
-            "REMOVE": 3
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "server.dll/CCSWeaponBase",
-          "pair_candidates": 3,
-          "paired_evidence": 2,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        }
-      ],
-      "classes_changed_total": 8,
-      "classes_changed_truncated": false,
-      "classes_removed": [],
-      "field_move_candidates_count": 0,
-      "from_build": "26144732",
-      "from_date": "2026-10-22",
-      "to_build": "26281801",
-      "to_date": "2026-10-28"
     }
   ],
-  "latest_build": "26445667",
+  "latest_build": "26598758",
   "platform": "windows-x86_64",
   "schema_version": "0.13.0",
   "transitions": [
@@ -7106,6 +8016,23 @@
       "is_empty": false,
       "to_build": "26445667",
       "to_date": "2026-11-05"
+    },
+    {
+      "anchor": "26445667-26598758",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 62,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 189
+      },
+      "from_build": "26445667",
+      "from_date": "2026-11-05",
+      "is_empty": false,
+      "to_build": "26598758",
+      "to_date": "2026-11-11"
     }
   ]
 }

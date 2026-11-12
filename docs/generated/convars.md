@@ -4,7 +4,7 @@ title: ConVars
 
 # ConVar Reference
 
-> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
 
 All console variables extracted from CS2, with the value type and the bounds the engine enforces where it declares them.
 
@@ -318,7 +318,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_clock_recvmargin_timeconstant_speedup` | `Float32` | `0.600000` |  | `developmentonly` | Clock sync will remove 63.2% of the error in N seconds |
 | `cl_clock_recvmargin_window` | `Float32` | `4.000000` |  | `developmentonly` | Clock sync will use past N seconds |
 | `cl_clockdbg` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
-| `cl_clockdrift_max_ticks` | `Int32` | `3` | `>= 0` | `hidden` `release` | Maximum number of ticks the clock is allowed to drift before the client snaps its clock to the server's. |
+| `cl_clockdrift_max_secs` | `Float32` | `0.125000` | `>= 0.000000` | `hidden` `release` | Maximum duration the client clock is allowed to drift from server snapshots, before the client snaps its clock to the latest server snapshot received |
 | `cl_clutch_mode` | `Bool` | `false` |  | `clientdll` `release` | Silence voice and other distracting sounds until the end of round or next death. |
 | `cl_color` | `Int32` | `1` | `0 .. 4` | `clientdll` `archive` `userinfo` | Preferred teammate color |
 | `cl_connectionretrytime_p2p` | `Float32` | `20.000000` |  | `release` | Number of seconds over which to spread retry attempts for P2P. |
@@ -541,6 +541,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_obs_interp_enable` | `Bool` | `true` |  | `clientdll` `archive` | Enables interpolation between observer targets |
 | `cl_obs_interp_speed` | `Float32` | `1.000000` | `0.250000 .. 2.500000` | `clientdll` `archive` | Spectator camera interpolation speed |
 | `cl_observed_bot_crosshair` | `Int32` | `2` |  | `clientdll` `archive` `release` | Crosshair shown when observing a bot. 0 = show your crosshair, 1 = show your crosshair only when the bot can be taken over (otherwise default), 2 = always show the default crosshair |
+| `cl_packetentities_merge_before_decode` | `Bool` | `true` |  | `developmentonly` `defensive` | When an entity is decoded from a baseline plus a wire delta, merge the two and decode once (true), or decode the baseline and then the delta as two passes (false, the old behaviour, which can invoke change callbacks with baseline values for an entity that already exists). |
 | `cl_paintkit_override` | `String` |  |  | `clientdll` `cheat` `release` |  |
 | `cl_panel_freeze_time_after_press` | `Float32` | `0.500000` |  | `developmentonly` `clientdll` `defensive` | time to freeze mouse/pointer motion after a mouse button press |
 | `cl_parallel_readpacketentities` | `Bool` | `true` |  | `developmentonly` `defensive` | Set to 1 to use threading snapshot reading (if game supports and server is sending bitcounts). |
@@ -2372,6 +2373,16 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `r_csgo_enable_translucent_screen_space` | `Bool` | `true` |  | `clientdll` `cheat` |  |
 | `r_csgo_enable_volume_fog` | `Bool` | `false` |  | `developmentonly` `clientdll` |  |
 | `r_csgo_firstpersonlegs_nearz_offset` | `Float32` | `0.100000` |  | `developmentonly` `clientdll` |  |
+| `r_csgo_frost_dry_time` | `Float32` | `20.000000` |  | `developmentonly` `clientdll` | Seconds for the melted frost to dry |
+| `r_csgo_frost_force` | `Int32` | `-1` |  | `developmentonly` `clientdll` | Frost on players, weapons and chickens: -1 = the map's (info_map_parameters frostenabled), 0 = off, 1 = on (outdoors; melts indoors) |
+| `r_csgo_frost_grow_time` | `Float32` | `10.000000` |  | `developmentonly` `clientdll` | Seconds outdoors for frost to grow to full |
+| `r_csgo_frost_heat_barrel_position` | `Float32` | `0.330000` |  | `developmentonly` `clientdll` | Frost: where the barrel heat sits, from the shell eject (0) to the muzzle (1) |
+| `r_csgo_frost_heat_cool_time` | `Float32` | `20.000000` |  | `developmentonly` `clientdll` | Frost: seconds for a hot barrel to cool down |
+| `r_csgo_frost_heat_light_delay` | `Float32` | `1.000000` |  | `developmentonly` `clientdll` | Frost: seconds after a molotov is lit before its rag starts to heat (the flame shows a moment after) |
+| `r_csgo_frost_heat_light_time` | `Float32` | `10.000000` |  | `developmentonly` `clientdll` | Frost: seconds for a lit molotov's rag to reach full heat |
+| `r_csgo_frost_heat_per_shot` | `Float32` | `0.050000` |  | `developmentonly` `clientdll` | Frost: barrel heat per shot (1 = hot enough to clear the whole barrel) |
+| `r_csgo_frost_indoor_distance` | `Float32` | `128.000000` |  | `developmentonly` `clientdll` | Frost: distance under cover (no sky) over which the cold fades out (indoors) |
+| `r_csgo_frost_melt_time` | `Float32` | `10.000000` |  | `developmentonly` `clientdll` | Seconds indoors for full frost to melt |
 | `r_csgo_fsr_enable_mip_bias` | `Bool` | `true` |  | `developmentonly` `clientdll` `defensive` | Apply negative mip bias when rendering with FSR. |
 | `r_csgo_fsr_rcas_sharpness` | `Float32` | `0.250000` |  | `developmentonly` `clientdll` `defensive` | RCAS sharpness when using FSR + RCAS upsample. |
 | `r_csgo_fsr_upsample` | `Int32` | `0` |  | `developmentonly` `clientdll` `defensive` | 0 == bilinear upsampe, 1 == FSR upsample, 2 == FSR + RCAS upsample |
@@ -2413,6 +2424,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `r_csgo_opaquerefract_viewmodel_depthcopy` | `Bool` | `false` |  | `developmentonly` `clientdll` | Copy depth in viewmodel for opaquerefract |
 | `r_csgo_opaquerefract_viewmodel_quality` | `Int32` | `1` |  | `developmentonly` `clientdll` | Opaque refract quality in viewmodel: 0 = no background copy, no depth, 1= background copy, depth if enabled |
 | `r_csgo_outline_glow_scaledenom` | `Int32` | `1` |  | `developmentonly` `clientdll` `cheat` |  |
+| `r_csgo_parallax` | `Int32` | `1` |  | `developmentonly` `clientdll` `defensive` | Parallax occlusion mapping (Advanced Video setting): 0 = off, 1 = on |
 | `r_csgo_player_occlusion_query` | `Bool` | `true` |  | `developmentonly` `clientdll` |  |
 | `r_csgo_player_occlusion_query_debug` | `Bool` | `false` |  | `developmentonly` `clientdll` |  |
 | `r_csgo_postprocess_enable` | `Bool` | `true` |  | `clientdll` `cheat` |  |
@@ -3610,7 +3622,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sv_rcon_minfailures` | `Int32` | `5` | `1 .. 20` | `developmentonly` `defensive` | Number of times a user can fail rcon authentication in sv_rcon_minfailuretime before being banned |
 | `sv_rcon_minfailuretime` | `Float32` | `30.000000` | `>= 1.000000` | `developmentonly` `defensive` | Number of seconds to track failed rcon authentications |
 | `sv_record_item_time_data` | `Bool` | `false` |  | `gamedll` `release` | Turn on recording of per player item time data into the server log. |
-| `sv_recvbuf_messages` | `Int32` | `1024` |  | `developmentonly` `defensive` | Max number of messages that can be queued in a netchan receive buffer for an ordinary connection from a client. |
 | `sv_regeneration_force_on` | `Bool` | `false` |  | `gamedll` `cheat` | Cheat to test regenerative health systems |
 | `sv_regeneration_wait_time` | `Float32` | `1.000000` |  | `developmentonly` `gamedll` `replicated` `defensive` |  |
 | `sv_region` | `Int32` | `-1` |  | `release` | The region of the world to report this server in. |
@@ -3947,6 +3958,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `videocfg_ao_detail` | `Int32` | `0` |  | `developmentonly` `clientdll` `defensive` |  |
 | `videocfg_fsr_detail` | `Int32` | `0` |  | `developmentonly` `clientdll` `defensive` |  |
 | `videocfg_hdr_detail` | `Int32` | `-1` |  | `developmentonly` `clientdll` `defensive` |  |
+| `videocfg_parallax_detail` | `Int32` | `0` |  | `developmentonly` `clientdll` `defensive` |  |
 | `videocfg_particle_detail` | `Int32` | `1` |  | `developmentonly` `clientdll` `defensive` |  |
 | `videocfg_shadow_quality` | `Int32` | `1` |  | `developmentonly` `clientdll` `defensive` |  |
 | `videocfg_texture_detail` | `Int32` | `1` |  | `developmentonly` `clientdll` `defensive` |  |
@@ -4018,6 +4030,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `vprof_all_threads` | `Bool` | `false` |  | `developmentonly` | Capture VProf scopes on background threads as well as the target thread. Same option as the All Threads checkbox in the VProf tools -- setting either one updates the other |
 | `vprof_counters` | `Int32` | `0` |  | `developmentonly` `defensive` |  |
 | `vprof_counters_show_minmax` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
+| `vprof_lite_auto` | `Bool` | `true` |  | `release` | Let demo playback and the game rules start, dump and stop the vprof lite profiler on their own.  The vprof_lite_start, vprof_lite_stop and vprof_lite_dump commands set this to 0 so that a script can drive the profiler itself. |
 | `vprof_scope_entity_clientthink` | `Bool` | `false` |  | `developmentonly` `clientdll` `hidden` `defensive` | Does nothing whatsoever. |
 | `vprof_scope_entity_thinks` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `vprof_think_limit` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |

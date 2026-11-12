@@ -16,6 +16,9 @@ direction LR
     +string cpu_brand
     +uint32 cpu_model
     +uint32 cpu_num_physical
+    +uint32 cpu_num_logical
+    +uint32 cpu_num_performance
+    +uint32 cpu_num_efficiency
     +uint32 ram_physical_total_mb
     +string gpu_rendersystem_dll_name
     +uint32 gpu_vendor_id
@@ -26,6 +29,7 @@ direction LR
     +uint32 gpu_texture_memory_size_mb
     +uint32 backbuffer_width
     +uint32 backbuffer_height
+    +uint32 thread_pool_workers
   }
 
   class CMsgSource2VProfLiteReportItem {
@@ -296,6 +300,9 @@ direction LR
 | `cpu_brand` | 2 | string | optional |  |
 | `cpu_model` | 3 | uint32 | optional |  |
 | `cpu_num_physical` | 4 | uint32 | optional |  |
+| `cpu_num_logical` | 5 | uint32 | optional |  |
+| `cpu_num_performance` | 6 | uint32 | optional |  |
+| `cpu_num_efficiency` | 7 | uint32 | optional |  |
 | `ram_physical_total_mb` | 21 | uint32 | optional |  |
 | `gpu_rendersystem_dll_name` | 41 | string | optional |  |
 | `gpu_vendor_id` | 42 | uint32 | optional |  |
@@ -306,6 +313,7 @@ direction LR
 | `gpu_texture_memory_size_mb` | 47 | uint32 | optional |  |
 | `backbuffer_width` | 51 | uint32 | optional |  |
 | `backbuffer_height` | 52 | uint32 | optional |  |
+| `thread_pool_workers` | 61 | uint32 | optional |  |
 
 ### `CMsgSource2VProfLiteReportItem`
 
