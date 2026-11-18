@@ -247,6 +247,19 @@ direction LR
     +bytes price_sheet
   }
 
+  class CMsgVolatileContainerPricesheet {
+    +uint32 version
+    +List~CMsgVolatileContainerPricesheet.Entry~ entries
+  }
+
+  class CMsgVolatileContainerPricesheet_Entry["CMsgVolatileContainerPricesheet.Entry"] {
+    +fixed64 key
+    +uint32 cost
+    +sint32 trend
+    +uint32 low
+    +uint32 high
+  }
+
   class CMsgUpdateItemSchema {
     +bytes items_game
     +fixed32 item_schema_version
@@ -516,6 +529,7 @@ direction LR
   CSOEconItem --> CSOEconItemAttribute : attribute[]
   CSOEconItem --> CSOEconItem : interior_item
   CSOEconItem --> CSOEconItemEquipped : equipped_state[]
+  CMsgVolatileContainerPricesheet --> CMsgVolatileContainerPricesheet_Entry : entries[]
   CMsgSetItemPositions --> CMsgSetItemPositions_ItemPosition : item_positions[]
   CMsgGCBannedWord --> GC_BannedWordType : word_type
   CMsgGCBannedWordListResponse --> CMsgGCBannedWord : word_list[]
@@ -896,6 +910,23 @@ direction LR
 | `country_deprecated` | 3 | string | optional |  |
 | `price_sheet_version` | 4 | fixed32 | optional |  |
 | `price_sheet` | 8 | bytes | optional |  |
+
+### `CMsgVolatileContainerPricesheet`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `version` | 1 | uint32 | optional |  |
+| `entries` | 2 | [CMsgVolatileContainerPricesheet.Entry](#cmsgvolatilecontainerpricesheetentry) | repeated |  |
+
+#### `CMsgVolatileContainerPricesheet.Entry`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `key` | 1 | fixed64 | optional |  |
+| `cost` | 2 | uint32 | optional |  |
+| `trend` | 3 | sint32 | optional |  |
+| `low` | 4 | uint32 | optional |  |
+| `high` | 5 | uint32 | optional |  |
 
 ### `CMsgUpdateItemSchema`
 

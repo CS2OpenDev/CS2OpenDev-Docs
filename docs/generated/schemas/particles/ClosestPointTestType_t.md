@@ -8,7 +8,7 @@ kind: enum
 
 # ClosestPointTestType_t
 
-> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particles
 

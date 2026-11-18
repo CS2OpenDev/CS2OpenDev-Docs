@@ -4,9 +4,9 @@ title: Maps
 
 # Maps & Radar Overviews
 
-> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
 
-Maps inventory (23): `ar_baggage`, `ar_shoots`, `ar_shoots_night`, `cs_italy`, `cs_office`, `de_ancient`, `de_ancient_night`, `de_ancient_v1`, `de_ancient_v2`, `de_anubis`, `de_cache`, `de_dust`, `de_dust2`, `de_inferno`, `de_inferno_s2`, `de_mirage`, `de_nuke`, `de_overpass`, `de_overpass_2v2`, `de_train`, `de_vertigo`, `rush_001`, `workshop_preview`
+Maps inventory (24): `ar_baggage`, `ar_shoots`, `ar_shoots_night`, `cs_italy`, `cs_office`, `de_ancient`, `de_ancient_night`, `de_ancient_v1`, `de_ancient_v2`, `de_anubis`, `de_cache`, `de_cbble`, `de_dust`, `de_dust2`, `de_inferno`, `de_inferno_s2`, `de_mirage`, `de_nuke`, `de_overpass`, `de_overpass_2v2`, `de_train`, `de_vertigo`, `rush_001`, `workshop_preview`
 
 ## Radar overview metadata
 
@@ -23,6 +23,7 @@ Maps inventory (23): `ar_baggage`, `ar_shoots`, `ar_shoots_night`, `cs_italy`, `
 | `de_ancient_v2` | `overviews/de_ancient` | -2953, 2164 | 5 | 0.51, 0.17 | 0.485, 0.87 |
 | `de_anubis` | `overviews/de_anubis` | -2796.000000, 3328.000000 | 5.220000 | 0.610000, 0.220000 | 0.580000, 0.930000 |
 | `de_cache` | `overviews/de_cache_radar` | -2000, 3250 | 5.5 | 0.09775, 0.473 | 0.887, 0.585 |
+| `de_cbble` | `overviews/de_cbble` | -3615, 2712 | 4.724792 | 0.264000, 0.778000 | 0.457000, 0.121000 |
 | `de_dust` | `overviews/de_dust` | -2850, 4073 | 6 | 0.47, 0.92 | 0.47, 0.10 |
 | `de_dust2` | `overviews/de_dust2_v2` | -2476, 3239 | 4.4 | 0.62, 0.21 | 0.39, 0.91 |
 | `de_inferno` | `overviews/de_inferno` | -2087, 3870 | 4.9 | 0.9, 0.35 | 0.1, 0.67 |

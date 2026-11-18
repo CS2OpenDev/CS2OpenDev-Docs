@@ -8,7 +8,7 @@ kind: class
 
 # PermEntityLumpData_t
 
-> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 8 · **Module:** worldrenderer
 

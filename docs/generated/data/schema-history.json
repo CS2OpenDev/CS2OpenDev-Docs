@@ -1145,7 +1145,7 @@
       "to_date": "2026-11-03"
     }
   ],
-  "latest_build": "26598758",
+  "latest_build": "26748068",
   "platform": "windows-x86_64",
   "schema_version": "0.13.0",
   "transitions": [
@@ -8033,6 +8033,23 @@
       "is_empty": false,
       "to_build": "26598758",
       "to_date": "2026-11-11"
+    },
+    {
+      "anchor": "26598758-26748068",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "26598758",
+      "from_date": "2026-11-11",
+      "is_empty": true,
+      "to_build": "26748068",
+      "to_date": "2026-11-18"
     }
   ]
 }

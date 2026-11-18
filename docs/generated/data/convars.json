@@ -22019,10 +22019,9 @@
     {
       "default": "0",
       "flags": [
-        "clientdll",
+        "commandline_enforced",
         "gamedll",
-        "release",
-        "replicated"
+        "release"
       ],
       "help": "Number of players required to be connected to end warmup early. 0 to require maximum players for mode.",
       "max": null,
@@ -22591,11 +22590,9 @@
     {
       "default": "false",
       "flags": [
-        "clientdll",
         "commandline_enforced",
         "gamedll",
-        "release",
-        "replicated"
+        "release"
       ],
       "help": "At the end of the match, perform a changelevel even if next map is the same",
       "max": null,
@@ -22607,10 +22604,9 @@
     {
       "default": "false",
       "flags": [
-        "clientdll",
+        "commandline_enforced",
         "gamedll",
-        "release",
-        "replicated"
+        "release"
       ],
       "help": "At the end of the match, perform a restart instead of loading a new map",
       "max": null,
@@ -24137,10 +24133,8 @@
     {
       "default": "1",
       "flags": [
-        "clientdll",
         "gamedll",
-        "release",
-        "replicated"
+        "release"
       ],
       "help": "",
       "max": null,
@@ -24276,11 +24270,9 @@
     {
       "default": "0.000000",
       "flags": [
-        "clientdll",
         "commandline_enforced",
         "gamedll",
-        "release",
-        "replicated"
+        "release"
       ],
       "help": "Warmup time to use when all players have connected. 0 to disable.",
       "max": null,
@@ -24292,11 +24284,9 @@
     {
       "default": "5.000000",
       "flags": [
-        "clientdll",
         "commandline_enforced",
         "gamedll",
-        "release",
-        "replicated"
+        "release"
       ],
       "help": "Warmup time to use when the match will be cancelled (eg. due to a live VAC ban).",
       "max": null,
@@ -30946,7 +30936,7 @@
       "value_type": "String"
     },
     {
-      "default": "mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_debris,mg_de_poseidon,mg_de_eldorado,mg_de_overpass",
+      "default": "mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_debris,mg_de_poseidon,mg_de_eldorado,mg_de_overpass,mg_de_cbble",
       "flags": [
         "archive",
         "clientdll"
@@ -30954,12 +30944,12 @@
       "help": "",
       "max": null,
       "min": null,
-      "name": "player_competitive_maplist_2v2_10_0_D684D4E1",
+      "name": "player_competitive_maplist_2v2_10_0_7B2B4F7",
       "prefix": "player",
       "value_type": "String"
     },
     {
-      "default": "mg_de_dust2,mg_de_train,mg_de_ancient,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_cs_italy,mg_de_cache,mg_de_boulder,mg_de_anubis,mg_lobby_mapveto,mg_de_fachwerk,mg_cs_shelter,mg_de_overpass",
+      "default": "mg_de_dust2,mg_de_train,mg_de_ancient,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_cs_italy,mg_de_cache,mg_de_anubis,mg_lobby_mapveto,mg_de_overpass,mg_de_cbble",
       "flags": [
         "archive",
         "clientdll"
@@ -30967,7 +30957,7 @@
       "help": "",
       "max": null,
       "min": null,
-      "name": "player_competitive_maplist_8_10_0_A062AC6A",
+      "name": "player_competitive_maplist_8_10_0_25074C46",
       "prefix": "player",
       "value_type": "String"
     },
@@ -32440,136 +32430,6 @@
       "max": null,
       "min": null,
       "name": "r_csgo_firstpersonlegs_nearz_offset",
-      "prefix": "r",
-      "value_type": "Float32"
-    },
-    {
-      "default": "20.000000",
-      "flags": [
-        "clientdll",
-        "developmentonly"
-      ],
-      "help": "Seconds for the melted frost to dry",
-      "max": null,
-      "min": null,
-      "name": "r_csgo_frost_dry_time",
-      "prefix": "r",
-      "value_type": "Float32"
-    },
-    {
-      "default": "-1",
-      "flags": [
-        "clientdll",
-        "developmentonly"
-      ],
-      "help": "Frost on players, weapons and chickens: -1 = the map's (info_map_parameters frostenabled), 0 = off, 1 = on (outdoors; melts indoors)",
-      "max": null,
-      "min": null,
-      "name": "r_csgo_frost_force",
-      "prefix": "r",
-      "value_type": "Int32"
-    },
-    {
-      "default": "10.000000",
-      "flags": [
-        "clientdll",
-        "developmentonly"
-      ],
-      "help": "Seconds outdoors for frost to grow to full",
-      "max": null,
-      "min": null,
-      "name": "r_csgo_frost_grow_time",
-      "prefix": "r",
-      "value_type": "Float32"
-    },
-    {
-      "default": "0.330000",
-      "flags": [
-        "clientdll",
-        "developmentonly"
-      ],
-      "help": "Frost: where the barrel heat sits, from the shell eject (0) to the muzzle (1)",
-      "max": null,
-      "min": null,
-      "name": "r_csgo_frost_heat_barrel_position",
-      "prefix": "r",
-      "value_type": "Float32"
-    },
-    {
-      "default": "20.000000",
-      "flags": [
-        "clientdll",
-        "developmentonly"
-      ],
-      "help": "Frost: seconds for a hot barrel to cool down",
-      "max": null,
-      "min": null,
-      "name": "r_csgo_frost_heat_cool_time",
-      "prefix": "r",
-      "value_type": "Float32"
-    },
-    {
-      "default": "1.000000",
-      "flags": [
-        "clientdll",
-        "developmentonly"
-      ],
-      "help": "Frost: seconds after a molotov is lit before its rag starts to heat (the flame shows a moment after)",
-      "max": null,
-      "min": null,
-      "name": "r_csgo_frost_heat_light_delay",
-      "prefix": "r",
-      "value_type": "Float32"
-    },
-    {
-      "default": "10.000000",
-      "flags": [
-        "clientdll",
-        "developmentonly"
-      ],
-      "help": "Frost: seconds for a lit molotov's rag to reach full heat",
-      "max": null,
-      "min": null,
-      "name": "r_csgo_frost_heat_light_time",
-      "prefix": "r",
-      "value_type": "Float32"
-    },
-    {
-      "default": "0.050000",
-      "flags": [
-        "clientdll",
-        "developmentonly"
-      ],
-      "help": "Frost: barrel heat per shot (1 = hot enough to clear the whole barrel)",
-      "max": null,
-      "min": null,
-      "name": "r_csgo_frost_heat_per_shot",
-      "prefix": "r",
-      "value_type": "Float32"
-    },
-    {
-      "default": "128.000000",
-      "flags": [
-        "clientdll",
-        "developmentonly"
-      ],
-      "help": "Frost: distance under cover (no sky) over which the cold fades out (indoors)",
-      "max": null,
-      "min": null,
-      "name": "r_csgo_frost_indoor_distance",
-      "prefix": "r",
-      "value_type": "Float32"
-    },
-    {
-      "default": "10.000000",
-      "flags": [
-        "clientdll",
-        "developmentonly"
-      ],
-      "help": "Seconds indoors for full frost to melt",
-      "max": null,
-      "min": null,
-      "name": "r_csgo_frost_melt_time",
       "prefix": "r",
       "value_type": "Float32"
     },
@@ -55511,13 +55371,13 @@
     },
     {
       "command_count": 344,
-      "convar_count": 1930,
+      "convar_count": 1914,
       "description": "Registered by the client binary (client.dll).",
       "name": "clientdll"
     },
     {
       "command_count": 0,
-      "convar_count": 278,
+      "convar_count": 280,
       "description": "Can be forced from the command line; a command-line value locks out later changes.",
       "name": "commandline_enforced"
     },
@@ -55535,7 +55395,7 @@
     },
     {
       "command_count": 446,
-      "convar_count": 1919,
+      "convar_count": 1909,
       "description": "Present only in development builds; stripped or inert in shipping builds.",
       "name": "developmentonly"
     },
@@ -55613,7 +55473,7 @@
     },
     {
       "command_count": 2,
-      "convar_count": 888,
+      "convar_count": 882,
       "description": "Server's value is sent to and enforced on connected clients.",
       "name": "replicated"
     },

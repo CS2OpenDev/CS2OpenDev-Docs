@@ -8,7 +8,7 @@ kind: class
 
 # CEntityInstance
 
-> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
 
 Root of the entity class hierarchy (server and client).  Everything that has an entity handle ultimately derives from this.
 

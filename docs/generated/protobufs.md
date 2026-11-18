@@ -8,7 +8,7 @@ Network message definitions and game event structures from CS2's Protobufs direc
 
 | File | Messages | Enums |
 |------|----------|-------|
-| [base_gcmessages.proto](proto/base_gcmessages.md) | 77 (+1 nested) | 3 (+1 nested) |
+| [base_gcmessages.proto](proto/base_gcmessages.md) | 78 (+2 nested) | 3 (+1 nested) |
 | [c_peer2peer_netmessages.proto](proto/c_peer2peer_netmessages.md) | 6 (+1 nested) | 1 (+1 nested) |
 | [clientmessages.proto](proto/clientmessages.md) | 6 | 2 |
 | [connectionless_netmessages.proto](proto/connectionless_netmessages.md) | 3 | 0 |

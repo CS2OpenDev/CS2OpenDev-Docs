@@ -4,7 +4,7 @@ title: ConVars
 
 # ConVar Reference
 
-> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
 
 All console variables extracted from CS2, with the value type and the bounds the engine enforces where it declares them.
 
@@ -1614,7 +1614,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `mp_endmatch_votenextmap_wargames_modes` | `String` |  |  | `gamedll` `release` | Modes available for endmatch voting during War Games. Separate names with spaces. |
 | `mp_endmatch_votenextmap_wargames_nummaps` | `Int32` | `3` |  | `gamedll` `release` | Maximum number of maps to include in endmatch voting during War Games |
 | `mp_endmatch_votenextmap_wargames_nummodes` | `Int32` | `1` |  | `gamedll` `release` | Maximum number of other War Games to include in endmatch voting during War Games |
-| `mp_endwarmup_player_count` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `release` | Number of players required to be connected to end warmup early. 0 to require maximum players for mode. |
+| `mp_endwarmup_player_count` | `Int32` | `0` |  | `gamedll` `release` `commandline_enforced` | Number of players required to be connected to end warmup early. 0 to require maximum players for mode. |
 | `mp_equipment_reset_rounds` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Reset all player equipment every N rounds (0 for never) |
 | `mp_fadetoblack` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `notify` `replicated` `defensive` | fade a player's screen to black when he dies |
 | `mp_flinch_punch_scale` | `Float32` | `3.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `cheat` | Scalar for first person view punch when getting hit. |
@@ -1652,8 +1652,8 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `mp_logdetail_items` | `Bool` | `false` |  | `gamedll` `release` | Logs a line any time a player acquires or loses an item. |
 | `mp_logmoney` | `Bool` | `false` |  | `gamedll` `release` | Enables money logging.  Values are: 0=off, 1=on |
 | `mp_match_can_clinch` | `Bool` | `true` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Can a team clinch and end the match by being so far ahead that the other team has no way to catching up? |
-| `mp_match_end_changelevel` | `Bool` | `false` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | At the end of the match, perform a changelevel even if next map is the same |
-| `mp_match_end_restart` | `Bool` | `false` |  | `gamedll` `clientdll` `replicated` `release` | At the end of the match, perform a restart instead of loading a new map |
+| `mp_match_end_changelevel` | `Bool` | `false` |  | `gamedll` `release` `commandline_enforced` | At the end of the match, perform a changelevel even if next map is the same |
+| `mp_match_end_restart` | `Bool` | `false` |  | `gamedll` `release` `commandline_enforced` | At the end of the match, perform a restart instead of loading a new map |
 | `mp_match_restart_delay` | `Int32` | `25` | `1 .. 9999` | `gamedll` `clientdll` `replicated` `release` | Time (in seconds) until a match restarts. |
 | `mp_max_armor` | `Int32` | `2` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Determines the highest level of armor allowed to be purchased. (0) None, (1) Kevlar, (2) Helmet |
 | `mp_maxmoney` | `Int32` | `16000` | `>= 0` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | maximum amount of money allowed in a player's account |
@@ -1754,7 +1754,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `mp_tournament` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `notify` `replicated` `defensive` |  |
 | `mp_tournament_whitelist` | `String` | `item_whitelist.txt` |  | `developmentonly` `gamedll` `defensive` | Specifies the item whitelist file to use. |
 | `mp_use_respawn_waves` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | When set to 1, and that player's team is set to respawn, they will respawn in waves. If set to 2, teams will respawn when the whole team is dead. |
-| `mp_verbose_changelevel_spew` | `Int32` | `1` |  | `gamedll` `clientdll` `replicated` `release` |  |
+| `mp_verbose_changelevel_spew` | `Int32` | `1` |  | `gamedll` `release` |  |
 | `mp_warmup_items_drop_policy` | `Int32` | `247` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Which items can drop during warmup (bitfield, 1=gun, 2=c4, 4=nade, 8=defuser, 16=taser, 32=healthshot) |
 | `mp_warmup_items_nocost` | `Bool` | `false` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Determines whether weapons are free to buy during warmup. |
 | `mp_warmup_items_nocount_policy` | `Int32` | `42` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Which items are unlimited during warmup (bitfield, 1=gun, 2=c4, 4=nade, 8=defuser/kevlar, 16=taser, 32=healthshot) |
@@ -1763,8 +1763,8 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `mp_warmup_online_enabled` | `Bool` | `true` |  | `gamedll` `clientdll` `replicated` `release` | Whether or not to do a warmup period at the start of an online match. |
 | `mp_warmup_pausetimer` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Set to 1 to stay in warmup indefinitely. Set to 0 to resume the timer. |
 | `mp_warmuptime` | `Float32` | `30.000000` | `>= 5.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | How long the warmup period lasts. Changing this value resets warmup. |
-| `mp_warmuptime_all_players_connected` | `Float32` | `0.000000` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Warmup time to use when all players have connected. 0 to disable. |
-| `mp_warmuptime_match_cancelled` | `Float32` | `5.000000` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Warmup time to use when the match will be cancelled (eg. due to a live VAC ban). |
+| `mp_warmuptime_all_players_connected` | `Float32` | `0.000000` |  | `gamedll` `release` `commandline_enforced` | Warmup time to use when all players have connected. 0 to disable. |
+| `mp_warmuptime_match_cancelled` | `Float32` | `5.000000` |  | `gamedll` `release` `commandline_enforced` | Warmup time to use when the match will be cancelled (eg. due to a live VAC ban). |
 | `mp_weapon_next_owner_touch_time` | `Float32` | `1.300000` |  | `gamedll` `cheat` `release` |  |
 | `mp_weapon_prev_owner_touch_time` | `Float32` | `1.500000` |  | `gamedll` `clientdll` `replicated` `cheat` `release` |  |
 | `mp_weapon_self_inflict_amount` | `Float32` | `0.000000` |  | `gamedll` `replicated` `release` `commandline_enforced` | If Set to non-0, will hurt the attacker by the specified fraction of max damage if they miss. |
@@ -2256,8 +2256,8 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `pickup_check_period` | `Float32` | `0.250000` |  | `developmentonly` `gamedll` `defensive` |  |
 | `player0_using_joystick` | `Bool` | `false` |  | `archive` |  |
 | `player_botdifflast_s` | `String` | `2` |  | `clientdll` `archive` `release` |  |
-| `player_competitive_maplist_2v2_10_0_D684D4E1` | `String` | `mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_debris,mg_de_poseidon,mg_de_eldorado,mg_de_overpass` |  | `clientdll` `archive` |  |
-| `player_competitive_maplist_8_10_0_A062AC6A` | `String` | `mg_de_dust2,mg_de_train,mg_de_ancient,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_cs_italy,mg_de_cache,mg_de_boulder,mg_de_anubis,mg_lobby_mapveto,mg_de_fachwerk,mg_cs_shelter,mg_de_overpass` |  | `clientdll` `archive` |  |
+| `player_competitive_maplist_2v2_10_0_7B2B4F7` | `String` | `mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_debris,mg_de_poseidon,mg_de_eldorado,mg_de_overpass,mg_de_cbble` |  | `clientdll` `archive` |  |
+| `player_competitive_maplist_8_10_0_25074C46` | `String` | `mg_de_dust2,mg_de_train,mg_de_ancient,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_cs_italy,mg_de_cache,mg_de_anubis,mg_lobby_mapveto,mg_de_overpass,mg_de_cbble` |  | `clientdll` `archive` |  |
 | `player_debug_off_nav` | `Bool` | `false` |  | `gamedll` `cheat` |  |
 | `player_debug_print_damage` | `Bool` | `false` |  | `gamedll` `cheat` | When true, print amount and type of all damage received by player to console. |
 | `player_nevershow_communityservermessage` | `String` | `0` |  | `clientdll` `archive` `per_user` |  |
@@ -2373,16 +2373,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `r_csgo_enable_translucent_screen_space` | `Bool` | `true` |  | `clientdll` `cheat` |  |
 | `r_csgo_enable_volume_fog` | `Bool` | `false` |  | `developmentonly` `clientdll` |  |
 | `r_csgo_firstpersonlegs_nearz_offset` | `Float32` | `0.100000` |  | `developmentonly` `clientdll` |  |
-| `r_csgo_frost_dry_time` | `Float32` | `20.000000` |  | `developmentonly` `clientdll` | Seconds for the melted frost to dry |
-| `r_csgo_frost_force` | `Int32` | `-1` |  | `developmentonly` `clientdll` | Frost on players, weapons and chickens: -1 = the map's (info_map_parameters frostenabled), 0 = off, 1 = on (outdoors; melts indoors) |
-| `r_csgo_frost_grow_time` | `Float32` | `10.000000` |  | `developmentonly` `clientdll` | Seconds outdoors for frost to grow to full |
-| `r_csgo_frost_heat_barrel_position` | `Float32` | `0.330000` |  | `developmentonly` `clientdll` | Frost: where the barrel heat sits, from the shell eject (0) to the muzzle (1) |
-| `r_csgo_frost_heat_cool_time` | `Float32` | `20.000000` |  | `developmentonly` `clientdll` | Frost: seconds for a hot barrel to cool down |
-| `r_csgo_frost_heat_light_delay` | `Float32` | `1.000000` |  | `developmentonly` `clientdll` | Frost: seconds after a molotov is lit before its rag starts to heat (the flame shows a moment after) |
-| `r_csgo_frost_heat_light_time` | `Float32` | `10.000000` |  | `developmentonly` `clientdll` | Frost: seconds for a lit molotov's rag to reach full heat |
-| `r_csgo_frost_heat_per_shot` | `Float32` | `0.050000` |  | `developmentonly` `clientdll` | Frost: barrel heat per shot (1 = hot enough to clear the whole barrel) |
-| `r_csgo_frost_indoor_distance` | `Float32` | `128.000000` |  | `developmentonly` `clientdll` | Frost: distance under cover (no sky) over which the cold fades out (indoors) |
-| `r_csgo_frost_melt_time` | `Float32` | `10.000000` |  | `developmentonly` `clientdll` | Seconds indoors for full frost to melt |
 | `r_csgo_fsr_enable_mip_bias` | `Bool` | `true` |  | `developmentonly` `clientdll` `defensive` | Apply negative mip bias when rendering with FSR. |
 | `r_csgo_fsr_rcas_sharpness` | `Float32` | `0.250000` |  | `developmentonly` `clientdll` `defensive` | RCAS sharpness when using FSR + RCAS upsample. |
 | `r_csgo_fsr_upsample` | `Int32` | `0` |  | `developmentonly` `clientdll` `defensive` | 0 == bilinear upsampe, 1 == FSR upsample, 2 == FSR + RCAS upsample |

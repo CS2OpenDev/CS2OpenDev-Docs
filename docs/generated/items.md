@@ -4,13 +4,13 @@ title: Items & Economy
 
 # Items & Economy
 
-> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
 
 Economy definitions extracted from the content pack's `items_game.txt`: weapon / equipment items, their prefabs, paint kits (skins), sticker kits, music kits, and the rarity / quality scales.  Name tokens (`#SFUI_*`, `#PaintKit_*`, …) resolve to display strings via the localization table.
 
 ## Items
 
-2060 item definitions.
+2091 item definitions.
 
 | defIndex | Name token | Classname | Prefab | Item type |
 |----------|------------|-----------|--------|-----------|
@@ -1729,6 +1729,21 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 5403 | `#CSGO_CustomPlayer_ctm_st6_variantm` |  | `customplayertradable` |  |
 | 5404 | `#CSGO_CustomPlayer_ctm_st6_varianti` |  | `customplayertradable` |  |
 | 5405 | `#CSGO_CustomPlayer_ctm_st6_variantn` |  | `customplayertradable` |  |
+| 5409 |  |  | `singapore2026_tournament_credits_prefab singapore2026_sellable_item1` |  |
+| 5410 | `#CSGO_TournamentPass_singapore2026` |  | `singapore2026_tournament_pass_prefab singapore2026_tournament_steamtv_items` |  |
+| 5411 | `#CSGO_TournamentPass_singapore2026_pack` |  | `singapore2026_tournament_pass_prefab singapore2026_tournament_steamtv_items` |  |
+| 5412 | `#CSGO_TournamentJournal_singapore2026` |  | `singapore2026_tournament_journal_prefab` |  |
+| 5413 | `#CSGO_TournamentJournal_singapore2026_Silver` |  | `singapore2026_tournament_journal_prefab` |  |
+| 5414 | `#CSGO_TournamentJournal_singapore2026_Gold` |  | `singapore2026_tournament_journal_prefab` |  |
+| 5415 | `#CSGO_TournamentJournal_singapore2026_Crystal` |  | `singapore2026_tournament_journal_prefab` |  |
+| 5416 | `#CSGO_crate_sticker_pack_singapore2026_all` |  | `singapore2026_sticker_capsule_prefab_volatile volatile_pricing_stickercap_2050` |  |
+| 5417 | `#CSGO_crate_sticker_pack_singapore2026_orgs` |  | `singapore2026_sticker_capsule_prefab` |  |
+| 5418 | `#CSGO_crate_signature_pack_singapore2026_group_players` |  | `singapore2026_signature_capsule_prefab` |  |
+| 5419 | `#CSGO_CollectibleCoin_singapore2026_Champion` |  | `majors_trophy` |  |
+| 5420 | `#CSGO_CollectibleCoin_singapore2026_Finalist` |  | `majors_trophy` |  |
+| 5421 | `#CSGO_CollectibleCoin_singapore2026_Semifinalist` |  | `majors_trophy` |  |
+| 5422 | `#CSGO_CollectibleCoin_singapore2026_Quarterfinalist` |  | `majors_trophy` |  |
+| 5423 | `#CSGO_crate_sticker_pack_singapore2026_all` |  | `singapore2026_sticker_capsule_prefab_volatile volatile_pricing_souvenirs_2050` |  |
 | 5500 | `#CSGO_CustomPlayer_tm_balkan_variantf` |  | `customplayertradable` |  |
 | 5501 | `#CSGO_CustomPlayer_tm_balkan_varianti` |  | `customplayertradable` |  |
 | 5502 | `#CSGO_CustomPlayer_tm_balkan_variantg` |  | `customplayertradable` |  |
@@ -1886,6 +1901,22 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 7042 | `#coupon_jackass_sticker_capsule` |  | `coupon_jackass_capsule_prefab` |  |
 | 7043 | `#coupon_starjunk95_01` |  | `coupon_prefab` |  |
 | 7044 | `#coupon_starjunk95_01_stattrak` |  | `coupon_prefab` |  |
+| 7045 | `#coupon_alleycvt_01` |  | `coupon_prefab` |  |
+| 7046 | `#coupon_alleycvt_01_stattrak` |  | `coupon_prefab` |  |
+| 7047 | `#coupon_arcando_01` |  | `coupon_prefab` |  |
+| 7048 | `#coupon_arcando_01_stattrak` |  | `coupon_prefab` |  |
+| 7049 | `#coupon_djdiesel_01` |  | `coupon_prefab` |  |
+| 7050 | `#coupon_djdiesel_01_stattrak` |  | `coupon_prefab` |  |
+| 7051 | `#coupon_fool_01` |  | `coupon_prefab` |  |
+| 7052 | `#coupon_fool_01_stattrak` |  | `coupon_prefab` |  |
+| 7053 | `#coupon_noisestorm_01` |  | `coupon_prefab` |  |
+| 7054 | `#coupon_noisestorm_01_stattrak` |  | `coupon_prefab` |  |
+| 7055 | `#coupon_pegboardnerds_01` |  | `coupon_prefab` |  |
+| 7056 | `#coupon_pegboardnerds_01_stattrak` |  | `coupon_prefab` |  |
+| 7057 | `#coupon_tristam_braken_01` |  | `coupon_prefab` |  |
+| 7058 | `#coupon_tristam_braken_01_stattrak` |  | `coupon_prefab` |  |
+| 7059 | `#coupon_vicetone_01` |  | `coupon_prefab` |  |
+| 7060 | `#coupon_vicetone_01_stattrak` |  | `coupon_prefab` |  |
 | 20000 | `#coupon_bossyburger` |  | `coupon_prefab` |  |
 | 20001 | `#coupon_catcall` |  | `coupon_prefab` |  |
 | 20002 | `#coupon_chickenstrike` |  | `coupon_prefab` |  |
@@ -2077,7 +2108,7 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 
 ## Paint Kits — skins
 
-1481 paint kits.
+1487 paint kits.
 
 | defIndex | Name | Description tag |
 |----------|------|----------------|
@@ -3489,6 +3520,12 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 1475 | `sawedoff_lunar_wyrm` | `#PaintKit_sawedoff_lunar_wyrm_Tag` |
 | 1476 | `hye_spyglitch_green_m4a1s` | `#PaintKit_hye_spyglitch_Tag` |
 | 1477 | `famas_corp_defense` | `#PaintKit_famas_corp_defense_Tag` |
+| 1478 | `hy_ddpat_knife` | `#PaintKit_hy_ddpat_Tag` |
+| 1479 | `hy_webs_knife` | `#PaintKit_hy_webs_Tag` |
+| 1480 | `aq_blued_knife` | `#PaintKit_aq_blued_Tag` |
+| 1481 | `aq_forced_knife` | `#PaintKit_aq_forced_Tag` |
+| 1482 | `aq_oiled_knife` | `#PaintKit_aq_oiled_Tag` |
+| 1483 | `hy_forest_boreal_knife` | `#PaintKit_hy_forest_boreal_Tag` |
 | 9001 | `workshop_default` |  |
 | 10006 | `bloodhound_black_silver` | `#PaintKit_bloodhound_black_silver_tag` |
 | 10007 | `bloodhound_snakeskin_brass` | `#PaintKit_bloodhound_snakeskin_brass_tag` |
@@ -3565,7 +3602,7 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 
 ## Sticker Kits
 
-11789 sticker kits.
+12595 sticker kits.
 
 | defIndex | Name | Item name token | Description |
 |----------|------|-----------------|-------------|
@@ -5252,6 +5289,7 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 1693 | `de_nuke_gold` | `#StickerKit_de_nuke_gold` | `#StickerKit_desc_de_nuke_gold` |
 | 1694 | `de_overpass_gold` | `#StickerKit_de_overpass_gold` | `#StickerKit_desc_de_overpass_gold` |
 | 1695 | `de_vertigo_gold` | `#StickerKit_de_vertigo_gold` | `#StickerKit_desc_de_vertigo_gold` |
+| 1696 | `de_cache_gold` | `#StickerKit_de_cache_gold` | `#StickerKit_desc_de_cache_gold` |
 | 1697 | `spray_std_axes_crossed` | `#SprayKit_std_axes_crossed` | `#SprayKit_desc_std_axes_crossed` |
 | 1698 | `spray_std_bubble_dead` | `#SprayKit_std_bubble_dead` | `#SprayKit_desc_std_bubble_dead` |
 | 1699 | `spray_std_chess_king` | `#SprayKit_std_chess_king` | `#SprayKit_desc_std_chess_king` |
@@ -15358,10 +15396,815 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 11811 | `cologne2026_signature_nettik_foil_ranking` | `#StickerKit_cologne2026_signature_nettik_foil_ranking` | `#StickerKit_desc_cologne2026_signature_nettik_foil` |
 | 11812 | `cologne2026_signature_nettik_holo_ranking` | `#StickerKit_cologne2026_signature_nettik_holo_ranking` | `#StickerKit_desc_cologne2026_signature_nettik_holo` |
 | 11813 | `cologne2026_signature_nettik_gold_ranking` | `#StickerKit_cologne2026_signature_nettik_gold_ranking` | `#StickerKit_desc_cologne2026_signature_nettik_gold` |
+| 11814 | `singapore2026_team_mouz` | `#StickerKit_singapore2026_team_mouz` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11815 | `singapore2026_team_mouz_foil` | `#StickerKit_singapore2026_team_mouz_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11816 | `singapore2026_team_mouz_holo` | `#StickerKit_singapore2026_team_mouz_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11817 | `singapore2026_team_mouz_gold` | `#StickerKit_singapore2026_team_mouz_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11818 | `singapore2026_team_vita` | `#StickerKit_singapore2026_team_vita` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11819 | `singapore2026_team_vita_foil` | `#StickerKit_singapore2026_team_vita_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11820 | `singapore2026_team_vita_holo` | `#StickerKit_singapore2026_team_vita_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11821 | `singapore2026_team_vita_gold` | `#StickerKit_singapore2026_team_vita_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11822 | `singapore2026_team_furi` | `#StickerKit_singapore2026_team_furi` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11823 | `singapore2026_team_furi_foil` | `#StickerKit_singapore2026_team_furi_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11824 | `singapore2026_team_furi_holo` | `#StickerKit_singapore2026_team_furi_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11825 | `singapore2026_team_furi_gold` | `#StickerKit_singapore2026_team_furi_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11826 | `singapore2026_team_aura` | `#StickerKit_singapore2026_team_aura` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11827 | `singapore2026_team_aura_foil` | `#StickerKit_singapore2026_team_aura_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11828 | `singapore2026_team_aura_holo` | `#StickerKit_singapore2026_team_aura_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11829 | `singapore2026_team_aura_gold` | `#StickerKit_singapore2026_team_aura_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11830 | `singapore2026_team_spir` | `#StickerKit_singapore2026_team_spir` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11831 | `singapore2026_team_spir_foil` | `#StickerKit_singapore2026_team_spir_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11832 | `singapore2026_team_spir_holo` | `#StickerKit_singapore2026_team_spir_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11833 | `singapore2026_team_spir_gold` | `#StickerKit_singapore2026_team_spir_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11834 | `singapore2026_team_bbt` | `#StickerKit_singapore2026_team_bbt` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11835 | `singapore2026_team_bbt_foil` | `#StickerKit_singapore2026_team_bbt_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11836 | `singapore2026_team_bbt_holo` | `#StickerKit_singapore2026_team_bbt_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11837 | `singapore2026_team_bbt_gold` | `#StickerKit_singapore2026_team_bbt_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11838 | `singapore2026_team_fal` | `#StickerKit_singapore2026_team_fal` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11839 | `singapore2026_team_fal_foil` | `#StickerKit_singapore2026_team_fal_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11840 | `singapore2026_team_fal_holo` | `#StickerKit_singapore2026_team_fal_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11841 | `singapore2026_team_fal_gold` | `#StickerKit_singapore2026_team_fal_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11842 | `singapore2026_team_fut` | `#StickerKit_singapore2026_team_fut` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11843 | `singapore2026_team_fut_foil` | `#StickerKit_singapore2026_team_fut_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11844 | `singapore2026_team_fut_holo` | `#StickerKit_singapore2026_team_fut_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11845 | `singapore2026_team_fut_gold` | `#StickerKit_singapore2026_team_fut_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11846 | `singapore2026_team_lgcy` | `#StickerKit_singapore2026_team_lgcy` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11847 | `singapore2026_team_lgcy_foil` | `#StickerKit_singapore2026_team_lgcy_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11848 | `singapore2026_team_lgcy_holo` | `#StickerKit_singapore2026_team_lgcy_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11849 | `singapore2026_team_lgcy_gold` | `#StickerKit_singapore2026_team_lgcy_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11850 | `singapore2026_team_nemi` | `#StickerKit_singapore2026_team_nemi` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11851 | `singapore2026_team_nemi_foil` | `#StickerKit_singapore2026_team_nemi_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11852 | `singapore2026_team_nemi_holo` | `#StickerKit_singapore2026_team_nemi_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11853 | `singapore2026_team_nemi_gold` | `#StickerKit_singapore2026_team_nemi_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11854 | `singapore2026_team_g2` | `#StickerKit_singapore2026_team_g2` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11855 | `singapore2026_team_g2_foil` | `#StickerKit_singapore2026_team_g2_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11856 | `singapore2026_team_g2_holo` | `#StickerKit_singapore2026_team_g2_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11857 | `singapore2026_team_g2_gold` | `#StickerKit_singapore2026_team_g2_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11858 | `singapore2026_team_one` | `#StickerKit_singapore2026_team_one` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11859 | `singapore2026_team_one_foil` | `#StickerKit_singapore2026_team_one_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11860 | `singapore2026_team_one_holo` | `#StickerKit_singapore2026_team_one_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11861 | `singapore2026_team_one_gold` | `#StickerKit_singapore2026_team_one_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11862 | `singapore2026_team_navi` | `#StickerKit_singapore2026_team_navi` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11863 | `singapore2026_team_navi_foil` | `#StickerKit_singapore2026_team_navi_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11864 | `singapore2026_team_navi_holo` | `#StickerKit_singapore2026_team_navi_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11865 | `singapore2026_team_navi_gold` | `#StickerKit_singapore2026_team_navi_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11866 | `singapore2026_team_astr` | `#StickerKit_singapore2026_team_astr` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11867 | `singapore2026_team_astr_foil` | `#StickerKit_singapore2026_team_astr_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11868 | `singapore2026_team_astr_holo` | `#StickerKit_singapore2026_team_astr_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11869 | `singapore2026_team_astr_gold` | `#StickerKit_singapore2026_team_astr_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11870 | `singapore2026_team_nip` | `#StickerKit_singapore2026_team_nip` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11871 | `singapore2026_team_nip_foil` | `#StickerKit_singapore2026_team_nip_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11872 | `singapore2026_team_nip_holo` | `#StickerKit_singapore2026_team_nip_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11873 | `singapore2026_team_nip_gold` | `#StickerKit_singapore2026_team_nip_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11874 | `singapore2026_team_mngz` | `#StickerKit_singapore2026_team_mngz` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11875 | `singapore2026_team_mngz_foil` | `#StickerKit_singapore2026_team_mngz_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11876 | `singapore2026_team_mngz_holo` | `#StickerKit_singapore2026_team_mngz_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11877 | `singapore2026_team_mngz_gold` | `#StickerKit_singapore2026_team_mngz_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11878 | `singapore2026_team_pvis` | `#StickerKit_singapore2026_team_pvis` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11879 | `singapore2026_team_pvis_foil` | `#StickerKit_singapore2026_team_pvis_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11880 | `singapore2026_team_pvis_holo` | `#StickerKit_singapore2026_team_pvis_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11881 | `singapore2026_team_pvis_gold` | `#StickerKit_singapore2026_team_pvis_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11882 | `singapore2026_team_hero` | `#StickerKit_singapore2026_team_hero` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11883 | `singapore2026_team_hero_foil` | `#StickerKit_singapore2026_team_hero_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11884 | `singapore2026_team_hero_holo` | `#StickerKit_singapore2026_team_hero_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11885 | `singapore2026_team_hero_gold` | `#StickerKit_singapore2026_team_hero_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11886 | `singapore2026_team_mibr` | `#StickerKit_singapore2026_team_mibr` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11887 | `singapore2026_team_mibr_foil` | `#StickerKit_singapore2026_team_mibr_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11888 | `singapore2026_team_mibr_holo` | `#StickerKit_singapore2026_team_mibr_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11889 | `singapore2026_team_mibr_gold` | `#StickerKit_singapore2026_team_mibr_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11890 | `singapore2026_team_faze` | `#StickerKit_singapore2026_team_faze` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11891 | `singapore2026_team_faze_foil` | `#StickerKit_singapore2026_team_faze_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11892 | `singapore2026_team_faze_holo` | `#StickerKit_singapore2026_team_faze_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11893 | `singapore2026_team_faze_gold` | `#StickerKit_singapore2026_team_faze_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11894 | `singapore2026_team_liq` | `#StickerKit_singapore2026_team_liq` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11895 | `singapore2026_team_liq_foil` | `#StickerKit_singapore2026_team_liq_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11896 | `singapore2026_team_liq_holo` | `#StickerKit_singapore2026_team_liq_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11897 | `singapore2026_team_liq_gold` | `#StickerKit_singapore2026_team_liq_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11898 | `singapore2026_team_eter` | `#StickerKit_singapore2026_team_eter` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11899 | `singapore2026_team_eter_foil` | `#StickerKit_singapore2026_team_eter_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11900 | `singapore2026_team_eter_holo` | `#StickerKit_singapore2026_team_eter_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11901 | `singapore2026_team_eter_gold` | `#StickerKit_singapore2026_team_eter_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11902 | `singapore2026_team_thv` | `#StickerKit_singapore2026_team_thv` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11903 | `singapore2026_team_thv_foil` | `#StickerKit_singapore2026_team_thv_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11904 | `singapore2026_team_thv_holo` | `#StickerKit_singapore2026_team_thv_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11905 | `singapore2026_team_thv_gold` | `#StickerKit_singapore2026_team_thv_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11906 | `singapore2026_team_nine` | `#StickerKit_singapore2026_team_nine` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11907 | `singapore2026_team_nine_foil` | `#StickerKit_singapore2026_team_nine_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11908 | `singapore2026_team_nine_holo` | `#StickerKit_singapore2026_team_nine_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11909 | `singapore2026_team_nine_gold` | `#StickerKit_singapore2026_team_nine_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11910 | `singapore2026_team_m80` | `#StickerKit_singapore2026_team_m80` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11911 | `singapore2026_team_m80_foil` | `#StickerKit_singapore2026_team_m80_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11912 | `singapore2026_team_m80_holo` | `#StickerKit_singapore2026_team_m80_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11913 | `singapore2026_team_m80_gold` | `#StickerKit_singapore2026_team_m80_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11914 | `singapore2026_team_dend` | `#StickerKit_singapore2026_team_dend` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11915 | `singapore2026_team_dend_foil` | `#StickerKit_singapore2026_team_dend_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11916 | `singapore2026_team_dend_holo` | `#StickerKit_singapore2026_team_dend_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11917 | `singapore2026_team_dend_gold` | `#StickerKit_singapore2026_team_dend_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11918 | `singapore2026_team_imp` | `#StickerKit_singapore2026_team_imp` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11919 | `singapore2026_team_imp_foil` | `#StickerKit_singapore2026_team_imp_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11920 | `singapore2026_team_imp_holo` | `#StickerKit_singapore2026_team_imp_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11921 | `singapore2026_team_imp_gold` | `#StickerKit_singapore2026_team_imp_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11922 | `singapore2026_team_wcrd` | `#StickerKit_singapore2026_team_wcrd` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11923 | `singapore2026_team_wcrd_foil` | `#StickerKit_singapore2026_team_wcrd_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11924 | `singapore2026_team_wcrd_holo` | `#StickerKit_singapore2026_team_wcrd_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11925 | `singapore2026_team_wcrd_gold` | `#StickerKit_singapore2026_team_wcrd_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11926 | `singapore2026_team_gosh` | `#StickerKit_singapore2026_team_gosh` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11927 | `singapore2026_team_gosh_foil` | `#StickerKit_singapore2026_team_gosh_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11928 | `singapore2026_team_gosh_holo` | `#StickerKit_singapore2026_team_gosh_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11929 | `singapore2026_team_gosh_gold` | `#StickerKit_singapore2026_team_gosh_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11930 | `singapore2026_team_fq` | `#StickerKit_singapore2026_team_fq` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11931 | `singapore2026_team_fq_foil` | `#StickerKit_singapore2026_team_fq_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11932 | `singapore2026_team_fq_holo` | `#StickerKit_singapore2026_team_fq_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11933 | `singapore2026_team_fq_gold` | `#StickerKit_singapore2026_team_fq_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11934 | `singapore2026_team_chin` | `#StickerKit_singapore2026_team_chin` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11935 | `singapore2026_team_chin_foil` | `#StickerKit_singapore2026_team_chin_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11936 | `singapore2026_team_chin_holo` | `#StickerKit_singapore2026_team_chin_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11937 | `singapore2026_team_chin_gold` | `#StickerKit_singapore2026_team_chin_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11938 | `singapore2026_team_lynn` | `#StickerKit_singapore2026_team_lynn` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11939 | `singapore2026_team_lynn_foil` | `#StickerKit_singapore2026_team_lynn_foil` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11940 | `singapore2026_team_lynn_holo` | `#StickerKit_singapore2026_team_lynn_holo` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11941 | `singapore2026_team_lynn_gold` | `#StickerKit_singapore2026_team_lynn_gold` | `#EventItemDesc_singapore2026_sticker_team` |
+| 11942 | `singapore2026_team_pgl` | `#StickerKit_singapore2026_team_pgl` | `#EventItemDesc_singapore2026_sticker_org` |
+| 11943 | `singapore2026_team_pgl_foil` | `#StickerKit_singapore2026_team_pgl_foil` | `#EventItemDesc_singapore2026_sticker_org` |
+| 11944 | `singapore2026_team_pgl_holo` | `#StickerKit_singapore2026_team_pgl_holo` | `#EventItemDesc_singapore2026_sticker_org` |
+| 11945 | `singapore2026_team_pgl_gold` | `#StickerKit_singapore2026_team_pgl_gold` | `#EventItemDesc_singapore2026_sticker_org` |
+| 11946 | `singapore2026_team_mouz_graffiti` | `#StickerKit_singapore2026_team_mouz` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11947 | `singapore2026_team_vita_graffiti` | `#StickerKit_singapore2026_team_vita` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11948 | `singapore2026_team_furi_graffiti` | `#StickerKit_singapore2026_team_furi` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11949 | `singapore2026_team_aura_graffiti` | `#StickerKit_singapore2026_team_aura` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11950 | `singapore2026_team_spir_graffiti` | `#StickerKit_singapore2026_team_spir` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11951 | `singapore2026_team_bbt_graffiti` | `#StickerKit_singapore2026_team_bbt` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11952 | `singapore2026_team_fal_graffiti` | `#StickerKit_singapore2026_team_fal` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11953 | `singapore2026_team_fut_graffiti` | `#StickerKit_singapore2026_team_fut` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11954 | `singapore2026_team_lgcy_graffiti` | `#StickerKit_singapore2026_team_lgcy` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11955 | `singapore2026_team_nemi_graffiti` | `#StickerKit_singapore2026_team_nemi` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11956 | `singapore2026_team_g2_graffiti` | `#StickerKit_singapore2026_team_g2` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11957 | `singapore2026_team_one_graffiti` | `#StickerKit_singapore2026_team_one` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11958 | `singapore2026_team_navi_graffiti` | `#StickerKit_singapore2026_team_navi` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11959 | `singapore2026_team_astr_graffiti` | `#StickerKit_singapore2026_team_astr` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11960 | `singapore2026_team_nip_graffiti` | `#StickerKit_singapore2026_team_nip` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11961 | `singapore2026_team_mngz_graffiti` | `#StickerKit_singapore2026_team_mngz` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11962 | `singapore2026_team_pvis_graffiti` | `#StickerKit_singapore2026_team_pvis` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11963 | `singapore2026_team_hero_graffiti` | `#StickerKit_singapore2026_team_hero` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11964 | `singapore2026_team_mibr_graffiti` | `#StickerKit_singapore2026_team_mibr` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11965 | `singapore2026_team_faze_graffiti` | `#StickerKit_singapore2026_team_faze` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11966 | `singapore2026_team_liq_graffiti` | `#StickerKit_singapore2026_team_liq` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11967 | `singapore2026_team_eter_graffiti` | `#StickerKit_singapore2026_team_eter` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11968 | `singapore2026_team_thv_graffiti` | `#StickerKit_singapore2026_team_thv` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11969 | `singapore2026_team_nine_graffiti` | `#StickerKit_singapore2026_team_nine` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11970 | `singapore2026_team_m80_graffiti` | `#StickerKit_singapore2026_team_m80` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11971 | `singapore2026_team_dend_graffiti` | `#StickerKit_singapore2026_team_dend` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11972 | `singapore2026_team_imp_graffiti` | `#StickerKit_singapore2026_team_imp` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11973 | `singapore2026_team_wcrd_graffiti` | `#StickerKit_singapore2026_team_wcrd` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11974 | `singapore2026_team_gosh_graffiti` | `#StickerKit_singapore2026_team_gosh` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11975 | `singapore2026_team_fq_graffiti` | `#StickerKit_singapore2026_team_fq` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11976 | `singapore2026_team_chin_graffiti` | `#StickerKit_singapore2026_team_chin` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11977 | `singapore2026_team_lynn_graffiti` | `#StickerKit_singapore2026_team_lynn` | `#EventItemDesc_singapore2026_graffiti_team` |
+| 11978 | `singapore2026_team_pgl_graffiti` | `#StickerKit_singapore2026_team_pgl` | `#EventItemDesc_singapore2026_graffiti_org` |
+| 11979 | `singapore2026_signature_pr` | `#StickerKit_singapore2026_signature_pr` | `#StickerKit_desc_singapore2026_signature_pr` |
+| 11980 | `singapore2026_signature_pr_foil` | `#StickerKit_singapore2026_signature_pr_foil` | `#StickerKit_desc_singapore2026_signature_pr_foil` |
+| 11981 | `singapore2026_signature_pr_holo` | `#StickerKit_singapore2026_signature_pr_holo` | `#StickerKit_desc_singapore2026_signature_pr_holo` |
+| 11982 | `singapore2026_signature_pr_gold` | `#StickerKit_singapore2026_signature_pr_gold` | `#StickerKit_desc_singapore2026_signature_pr_gold` |
+| 11983 | `singapore2026_signature_spinx` | `#StickerKit_singapore2026_signature_spinx` | `#StickerKit_desc_singapore2026_signature_spinx` |
+| 11984 | `singapore2026_signature_spinx_foil` | `#StickerKit_singapore2026_signature_spinx_foil` | `#StickerKit_desc_singapore2026_signature_spinx_foil` |
+| 11985 | `singapore2026_signature_spinx_holo` | `#StickerKit_singapore2026_signature_spinx_holo` | `#StickerKit_desc_singapore2026_signature_spinx_holo` |
+| 11986 | `singapore2026_signature_spinx_gold` | `#StickerKit_singapore2026_signature_spinx_gold` | `#StickerKit_desc_singapore2026_signature_spinx_gold` |
+| 11987 | `singapore2026_signature_torzsi` | `#StickerKit_singapore2026_signature_torzsi` | `#StickerKit_desc_singapore2026_signature_torzsi` |
+| 11988 | `singapore2026_signature_torzsi_foil` | `#StickerKit_singapore2026_signature_torzsi_foil` | `#StickerKit_desc_singapore2026_signature_torzsi_foil` |
+| 11989 | `singapore2026_signature_torzsi_holo` | `#StickerKit_singapore2026_signature_torzsi_holo` | `#StickerKit_desc_singapore2026_signature_torzsi_holo` |
+| 11990 | `singapore2026_signature_torzsi_gold` | `#StickerKit_singapore2026_signature_torzsi_gold` | `#StickerKit_desc_singapore2026_signature_torzsi_gold` |
+| 11991 | `singapore2026_signature_xelex` | `#StickerKit_singapore2026_signature_xelex` | `#StickerKit_desc_singapore2026_signature_xelex` |
+| 11992 | `singapore2026_signature_xelex_foil` | `#StickerKit_singapore2026_signature_xelex_foil` | `#StickerKit_desc_singapore2026_signature_xelex_foil` |
+| 11993 | `singapore2026_signature_xelex_holo` | `#StickerKit_singapore2026_signature_xelex_holo` | `#StickerKit_desc_singapore2026_signature_xelex_holo` |
+| 11994 | `singapore2026_signature_xelex_gold` | `#StickerKit_singapore2026_signature_xelex_gold` | `#StickerKit_desc_singapore2026_signature_xelex_gold` |
+| 11995 | `singapore2026_signature_xertion` | `#StickerKit_singapore2026_signature_xertion` | `#StickerKit_desc_singapore2026_signature_xertion` |
+| 11996 | `singapore2026_signature_xertion_foil` | `#StickerKit_singapore2026_signature_xertion_foil` | `#StickerKit_desc_singapore2026_signature_xertion_foil` |
+| 11997 | `singapore2026_signature_xertion_holo` | `#StickerKit_singapore2026_signature_xertion_holo` | `#StickerKit_desc_singapore2026_signature_xertion_holo` |
+| 11998 | `singapore2026_signature_xertion_gold` | `#StickerKit_singapore2026_signature_xertion_gold` | `#StickerKit_desc_singapore2026_signature_xertion_gold` |
+| 11999 | `singapore2026_signature_flamez` | `#StickerKit_singapore2026_signature_flamez` | `#StickerKit_desc_singapore2026_signature_flamez` |
+| 12000 | `singapore2026_signature_flamez_foil` | `#StickerKit_singapore2026_signature_flamez_foil` | `#StickerKit_desc_singapore2026_signature_flamez_foil` |
+| 12001 | `singapore2026_signature_flamez_holo` | `#StickerKit_singapore2026_signature_flamez_holo` | `#StickerKit_desc_singapore2026_signature_flamez_holo` |
+| 12002 | `singapore2026_signature_flamez_gold` | `#StickerKit_singapore2026_signature_flamez_gold` | `#StickerKit_desc_singapore2026_signature_flamez_gold` |
+| 12003 | `singapore2026_signature_jl` | `#StickerKit_singapore2026_signature_jl` | `#StickerKit_desc_singapore2026_signature_jl` |
+| 12004 | `singapore2026_signature_jl_foil` | `#StickerKit_singapore2026_signature_jl_foil` | `#StickerKit_desc_singapore2026_signature_jl_foil` |
+| 12005 | `singapore2026_signature_jl_holo` | `#StickerKit_singapore2026_signature_jl_holo` | `#StickerKit_desc_singapore2026_signature_jl_holo` |
+| 12006 | `singapore2026_signature_jl_gold` | `#StickerKit_singapore2026_signature_jl_gold` | `#StickerKit_desc_singapore2026_signature_jl_gold` |
+| 12007 | `singapore2026_signature_mezii` | `#StickerKit_singapore2026_signature_mezii` | `#StickerKit_desc_singapore2026_signature_mezii` |
+| 12008 | `singapore2026_signature_mezii_foil` | `#StickerKit_singapore2026_signature_mezii_foil` | `#StickerKit_desc_singapore2026_signature_mezii_foil` |
+| 12009 | `singapore2026_signature_mezii_holo` | `#StickerKit_singapore2026_signature_mezii_holo` | `#StickerKit_desc_singapore2026_signature_mezii_holo` |
+| 12010 | `singapore2026_signature_mezii_gold` | `#StickerKit_singapore2026_signature_mezii_gold` | `#StickerKit_desc_singapore2026_signature_mezii_gold` |
+| 12011 | `singapore2026_signature_ropz` | `#StickerKit_singapore2026_signature_ropz` | `#StickerKit_desc_singapore2026_signature_ropz` |
+| 12012 | `singapore2026_signature_ropz_foil` | `#StickerKit_singapore2026_signature_ropz_foil` | `#StickerKit_desc_singapore2026_signature_ropz_foil` |
+| 12013 | `singapore2026_signature_ropz_holo` | `#StickerKit_singapore2026_signature_ropz_holo` | `#StickerKit_desc_singapore2026_signature_ropz_holo` |
+| 12014 | `singapore2026_signature_ropz_gold` | `#StickerKit_singapore2026_signature_ropz_gold` | `#StickerKit_desc_singapore2026_signature_ropz_gold` |
+| 12015 | `singapore2026_signature_zywoo` | `#StickerKit_singapore2026_signature_zywoo` | `#StickerKit_desc_singapore2026_signature_zywoo` |
+| 12016 | `singapore2026_signature_zywoo_foil` | `#StickerKit_singapore2026_signature_zywoo_foil` | `#StickerKit_desc_singapore2026_signature_zywoo_foil` |
+| 12017 | `singapore2026_signature_zywoo_holo` | `#StickerKit_singapore2026_signature_zywoo_holo` | `#StickerKit_desc_singapore2026_signature_zywoo_holo` |
+| 12018 | `singapore2026_signature_zywoo_gold` | `#StickerKit_singapore2026_signature_zywoo_gold` | `#StickerKit_desc_singapore2026_signature_zywoo_gold` |
+| 12019 | `singapore2026_signature_fallen` | `#StickerKit_singapore2026_signature_fallen` | `#StickerKit_desc_singapore2026_signature_fallen` |
+| 12020 | `singapore2026_signature_fallen_foil` | `#StickerKit_singapore2026_signature_fallen_foil` | `#StickerKit_desc_singapore2026_signature_fallen_foil` |
+| 12021 | `singapore2026_signature_fallen_holo` | `#StickerKit_singapore2026_signature_fallen_holo` | `#StickerKit_desc_singapore2026_signature_fallen_holo` |
+| 12022 | `singapore2026_signature_fallen_gold` | `#StickerKit_singapore2026_signature_fallen_gold` | `#StickerKit_desc_singapore2026_signature_fallen_gold` |
+| 12023 | `singapore2026_signature_kscerato` | `#StickerKit_singapore2026_signature_kscerato` | `#StickerKit_desc_singapore2026_signature_kscerato` |
+| 12024 | `singapore2026_signature_kscerato_foil` | `#StickerKit_singapore2026_signature_kscerato_foil` | `#StickerKit_desc_singapore2026_signature_kscerato_foil` |
+| 12025 | `singapore2026_signature_kscerato_holo` | `#StickerKit_singapore2026_signature_kscerato_holo` | `#StickerKit_desc_singapore2026_signature_kscerato_holo` |
+| 12026 | `singapore2026_signature_kscerato_gold` | `#StickerKit_singapore2026_signature_kscerato_gold` | `#StickerKit_desc_singapore2026_signature_kscerato_gold` |
+| 12027 | `singapore2026_signature_molodoy` | `#StickerKit_singapore2026_signature_molodoy` | `#StickerKit_desc_singapore2026_signature_molodoy` |
+| 12028 | `singapore2026_signature_molodoy_foil` | `#StickerKit_singapore2026_signature_molodoy_foil` | `#StickerKit_desc_singapore2026_signature_molodoy_foil` |
+| 12029 | `singapore2026_signature_molodoy_holo` | `#StickerKit_singapore2026_signature_molodoy_holo` | `#StickerKit_desc_singapore2026_signature_molodoy_holo` |
+| 12030 | `singapore2026_signature_molodoy_gold` | `#StickerKit_singapore2026_signature_molodoy_gold` | `#StickerKit_desc_singapore2026_signature_molodoy_gold` |
+| 12031 | `singapore2026_signature_yekindar` | `#StickerKit_singapore2026_signature_yekindar` | `#StickerKit_desc_singapore2026_signature_yekindar` |
+| 12032 | `singapore2026_signature_yekindar_foil` | `#StickerKit_singapore2026_signature_yekindar_foil` | `#StickerKit_desc_singapore2026_signature_yekindar_foil` |
+| 12033 | `singapore2026_signature_yekindar_holo` | `#StickerKit_singapore2026_signature_yekindar_holo` | `#StickerKit_desc_singapore2026_signature_yekindar_holo` |
+| 12034 | `singapore2026_signature_yekindar_gold` | `#StickerKit_singapore2026_signature_yekindar_gold` | `#StickerKit_desc_singapore2026_signature_yekindar_gold` |
+| 12035 | `singapore2026_signature_yuurih` | `#StickerKit_singapore2026_signature_yuurih` | `#StickerKit_desc_singapore2026_signature_yuurih` |
+| 12036 | `singapore2026_signature_yuurih_foil` | `#StickerKit_singapore2026_signature_yuurih_foil` | `#StickerKit_desc_singapore2026_signature_yuurih_foil` |
+| 12037 | `singapore2026_signature_yuurih_holo` | `#StickerKit_singapore2026_signature_yuurih_holo` | `#StickerKit_desc_singapore2026_signature_yuurih_holo` |
+| 12038 | `singapore2026_signature_yuurih_gold` | `#StickerKit_singapore2026_signature_yuurih_gold` | `#StickerKit_desc_singapore2026_signature_yuurih_gold` |
+| 12039 | `singapore2026_signature_jimpphat` | `#StickerKit_singapore2026_signature_jimpphat` | `#StickerKit_desc_singapore2026_signature_jimpphat` |
+| 12040 | `singapore2026_signature_jimpphat_foil` | `#StickerKit_singapore2026_signature_jimpphat_foil` | `#StickerKit_desc_singapore2026_signature_jimpphat_foil` |
+| 12041 | `singapore2026_signature_jimpphat_holo` | `#StickerKit_singapore2026_signature_jimpphat_holo` | `#StickerKit_desc_singapore2026_signature_jimpphat_holo` |
+| 12042 | `singapore2026_signature_jimpphat_gold` | `#StickerKit_singapore2026_signature_jimpphat_gold` | `#StickerKit_desc_singapore2026_signature_jimpphat_gold` |
+| 12043 | `singapore2026_signature_kyxsan` | `#StickerKit_singapore2026_signature_kyxsan` | `#StickerKit_desc_singapore2026_signature_kyxsan` |
+| 12044 | `singapore2026_signature_kyxsan_foil` | `#StickerKit_singapore2026_signature_kyxsan_foil` | `#StickerKit_desc_singapore2026_signature_kyxsan_foil` |
+| 12045 | `singapore2026_signature_kyxsan_holo` | `#StickerKit_singapore2026_signature_kyxsan_holo` | `#StickerKit_desc_singapore2026_signature_kyxsan_holo` |
+| 12046 | `singapore2026_signature_kyxsan_gold` | `#StickerKit_singapore2026_signature_kyxsan_gold` | `#StickerKit_desc_singapore2026_signature_kyxsan_gold` |
+| 12047 | `singapore2026_signature_wicadia` | `#StickerKit_singapore2026_signature_wicadia` | `#StickerKit_desc_singapore2026_signature_wicadia` |
+| 12048 | `singapore2026_signature_wicadia_foil` | `#StickerKit_singapore2026_signature_wicadia_foil` | `#StickerKit_desc_singapore2026_signature_wicadia_foil` |
+| 12049 | `singapore2026_signature_wicadia_holo` | `#StickerKit_singapore2026_signature_wicadia_holo` | `#StickerKit_desc_singapore2026_signature_wicadia_holo` |
+| 12050 | `singapore2026_signature_wicadia_gold` | `#StickerKit_singapore2026_signature_wicadia_gold` | `#StickerKit_desc_singapore2026_signature_wicadia_gold` |
+| 12051 | `singapore2026_signature_woxic` | `#StickerKit_singapore2026_signature_woxic` | `#StickerKit_desc_singapore2026_signature_woxic` |
+| 12052 | `singapore2026_signature_woxic_foil` | `#StickerKit_singapore2026_signature_woxic_foil` | `#StickerKit_desc_singapore2026_signature_woxic_foil` |
+| 12053 | `singapore2026_signature_woxic_holo` | `#StickerKit_singapore2026_signature_woxic_holo` | `#StickerKit_desc_singapore2026_signature_woxic_holo` |
+| 12054 | `singapore2026_signature_woxic_gold` | `#StickerKit_singapore2026_signature_woxic_gold` | `#StickerKit_desc_singapore2026_signature_woxic_gold` |
+| 12055 | `singapore2026_signature_xantares` | `#StickerKit_singapore2026_signature_xantares` | `#StickerKit_desc_singapore2026_signature_xantares` |
+| 12056 | `singapore2026_signature_xantares_foil` | `#StickerKit_singapore2026_signature_xantares_foil` | `#StickerKit_desc_singapore2026_signature_xantares_foil` |
+| 12057 | `singapore2026_signature_xantares_holo` | `#StickerKit_singapore2026_signature_xantares_holo` | `#StickerKit_desc_singapore2026_signature_xantares_holo` |
+| 12058 | `singapore2026_signature_xantares_gold` | `#StickerKit_singapore2026_signature_xantares_gold` | `#StickerKit_desc_singapore2026_signature_xantares_gold` |
+| 12059 | `singapore2026_signature_donk` | `#StickerKit_singapore2026_signature_donk` | `#StickerKit_desc_singapore2026_signature_donk` |
+| 12060 | `singapore2026_signature_donk_foil` | `#StickerKit_singapore2026_signature_donk_foil` | `#StickerKit_desc_singapore2026_signature_donk_foil` |
+| 12061 | `singapore2026_signature_donk_holo` | `#StickerKit_singapore2026_signature_donk_holo` | `#StickerKit_desc_singapore2026_signature_donk_holo` |
+| 12062 | `singapore2026_signature_donk_gold` | `#StickerKit_singapore2026_signature_donk_gold` | `#StickerKit_desc_singapore2026_signature_donk_gold` |
+| 12063 | `singapore2026_signature_magixx` | `#StickerKit_singapore2026_signature_magixx` | `#StickerKit_desc_singapore2026_signature_magixx` |
+| 12064 | `singapore2026_signature_magixx_foil` | `#StickerKit_singapore2026_signature_magixx_foil` | `#StickerKit_desc_singapore2026_signature_magixx_foil` |
+| 12065 | `singapore2026_signature_magixx_holo` | `#StickerKit_singapore2026_signature_magixx_holo` | `#StickerKit_desc_singapore2026_signature_magixx_holo` |
+| 12066 | `singapore2026_signature_magixx_gold` | `#StickerKit_singapore2026_signature_magixx_gold` | `#StickerKit_desc_singapore2026_signature_magixx_gold` |
+| 12067 | `singapore2026_signature_sh1ro` | `#StickerKit_singapore2026_signature_sh1ro` | `#StickerKit_desc_singapore2026_signature_sh1ro` |
+| 12068 | `singapore2026_signature_sh1ro_foil` | `#StickerKit_singapore2026_signature_sh1ro_foil` | `#StickerKit_desc_singapore2026_signature_sh1ro_foil` |
+| 12069 | `singapore2026_signature_sh1ro_holo` | `#StickerKit_singapore2026_signature_sh1ro_holo` | `#StickerKit_desc_singapore2026_signature_sh1ro_holo` |
+| 12070 | `singapore2026_signature_sh1ro_gold` | `#StickerKit_singapore2026_signature_sh1ro_gold` | `#StickerKit_desc_singapore2026_signature_sh1ro_gold` |
+| 12071 | `singapore2026_signature_tn1r` | `#StickerKit_singapore2026_signature_tn1r` | `#StickerKit_desc_singapore2026_signature_tn1r` |
+| 12072 | `singapore2026_signature_tn1r_foil` | `#StickerKit_singapore2026_signature_tn1r_foil` | `#StickerKit_desc_singapore2026_signature_tn1r_foil` |
+| 12073 | `singapore2026_signature_tn1r_holo` | `#StickerKit_singapore2026_signature_tn1r_holo` | `#StickerKit_desc_singapore2026_signature_tn1r_holo` |
+| 12074 | `singapore2026_signature_tn1r_gold` | `#StickerKit_singapore2026_signature_tn1r_gold` | `#StickerKit_desc_singapore2026_signature_tn1r_gold` |
+| 12075 | `singapore2026_signature_zont1x` | `#StickerKit_singapore2026_signature_zont1x` | `#StickerKit_desc_singapore2026_signature_zont1x` |
+| 12076 | `singapore2026_signature_zont1x_foil` | `#StickerKit_singapore2026_signature_zont1x_foil` | `#StickerKit_desc_singapore2026_signature_zont1x_foil` |
+| 12077 | `singapore2026_signature_zont1x_holo` | `#StickerKit_singapore2026_signature_zont1x_holo` | `#StickerKit_desc_singapore2026_signature_zont1x_holo` |
+| 12078 | `singapore2026_signature_zont1x_gold` | `#StickerKit_singapore2026_signature_zont1x_gold` | `#StickerKit_desc_singapore2026_signature_zont1x_gold` |
+| 12079 | `singapore2026_signature_boombl4` | `#StickerKit_singapore2026_signature_boombl4` | `#StickerKit_desc_singapore2026_signature_boombl4` |
+| 12080 | `singapore2026_signature_boombl4_foil` | `#StickerKit_singapore2026_signature_boombl4_foil` | `#StickerKit_desc_singapore2026_signature_boombl4_foil` |
+| 12081 | `singapore2026_signature_boombl4_holo` | `#StickerKit_singapore2026_signature_boombl4_holo` | `#StickerKit_desc_singapore2026_signature_boombl4_holo` |
+| 12082 | `singapore2026_signature_boombl4_gold` | `#StickerKit_singapore2026_signature_boombl4_gold` | `#StickerKit_desc_singapore2026_signature_boombl4_gold` |
+| 12083 | `singapore2026_signature_d1ledez` | `#StickerKit_singapore2026_signature_d1ledez` | `#StickerKit_desc_singapore2026_signature_d1ledez` |
+| 12084 | `singapore2026_signature_d1ledez_foil` | `#StickerKit_singapore2026_signature_d1ledez_foil` | `#StickerKit_desc_singapore2026_signature_d1ledez_foil` |
+| 12085 | `singapore2026_signature_d1ledez_holo` | `#StickerKit_singapore2026_signature_d1ledez_holo` | `#StickerKit_desc_singapore2026_signature_d1ledez_holo` |
+| 12086 | `singapore2026_signature_d1ledez_gold` | `#StickerKit_singapore2026_signature_d1ledez_gold` | `#StickerKit_desc_singapore2026_signature_d1ledez_gold` |
+| 12087 | `singapore2026_signature_magnojez` | `#StickerKit_singapore2026_signature_magnojez` | `#StickerKit_desc_singapore2026_signature_magnojez` |
+| 12088 | `singapore2026_signature_magnojez_foil` | `#StickerKit_singapore2026_signature_magnojez_foil` | `#StickerKit_desc_singapore2026_signature_magnojez_foil` |
+| 12089 | `singapore2026_signature_magnojez_holo` | `#StickerKit_singapore2026_signature_magnojez_holo` | `#StickerKit_desc_singapore2026_signature_magnojez_holo` |
+| 12090 | `singapore2026_signature_magnojez_gold` | `#StickerKit_singapore2026_signature_magnojez_gold` | `#StickerKit_desc_singapore2026_signature_magnojez_gold` |
+| 12091 | `singapore2026_signature_s1ren` | `#StickerKit_singapore2026_signature_s1ren` | `#StickerKit_desc_singapore2026_signature_s1ren` |
+| 12092 | `singapore2026_signature_s1ren_foil` | `#StickerKit_singapore2026_signature_s1ren_foil` | `#StickerKit_desc_singapore2026_signature_s1ren_foil` |
+| 12093 | `singapore2026_signature_s1ren_holo` | `#StickerKit_singapore2026_signature_s1ren_holo` | `#StickerKit_desc_singapore2026_signature_s1ren_holo` |
+| 12094 | `singapore2026_signature_s1ren_gold` | `#StickerKit_singapore2026_signature_s1ren_gold` | `#StickerKit_desc_singapore2026_signature_s1ren_gold` |
+| 12095 | `singapore2026_signature_zorte` | `#StickerKit_singapore2026_signature_zorte` | `#StickerKit_desc_singapore2026_signature_zorte` |
+| 12096 | `singapore2026_signature_zorte_foil` | `#StickerKit_singapore2026_signature_zorte_foil` | `#StickerKit_desc_singapore2026_signature_zorte_foil` |
+| 12097 | `singapore2026_signature_zorte_holo` | `#StickerKit_singapore2026_signature_zorte_holo` | `#StickerKit_desc_singapore2026_signature_zorte_holo` |
+| 12098 | `singapore2026_signature_zorte_gold` | `#StickerKit_singapore2026_signature_zorte_gold` | `#StickerKit_desc_singapore2026_signature_zorte_gold` |
+| 12099 | `singapore2026_signature_karrigan` | `#StickerKit_singapore2026_signature_karrigan` | `#StickerKit_desc_singapore2026_signature_karrigan` |
+| 12100 | `singapore2026_signature_karrigan_foil` | `#StickerKit_singapore2026_signature_karrigan_foil` | `#StickerKit_desc_singapore2026_signature_karrigan_foil` |
+| 12101 | `singapore2026_signature_karrigan_holo` | `#StickerKit_singapore2026_signature_karrigan_holo` | `#StickerKit_desc_singapore2026_signature_karrigan_holo` |
+| 12102 | `singapore2026_signature_karrigan_gold` | `#StickerKit_singapore2026_signature_karrigan_gold` | `#StickerKit_desc_singapore2026_signature_karrigan_gold` |
+| 12103 | `singapore2026_signature_kyousuke` | `#StickerKit_singapore2026_signature_kyousuke` | `#StickerKit_desc_singapore2026_signature_kyousuke` |
+| 12104 | `singapore2026_signature_kyousuke_foil` | `#StickerKit_singapore2026_signature_kyousuke_foil` | `#StickerKit_desc_singapore2026_signature_kyousuke_foil` |
+| 12105 | `singapore2026_signature_kyousuke_holo` | `#StickerKit_singapore2026_signature_kyousuke_holo` | `#StickerKit_desc_singapore2026_signature_kyousuke_holo` |
+| 12106 | `singapore2026_signature_kyousuke_gold` | `#StickerKit_singapore2026_signature_kyousuke_gold` | `#StickerKit_desc_singapore2026_signature_kyousuke_gold` |
+| 12107 | `singapore2026_signature_m0nesy` | `#StickerKit_singapore2026_signature_m0nesy` | `#StickerKit_desc_singapore2026_signature_m0nesy` |
+| 12108 | `singapore2026_signature_m0nesy_foil` | `#StickerKit_singapore2026_signature_m0nesy_foil` | `#StickerKit_desc_singapore2026_signature_m0nesy_foil` |
+| 12109 | `singapore2026_signature_m0nesy_holo` | `#StickerKit_singapore2026_signature_m0nesy_holo` | `#StickerKit_desc_singapore2026_signature_m0nesy_holo` |
+| 12110 | `singapore2026_signature_m0nesy_gold` | `#StickerKit_singapore2026_signature_m0nesy_gold` | `#StickerKit_desc_singapore2026_signature_m0nesy_gold` |
+| 12111 | `singapore2026_signature_niko` | `#StickerKit_singapore2026_signature_niko` | `#StickerKit_desc_singapore2026_signature_niko` |
+| 12112 | `singapore2026_signature_niko_foil` | `#StickerKit_singapore2026_signature_niko_foil` | `#StickerKit_desc_singapore2026_signature_niko_foil` |
+| 12113 | `singapore2026_signature_niko_holo` | `#StickerKit_singapore2026_signature_niko_holo` | `#StickerKit_desc_singapore2026_signature_niko_holo` |
+| 12114 | `singapore2026_signature_niko_gold` | `#StickerKit_singapore2026_signature_niko_gold` | `#StickerKit_desc_singapore2026_signature_niko_gold` |
+| 12115 | `singapore2026_signature_teses` | `#StickerKit_singapore2026_signature_teses` | `#StickerKit_desc_singapore2026_signature_teses` |
+| 12116 | `singapore2026_signature_teses_foil` | `#StickerKit_singapore2026_signature_teses_foil` | `#StickerKit_desc_singapore2026_signature_teses_foil` |
+| 12117 | `singapore2026_signature_teses_holo` | `#StickerKit_singapore2026_signature_teses_holo` | `#StickerKit_desc_singapore2026_signature_teses_holo` |
+| 12118 | `singapore2026_signature_teses_gold` | `#StickerKit_singapore2026_signature_teses_gold` | `#StickerKit_desc_singapore2026_signature_teses_gold` |
+| 12119 | `singapore2026_signature_cmtry` | `#StickerKit_singapore2026_signature_cmtry` | `#StickerKit_desc_singapore2026_signature_cmtry` |
+| 12120 | `singapore2026_signature_cmtry_foil` | `#StickerKit_singapore2026_signature_cmtry_foil` | `#StickerKit_desc_singapore2026_signature_cmtry_foil` |
+| 12121 | `singapore2026_signature_cmtry_holo` | `#StickerKit_singapore2026_signature_cmtry_holo` | `#StickerKit_desc_singapore2026_signature_cmtry_holo` |
+| 12122 | `singapore2026_signature_cmtry_gold` | `#StickerKit_singapore2026_signature_cmtry_gold` | `#StickerKit_desc_singapore2026_signature_cmtry_gold` |
+| 12123 | `singapore2026_signature_dem0n` | `#StickerKit_singapore2026_signature_dem0n` | `#StickerKit_desc_singapore2026_signature_dem0n` |
+| 12124 | `singapore2026_signature_dem0n_foil` | `#StickerKit_singapore2026_signature_dem0n_foil` | `#StickerKit_desc_singapore2026_signature_dem0n_foil` |
+| 12125 | `singapore2026_signature_dem0n_holo` | `#StickerKit_singapore2026_signature_dem0n_holo` | `#StickerKit_desc_singapore2026_signature_dem0n_holo` |
+| 12126 | `singapore2026_signature_dem0n_gold` | `#StickerKit_singapore2026_signature_dem0n_gold` | `#StickerKit_desc_singapore2026_signature_dem0n_gold` |
+| 12127 | `singapore2026_signature_dziugss` | `#StickerKit_singapore2026_signature_dziugss` | `#StickerKit_desc_singapore2026_signature_dziugss` |
+| 12128 | `singapore2026_signature_dziugss_foil` | `#StickerKit_singapore2026_signature_dziugss_foil` | `#StickerKit_desc_singapore2026_signature_dziugss_foil` |
+| 12129 | `singapore2026_signature_dziugss_holo` | `#StickerKit_singapore2026_signature_dziugss_holo` | `#StickerKit_desc_singapore2026_signature_dziugss_holo` |
+| 12130 | `singapore2026_signature_dziugss_gold` | `#StickerKit_singapore2026_signature_dziugss_gold` | `#StickerKit_desc_singapore2026_signature_dziugss_gold` |
+| 12131 | `singapore2026_signature_krabeni` | `#StickerKit_singapore2026_signature_krabeni` | `#StickerKit_desc_singapore2026_signature_krabeni` |
+| 12132 | `singapore2026_signature_krabeni_foil` | `#StickerKit_singapore2026_signature_krabeni_foil` | `#StickerKit_desc_singapore2026_signature_krabeni_foil` |
+| 12133 | `singapore2026_signature_krabeni_holo` | `#StickerKit_singapore2026_signature_krabeni_holo` | `#StickerKit_desc_singapore2026_signature_krabeni_holo` |
+| 12134 | `singapore2026_signature_krabeni_gold` | `#StickerKit_singapore2026_signature_krabeni_gold` | `#StickerKit_desc_singapore2026_signature_krabeni_gold` |
+| 12135 | `singapore2026_signature_xfl0ud` | `#StickerKit_singapore2026_signature_xfl0ud` | `#StickerKit_desc_singapore2026_signature_xfl0ud` |
+| 12136 | `singapore2026_signature_xfl0ud_foil` | `#StickerKit_singapore2026_signature_xfl0ud_foil` | `#StickerKit_desc_singapore2026_signature_xfl0ud_foil` |
+| 12137 | `singapore2026_signature_xfl0ud_holo` | `#StickerKit_singapore2026_signature_xfl0ud_holo` | `#StickerKit_desc_singapore2026_signature_xfl0ud_holo` |
+| 12138 | `singapore2026_signature_xfl0ud_gold` | `#StickerKit_singapore2026_signature_xfl0ud_gold` | `#StickerKit_desc_singapore2026_signature_xfl0ud_gold` |
+| 12139 | `singapore2026_signature_art` | `#StickerKit_singapore2026_signature_art` | `#StickerKit_desc_singapore2026_signature_art` |
+| 12140 | `singapore2026_signature_art_foil` | `#StickerKit_singapore2026_signature_art_foil` | `#StickerKit_desc_singapore2026_signature_art_foil` |
+| 12141 | `singapore2026_signature_art_holo` | `#StickerKit_singapore2026_signature_art_holo` | `#StickerKit_desc_singapore2026_signature_art_holo` |
+| 12142 | `singapore2026_signature_art_gold` | `#StickerKit_singapore2026_signature_art_gold` | `#StickerKit_desc_singapore2026_signature_art_gold` |
+| 12143 | `singapore2026_signature_dumau` | `#StickerKit_singapore2026_signature_dumau` | `#StickerKit_desc_singapore2026_signature_dumau` |
+| 12144 | `singapore2026_signature_dumau_foil` | `#StickerKit_singapore2026_signature_dumau_foil` | `#StickerKit_desc_singapore2026_signature_dumau_foil` |
+| 12145 | `singapore2026_signature_dumau_holo` | `#StickerKit_singapore2026_signature_dumau_holo` | `#StickerKit_desc_singapore2026_signature_dumau_holo` |
+| 12146 | `singapore2026_signature_dumau_gold` | `#StickerKit_singapore2026_signature_dumau_gold` | `#StickerKit_desc_singapore2026_signature_dumau_gold` |
+| 12147 | `singapore2026_signature_latto` | `#StickerKit_singapore2026_signature_latto` | `#StickerKit_desc_singapore2026_signature_latto` |
+| 12148 | `singapore2026_signature_latto_foil` | `#StickerKit_singapore2026_signature_latto_foil` | `#StickerKit_desc_singapore2026_signature_latto_foil` |
+| 12149 | `singapore2026_signature_latto_holo` | `#StickerKit_singapore2026_signature_latto_holo` | `#StickerKit_desc_singapore2026_signature_latto_holo` |
+| 12150 | `singapore2026_signature_latto_gold` | `#StickerKit_singapore2026_signature_latto_gold` | `#StickerKit_desc_singapore2026_signature_latto_gold` |
+| 12151 | `singapore2026_signature_n1ssim` | `#StickerKit_singapore2026_signature_n1ssim` | `#StickerKit_desc_singapore2026_signature_n1ssim` |
+| 12152 | `singapore2026_signature_n1ssim_foil` | `#StickerKit_singapore2026_signature_n1ssim_foil` | `#StickerKit_desc_singapore2026_signature_n1ssim_foil` |
+| 12153 | `singapore2026_signature_n1ssim_holo` | `#StickerKit_singapore2026_signature_n1ssim_holo` | `#StickerKit_desc_singapore2026_signature_n1ssim_holo` |
+| 12154 | `singapore2026_signature_n1ssim_gold` | `#StickerKit_singapore2026_signature_n1ssim_gold` | `#StickerKit_desc_singapore2026_signature_n1ssim_gold` |
+| 12155 | `singapore2026_signature_try` | `#StickerKit_singapore2026_signature_try` | `#StickerKit_desc_singapore2026_signature_try` |
+| 12156 | `singapore2026_signature_try_foil` | `#StickerKit_singapore2026_signature_try_foil` | `#StickerKit_desc_singapore2026_signature_try_foil` |
+| 12157 | `singapore2026_signature_try_holo` | `#StickerKit_singapore2026_signature_try_holo` | `#StickerKit_desc_singapore2026_signature_try_holo` |
+| 12158 | `singapore2026_signature_try_gold` | `#StickerKit_singapore2026_signature_try_gold` | `#StickerKit_desc_singapore2026_signature_try_gold` |
+| 12159 | `singapore2026_signature_kair0n` | `#StickerKit_singapore2026_signature_kair0n` | `#StickerKit_desc_singapore2026_signature_kair0n` |
+| 12160 | `singapore2026_signature_kair0n_foil` | `#StickerKit_singapore2026_signature_kair0n_foil` | `#StickerKit_desc_singapore2026_signature_kair0n_foil` |
+| 12161 | `singapore2026_signature_kair0n_holo` | `#StickerKit_singapore2026_signature_kair0n_holo` | `#StickerKit_desc_singapore2026_signature_kair0n_holo` |
+| 12162 | `singapore2026_signature_kair0n_gold` | `#StickerKit_singapore2026_signature_kair0n_gold` | `#StickerKit_desc_singapore2026_signature_kair0n_gold` |
+| 12163 | `singapore2026_signature_khan` | `#StickerKit_singapore2026_signature_khan` | `#StickerKit_desc_singapore2026_signature_khan` |
+| 12164 | `singapore2026_signature_khan_foil` | `#StickerKit_singapore2026_signature_khan_foil` | `#StickerKit_desc_singapore2026_signature_khan_foil` |
+| 12165 | `singapore2026_signature_khan_holo` | `#StickerKit_singapore2026_signature_khan_holo` | `#StickerKit_desc_singapore2026_signature_khan_holo` |
+| 12166 | `singapore2026_signature_khan_gold` | `#StickerKit_singapore2026_signature_khan_gold` | `#StickerKit_desc_singapore2026_signature_khan_gold` |
+| 12167 | `singapore2026_signature_robo` | `#StickerKit_singapore2026_signature_robo` | `#StickerKit_desc_singapore2026_signature_robo` |
+| 12168 | `singapore2026_signature_robo_foil` | `#StickerKit_singapore2026_signature_robo_foil` | `#StickerKit_desc_singapore2026_signature_robo_foil` |
+| 12169 | `singapore2026_signature_robo_holo` | `#StickerKit_singapore2026_signature_robo_holo` | `#StickerKit_desc_singapore2026_signature_robo_holo` |
+| 12170 | `singapore2026_signature_robo_gold` | `#StickerKit_singapore2026_signature_robo_gold` | `#StickerKit_desc_singapore2026_signature_robo_gold` |
+| 12171 | `singapore2026_signature_syph0` | `#StickerKit_singapore2026_signature_syph0` | `#StickerKit_desc_singapore2026_signature_syph0` |
+| 12172 | `singapore2026_signature_syph0_foil` | `#StickerKit_singapore2026_signature_syph0_foil` | `#StickerKit_desc_singapore2026_signature_syph0_foil` |
+| 12173 | `singapore2026_signature_syph0_holo` | `#StickerKit_singapore2026_signature_syph0_holo` | `#StickerKit_desc_singapore2026_signature_syph0_holo` |
+| 12174 | `singapore2026_signature_syph0_gold` | `#StickerKit_singapore2026_signature_syph0_gold` | `#StickerKit_desc_singapore2026_signature_syph0_gold` |
+| 12175 | `singapore2026_signature_xant3r` | `#StickerKit_singapore2026_signature_xant3r` | `#StickerKit_desc_singapore2026_signature_xant3r` |
+| 12176 | `singapore2026_signature_xant3r_foil` | `#StickerKit_singapore2026_signature_xant3r_foil` | `#StickerKit_desc_singapore2026_signature_xant3r_foil` |
+| 12177 | `singapore2026_signature_xant3r_holo` | `#StickerKit_singapore2026_signature_xant3r_holo` | `#StickerKit_desc_singapore2026_signature_xant3r_holo` |
+| 12178 | `singapore2026_signature_xant3r_gold` | `#StickerKit_singapore2026_signature_xant3r_gold` | `#StickerKit_desc_singapore2026_signature_xant3r_gold` |
+| 12179 | `singapore2026_signature_heavygod` | `#StickerKit_singapore2026_signature_heavygod` | `#StickerKit_desc_singapore2026_signature_heavygod` |
+| 12180 | `singapore2026_signature_heavygod_foil` | `#StickerKit_singapore2026_signature_heavygod_foil` | `#StickerKit_desc_singapore2026_signature_heavygod_foil` |
+| 12181 | `singapore2026_signature_heavygod_holo` | `#StickerKit_singapore2026_signature_heavygod_holo` | `#StickerKit_desc_singapore2026_signature_heavygod_holo` |
+| 12182 | `singapore2026_signature_heavygod_gold` | `#StickerKit_singapore2026_signature_heavygod_gold` | `#StickerKit_desc_singapore2026_signature_heavygod_gold` |
+| 12183 | `singapore2026_signature_hunter` | `#StickerKit_singapore2026_signature_hunter` | `#StickerKit_desc_singapore2026_signature_hunter` |
+| 12184 | `singapore2026_signature_hunter_foil` | `#StickerKit_singapore2026_signature_hunter_foil` | `#StickerKit_desc_singapore2026_signature_hunter_foil` |
+| 12185 | `singapore2026_signature_hunter_holo` | `#StickerKit_singapore2026_signature_hunter_holo` | `#StickerKit_desc_singapore2026_signature_hunter_holo` |
+| 12186 | `singapore2026_signature_hunter_gold` | `#StickerKit_singapore2026_signature_hunter_gold` | `#StickerKit_desc_singapore2026_signature_hunter_gold` |
+| 12187 | `singapore2026_signature_matys` | `#StickerKit_singapore2026_signature_matys` | `#StickerKit_desc_singapore2026_signature_matys` |
+| 12188 | `singapore2026_signature_matys_foil` | `#StickerKit_singapore2026_signature_matys_foil` | `#StickerKit_desc_singapore2026_signature_matys_foil` |
+| 12189 | `singapore2026_signature_matys_holo` | `#StickerKit_singapore2026_signature_matys_holo` | `#StickerKit_desc_singapore2026_signature_matys_holo` |
+| 12190 | `singapore2026_signature_matys_gold` | `#StickerKit_singapore2026_signature_matys_gold` | `#StickerKit_desc_singapore2026_signature_matys_gold` |
+| 12191 | `singapore2026_signature_nertz` | `#StickerKit_singapore2026_signature_nertz` | `#StickerKit_desc_singapore2026_signature_nertz` |
+| 12192 | `singapore2026_signature_nertz_foil` | `#StickerKit_singapore2026_signature_nertz_foil` | `#StickerKit_desc_singapore2026_signature_nertz_foil` |
+| 12193 | `singapore2026_signature_nertz_holo` | `#StickerKit_singapore2026_signature_nertz_holo` | `#StickerKit_desc_singapore2026_signature_nertz_holo` |
+| 12194 | `singapore2026_signature_nertz_gold` | `#StickerKit_singapore2026_signature_nertz_gold` | `#StickerKit_desc_singapore2026_signature_nertz_gold` |
+| 12195 | `singapore2026_signature_r1nkle` | `#StickerKit_singapore2026_signature_r1nkle` | `#StickerKit_desc_singapore2026_signature_r1nkle` |
+| 12196 | `singapore2026_signature_r1nkle_foil` | `#StickerKit_singapore2026_signature_r1nkle_foil` | `#StickerKit_desc_singapore2026_signature_r1nkle_foil` |
+| 12197 | `singapore2026_signature_r1nkle_holo` | `#StickerKit_singapore2026_signature_r1nkle_holo` | `#StickerKit_desc_singapore2026_signature_r1nkle_holo` |
+| 12198 | `singapore2026_signature_r1nkle_gold` | `#StickerKit_singapore2026_signature_r1nkle_gold` | `#StickerKit_desc_singapore2026_signature_r1nkle_gold` |
+| 12199 | `singapore2026_signature_artfr0st` | `#StickerKit_singapore2026_signature_artfr0st` | `#StickerKit_desc_singapore2026_signature_artfr0st` |
+| 12200 | `singapore2026_signature_artfr0st_foil` | `#StickerKit_singapore2026_signature_artfr0st_foil` | `#StickerKit_desc_singapore2026_signature_artfr0st_foil` |
+| 12201 | `singapore2026_signature_artfr0st_holo` | `#StickerKit_singapore2026_signature_artfr0st_holo` | `#StickerKit_desc_singapore2026_signature_artfr0st_holo` |
+| 12202 | `singapore2026_signature_artfr0st_gold` | `#StickerKit_singapore2026_signature_artfr0st_gold` | `#StickerKit_desc_singapore2026_signature_artfr0st_gold` |
+| 12203 | `singapore2026_signature_ax1le` | `#StickerKit_singapore2026_signature_ax1le` | `#StickerKit_desc_singapore2026_signature_ax1le` |
+| 12204 | `singapore2026_signature_ax1le_foil` | `#StickerKit_singapore2026_signature_ax1le_foil` | `#StickerKit_desc_singapore2026_signature_ax1le_foil` |
+| 12205 | `singapore2026_signature_ax1le_holo` | `#StickerKit_singapore2026_signature_ax1le_holo` | `#StickerKit_desc_singapore2026_signature_ax1le_holo` |
+| 12206 | `singapore2026_signature_ax1le_gold` | `#StickerKit_singapore2026_signature_ax1le_gold` | `#StickerKit_desc_singapore2026_signature_ax1le_gold` |
+| 12207 | `singapore2026_signature_belchonokk` | `#StickerKit_singapore2026_signature_belchonokk` | `#StickerKit_desc_singapore2026_signature_belchonokk` |
+| 12208 | `singapore2026_signature_belchonokk_foil` | `#StickerKit_singapore2026_signature_belchonokk_foil` | `#StickerKit_desc_singapore2026_signature_belchonokk_foil` |
+| 12209 | `singapore2026_signature_belchonokk_holo` | `#StickerKit_singapore2026_signature_belchonokk_holo` | `#StickerKit_desc_singapore2026_signature_belchonokk_holo` |
+| 12210 | `singapore2026_signature_belchonokk_gold` | `#StickerKit_singapore2026_signature_belchonokk_gold` | `#StickerKit_desc_singapore2026_signature_belchonokk_gold` |
+| 12211 | `singapore2026_signature_fame` | `#StickerKit_singapore2026_signature_fame` | `#StickerKit_desc_singapore2026_signature_fame` |
+| 12212 | `singapore2026_signature_fame_foil` | `#StickerKit_singapore2026_signature_fame_foil` | `#StickerKit_desc_singapore2026_signature_fame_foil` |
+| 12213 | `singapore2026_signature_fame_holo` | `#StickerKit_singapore2026_signature_fame_holo` | `#StickerKit_desc_singapore2026_signature_fame_holo` |
+| 12214 | `singapore2026_signature_fame_gold` | `#StickerKit_singapore2026_signature_fame_gold` | `#StickerKit_desc_singapore2026_signature_fame_gold` |
+| 12215 | `singapore2026_signature_nafany` | `#StickerKit_singapore2026_signature_nafany` | `#StickerKit_desc_singapore2026_signature_nafany` |
+| 12216 | `singapore2026_signature_nafany_foil` | `#StickerKit_singapore2026_signature_nafany_foil` | `#StickerKit_desc_singapore2026_signature_nafany_foil` |
+| 12217 | `singapore2026_signature_nafany_holo` | `#StickerKit_singapore2026_signature_nafany_holo` | `#StickerKit_desc_singapore2026_signature_nafany_holo` |
+| 12218 | `singapore2026_signature_nafany_gold` | `#StickerKit_singapore2026_signature_nafany_gold` | `#StickerKit_desc_singapore2026_signature_nafany_gold` |
+| 12219 | `singapore2026_signature_aleksib` | `#StickerKit_singapore2026_signature_aleksib` | `#StickerKit_desc_singapore2026_signature_aleksib` |
+| 12220 | `singapore2026_signature_aleksib_foil` | `#StickerKit_singapore2026_signature_aleksib_foil` | `#StickerKit_desc_singapore2026_signature_aleksib_foil` |
+| 12221 | `singapore2026_signature_aleksib_holo` | `#StickerKit_singapore2026_signature_aleksib_holo` | `#StickerKit_desc_singapore2026_signature_aleksib_holo` |
+| 12222 | `singapore2026_signature_aleksib_gold` | `#StickerKit_singapore2026_signature_aleksib_gold` | `#StickerKit_desc_singapore2026_signature_aleksib_gold` |
+| 12223 | `singapore2026_signature_b1t` | `#StickerKit_singapore2026_signature_b1t` | `#StickerKit_desc_singapore2026_signature_b1t` |
+| 12224 | `singapore2026_signature_b1t_foil` | `#StickerKit_singapore2026_signature_b1t_foil` | `#StickerKit_desc_singapore2026_signature_b1t_foil` |
+| 12225 | `singapore2026_signature_b1t_holo` | `#StickerKit_singapore2026_signature_b1t_holo` | `#StickerKit_desc_singapore2026_signature_b1t_holo` |
+| 12226 | `singapore2026_signature_b1t_gold` | `#StickerKit_singapore2026_signature_b1t_gold` | `#StickerKit_desc_singapore2026_signature_b1t_gold` |
+| 12227 | `singapore2026_signature_im` | `#StickerKit_singapore2026_signature_im` | `#StickerKit_desc_singapore2026_signature_im` |
+| 12228 | `singapore2026_signature_im_foil` | `#StickerKit_singapore2026_signature_im_foil` | `#StickerKit_desc_singapore2026_signature_im_foil` |
+| 12229 | `singapore2026_signature_im_holo` | `#StickerKit_singapore2026_signature_im_holo` | `#StickerKit_desc_singapore2026_signature_im_holo` |
+| 12230 | `singapore2026_signature_im_gold` | `#StickerKit_singapore2026_signature_im_gold` | `#StickerKit_desc_singapore2026_signature_im_gold` |
+| 12231 | `singapore2026_signature_makazze` | `#StickerKit_singapore2026_signature_makazze` | `#StickerKit_desc_singapore2026_signature_makazze` |
+| 12232 | `singapore2026_signature_makazze_foil` | `#StickerKit_singapore2026_signature_makazze_foil` | `#StickerKit_desc_singapore2026_signature_makazze_foil` |
+| 12233 | `singapore2026_signature_makazze_holo` | `#StickerKit_singapore2026_signature_makazze_holo` | `#StickerKit_desc_singapore2026_signature_makazze_holo` |
+| 12234 | `singapore2026_signature_makazze_gold` | `#StickerKit_singapore2026_signature_makazze_gold` | `#StickerKit_desc_singapore2026_signature_makazze_gold` |
+| 12235 | `singapore2026_signature_w0nderful` | `#StickerKit_singapore2026_signature_w0nderful` | `#StickerKit_desc_singapore2026_signature_w0nderful` |
+| 12236 | `singapore2026_signature_w0nderful_foil` | `#StickerKit_singapore2026_signature_w0nderful_foil` | `#StickerKit_desc_singapore2026_signature_w0nderful_foil` |
+| 12237 | `singapore2026_signature_w0nderful_holo` | `#StickerKit_singapore2026_signature_w0nderful_holo` | `#StickerKit_desc_singapore2026_signature_w0nderful_holo` |
+| 12238 | `singapore2026_signature_w0nderful_gold` | `#StickerKit_singapore2026_signature_w0nderful_gold` | `#StickerKit_desc_singapore2026_signature_w0nderful_gold` |
+| 12239 | `singapore2026_signature_jabbi` | `#StickerKit_singapore2026_signature_jabbi` | `#StickerKit_desc_singapore2026_signature_jabbi` |
+| 12240 | `singapore2026_signature_jabbi_foil` | `#StickerKit_singapore2026_signature_jabbi_foil` | `#StickerKit_desc_singapore2026_signature_jabbi_foil` |
+| 12241 | `singapore2026_signature_jabbi_holo` | `#StickerKit_singapore2026_signature_jabbi_holo` | `#StickerKit_desc_singapore2026_signature_jabbi_holo` |
+| 12242 | `singapore2026_signature_jabbi_gold` | `#StickerKit_singapore2026_signature_jabbi_gold` | `#StickerKit_desc_singapore2026_signature_jabbi_gold` |
+| 12243 | `singapore2026_signature_phzy` | `#StickerKit_singapore2026_signature_phzy` | `#StickerKit_desc_singapore2026_signature_phzy` |
+| 12244 | `singapore2026_signature_phzy_foil` | `#StickerKit_singapore2026_signature_phzy_foil` | `#StickerKit_desc_singapore2026_signature_phzy_foil` |
+| 12245 | `singapore2026_signature_phzy_holo` | `#StickerKit_singapore2026_signature_phzy_holo` | `#StickerKit_desc_singapore2026_signature_phzy_holo` |
+| 12246 | `singapore2026_signature_phzy_gold` | `#StickerKit_singapore2026_signature_phzy_gold` | `#StickerKit_desc_singapore2026_signature_phzy_gold` |
+| 12247 | `singapore2026_signature_ryu` | `#StickerKit_singapore2026_signature_ryu` | `#StickerKit_desc_singapore2026_signature_ryu` |
+| 12248 | `singapore2026_signature_ryu_foil` | `#StickerKit_singapore2026_signature_ryu_foil` | `#StickerKit_desc_singapore2026_signature_ryu_foil` |
+| 12249 | `singapore2026_signature_ryu_holo` | `#StickerKit_singapore2026_signature_ryu_holo` | `#StickerKit_desc_singapore2026_signature_ryu_holo` |
+| 12250 | `singapore2026_signature_ryu_gold` | `#StickerKit_singapore2026_signature_ryu_gold` | `#StickerKit_desc_singapore2026_signature_ryu_gold` |
+| 12251 | `singapore2026_signature_siuhy` | `#StickerKit_singapore2026_signature_siuhy` | `#StickerKit_desc_singapore2026_signature_siuhy` |
+| 12252 | `singapore2026_signature_siuhy_foil` | `#StickerKit_singapore2026_signature_siuhy_foil` | `#StickerKit_desc_singapore2026_signature_siuhy_foil` |
+| 12253 | `singapore2026_signature_siuhy_holo` | `#StickerKit_singapore2026_signature_siuhy_holo` | `#StickerKit_desc_singapore2026_signature_siuhy_holo` |
+| 12254 | `singapore2026_signature_siuhy_gold` | `#StickerKit_singapore2026_signature_siuhy_gold` | `#StickerKit_desc_singapore2026_signature_siuhy_gold` |
+| 12255 | `singapore2026_signature_staehr` | `#StickerKit_singapore2026_signature_staehr` | `#StickerKit_desc_singapore2026_signature_staehr` |
+| 12256 | `singapore2026_signature_staehr_foil` | `#StickerKit_singapore2026_signature_staehr_foil` | `#StickerKit_desc_singapore2026_signature_staehr_foil` |
+| 12257 | `singapore2026_signature_staehr_holo` | `#StickerKit_singapore2026_signature_staehr_holo` | `#StickerKit_desc_singapore2026_signature_staehr_holo` |
+| 12258 | `singapore2026_signature_staehr_gold` | `#StickerKit_singapore2026_signature_staehr_gold` | `#StickerKit_desc_singapore2026_signature_staehr_gold` |
+| 12259 | `singapore2026_signature_adamb` | `#StickerKit_singapore2026_signature_adamb` | `#StickerKit_desc_singapore2026_signature_adamb` |
+| 12260 | `singapore2026_signature_adamb_foil` | `#StickerKit_singapore2026_signature_adamb_foil` | `#StickerKit_desc_singapore2026_signature_adamb_foil` |
+| 12261 | `singapore2026_signature_adamb_holo` | `#StickerKit_singapore2026_signature_adamb_holo` | `#StickerKit_desc_singapore2026_signature_adamb_holo` |
+| 12262 | `singapore2026_signature_adamb_gold` | `#StickerKit_singapore2026_signature_adamb_gold` | `#StickerKit_desc_singapore2026_signature_adamb_gold` |
+| 12263 | `singapore2026_signature_krimbo` | `#StickerKit_singapore2026_signature_krimbo` | `#StickerKit_desc_singapore2026_signature_krimbo` |
+| 12264 | `singapore2026_signature_krimbo_foil` | `#StickerKit_singapore2026_signature_krimbo_foil` | `#StickerKit_desc_singapore2026_signature_krimbo_foil` |
+| 12265 | `singapore2026_signature_krimbo_holo` | `#StickerKit_singapore2026_signature_krimbo_holo` | `#StickerKit_desc_singapore2026_signature_krimbo_holo` |
+| 12266 | `singapore2026_signature_krimbo_gold` | `#StickerKit_singapore2026_signature_krimbo_gold` | `#StickerKit_desc_singapore2026_signature_krimbo_gold` |
+| 12267 | `singapore2026_signature_sjuush` | `#StickerKit_singapore2026_signature_sjuush` | `#StickerKit_desc_singapore2026_signature_sjuush` |
+| 12268 | `singapore2026_signature_sjuush_foil` | `#StickerKit_singapore2026_signature_sjuush_foil` | `#StickerKit_desc_singapore2026_signature_sjuush_foil` |
+| 12269 | `singapore2026_signature_sjuush_holo` | `#StickerKit_singapore2026_signature_sjuush_holo` | `#StickerKit_desc_singapore2026_signature_sjuush_holo` |
+| 12270 | `singapore2026_signature_sjuush_gold` | `#StickerKit_singapore2026_signature_sjuush_gold` | `#StickerKit_desc_singapore2026_signature_sjuush_gold` |
+| 12271 | `singapore2026_signature_stavn` | `#StickerKit_singapore2026_signature_stavn` | `#StickerKit_desc_singapore2026_signature_stavn` |
+| 12272 | `singapore2026_signature_stavn_foil` | `#StickerKit_singapore2026_signature_stavn_foil` | `#StickerKit_desc_singapore2026_signature_stavn_foil` |
+| 12273 | `singapore2026_signature_stavn_holo` | `#StickerKit_singapore2026_signature_stavn_holo` | `#StickerKit_desc_singapore2026_signature_stavn_holo` |
+| 12274 | `singapore2026_signature_stavn_gold` | `#StickerKit_singapore2026_signature_stavn_gold` | `#StickerKit_desc_singapore2026_signature_stavn_gold` |
+| 12275 | `singapore2026_signature_xkacpersky` | `#StickerKit_singapore2026_signature_xkacpersky` | `#StickerKit_desc_singapore2026_signature_xkacpersky` |
+| 12276 | `singapore2026_signature_xkacpersky_foil` | `#StickerKit_singapore2026_signature_xkacpersky_foil` | `#StickerKit_desc_singapore2026_signature_xkacpersky_foil` |
+| 12277 | `singapore2026_signature_xkacpersky_holo` | `#StickerKit_singapore2026_signature_xkacpersky_holo` | `#StickerKit_desc_singapore2026_signature_xkacpersky_holo` |
+| 12278 | `singapore2026_signature_xkacpersky_gold` | `#StickerKit_singapore2026_signature_xkacpersky_gold` | `#StickerKit_desc_singapore2026_signature_xkacpersky_gold` |
+| 12279 | `singapore2026_signature_910` | `#StickerKit_singapore2026_signature_910` | `#StickerKit_desc_singapore2026_signature_910` |
+| 12280 | `singapore2026_signature_910_foil` | `#StickerKit_singapore2026_signature_910_foil` | `#StickerKit_desc_singapore2026_signature_910_foil` |
+| 12281 | `singapore2026_signature_910_holo` | `#StickerKit_singapore2026_signature_910_holo` | `#StickerKit_desc_singapore2026_signature_910_holo` |
+| 12282 | `singapore2026_signature_910_gold` | `#StickerKit_singapore2026_signature_910_gold` | `#StickerKit_desc_singapore2026_signature_910_gold` |
+| 12283 | `singapore2026_signature_blitz` | `#StickerKit_singapore2026_signature_blitz` | `#StickerKit_desc_singapore2026_signature_blitz` |
+| 12284 | `singapore2026_signature_blitz_foil` | `#StickerKit_singapore2026_signature_blitz_foil` | `#StickerKit_desc_singapore2026_signature_blitz_foil` |
+| 12285 | `singapore2026_signature_blitz_holo` | `#StickerKit_singapore2026_signature_blitz_holo` | `#StickerKit_desc_singapore2026_signature_blitz_holo` |
+| 12286 | `singapore2026_signature_blitz_gold` | `#StickerKit_singapore2026_signature_blitz_gold` | `#StickerKit_desc_singapore2026_signature_blitz_gold` |
+| 12287 | `singapore2026_signature_cobra` | `#StickerKit_singapore2026_signature_cobra` | `#StickerKit_desc_singapore2026_signature_cobra` |
+| 12288 | `singapore2026_signature_cobra_foil` | `#StickerKit_singapore2026_signature_cobra_foil` | `#StickerKit_desc_singapore2026_signature_cobra_foil` |
+| 12289 | `singapore2026_signature_cobra_holo` | `#StickerKit_singapore2026_signature_cobra_holo` | `#StickerKit_desc_singapore2026_signature_cobra_holo` |
+| 12290 | `singapore2026_signature_cobra_gold` | `#StickerKit_singapore2026_signature_cobra_gold` | `#StickerKit_desc_singapore2026_signature_cobra_gold` |
+| 12291 | `singapore2026_signature_nin9` | `#StickerKit_singapore2026_signature_nin9` | `#StickerKit_desc_singapore2026_signature_nin9` |
+| 12292 | `singapore2026_signature_nin9_foil` | `#StickerKit_singapore2026_signature_nin9_foil` | `#StickerKit_desc_singapore2026_signature_nin9_foil` |
+| 12293 | `singapore2026_signature_nin9_holo` | `#StickerKit_singapore2026_signature_nin9_holo` | `#StickerKit_desc_singapore2026_signature_nin9_holo` |
+| 12294 | `singapore2026_signature_nin9_gold` | `#StickerKit_singapore2026_signature_nin9_gold` | `#StickerKit_desc_singapore2026_signature_nin9_gold` |
+| 12295 | `singapore2026_signature_techno4k` | `#StickerKit_singapore2026_signature_techno4k` | `#StickerKit_desc_singapore2026_signature_techno4k` |
+| 12296 | `singapore2026_signature_techno4k_foil` | `#StickerKit_singapore2026_signature_techno4k_foil` | `#StickerKit_desc_singapore2026_signature_techno4k_foil` |
+| 12297 | `singapore2026_signature_techno4k_holo` | `#StickerKit_singapore2026_signature_techno4k_holo` | `#StickerKit_desc_singapore2026_signature_techno4k_holo` |
+| 12298 | `singapore2026_signature_techno4k_gold` | `#StickerKit_singapore2026_signature_techno4k_gold` | `#StickerKit_desc_singapore2026_signature_techno4k_gold` |
+| 12299 | `singapore2026_signature_fl1t` | `#StickerKit_singapore2026_signature_fl1t` | `#StickerKit_desc_singapore2026_signature_fl1t` |
+| 12300 | `singapore2026_signature_fl1t_foil` | `#StickerKit_singapore2026_signature_fl1t_foil` | `#StickerKit_desc_singapore2026_signature_fl1t_foil` |
+| 12301 | `singapore2026_signature_fl1t_holo` | `#StickerKit_singapore2026_signature_fl1t_holo` | `#StickerKit_desc_singapore2026_signature_fl1t_holo` |
+| 12302 | `singapore2026_signature_fl1t_gold` | `#StickerKit_singapore2026_signature_fl1t_gold` | `#StickerKit_desc_singapore2026_signature_fl1t_gold` |
+| 12303 | `singapore2026_signature_hobbit` | `#StickerKit_singapore2026_signature_hobbit` | `#StickerKit_desc_singapore2026_signature_hobbit` |
+| 12304 | `singapore2026_signature_hobbit_foil` | `#StickerKit_singapore2026_signature_hobbit_foil` | `#StickerKit_desc_singapore2026_signature_hobbit_foil` |
+| 12305 | `singapore2026_signature_hobbit_holo` | `#StickerKit_singapore2026_signature_hobbit_holo` | `#StickerKit_desc_singapore2026_signature_hobbit_holo` |
+| 12306 | `singapore2026_signature_hobbit_gold` | `#StickerKit_singapore2026_signature_hobbit_gold` | `#StickerKit_desc_singapore2026_signature_hobbit_gold` |
+| 12307 | `singapore2026_signature_jame` | `#StickerKit_singapore2026_signature_jame` | `#StickerKit_desc_singapore2026_signature_jame` |
+| 12308 | `singapore2026_signature_jame_foil` | `#StickerKit_singapore2026_signature_jame_foil` | `#StickerKit_desc_singapore2026_signature_jame_foil` |
+| 12309 | `singapore2026_signature_jame_holo` | `#StickerKit_singapore2026_signature_jame_holo` | `#StickerKit_desc_singapore2026_signature_jame_holo` |
+| 12310 | `singapore2026_signature_jame_gold` | `#StickerKit_singapore2026_signature_jame_gold` | `#StickerKit_desc_singapore2026_signature_jame_gold` |
+| 12311 | `singapore2026_signature_xielo` | `#StickerKit_singapore2026_signature_xielo` | `#StickerKit_desc_singapore2026_signature_xielo` |
+| 12312 | `singapore2026_signature_xielo_foil` | `#StickerKit_singapore2026_signature_xielo_foil` | `#StickerKit_desc_singapore2026_signature_xielo_foil` |
+| 12313 | `singapore2026_signature_xielo_holo` | `#StickerKit_singapore2026_signature_xielo_holo` | `#StickerKit_desc_singapore2026_signature_xielo_holo` |
+| 12314 | `singapore2026_signature_xielo_gold` | `#StickerKit_singapore2026_signature_xielo_gold` | `#StickerKit_desc_singapore2026_signature_xielo_gold` |
+| 12315 | `singapore2026_signature_zweih` | `#StickerKit_singapore2026_signature_zweih` | `#StickerKit_desc_singapore2026_signature_zweih` |
+| 12316 | `singapore2026_signature_zweih_foil` | `#StickerKit_singapore2026_signature_zweih_foil` | `#StickerKit_desc_singapore2026_signature_zweih_foil` |
+| 12317 | `singapore2026_signature_zweih_holo` | `#StickerKit_singapore2026_signature_zweih_holo` | `#StickerKit_desc_singapore2026_signature_zweih_holo` |
+| 12318 | `singapore2026_signature_zweih_gold` | `#StickerKit_singapore2026_signature_zweih_gold` | `#StickerKit_desc_singapore2026_signature_zweih_gold` |
+| 12319 | `singapore2026_signature_brollan` | `#StickerKit_singapore2026_signature_brollan` | `#StickerKit_desc_singapore2026_signature_brollan` |
+| 12320 | `singapore2026_signature_brollan_foil` | `#StickerKit_singapore2026_signature_brollan_foil` | `#StickerKit_desc_singapore2026_signature_brollan_foil` |
+| 12321 | `singapore2026_signature_brollan_holo` | `#StickerKit_singapore2026_signature_brollan_holo` | `#StickerKit_desc_singapore2026_signature_brollan_holo` |
+| 12322 | `singapore2026_signature_brollan_gold` | `#StickerKit_singapore2026_signature_brollan_gold` | `#StickerKit_desc_singapore2026_signature_brollan_gold` |
+| 12323 | `singapore2026_signature_chr1zn` | `#StickerKit_singapore2026_signature_chr1zn` | `#StickerKit_desc_singapore2026_signature_chr1zn` |
+| 12324 | `singapore2026_signature_chr1zn_foil` | `#StickerKit_singapore2026_signature_chr1zn_foil` | `#StickerKit_desc_singapore2026_signature_chr1zn_foil` |
+| 12325 | `singapore2026_signature_chr1zn_holo` | `#StickerKit_singapore2026_signature_chr1zn_holo` | `#StickerKit_desc_singapore2026_signature_chr1zn_holo` |
+| 12326 | `singapore2026_signature_chr1zn_gold` | `#StickerKit_singapore2026_signature_chr1zn_gold` | `#StickerKit_desc_singapore2026_signature_chr1zn_gold` |
+| 12327 | `singapore2026_signature_martinezsa` | `#StickerKit_singapore2026_signature_martinezsa` | `#StickerKit_desc_singapore2026_signature_martinezsa` |
+| 12328 | `singapore2026_signature_martinezsa_foil` | `#StickerKit_singapore2026_signature_martinezsa_foil` | `#StickerKit_desc_singapore2026_signature_martinezsa_foil` |
+| 12329 | `singapore2026_signature_martinezsa_holo` | `#StickerKit_singapore2026_signature_martinezsa_holo` | `#StickerKit_desc_singapore2026_signature_martinezsa_holo` |
+| 12330 | `singapore2026_signature_martinezsa_gold` | `#StickerKit_singapore2026_signature_martinezsa_gold` | `#StickerKit_desc_singapore2026_signature_martinezsa_gold` |
+| 12331 | `singapore2026_signature_nilo` | `#StickerKit_singapore2026_signature_nilo` | `#StickerKit_desc_singapore2026_signature_nilo` |
+| 12332 | `singapore2026_signature_nilo_foil` | `#StickerKit_singapore2026_signature_nilo_foil` | `#StickerKit_desc_singapore2026_signature_nilo_foil` |
+| 12333 | `singapore2026_signature_nilo_holo` | `#StickerKit_singapore2026_signature_nilo_holo` | `#StickerKit_desc_singapore2026_signature_nilo_holo` |
+| 12334 | `singapore2026_signature_nilo_gold` | `#StickerKit_singapore2026_signature_nilo_gold` | `#StickerKit_desc_singapore2026_signature_nilo_gold` |
+| 12335 | `singapore2026_signature_susp` | `#StickerKit_singapore2026_signature_susp` | `#StickerKit_desc_singapore2026_signature_susp` |
+| 12336 | `singapore2026_signature_susp_foil` | `#StickerKit_singapore2026_signature_susp_foil` | `#StickerKit_desc_singapore2026_signature_susp_foil` |
+| 12337 | `singapore2026_signature_susp_holo` | `#StickerKit_singapore2026_signature_susp_holo` | `#StickerKit_desc_singapore2026_signature_susp_holo` |
+| 12338 | `singapore2026_signature_susp_gold` | `#StickerKit_singapore2026_signature_susp_gold` | `#StickerKit_desc_singapore2026_signature_susp_gold` |
+| 12339 | `singapore2026_signature_insani` | `#StickerKit_singapore2026_signature_insani` | `#StickerKit_desc_singapore2026_signature_insani` |
+| 12340 | `singapore2026_signature_insani_foil` | `#StickerKit_singapore2026_signature_insani_foil` | `#StickerKit_desc_singapore2026_signature_insani_foil` |
+| 12341 | `singapore2026_signature_insani_holo` | `#StickerKit_singapore2026_signature_insani_holo` | `#StickerKit_desc_singapore2026_signature_insani_holo` |
+| 12342 | `singapore2026_signature_insani_gold` | `#StickerKit_singapore2026_signature_insani_gold` | `#StickerKit_desc_singapore2026_signature_insani_gold` |
+| 12343 | `singapore2026_signature_lnz` | `#StickerKit_singapore2026_signature_lnz` | `#StickerKit_desc_singapore2026_signature_lnz` |
+| 12344 | `singapore2026_signature_lnz_foil` | `#StickerKit_singapore2026_signature_lnz_foil` | `#StickerKit_desc_singapore2026_signature_lnz_foil` |
+| 12345 | `singapore2026_signature_lnz_holo` | `#StickerKit_singapore2026_signature_lnz_holo` | `#StickerKit_desc_singapore2026_signature_lnz_holo` |
+| 12346 | `singapore2026_signature_lnz_gold` | `#StickerKit_singapore2026_signature_lnz_gold` | `#StickerKit_desc_singapore2026_signature_lnz_gold` |
+| 12347 | `singapore2026_signature_nqz` | `#StickerKit_singapore2026_signature_nqz` | `#StickerKit_desc_singapore2026_signature_nqz` |
+| 12348 | `singapore2026_signature_nqz_foil` | `#StickerKit_singapore2026_signature_nqz_foil` | `#StickerKit_desc_singapore2026_signature_nqz_foil` |
+| 12349 | `singapore2026_signature_nqz_holo` | `#StickerKit_singapore2026_signature_nqz_holo` | `#StickerKit_desc_singapore2026_signature_nqz_holo` |
+| 12350 | `singapore2026_signature_nqz_gold` | `#StickerKit_singapore2026_signature_nqz_gold` | `#StickerKit_desc_singapore2026_signature_nqz_gold` |
+| 12351 | `singapore2026_signature_tomaszin` | `#StickerKit_singapore2026_signature_tomaszin` | `#StickerKit_desc_singapore2026_signature_tomaszin` |
+| 12352 | `singapore2026_signature_tomaszin_foil` | `#StickerKit_singapore2026_signature_tomaszin_foil` | `#StickerKit_desc_singapore2026_signature_tomaszin_foil` |
+| 12353 | `singapore2026_signature_tomaszin_holo` | `#StickerKit_singapore2026_signature_tomaszin_holo` | `#StickerKit_desc_singapore2026_signature_tomaszin_holo` |
+| 12354 | `singapore2026_signature_tomaszin_gold` | `#StickerKit_singapore2026_signature_tomaszin_gold` | `#StickerKit_desc_singapore2026_signature_tomaszin_gold` |
+| 12355 | `singapore2026_signature_venomzera` | `#StickerKit_singapore2026_signature_venomzera` | `#StickerKit_desc_singapore2026_signature_venomzera` |
+| 12356 | `singapore2026_signature_venomzera_foil` | `#StickerKit_singapore2026_signature_venomzera_foil` | `#StickerKit_desc_singapore2026_signature_venomzera_foil` |
+| 12357 | `singapore2026_signature_venomzera_holo` | `#StickerKit_singapore2026_signature_venomzera_holo` | `#StickerKit_desc_singapore2026_signature_venomzera_holo` |
+| 12358 | `singapore2026_signature_venomzera_gold` | `#StickerKit_singapore2026_signature_venomzera_gold` | `#StickerKit_desc_singapore2026_signature_venomzera_gold` |
+| 12359 | `singapore2026_signature_frozen` | `#StickerKit_singapore2026_signature_frozen` | `#StickerKit_desc_singapore2026_signature_frozen` |
+| 12360 | `singapore2026_signature_frozen_foil` | `#StickerKit_singapore2026_signature_frozen_foil` | `#StickerKit_desc_singapore2026_signature_frozen_foil` |
+| 12361 | `singapore2026_signature_frozen_holo` | `#StickerKit_singapore2026_signature_frozen_holo` | `#StickerKit_desc_singapore2026_signature_frozen_holo` |
+| 12362 | `singapore2026_signature_frozen_gold` | `#StickerKit_singapore2026_signature_frozen_gold` | `#StickerKit_desc_singapore2026_signature_frozen_gold` |
+| 12363 | `singapore2026_signature_jboen` | `#StickerKit_singapore2026_signature_jboen` | `#StickerKit_desc_singapore2026_signature_jboen` |
+| 12364 | `singapore2026_signature_jboen_foil` | `#StickerKit_singapore2026_signature_jboen_foil` | `#StickerKit_desc_singapore2026_signature_jboen_foil` |
+| 12365 | `singapore2026_signature_jboen_holo` | `#StickerKit_singapore2026_signature_jboen_holo` | `#StickerKit_desc_singapore2026_signature_jboen_holo` |
+| 12366 | `singapore2026_signature_jboen_gold` | `#StickerKit_singapore2026_signature_jboen_gold` | `#StickerKit_desc_singapore2026_signature_jboen_gold` |
+| 12367 | `singapore2026_signature_jcobbb` | `#StickerKit_singapore2026_signature_jcobbb` | `#StickerKit_desc_singapore2026_signature_jcobbb` |
+| 12368 | `singapore2026_signature_jcobbb_foil` | `#StickerKit_singapore2026_signature_jcobbb_foil` | `#StickerKit_desc_singapore2026_signature_jcobbb_foil` |
+| 12369 | `singapore2026_signature_jcobbb_holo` | `#StickerKit_singapore2026_signature_jcobbb_holo` | `#StickerKit_desc_singapore2026_signature_jcobbb_holo` |
+| 12370 | `singapore2026_signature_jcobbb_gold` | `#StickerKit_singapore2026_signature_jcobbb_gold` | `#StickerKit_desc_singapore2026_signature_jcobbb_gold` |
+| 12371 | `singapore2026_signature_neityu` | `#StickerKit_singapore2026_signature_neityu` | `#StickerKit_desc_singapore2026_signature_neityu` |
+| 12372 | `singapore2026_signature_neityu_foil` | `#StickerKit_singapore2026_signature_neityu_foil` | `#StickerKit_desc_singapore2026_signature_neityu_foil` |
+| 12373 | `singapore2026_signature_neityu_holo` | `#StickerKit_singapore2026_signature_neityu_holo` | `#StickerKit_desc_singapore2026_signature_neityu_holo` |
+| 12374 | `singapore2026_signature_neityu_gold` | `#StickerKit_singapore2026_signature_neityu_gold` | `#StickerKit_desc_singapore2026_signature_neityu_gold` |
+| 12375 | `singapore2026_signature_twistzz` | `#StickerKit_singapore2026_signature_twistzz` | `#StickerKit_desc_singapore2026_signature_twistzz` |
+| 12376 | `singapore2026_signature_twistzz_foil` | `#StickerKit_singapore2026_signature_twistzz_foil` | `#StickerKit_desc_singapore2026_signature_twistzz_foil` |
+| 12377 | `singapore2026_signature_twistzz_holo` | `#StickerKit_singapore2026_signature_twistzz_holo` | `#StickerKit_desc_singapore2026_signature_twistzz_holo` |
+| 12378 | `singapore2026_signature_twistzz_gold` | `#StickerKit_singapore2026_signature_twistzz_gold` | `#StickerKit_desc_singapore2026_signature_twistzz_gold` |
+| 12379 | `singapore2026_signature_elige` | `#StickerKit_singapore2026_signature_elige` | `#StickerKit_desc_singapore2026_signature_elige` |
+| 12380 | `singapore2026_signature_elige_foil` | `#StickerKit_singapore2026_signature_elige_foil` | `#StickerKit_desc_singapore2026_signature_elige_foil` |
+| 12381 | `singapore2026_signature_elige_holo` | `#StickerKit_singapore2026_signature_elige_holo` | `#StickerKit_desc_singapore2026_signature_elige_holo` |
+| 12382 | `singapore2026_signature_elige_gold` | `#StickerKit_singapore2026_signature_elige_gold` | `#StickerKit_desc_singapore2026_signature_elige_gold` |
+| 12383 | `singapore2026_signature_jorko` | `#StickerKit_singapore2026_signature_jorko` | `#StickerKit_desc_singapore2026_signature_jorko` |
+| 12384 | `singapore2026_signature_jorko_foil` | `#StickerKit_singapore2026_signature_jorko_foil` | `#StickerKit_desc_singapore2026_signature_jorko_foil` |
+| 12385 | `singapore2026_signature_jorko_holo` | `#StickerKit_singapore2026_signature_jorko_holo` | `#StickerKit_desc_singapore2026_signature_jorko_holo` |
+| 12386 | `singapore2026_signature_jorko_gold` | `#StickerKit_singapore2026_signature_jorko_gold` | `#StickerKit_desc_singapore2026_signature_jorko_gold` |
+| 12387 | `singapore2026_signature_jt` | `#StickerKit_singapore2026_signature_jt` | `#StickerKit_desc_singapore2026_signature_jt` |
+| 12388 | `singapore2026_signature_jt_foil` | `#StickerKit_singapore2026_signature_jt_foil` | `#StickerKit_desc_singapore2026_signature_jt_foil` |
+| 12389 | `singapore2026_signature_jt_holo` | `#StickerKit_singapore2026_signature_jt_holo` | `#StickerKit_desc_singapore2026_signature_jt_holo` |
+| 12390 | `singapore2026_signature_jt_gold` | `#StickerKit_singapore2026_signature_jt_gold` | `#StickerKit_desc_singapore2026_signature_jt_gold` |
+| 12391 | `singapore2026_signature_malbsmd` | `#StickerKit_singapore2026_signature_malbsmd` | `#StickerKit_desc_singapore2026_signature_malbsmd` |
+| 12392 | `singapore2026_signature_malbsmd_foil` | `#StickerKit_singapore2026_signature_malbsmd_foil` | `#StickerKit_desc_singapore2026_signature_malbsmd_foil` |
+| 12393 | `singapore2026_signature_malbsmd_holo` | `#StickerKit_singapore2026_signature_malbsmd_holo` | `#StickerKit_desc_singapore2026_signature_malbsmd_holo` |
+| 12394 | `singapore2026_signature_malbsmd_gold` | `#StickerKit_singapore2026_signature_malbsmd_gold` | `#StickerKit_desc_singapore2026_signature_malbsmd_gold` |
+| 12395 | `singapore2026_signature_naf` | `#StickerKit_singapore2026_signature_naf` | `#StickerKit_desc_singapore2026_signature_naf` |
+| 12396 | `singapore2026_signature_naf_foil` | `#StickerKit_singapore2026_signature_naf_foil` | `#StickerKit_desc_singapore2026_signature_naf_foil` |
+| 12397 | `singapore2026_signature_naf_holo` | `#StickerKit_singapore2026_signature_naf_holo` | `#StickerKit_desc_singapore2026_signature_naf_holo` |
+| 12398 | `singapore2026_signature_naf_gold` | `#StickerKit_singapore2026_signature_naf_gold` | `#StickerKit_desc_singapore2026_signature_naf_gold` |
+| 12399 | `singapore2026_signature_jottaaa` | `#StickerKit_singapore2026_signature_jottaaa` | `#StickerKit_desc_singapore2026_signature_jottaaa` |
+| 12400 | `singapore2026_signature_jottaaa_foil` | `#StickerKit_singapore2026_signature_jottaaa_foil` | `#StickerKit_desc_singapore2026_signature_jottaaa_foil` |
+| 12401 | `singapore2026_signature_jottaaa_holo` | `#StickerKit_singapore2026_signature_jottaaa_holo` | `#StickerKit_desc_singapore2026_signature_jottaaa_holo` |
+| 12402 | `singapore2026_signature_jottaaa_gold` | `#StickerKit_singapore2026_signature_jottaaa_gold` | `#StickerKit_desc_singapore2026_signature_jottaaa_gold` |
+| 12403 | `singapore2026_signature_kvem` | `#StickerKit_singapore2026_signature_kvem` | `#StickerKit_desc_singapore2026_signature_kvem` |
+| 12404 | `singapore2026_signature_kvem_foil` | `#StickerKit_singapore2026_signature_kvem_foil` | `#StickerKit_desc_singapore2026_signature_kvem_foil` |
+| 12405 | `singapore2026_signature_kvem_holo` | `#StickerKit_singapore2026_signature_kvem_holo` | `#StickerKit_desc_singapore2026_signature_kvem_holo` |
+| 12406 | `singapore2026_signature_kvem_gold` | `#StickerKit_singapore2026_signature_kvem_gold` | `#StickerKit_desc_singapore2026_signature_kvem_gold` |
+| 12407 | `singapore2026_signature_mistem` | `#StickerKit_singapore2026_signature_mistem` | `#StickerKit_desc_singapore2026_signature_mistem` |
+| 12408 | `singapore2026_signature_mistem_foil` | `#StickerKit_singapore2026_signature_mistem_foil` | `#StickerKit_desc_singapore2026_signature_mistem_foil` |
+| 12409 | `singapore2026_signature_mistem_holo` | `#StickerKit_singapore2026_signature_mistem_holo` | `#StickerKit_desc_singapore2026_signature_mistem_holo` |
+| 12410 | `singapore2026_signature_mistem_gold` | `#StickerKit_singapore2026_signature_mistem_gold` | `#StickerKit_desc_singapore2026_signature_mistem_gold` |
+| 12411 | `singapore2026_signature_regali` | `#StickerKit_singapore2026_signature_regali` | `#StickerKit_desc_singapore2026_signature_regali` |
+| 12412 | `singapore2026_signature_regali_foil` | `#StickerKit_singapore2026_signature_regali_foil` | `#StickerKit_desc_singapore2026_signature_regali_foil` |
+| 12413 | `singapore2026_signature_regali_holo` | `#StickerKit_singapore2026_signature_regali_holo` | `#StickerKit_desc_singapore2026_signature_regali_holo` |
+| 12414 | `singapore2026_signature_regali_gold` | `#StickerKit_singapore2026_signature_regali_gold` | `#StickerKit_desc_singapore2026_signature_regali_gold` |
+| 12415 | `singapore2026_signature_soulfly` | `#StickerKit_singapore2026_signature_soulfly` | `#StickerKit_desc_singapore2026_signature_soulfly` |
+| 12416 | `singapore2026_signature_soulfly_foil` | `#StickerKit_singapore2026_signature_soulfly_foil` | `#StickerKit_desc_singapore2026_signature_soulfly_foil` |
+| 12417 | `singapore2026_signature_soulfly_holo` | `#StickerKit_singapore2026_signature_soulfly_holo` | `#StickerKit_desc_singapore2026_signature_soulfly_holo` |
+| 12418 | `singapore2026_signature_soulfly_gold` | `#StickerKit_singapore2026_signature_soulfly_gold` | `#StickerKit_desc_singapore2026_signature_soulfly_gold` |
+| 12419 | `singapore2026_signature_device` | `#StickerKit_singapore2026_signature_device` | `#StickerKit_desc_singapore2026_signature_device` |
+| 12420 | `singapore2026_signature_device_foil` | `#StickerKit_singapore2026_signature_device_foil` | `#StickerKit_desc_singapore2026_signature_device_foil` |
+| 12421 | `singapore2026_signature_device_holo` | `#StickerKit_singapore2026_signature_device_holo` | `#StickerKit_desc_singapore2026_signature_device_holo` |
+| 12422 | `singapore2026_signature_device_gold` | `#StickerKit_singapore2026_signature_device_gold` | `#StickerKit_desc_singapore2026_signature_device_gold` |
+| 12423 | `singapore2026_signature_gizmy` | `#StickerKit_singapore2026_signature_gizmy` | `#StickerKit_desc_singapore2026_signature_gizmy` |
+| 12424 | `singapore2026_signature_gizmy_foil` | `#StickerKit_singapore2026_signature_gizmy_foil` | `#StickerKit_desc_singapore2026_signature_gizmy_foil` |
+| 12425 | `singapore2026_signature_gizmy_holo` | `#StickerKit_singapore2026_signature_gizmy_holo` | `#StickerKit_desc_singapore2026_signature_gizmy_holo` |
+| 12426 | `singapore2026_signature_gizmy_gold` | `#StickerKit_singapore2026_signature_gizmy_gold` | `#StickerKit_desc_singapore2026_signature_gizmy_gold` |
+| 12427 | `singapore2026_signature_poiii` | `#StickerKit_singapore2026_signature_poiii` | `#StickerKit_desc_singapore2026_signature_poiii` |
+| 12428 | `singapore2026_signature_poiii_foil` | `#StickerKit_singapore2026_signature_poiii_foil` | `#StickerKit_desc_singapore2026_signature_poiii_foil` |
+| 12429 | `singapore2026_signature_poiii_holo` | `#StickerKit_singapore2026_signature_poiii_holo` | `#StickerKit_desc_singapore2026_signature_poiii_holo` |
+| 12430 | `singapore2026_signature_poiii_gold` | `#StickerKit_singapore2026_signature_poiii_gold` | `#StickerKit_desc_singapore2026_signature_poiii_gold` |
+| 12431 | `singapore2026_signature_rain` | `#StickerKit_singapore2026_signature_rain` | `#StickerKit_desc_singapore2026_signature_rain` |
+| 12432 | `singapore2026_signature_rain_foil` | `#StickerKit_singapore2026_signature_rain_foil` | `#StickerKit_desc_singapore2026_signature_rain_foil` |
+| 12433 | `singapore2026_signature_rain_holo` | `#StickerKit_singapore2026_signature_rain_holo` | `#StickerKit_desc_singapore2026_signature_rain_holo` |
+| 12434 | `singapore2026_signature_rain_gold` | `#StickerKit_singapore2026_signature_rain_gold` | `#StickerKit_desc_singapore2026_signature_rain_gold` |
+| 12435 | `singapore2026_signature_sirah` | `#StickerKit_singapore2026_signature_sirah` | `#StickerKit_desc_singapore2026_signature_sirah` |
+| 12436 | `singapore2026_signature_sirah_foil` | `#StickerKit_singapore2026_signature_sirah_foil` | `#StickerKit_desc_singapore2026_signature_sirah_foil` |
+| 12437 | `singapore2026_signature_sirah_holo` | `#StickerKit_singapore2026_signature_sirah_holo` | `#StickerKit_desc_singapore2026_signature_sirah_holo` |
+| 12438 | `singapore2026_signature_sirah_gold` | `#StickerKit_singapore2026_signature_sirah_gold` | `#StickerKit_desc_singapore2026_signature_sirah_gold` |
+| 12439 | `singapore2026_signature_dgt` | `#StickerKit_singapore2026_signature_dgt` | `#StickerKit_desc_singapore2026_signature_dgt` |
+| 12440 | `singapore2026_signature_dgt_foil` | `#StickerKit_singapore2026_signature_dgt_foil` | `#StickerKit_desc_singapore2026_signature_dgt_foil` |
+| 12441 | `singapore2026_signature_dgt_holo` | `#StickerKit_singapore2026_signature_dgt_holo` | `#StickerKit_desc_singapore2026_signature_dgt_holo` |
+| 12442 | `singapore2026_signature_dgt_gold` | `#StickerKit_singapore2026_signature_dgt_gold` | `#StickerKit_desc_singapore2026_signature_dgt_gold` |
+| 12443 | `singapore2026_signature_huasopeek` | `#StickerKit_singapore2026_signature_huasopeek` | `#StickerKit_desc_singapore2026_signature_huasopeek` |
+| 12444 | `singapore2026_signature_huasopeek_foil` | `#StickerKit_singapore2026_signature_huasopeek_foil` | `#StickerKit_desc_singapore2026_signature_huasopeek_foil` |
+| 12445 | `singapore2026_signature_huasopeek_holo` | `#StickerKit_singapore2026_signature_huasopeek_holo` | `#StickerKit_desc_singapore2026_signature_huasopeek_holo` |
+| 12446 | `singapore2026_signature_huasopeek_gold` | `#StickerKit_singapore2026_signature_huasopeek_gold` | `#StickerKit_desc_singapore2026_signature_huasopeek_gold` |
+| 12447 | `singapore2026_signature_luchov` | `#StickerKit_singapore2026_signature_luchov` | `#StickerKit_desc_singapore2026_signature_luchov` |
+| 12448 | `singapore2026_signature_luchov_foil` | `#StickerKit_singapore2026_signature_luchov_foil` | `#StickerKit_desc_singapore2026_signature_luchov_foil` |
+| 12449 | `singapore2026_signature_luchov_holo` | `#StickerKit_singapore2026_signature_luchov_holo` | `#StickerKit_desc_singapore2026_signature_luchov_holo` |
+| 12450 | `singapore2026_signature_luchov_gold` | `#StickerKit_singapore2026_signature_luchov_gold` | `#StickerKit_desc_singapore2026_signature_luchov_gold` |
+| 12451 | `singapore2026_signature_max` | `#StickerKit_singapore2026_signature_max` | `#StickerKit_desc_singapore2026_signature_max` |
+| 12452 | `singapore2026_signature_max_foil` | `#StickerKit_singapore2026_signature_max_foil` | `#StickerKit_desc_singapore2026_signature_max_foil` |
+| 12453 | `singapore2026_signature_max_holo` | `#StickerKit_singapore2026_signature_max_holo` | `#StickerKit_desc_singapore2026_signature_max_holo` |
+| 12454 | `singapore2026_signature_max_gold` | `#StickerKit_singapore2026_signature_max_gold` | `#StickerKit_desc_singapore2026_signature_max_gold` |
+| 12455 | `singapore2026_signature_meyern` | `#StickerKit_singapore2026_signature_meyern` | `#StickerKit_desc_singapore2026_signature_meyern` |
+| 12456 | `singapore2026_signature_meyern_foil` | `#StickerKit_singapore2026_signature_meyern_foil` | `#StickerKit_desc_singapore2026_signature_meyern_foil` |
+| 12457 | `singapore2026_signature_meyern_holo` | `#StickerKit_singapore2026_signature_meyern_holo` | `#StickerKit_desc_singapore2026_signature_meyern_holo` |
+| 12458 | `singapore2026_signature_meyern_gold` | `#StickerKit_singapore2026_signature_meyern_gold` | `#StickerKit_desc_singapore2026_signature_meyern_gold` |
+| 12459 | `singapore2026_signature_jba` | `#StickerKit_singapore2026_signature_jba` | `#StickerKit_desc_singapore2026_signature_jba` |
+| 12460 | `singapore2026_signature_jba_foil` | `#StickerKit_singapore2026_signature_jba_foil` | `#StickerKit_desc_singapore2026_signature_jba_foil` |
+| 12461 | `singapore2026_signature_jba_holo` | `#StickerKit_singapore2026_signature_jba_holo` | `#StickerKit_desc_singapore2026_signature_jba_holo` |
+| 12462 | `singapore2026_signature_jba_gold` | `#StickerKit_singapore2026_signature_jba_gold` | `#StickerKit_desc_singapore2026_signature_jba_gold` |
+| 12463 | `singapore2026_signature_lake` | `#StickerKit_singapore2026_signature_lake` | `#StickerKit_desc_singapore2026_signature_lake` |
+| 12464 | `singapore2026_signature_lake_foil` | `#StickerKit_singapore2026_signature_lake_foil` | `#StickerKit_desc_singapore2026_signature_lake_foil` |
+| 12465 | `singapore2026_signature_lake_holo` | `#StickerKit_singapore2026_signature_lake_holo` | `#StickerKit_desc_singapore2026_signature_lake_holo` |
+| 12466 | `singapore2026_signature_lake_gold` | `#StickerKit_singapore2026_signature_lake_gold` | `#StickerKit_desc_singapore2026_signature_lake_gold` |
+| 12467 | `singapore2026_signature_s1n` | `#StickerKit_singapore2026_signature_s1n` | `#StickerKit_desc_singapore2026_signature_s1n` |
+| 12468 | `singapore2026_signature_s1n_foil` | `#StickerKit_singapore2026_signature_s1n_foil` | `#StickerKit_desc_singapore2026_signature_s1n_foil` |
+| 12469 | `singapore2026_signature_s1n_holo` | `#StickerKit_singapore2026_signature_s1n_holo` | `#StickerKit_desc_singapore2026_signature_s1n_holo` |
+| 12470 | `singapore2026_signature_s1n_gold` | `#StickerKit_singapore2026_signature_s1n_gold` | `#StickerKit_desc_singapore2026_signature_s1n_gold` |
+| 12471 | `singapore2026_signature_slaxz` | `#StickerKit_singapore2026_signature_slaxz` | `#StickerKit_desc_singapore2026_signature_slaxz` |
+| 12472 | `singapore2026_signature_slaxz_foil` | `#StickerKit_singapore2026_signature_slaxz_foil` | `#StickerKit_desc_singapore2026_signature_slaxz_foil` |
+| 12473 | `singapore2026_signature_slaxz_holo` | `#StickerKit_singapore2026_signature_slaxz_holo` | `#StickerKit_desc_singapore2026_signature_slaxz_holo` |
+| 12474 | `singapore2026_signature_slaxz_gold` | `#StickerKit_singapore2026_signature_slaxz_gold` | `#StickerKit_desc_singapore2026_signature_slaxz_gold` |
+| 12475 | `singapore2026_signature_swisher` | `#StickerKit_singapore2026_signature_swisher` | `#StickerKit_desc_singapore2026_signature_swisher` |
+| 12476 | `singapore2026_signature_swisher_foil` | `#StickerKit_singapore2026_signature_swisher_foil` | `#StickerKit_desc_singapore2026_signature_swisher_foil` |
+| 12477 | `singapore2026_signature_swisher_holo` | `#StickerKit_singapore2026_signature_swisher_holo` | `#StickerKit_desc_singapore2026_signature_swisher_holo` |
+| 12478 | `singapore2026_signature_swisher_gold` | `#StickerKit_singapore2026_signature_swisher_gold` | `#StickerKit_desc_singapore2026_signature_swisher_gold` |
+| 12479 | `singapore2026_signature_doc` | `#StickerKit_singapore2026_signature_doc` | `#StickerKit_desc_singapore2026_signature_doc` |
+| 12480 | `singapore2026_signature_doc_foil` | `#StickerKit_singapore2026_signature_doc_foil` | `#StickerKit_desc_singapore2026_signature_doc_foil` |
+| 12481 | `singapore2026_signature_doc_holo` | `#StickerKit_singapore2026_signature_doc_holo` | `#StickerKit_desc_singapore2026_signature_doc_holo` |
+| 12482 | `singapore2026_signature_doc_gold` | `#StickerKit_singapore2026_signature_doc_gold` | `#StickerKit_desc_singapore2026_signature_doc_gold` |
+| 12483 | `singapore2026_signature_gafolo` | `#StickerKit_singapore2026_signature_gafolo` | `#StickerKit_desc_singapore2026_signature_gafolo` |
+| 12484 | `singapore2026_signature_gafolo_foil` | `#StickerKit_singapore2026_signature_gafolo_foil` | `#StickerKit_desc_singapore2026_signature_gafolo_foil` |
+| 12485 | `singapore2026_signature_gafolo_holo` | `#StickerKit_singapore2026_signature_gafolo_holo` | `#StickerKit_desc_singapore2026_signature_gafolo_holo` |
+| 12486 | `singapore2026_signature_gafolo_gold` | `#StickerKit_singapore2026_signature_gafolo_gold` | `#StickerKit_desc_singapore2026_signature_gafolo_gold` |
+| 12487 | `singapore2026_signature_koala` | `#StickerKit_singapore2026_signature_koala` | `#StickerKit_desc_singapore2026_signature_koala` |
+| 12488 | `singapore2026_signature_koala_foil` | `#StickerKit_singapore2026_signature_koala_foil` | `#StickerKit_desc_singapore2026_signature_koala_foil` |
+| 12489 | `singapore2026_signature_koala_holo` | `#StickerKit_singapore2026_signature_koala_holo` | `#StickerKit_desc_singapore2026_signature_koala_holo` |
+| 12490 | `singapore2026_signature_koala_gold` | `#StickerKit_singapore2026_signature_koala_gold` | `#StickerKit_desc_singapore2026_signature_koala_gold` |
+| 12491 | `singapore2026_signature_maxxkor` | `#StickerKit_singapore2026_signature_maxxkor` | `#StickerKit_desc_singapore2026_signature_maxxkor` |
+| 12492 | `singapore2026_signature_maxxkor_foil` | `#StickerKit_singapore2026_signature_maxxkor_foil` | `#StickerKit_desc_singapore2026_signature_maxxkor_foil` |
+| 12493 | `singapore2026_signature_maxxkor_holo` | `#StickerKit_singapore2026_signature_maxxkor_holo` | `#StickerKit_desc_singapore2026_signature_maxxkor_holo` |
+| 12494 | `singapore2026_signature_maxxkor_gold` | `#StickerKit_singapore2026_signature_maxxkor_gold` | `#StickerKit_desc_singapore2026_signature_maxxkor_gold` |
+| 12495 | `singapore2026_signature_rdnzao` | `#StickerKit_singapore2026_signature_rdnzao` | `#StickerKit_desc_singapore2026_signature_rdnzao` |
+| 12496 | `singapore2026_signature_rdnzao_foil` | `#StickerKit_singapore2026_signature_rdnzao_foil` | `#StickerKit_desc_singapore2026_signature_rdnzao_foil` |
+| 12497 | `singapore2026_signature_rdnzao_holo` | `#StickerKit_singapore2026_signature_rdnzao_holo` | `#StickerKit_desc_singapore2026_signature_rdnzao_holo` |
+| 12498 | `singapore2026_signature_rdnzao_gold` | `#StickerKit_singapore2026_signature_rdnzao_gold` | `#StickerKit_desc_singapore2026_signature_rdnzao_gold` |
+| 12499 | `singapore2026_signature_chelo` | `#StickerKit_singapore2026_signature_chelo` | `#StickerKit_desc_singapore2026_signature_chelo` |
+| 12500 | `singapore2026_signature_chelo_foil` | `#StickerKit_singapore2026_signature_chelo_foil` | `#StickerKit_desc_singapore2026_signature_chelo_foil` |
+| 12501 | `singapore2026_signature_chelo_holo` | `#StickerKit_singapore2026_signature_chelo_holo` | `#StickerKit_desc_singapore2026_signature_chelo_holo` |
+| 12502 | `singapore2026_signature_chelo_gold` | `#StickerKit_singapore2026_signature_chelo_gold` | `#StickerKit_desc_singapore2026_signature_chelo_gold` |
+| 12503 | `singapore2026_signature_decenty` | `#StickerKit_singapore2026_signature_decenty` | `#StickerKit_desc_singapore2026_signature_decenty` |
+| 12504 | `singapore2026_signature_decenty_foil` | `#StickerKit_singapore2026_signature_decenty_foil` | `#StickerKit_desc_singapore2026_signature_decenty_foil` |
+| 12505 | `singapore2026_signature_decenty_holo` | `#StickerKit_singapore2026_signature_decenty_holo` | `#StickerKit_desc_singapore2026_signature_decenty_holo` |
+| 12506 | `singapore2026_signature_decenty_gold` | `#StickerKit_singapore2026_signature_decenty_gold` | `#StickerKit_desc_singapore2026_signature_decenty_gold` |
+| 12507 | `singapore2026_signature_noway` | `#StickerKit_singapore2026_signature_noway` | `#StickerKit_desc_singapore2026_signature_noway` |
+| 12508 | `singapore2026_signature_noway_foil` | `#StickerKit_singapore2026_signature_noway_foil` | `#StickerKit_desc_singapore2026_signature_noway_foil` |
+| 12509 | `singapore2026_signature_noway_holo` | `#StickerKit_singapore2026_signature_noway_holo` | `#StickerKit_desc_singapore2026_signature_noway_holo` |
+| 12510 | `singapore2026_signature_noway_gold` | `#StickerKit_singapore2026_signature_noway_gold` | `#StickerKit_desc_singapore2026_signature_noway_gold` |
+| 12511 | `singapore2026_signature_saadzin` | `#StickerKit_singapore2026_signature_saadzin` | `#StickerKit_desc_singapore2026_signature_saadzin` |
+| 12512 | `singapore2026_signature_saadzin_foil` | `#StickerKit_singapore2026_signature_saadzin_foil` | `#StickerKit_desc_singapore2026_signature_saadzin_foil` |
+| 12513 | `singapore2026_signature_saadzin_holo` | `#StickerKit_singapore2026_signature_saadzin_holo` | `#StickerKit_desc_singapore2026_signature_saadzin_holo` |
+| 12514 | `singapore2026_signature_saadzin_gold` | `#StickerKit_singapore2026_signature_saadzin_gold` | `#StickerKit_desc_singapore2026_signature_saadzin_gold` |
+| 12515 | `singapore2026_signature_vini` | `#StickerKit_singapore2026_signature_vini` | `#StickerKit_desc_singapore2026_signature_vini` |
+| 12516 | `singapore2026_signature_vini_foil` | `#StickerKit_singapore2026_signature_vini_foil` | `#StickerKit_desc_singapore2026_signature_vini_foil` |
+| 12517 | `singapore2026_signature_vini_holo` | `#StickerKit_singapore2026_signature_vini_holo` | `#StickerKit_desc_singapore2026_signature_vini_holo` |
+| 12518 | `singapore2026_signature_vini_gold` | `#StickerKit_singapore2026_signature_vini_gold` | `#StickerKit_desc_singapore2026_signature_vini_gold` |
+| 12519 | `singapore2026_signature_cxzi` | `#StickerKit_singapore2026_signature_cxzi` | `#StickerKit_desc_singapore2026_signature_cxzi` |
+| 12520 | `singapore2026_signature_cxzi_foil` | `#StickerKit_singapore2026_signature_cxzi_foil` | `#StickerKit_desc_singapore2026_signature_cxzi_foil` |
+| 12521 | `singapore2026_signature_cxzi_holo` | `#StickerKit_singapore2026_signature_cxzi_holo` | `#StickerKit_desc_singapore2026_signature_cxzi_holo` |
+| 12522 | `singapore2026_signature_cxzi_gold` | `#StickerKit_singapore2026_signature_cxzi_gold` | `#StickerKit_desc_singapore2026_signature_cxzi_gold` |
+| 12523 | `singapore2026_signature_fr3nd` | `#StickerKit_singapore2026_signature_fr3nd` | `#StickerKit_desc_singapore2026_signature_fr3nd` |
+| 12524 | `singapore2026_signature_fr3nd_foil` | `#StickerKit_singapore2026_signature_fr3nd_foil` | `#StickerKit_desc_singapore2026_signature_fr3nd_foil` |
+| 12525 | `singapore2026_signature_fr3nd_holo` | `#StickerKit_singapore2026_signature_fr3nd_holo` | `#StickerKit_desc_singapore2026_signature_fr3nd_holo` |
+| 12526 | `singapore2026_signature_fr3nd_gold` | `#StickerKit_singapore2026_signature_fr3nd_gold` | `#StickerKit_desc_singapore2026_signature_fr3nd_gold` |
+| 12527 | `singapore2026_signature_hext` | `#StickerKit_singapore2026_signature_hext` | `#StickerKit_desc_singapore2026_signature_hext` |
+| 12528 | `singapore2026_signature_hext_foil` | `#StickerKit_singapore2026_signature_hext_foil` | `#StickerKit_desc_singapore2026_signature_hext_foil` |
+| 12529 | `singapore2026_signature_hext_holo` | `#StickerKit_singapore2026_signature_hext_holo` | `#StickerKit_desc_singapore2026_signature_hext_holo` |
+| 12530 | `singapore2026_signature_hext_gold` | `#StickerKit_singapore2026_signature_hext_gold` | `#StickerKit_desc_singapore2026_signature_hext_gold` |
+| 12531 | `singapore2026_signature_nemanha` | `#StickerKit_singapore2026_signature_nemanha` | `#StickerKit_desc_singapore2026_signature_nemanha` |
+| 12532 | `singapore2026_signature_nemanha_foil` | `#StickerKit_singapore2026_signature_nemanha_foil` | `#StickerKit_desc_singapore2026_signature_nemanha_foil` |
+| 12533 | `singapore2026_signature_nemanha_holo` | `#StickerKit_singapore2026_signature_nemanha_holo` | `#StickerKit_desc_singapore2026_signature_nemanha_holo` |
+| 12534 | `singapore2026_signature_nemanha_gold` | `#StickerKit_singapore2026_signature_nemanha_gold` | `#StickerKit_desc_singapore2026_signature_nemanha_gold` |
+| 12535 | `singapore2026_signature_reck` | `#StickerKit_singapore2026_signature_reck` | `#StickerKit_desc_singapore2026_signature_reck` |
+| 12536 | `singapore2026_signature_reck_foil` | `#StickerKit_singapore2026_signature_reck_foil` | `#StickerKit_desc_singapore2026_signature_reck_foil` |
+| 12537 | `singapore2026_signature_reck_holo` | `#StickerKit_singapore2026_signature_reck_holo` | `#StickerKit_desc_singapore2026_signature_reck_holo` |
+| 12538 | `singapore2026_signature_reck_gold` | `#StickerKit_singapore2026_signature_reck_gold` | `#StickerKit_desc_singapore2026_signature_reck_gold` |
+| 12539 | `singapore2026_signature_asap` | `#StickerKit_singapore2026_signature_asap` | `#StickerKit_desc_singapore2026_signature_asap` |
+| 12540 | `singapore2026_signature_asap_foil` | `#StickerKit_singapore2026_signature_asap_foil` | `#StickerKit_desc_singapore2026_signature_asap_foil` |
+| 12541 | `singapore2026_signature_asap_holo` | `#StickerKit_singapore2026_signature_asap_holo` | `#StickerKit_desc_singapore2026_signature_asap_holo` |
+| 12542 | `singapore2026_signature_asap_gold` | `#StickerKit_singapore2026_signature_asap_gold` | `#StickerKit_desc_singapore2026_signature_asap_gold` |
+| 12543 | `singapore2026_signature_magisk` | `#StickerKit_singapore2026_signature_magisk` | `#StickerKit_desc_singapore2026_signature_magisk` |
+| 12544 | `singapore2026_signature_magisk_foil` | `#StickerKit_singapore2026_signature_magisk_foil` | `#StickerKit_desc_singapore2026_signature_magisk_foil` |
+| 12545 | `singapore2026_signature_magisk_holo` | `#StickerKit_singapore2026_signature_magisk_holo` | `#StickerKit_desc_singapore2026_signature_magisk_holo` |
+| 12546 | `singapore2026_signature_magisk_gold` | `#StickerKit_singapore2026_signature_magisk_gold` | `#StickerKit_desc_singapore2026_signature_magisk_gold` |
+| 12547 | `singapore2026_signature_mzinho` | `#StickerKit_singapore2026_signature_mzinho` | `#StickerKit_desc_singapore2026_signature_mzinho` |
+| 12548 | `singapore2026_signature_mzinho_foil` | `#StickerKit_singapore2026_signature_mzinho_foil` | `#StickerKit_desc_singapore2026_signature_mzinho_foil` |
+| 12549 | `singapore2026_signature_mzinho_holo` | `#StickerKit_singapore2026_signature_mzinho_holo` | `#StickerKit_desc_singapore2026_signature_mzinho_holo` |
+| 12550 | `singapore2026_signature_mzinho_gold` | `#StickerKit_singapore2026_signature_mzinho_gold` | `#StickerKit_desc_singapore2026_signature_mzinho_gold` |
+| 12551 | `singapore2026_signature_s1mple` | `#StickerKit_singapore2026_signature_s1mple` | `#StickerKit_desc_singapore2026_signature_s1mple` |
+| 12552 | `singapore2026_signature_s1mple_foil` | `#StickerKit_singapore2026_signature_s1mple_foil` | `#StickerKit_desc_singapore2026_signature_s1mple_foil` |
+| 12553 | `singapore2026_signature_s1mple_holo` | `#StickerKit_singapore2026_signature_s1mple_holo` | `#StickerKit_desc_singapore2026_signature_s1mple_holo` |
+| 12554 | `singapore2026_signature_s1mple_gold` | `#StickerKit_singapore2026_signature_s1mple_gold` | `#StickerKit_desc_singapore2026_signature_s1mple_gold` |
+| 12555 | `singapore2026_signature_senzu` | `#StickerKit_singapore2026_signature_senzu` | `#StickerKit_desc_singapore2026_signature_senzu` |
+| 12556 | `singapore2026_signature_senzu_foil` | `#StickerKit_singapore2026_signature_senzu_foil` | `#StickerKit_desc_singapore2026_signature_senzu_foil` |
+| 12557 | `singapore2026_signature_senzu_holo` | `#StickerKit_singapore2026_signature_senzu_holo` | `#StickerKit_desc_singapore2026_signature_senzu_holo` |
+| 12558 | `singapore2026_signature_senzu_gold` | `#StickerKit_singapore2026_signature_senzu_gold` | `#StickerKit_desc_singapore2026_signature_senzu_gold` |
+| 12559 | `singapore2026_signature_alistair` | `#StickerKit_singapore2026_signature_alistair` | `#StickerKit_desc_singapore2026_signature_alistair` |
+| 12560 | `singapore2026_signature_alistair_foil` | `#StickerKit_singapore2026_signature_alistair_foil` | `#StickerKit_desc_singapore2026_signature_alistair_foil` |
+| 12561 | `singapore2026_signature_alistair_holo` | `#StickerKit_singapore2026_signature_alistair_holo` | `#StickerKit_desc_singapore2026_signature_alistair_holo` |
+| 12562 | `singapore2026_signature_alistair_gold` | `#StickerKit_singapore2026_signature_alistair_gold` | `#StickerKit_desc_singapore2026_signature_alistair_gold` |
+| 12563 | `singapore2026_signature_ins` | `#StickerKit_singapore2026_signature_ins` | `#StickerKit_desc_singapore2026_signature_ins` |
+| 12564 | `singapore2026_signature_ins_foil` | `#StickerKit_singapore2026_signature_ins_foil` | `#StickerKit_desc_singapore2026_signature_ins_foil` |
+| 12565 | `singapore2026_signature_ins_holo` | `#StickerKit_singapore2026_signature_ins_holo` | `#StickerKit_desc_singapore2026_signature_ins_holo` |
+| 12566 | `singapore2026_signature_ins_gold` | `#StickerKit_singapore2026_signature_ins_gold` | `#StickerKit_desc_singapore2026_signature_ins_gold` |
+| 12567 | `singapore2026_signature_jks` | `#StickerKit_singapore2026_signature_jks` | `#StickerKit_desc_singapore2026_signature_jks` |
+| 12568 | `singapore2026_signature_jks_foil` | `#StickerKit_singapore2026_signature_jks_foil` | `#StickerKit_desc_singapore2026_signature_jks_foil` |
+| 12569 | `singapore2026_signature_jks_holo` | `#StickerKit_singapore2026_signature_jks_holo` | `#StickerKit_desc_singapore2026_signature_jks_holo` |
+| 12570 | `singapore2026_signature_jks_gold` | `#StickerKit_singapore2026_signature_jks_gold` | `#StickerKit_desc_singapore2026_signature_jks_gold` |
+| 12571 | `singapore2026_signature_nettik` | `#StickerKit_singapore2026_signature_nettik` | `#StickerKit_desc_singapore2026_signature_nettik` |
+| 12572 | `singapore2026_signature_nettik_foil` | `#StickerKit_singapore2026_signature_nettik_foil` | `#StickerKit_desc_singapore2026_signature_nettik_foil` |
+| 12573 | `singapore2026_signature_nettik_holo` | `#StickerKit_singapore2026_signature_nettik_holo` | `#StickerKit_desc_singapore2026_signature_nettik_holo` |
+| 12574 | `singapore2026_signature_nettik_gold` | `#StickerKit_singapore2026_signature_nettik_gold` | `#StickerKit_desc_singapore2026_signature_nettik_gold` |
+| 12575 | `singapore2026_signature_vexite` | `#StickerKit_singapore2026_signature_vexite` | `#StickerKit_desc_singapore2026_signature_vexite` |
+| 12576 | `singapore2026_signature_vexite_foil` | `#StickerKit_singapore2026_signature_vexite_foil` | `#StickerKit_desc_singapore2026_signature_vexite_foil` |
+| 12577 | `singapore2026_signature_vexite_holo` | `#StickerKit_singapore2026_signature_vexite_holo` | `#StickerKit_desc_singapore2026_signature_vexite_holo` |
+| 12578 | `singapore2026_signature_vexite_gold` | `#StickerKit_singapore2026_signature_vexite_gold` | `#StickerKit_desc_singapore2026_signature_vexite_gold` |
+| 12579 | `singapore2026_signature_cool4st` | `#StickerKit_singapore2026_signature_cool4st` | `#StickerKit_desc_singapore2026_signature_cool4st` |
+| 12580 | `singapore2026_signature_cool4st_foil` | `#StickerKit_singapore2026_signature_cool4st_foil` | `#StickerKit_desc_singapore2026_signature_cool4st_foil` |
+| 12581 | `singapore2026_signature_cool4st_holo` | `#StickerKit_singapore2026_signature_cool4st_holo` | `#StickerKit_desc_singapore2026_signature_cool4st_holo` |
+| 12582 | `singapore2026_signature_cool4st_gold` | `#StickerKit_singapore2026_signature_cool4st_gold` | `#StickerKit_desc_singapore2026_signature_cool4st_gold` |
+| 12583 | `singapore2026_signature_fury5k` | `#StickerKit_singapore2026_signature_fury5k` | `#StickerKit_desc_singapore2026_signature_fury5k` |
+| 12584 | `singapore2026_signature_fury5k_foil` | `#StickerKit_singapore2026_signature_fury5k_foil` | `#StickerKit_desc_singapore2026_signature_fury5k_foil` |
+| 12585 | `singapore2026_signature_fury5k_holo` | `#StickerKit_singapore2026_signature_fury5k_holo` | `#StickerKit_desc_singapore2026_signature_fury5k_holo` |
+| 12586 | `singapore2026_signature_fury5k_gold` | `#StickerKit_singapore2026_signature_fury5k_gold` | `#StickerKit_desc_singapore2026_signature_fury5k_gold` |
+| 12587 | `singapore2026_signature_roux` | `#StickerKit_singapore2026_signature_roux` | `#StickerKit_desc_singapore2026_signature_roux` |
+| 12588 | `singapore2026_signature_roux_foil` | `#StickerKit_singapore2026_signature_roux_foil` | `#StickerKit_desc_singapore2026_signature_roux_foil` |
+| 12589 | `singapore2026_signature_roux_holo` | `#StickerKit_singapore2026_signature_roux_holo` | `#StickerKit_desc_singapore2026_signature_roux_holo` |
+| 12590 | `singapore2026_signature_roux_gold` | `#StickerKit_singapore2026_signature_roux_gold` | `#StickerKit_desc_singapore2026_signature_roux_gold` |
+| 12591 | `singapore2026_signature_sk0r` | `#StickerKit_singapore2026_signature_sk0r` | `#StickerKit_desc_singapore2026_signature_sk0r` |
+| 12592 | `singapore2026_signature_sk0r_foil` | `#StickerKit_singapore2026_signature_sk0r_foil` | `#StickerKit_desc_singapore2026_signature_sk0r_foil` |
+| 12593 | `singapore2026_signature_sk0r_holo` | `#StickerKit_singapore2026_signature_sk0r_holo` | `#StickerKit_desc_singapore2026_signature_sk0r_holo` |
+| 12594 | `singapore2026_signature_sk0r_gold` | `#StickerKit_singapore2026_signature_sk0r_gold` | `#StickerKit_desc_singapore2026_signature_sk0r_gold` |
+| 12595 | `singapore2026_signature_tikuak` | `#StickerKit_singapore2026_signature_tikuak` | `#StickerKit_desc_singapore2026_signature_tikuak` |
+| 12596 | `singapore2026_signature_tikuak_foil` | `#StickerKit_singapore2026_signature_tikuak_foil` | `#StickerKit_desc_singapore2026_signature_tikuak_foil` |
+| 12597 | `singapore2026_signature_tikuak_holo` | `#StickerKit_singapore2026_signature_tikuak_holo` | `#StickerKit_desc_singapore2026_signature_tikuak_holo` |
+| 12598 | `singapore2026_signature_tikuak_gold` | `#StickerKit_singapore2026_signature_tikuak_gold` | `#StickerKit_desc_singapore2026_signature_tikuak_gold` |
+| 12599 | `singapore2026_signature_c4llm3su3` | `#StickerKit_singapore2026_signature_c4llm3su3` | `#StickerKit_desc_singapore2026_signature_c4llm3su3` |
+| 12600 | `singapore2026_signature_c4llm3su3_foil` | `#StickerKit_singapore2026_signature_c4llm3su3_foil` | `#StickerKit_desc_singapore2026_signature_c4llm3su3_foil` |
+| 12601 | `singapore2026_signature_c4llm3su3_holo` | `#StickerKit_singapore2026_signature_c4llm3su3_holo` | `#StickerKit_desc_singapore2026_signature_c4llm3su3_holo` |
+| 12602 | `singapore2026_signature_c4llm3su3_gold` | `#StickerKit_singapore2026_signature_c4llm3su3_gold` | `#StickerKit_desc_singapore2026_signature_c4llm3su3_gold` |
+| 12603 | `singapore2026_signature_emiliaqaq` | `#StickerKit_singapore2026_signature_emiliaqaq` | `#StickerKit_desc_singapore2026_signature_emiliaqaq` |
+| 12604 | `singapore2026_signature_emiliaqaq_foil` | `#StickerKit_singapore2026_signature_emiliaqaq_foil` | `#StickerKit_desc_singapore2026_signature_emiliaqaq_foil` |
+| 12605 | `singapore2026_signature_emiliaqaq_holo` | `#StickerKit_singapore2026_signature_emiliaqaq_holo` | `#StickerKit_desc_singapore2026_signature_emiliaqaq_holo` |
+| 12606 | `singapore2026_signature_emiliaqaq_gold` | `#StickerKit_singapore2026_signature_emiliaqaq_gold` | `#StickerKit_desc_singapore2026_signature_emiliaqaq_gold` |
+| 12607 | `singapore2026_signature_starry` | `#StickerKit_singapore2026_signature_starry` | `#StickerKit_desc_singapore2026_signature_starry` |
+| 12608 | `singapore2026_signature_starry_foil` | `#StickerKit_singapore2026_signature_starry_foil` | `#StickerKit_desc_singapore2026_signature_starry_foil` |
+| 12609 | `singapore2026_signature_starry_holo` | `#StickerKit_singapore2026_signature_starry_holo` | `#StickerKit_desc_singapore2026_signature_starry_holo` |
+| 12610 | `singapore2026_signature_starry_gold` | `#StickerKit_singapore2026_signature_starry_gold` | `#StickerKit_desc_singapore2026_signature_starry_gold` |
+| 12611 | `singapore2026_signature_westmelon` | `#StickerKit_singapore2026_signature_westmelon` | `#StickerKit_desc_singapore2026_signature_westmelon` |
+| 12612 | `singapore2026_signature_westmelon_foil` | `#StickerKit_singapore2026_signature_westmelon_foil` | `#StickerKit_desc_singapore2026_signature_westmelon_foil` |
+| 12613 | `singapore2026_signature_westmelon_holo` | `#StickerKit_singapore2026_signature_westmelon_holo` | `#StickerKit_desc_singapore2026_signature_westmelon_holo` |
+| 12614 | `singapore2026_signature_westmelon_gold` | `#StickerKit_singapore2026_signature_westmelon_gold` | `#StickerKit_desc_singapore2026_signature_westmelon_gold` |
+| 12615 | `singapore2026_signature_z4kr` | `#StickerKit_singapore2026_signature_z4kr` | `#StickerKit_desc_singapore2026_signature_z4kr` |
+| 12616 | `singapore2026_signature_z4kr_foil` | `#StickerKit_singapore2026_signature_z4kr_foil` | `#StickerKit_desc_singapore2026_signature_z4kr_foil` |
+| 12617 | `singapore2026_signature_z4kr_holo` | `#StickerKit_singapore2026_signature_z4kr_holo` | `#StickerKit_desc_singapore2026_signature_z4kr_holo` |
+| 12618 | `singapore2026_signature_z4kr_gold` | `#StickerKit_singapore2026_signature_z4kr_gold` | `#StickerKit_desc_singapore2026_signature_z4kr_gold` |
 
 ## Music Kits
 
-102 music kits.
+110 music kits.
 
 | defIndex | Name | Loc name |
 |----------|------|----------|
@@ -15467,10 +16310,18 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 102 | `repiet_01` | `#MusicKit_repiet_01` |
 | 103 | `shockone_01` | `#MusicKit_shockone_01` |
 | 104 | `starjunk95_01` | `#MusicKit_starjunk95_01` |
+| 105 | `alleycvt_01` | `#MusicKit_alleycvt_01` |
+| 106 | `arcando_01` | `#MusicKit_arcando_01` |
+| 107 | `djdiesel_01` | `#MusicKit_djdiesel_01` |
+| 108 | `fool_01` | `#MusicKit_fool_01` |
+| 109 | `noisestorm_01` | `#MusicKit_noisestorm_01` |
+| 110 | `pegboardnerds_01` | `#MusicKit_pegboardnerds_01` |
+| 111 | `tristam_braken_01` | `#MusicKit_tristam_braken_01` |
+| 112 | `vicetone_01` | `#MusicKit_vicetone_01` |
 
 ## Prefabs
 
-214 prefabs.
+221 prefabs.
 
 | id | Parent prefab | Classname | Item type |
 |----|---------------|-----------|-----------|
@@ -15622,6 +16473,13 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | `sha2024_tournament_journal_prefab` | `fan_shield` |  |  |
 | `sha2024_tournament_pass_prefab` | `fan_token` |  |  |
 | `shotgun` | `primary` |  | #CSGO_Type_Shotgun |
+| `singapore2026_sellable_item1` | `singapore2026_sellable_item0` |  |  |
+| `singapore2026_signature_capsule_prefab` | `singapore2026_sticker_capsule_prefab` |  |  |
+| `singapore2026_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `singapore2026_sticker_capsule_prefab_volatile` | `singapore2026_sticker_capsule_prefab` |  |  |
+| `singapore2026_tournament_credits_prefab` | `season_tiers` |  |  |
+| `singapore2026_tournament_journal_prefab` | `fan_shield` |  |  |
+| `singapore2026_tournament_pass_prefab` | `fan_token singapore2026_sellable_item1` |  |  |
 | `smg` | `primary` |  | #CSGO_Type_SMG |
 | `sniper_rifle` | `primary` |  | #CSGO_Type_SniperRifle |
 | `steam_badge` | `collectible_untradable` |  |  |

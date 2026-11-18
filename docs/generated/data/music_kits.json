@@ -509,6 +509,46 @@
       "def_index": 104,
       "loc_name": "#MusicKit_starjunk95_01",
       "name": "starjunk95_01"
+    },
+    {
+      "def_index": 105,
+      "loc_name": "#MusicKit_alleycvt_01",
+      "name": "alleycvt_01"
+    },
+    {
+      "def_index": 106,
+      "loc_name": "#MusicKit_arcando_01",
+      "name": "arcando_01"
+    },
+    {
+      "def_index": 107,
+      "loc_name": "#MusicKit_djdiesel_01",
+      "name": "djdiesel_01"
+    },
+    {
+      "def_index": 108,
+      "loc_name": "#MusicKit_fool_01",
+      "name": "fool_01"
+    },
+    {
+      "def_index": 109,
+      "loc_name": "#MusicKit_noisestorm_01",
+      "name": "noisestorm_01"
+    },
+    {
+      "def_index": 110,
+      "loc_name": "#MusicKit_pegboardnerds_01",
+      "name": "pegboardnerds_01"
+    },
+    {
+      "def_index": 111,
+      "loc_name": "#MusicKit_tristam_braken_01",
+      "name": "tristam_braken_01"
+    },
+    {
+      "def_index": 112,
+      "loc_name": "#MusicKit_vicetone_01",
+      "name": "vicetone_01"
     }
   ]
 }

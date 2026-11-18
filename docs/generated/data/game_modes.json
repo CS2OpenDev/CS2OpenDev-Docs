@@ -62,8 +62,7 @@
           "has_convar_overrides": false,
           "id": "retakes",
           "map_groups": [
-            "mg_casualalpha",
-            "mg_casualdelta"
+            "template#include"
           ],
           "max_players": 7,
           "name_token": "#SFUI_GameModeRetakes",
@@ -377,11 +376,9 @@
     {
       "id": "mg_casualalpha",
       "maps": [
-        "de_cache",
         "de_dust2",
         "de_inferno",
-        "de_mirage",
-        "de_vertigo"
+        "de_mirage"
       ]
     },
     {
@@ -395,20 +392,18 @@
     {
       "id": "mg_casualdelta",
       "maps": [
-        "de_ancient_night",
         "de_anubis",
+        "de_cache",
         "de_nuke",
-        "de_overpass",
-        "de_train"
+        "de_vertigo"
       ]
     },
     {
       "id": "mg_casualsigma",
       "maps": [
-        "de_dust2",
-        "de_inferno",
-        "de_mirage",
-        "de_vertigo"
+        "de_ancient_night",
+        "de_overpass",
+        "de_train"
       ]
     },
     {

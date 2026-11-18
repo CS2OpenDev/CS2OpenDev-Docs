@@ -3,69 +3,8 @@
     {
       "added": [],
       "added_count": 0,
-      "changed": [
-        {
-          "field_changes": [
-            {
-              "field": "field_count",
-              "new_value": "12",
-              "old_value": "11"
-            }
-          ],
-          "name": "!GlobalTypes/CNmAimCSNode::CDefinition"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "field_count",
-              "new_value": "4",
-              "old_value": "3"
-            }
-          ],
-          "name": "!GlobalTypes/CNmGraphDocAimCSNode"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "field_count",
-              "new_value": "2",
-              "old_value": "1"
-            }
-          ],
-          "name": "!GlobalTypes/EventClientPollNetworking_t"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "field_count",
-              "new_value": "16",
-              "old_value": "15"
-            }
-          ],
-          "name": "client.dll/CMapInfo"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "field_count",
-              "new_value": "22",
-              "old_value": "23"
-            }
-          ],
-          "name": "client.dll/C_Hostage"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "field_count",
-              "new_value": "16",
-              "old_value": "15"
-            }
-          ],
-          "name": "server.dll/CMapInfo"
-        }
-      ],
-      "changed_count": 6,
+      "changed": [],
+      "changed_count": 0,
       "family": "classes",
       "removed": [],
       "removed_count": 0,
@@ -83,8 +22,77 @@
     },
     {
       "added": [
-        "cl_clockdrift_max_secs",
-        "cl_packetentities_merge_before_decode",
+        "player_competitive_maplist_2v2_10_0_7B2B4F7",
+        "player_competitive_maplist_8_10_0_25074C46"
+      ],
+      "added_count": 2,
+      "changed": [
+        {
+          "field_changes": [
+            {
+              "field": "flags",
+              "new_value": "gamedll,release,commandline_enforced",
+              "old_value": "gamedll,clientdll,replicated,release"
+            }
+          ],
+          "name": "mp_endwarmup_player_count"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "flags",
+              "new_value": "gamedll,release,commandline_enforced",
+              "old_value": "gamedll,clientdll,replicated,release,commandline_enforced"
+            }
+          ],
+          "name": "mp_match_end_changelevel"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "flags",
+              "new_value": "gamedll,release,commandline_enforced",
+              "old_value": "gamedll,clientdll,replicated,release"
+            }
+          ],
+          "name": "mp_match_end_restart"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "flags",
+              "new_value": "gamedll,release",
+              "old_value": "gamedll,clientdll,replicated,release"
+            }
+          ],
+          "name": "mp_verbose_changelevel_spew"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "flags",
+              "new_value": "gamedll,release,commandline_enforced",
+              "old_value": "gamedll,clientdll,replicated,release,commandline_enforced"
+            }
+          ],
+          "name": "mp_warmuptime_all_players_connected"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "flags",
+              "new_value": "gamedll,release,commandline_enforced",
+              "old_value": "gamedll,clientdll,replicated,release,commandline_enforced"
+            }
+          ],
+          "name": "mp_warmuptime_match_cancelled"
+        }
+      ],
+      "changed_count": 6,
+      "family": "convars",
+      "removed": [
+        "player_competitive_maplist_2v2_10_0_D684D4E1",
+        "player_competitive_maplist_8_10_0_A062AC6A",
         "r_csgo_frost_dry_time",
         "r_csgo_frost_force",
         "r_csgo_frost_grow_time",
@@ -94,29 +102,14 @@
         "r_csgo_frost_heat_light_time",
         "r_csgo_frost_heat_per_shot",
         "r_csgo_frost_indoor_distance",
-        "r_csgo_frost_melt_time",
-        "r_csgo_parallax",
-        "videocfg_parallax_detail",
-        "vprof_lite_auto"
+        "r_csgo_frost_melt_time"
       ],
-      "added_count": 15,
-      "changed": [],
-      "changed_count": 0,
-      "family": "convars",
-      "removed": [
-        "cl_clockdrift_max_ticks",
-        "sv_recvbuf_messages"
-      ],
-      "removed_count": 2,
+      "removed_count": 12,
       "truncated": false
     },
     {
-      "added": [
-        "vprof_lite_dump",
-        "vprof_lite_start",
-        "vprof_lite_stop"
-      ],
-      "added_count": 3,
+      "added": [],
+      "added_count": 0,
       "changed": [],
       "changed_count": 0,
       "family": "commands",
@@ -147,28 +140,17 @@
     {
       "added": [],
       "added_count": 0,
-      "changed": [
-        {
-          "field_changes": [
-            {
-              "field": "keyvalue:frostenabled",
-              "new_value": "boolean",
-              "old_value": ""
-            }
-          ],
-          "name": "info_map_parameters"
-        }
-      ],
-      "changed_count": 1,
+      "changed": [],
+      "changed_count": 0,
       "family": "entity_io",
       "removed": [],
       "removed_count": 0,
       "truncated": false
     }
   ],
-  "from_build": "26445667",
+  "from_build": "26598758",
   "no_changes": false,
   "platform": "windows-x86_64",
-  "schema_history_anchor": "26445667-26598758",
-  "to_build": "26598758"
+  "schema_history_anchor": "26598758-26748068",
+  "to_build": "26748068"
 }

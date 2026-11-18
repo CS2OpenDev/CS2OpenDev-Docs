@@ -2063,6 +2063,111 @@
               "default": "",
               "description": "",
               "label": "optional",
+              "name": "version",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "entries",
+              "notes": "",
+              "number": 2,
+              "type": "CMsgVolatileContainerPricesheet.Entry",
+              "type_file": "base_gcmessages.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CMsgVolatileContainerPricesheet",
+          "nested_enums": [],
+          "nested_messages": [
+            "CMsgVolatileContainerPricesheet.Entry"
+          ],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgVolatileContainerPricesheet",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "key",
+              "notes": "",
+              "number": 1,
+              "type": "fixed64",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "cost",
+              "notes": "",
+              "number": 2,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "trend",
+              "notes": "",
+              "number": 3,
+              "type": "sint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "low",
+              "notes": "",
+              "number": 4,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "high",
+              "notes": "",
+              "number": 5,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "Entry",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CMsgVolatileContainerPricesheet",
+          "qualified": "CMsgVolatileContainerPricesheet.Entry",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
               "name": "items_game",
               "notes": "",
               "number": 1,
@@ -60774,6 +60879,9 @@
       "CP2P_Voice",
       "CSVCMsg_VoiceData"
     ],
+    "CMsgVolatileContainerPricesheet.Entry": [
+      "CMsgVolatileContainerPricesheet"
+    ],
     "CMsg_CVars": [
       "CNETMsg_SetConVar"
     ],
@@ -61677,6 +61785,8 @@
     "CMsgVector": "networkbasetypes.proto",
     "CMsgVector2D": "networkbasetypes.proto",
     "CMsgVoiceAudio": "netmessages.proto",
+    "CMsgVolatileContainerPricesheet": "base_gcmessages.proto",
+    "CMsgVolatileContainerPricesheet.Entry": "base_gcmessages.proto",
     "CMsg_CVars": "networkbasetypes.proto",
     "CMsg_CVars.CVar": "networkbasetypes.proto",
     "CNETMsg_DebugOverlay": "networkbasetypes.proto",

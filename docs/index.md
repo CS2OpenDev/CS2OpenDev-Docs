@@ -6,7 +6,7 @@ title: CS2 Developer Reference
 
 Auto-generated reference for the **shipped CS2 runtime**, extracted deterministically from the game binaries by [CS2OpenDev-SchemaTracker](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker): entity schemas, protobuf wire messages, network/demo message tables, game events, console variables & commands, and the game-content tables (items, game modes, surfaces, props, maps).
 
-> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
 
 ## Statistics
 
@@ -14,9 +14,9 @@ Auto-generated reference for the **shipped CS2 runtime**, extracted deterministi
 |----------|-------|
 | Schema Entities | 4075 |
 | Proto Files | 41 |
-| Proto Messages | 620 |
+| Proto Messages | 621 |
 | Game Events | 289 |
-| ConVars | 4063 |
+| ConVars | 4053 |
 | Commands | 1141 |
 
 ## Quick Links

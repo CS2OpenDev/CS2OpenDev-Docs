@@ -21,13 +21,13 @@ distinct top-level entity names (matching what a reader would call
 additionally include client/server twin duplicate records, so they can sum
 to more than the top-level totals -- see the `note` field on the object.
 `counts.messages` is `protobufs.json`'s flattened total (top-level plus
-nested, 773 on this build); `counts.surfaces` is the
+nested, 775 on this build); `counts.surfaces` is the
 upstream record count from `surface_properties.json`
 (303 on this build), not the number of distinct
 materials in `surfaces.json`'s `materials[]` (which is smaller, since the
 same material can have several rows).
 
-## protobufs.json (1794.2 KB)
+## protobufs.json (1797.4 KB)
 
 `files[]`: one entry per `.proto` file (`name`, `stem`, `package`, `imports`,
 overlay `description`/`notes`). `messages[]` and `enums[]` on each file are
@@ -90,7 +90,7 @@ than guessed at.
 `network.json` performs a second, separate join using these same rules
 against the RTTI-recovered id tables -- see below.
 
-## convars.json (1218.9 KB) / commands.json (290.1 KB)
+## convars.json (1215.4 KB) / commands.json (290.1 KB)
 
 `convars[]`/`commands[]`: `name`, `default` (convars only), `value_type`
 (convars only, e.g. `Float32`/`Int32`/`Bool`/`String`), `min`/`max` (convars
@@ -130,7 +130,7 @@ external header. `player_controller_and_pawn` has no single code: its
 `note` explains the bit-packing (controller id in the low byte, pawn index
 above it).
 
-## items.json (1267.3 KB) / paint_kits.json (188.9 KB) / sticker_kits.json (2553.6 KB) / music_kits.json (10.9 KB)
+## items.json (1287.1 KB) / paint_kits.json (189.6 KB) / sticker_kits.json (2738.0 KB) / music_kits.json (11.8 KB)
 
 `items[]`: `def_index`, `name` (upstream's own identifying `name` field,
 e.g. `weapon_ak47` -- previously dropped by the Markdown generator),
@@ -155,14 +155,14 @@ and `name_token` from the first link and `item_type_name` from the second.
 the 5 MB cap without a defIndex-thousand split (see `meta.json` for the
 current sticker kit count).
 
-## maps.json (13.5 KB)
+## maps.json (14.3 KB)
 
 All upstream per-map fields, bomb site coordinates (`bombAX`/`bombAY`/
 `bombBX`/`bombBY`), `rotate`, `zoom`, and `blockName` included verbatim
 (previously dropped). `note` states plainly that this is the set of maps
 shipping a radar overview, not the game's full map list.
 
-## game_modes.json (26.3 KB)
+## game_modes.json (26.2 KB)
 
 Each mode carries upstream's numeric `game_type`/`game_mode` ids alongside
 the string `id` (previously dropped). `has_convar_overrides` reflects
@@ -236,7 +236,7 @@ Which enum feeds which channel/id range:
 | `GameEvents` | 200, 213-214, 450-453 | `EBaseGameEvents`, `ECsgoGameEvents` |
 | `Demo stream` | 0-19, 64 | `EDemoCommands` |
 
-## changelog.json (3.9 KB)
+## changelog.json (4.0 KB)
 
 For the one build-pair transition the current artifact set carries: every
 family is always listed (with `added_count`/`removed_count`/`changed_count`,
@@ -245,7 +245,7 @@ across the whole transition (which it is on this build), and
 `schema_history_anchor` links to the matching transition's anchor in
 `schema-history.json`.
 
-## schema-history.json (193.4 KB)
+## schema-history.json (193.8 KB)
 
 `transitions[]`: every recorded transition (from/to build, dates, op
 counts, `anchor`, `is_empty`). `detail[]`: full per-class field-op detail

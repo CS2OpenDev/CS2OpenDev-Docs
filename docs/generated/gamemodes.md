@@ -4,7 +4,7 @@ title: Game Modes
 
 # Game Modes & Map Groups
 
-> Source: **Build 26598758** · 2026-11-11 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
 
 Game types and their nested game modes (from `gamemodes.txt`): max players, map groups, and per-mode convar overrides.
 
@@ -34,7 +34,7 @@ Game types and their nested game modes (from `gamemodes.txt`): max players, map 
 
 - **Name token:** `#SFUI_GameModeRetakes`
 - **Max players:** 7
-- **Map groups:** `mg_casualalpha`, `mg_casualdelta`
+- **Map groups:** `template#include`
 
 ### `rush`
 
@@ -146,10 +146,10 @@ Game types and their nested game modes (from `gamemodes.txt`): max players, map 
 | `mg_ar_shoots_night` | `ar_shoots_night` |
 | `mg_ar_stmarc` | `de_stmarc` |
 | `mg_armsrace` | `ar_baggage`, `ar_pool_day`, `ar_shoots`, `ar_shoots_night` |
-| `mg_casualalpha` | `de_cache`, `de_dust2`, `de_inferno`, `de_mirage`, `de_vertigo` |
+| `mg_casualalpha` | `de_dust2`, `de_inferno`, `de_mirage` |
 | `mg_casualcharlie` | `cs_shelter`, `de_boulder`, `de_fachwerk` |
-| `mg_casualdelta` | `de_ancient_night`, `de_anubis`, `de_nuke`, `de_overpass`, `de_train` |
-| `mg_casualsigma` | `de_dust2`, `de_inferno`, `de_mirage`, `de_vertigo` |
+| `mg_casualdelta` | `de_anubis`, `de_cache`, `de_nuke`, `de_vertigo` |
+| `mg_casualsigma` | `de_ancient_night`, `de_overpass`, `de_train` |
 | `mg_coop_autumn` | `coop_autumn` |
 | `mg_coop_cementplant` | `coop_cementplant` |
 | `mg_coop_fall` | `coop_fall` |

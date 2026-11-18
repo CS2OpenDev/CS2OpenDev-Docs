@@ -3854,6 +3854,42 @@
     },
     {
       "classname": "supply_crate",
+      "def_index": 7045,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - alleycvt_01",
+      "name_token": "#coupon_alleycvt_01",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7046,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - alleycvt_01_stattrak",
+      "name_token": "#coupon_alleycvt_01_stattrak",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
       "def_index": 7029,
       "description_token": "#coupon_desc",
       "is_default": false,
@@ -3952,6 +3988,42 @@
       "name": "coupon - amontobin_01_stattrak",
       "name_token": "#coupon_amontobin_01_stattrak",
       "prefab_id": "valve coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7047,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - arcando_01",
+      "name_token": "#coupon_arcando_01",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7048,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - arcando_01_stattrak",
+      "name_token": "#coupon_arcando_01_stattrak",
+      "prefab_id": "coupon_prefab",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -4898,6 +4970,42 @@
     },
     {
       "classname": "supply_crate",
+      "def_index": 7049,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - djdiesel_01",
+      "name_token": "#coupon_djdiesel_01",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7050,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - djdiesel_01_stattrak",
+      "name_token": "#coupon_djdiesel_01_stattrak",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
       "def_index": 20004,
       "description_token": "#coupon_desc",
       "is_default": false,
@@ -5121,6 +5229,42 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "coupon - flickshot",
       "name_token": "#coupon_flickshot",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7051,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - fool_01",
+      "name_token": "#coupon_fool_01",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7052,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - fool_01_stattrak",
+      "name_token": "#coupon_fool_01_stattrak",
       "prefab_id": "coupon_prefab",
       "resolution": {
         "classname": "prefab:weapon_case_base",
@@ -6104,6 +6248,42 @@
     },
     {
       "classname": "supply_crate",
+      "def_index": 7053,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - noisestorm_01",
+      "name_token": "#coupon_noisestorm_01",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7054,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - noisestorm_01_stattrak",
+      "name_token": "#coupon_noisestorm_01_stattrak",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
       "def_index": 20021,
       "description_token": "#coupon_desc",
       "is_default": false,
@@ -6165,6 +6345,42 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "coupon - pandamonium",
       "name_token": "#coupon_pandamonium",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7055,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - pegboardnerds_01",
+      "name_token": "#coupon_pegboardnerds_01",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7056,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - pegboardnerds_01_stattrak",
+      "name_token": "#coupon_pegboardnerds_01_stattrak",
       "prefab_id": "coupon_prefab",
       "resolution": {
         "classname": "prefab:weapon_case_base",
@@ -7292,6 +7508,42 @@
     },
     {
       "classname": "supply_crate",
+      "def_index": 7057,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - tristam_braken_01",
+      "name_token": "#coupon_tristam_braken_01",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7058,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - tristam_braken_01_stattrak",
+      "name_token": "#coupon_tristam_braken_01_stattrak",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
       "def_index": 20071,
       "description_token": "#coupon_desc",
       "is_default": false,
@@ -7317,6 +7569,42 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "coupon - troelsfolmann_01_stattrak",
       "name_token": "#coupon_troelsfolmann_01_stattrak",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7059,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - vicetone_01",
+      "name_token": "#coupon_vicetone_01",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7060,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - vicetone_01_stattrak",
+      "name_token": "#coupon_vicetone_01_stattrak",
       "prefab_id": "coupon_prefab",
       "resolution": {
         "classname": "prefab:weapon_case_base",
@@ -15572,6 +15860,24 @@
     },
     {
       "classname": "supply_crate",
+      "def_index": 5418,
+      "description_token": "#CSGO_crate_signature_pack_singapore2026_group_players_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "crate_signature_pack_singapore2026_group_players",
+      "name_token": "#CSGO_crate_signature_pack_singapore2026_group_players",
+      "prefab_id": "singapore2026_signature_capsule_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
       "def_index": 4816,
       "description_token": "#CSGO_crate_signature_pack_stockh2021_group_champions_desc",
       "is_default": false,
@@ -15598,6 +15904,24 @@
       "name": "crate_signature_pack_stockh2021_group_finalists",
       "name_token": "#CSGO_crate_signature_pack_stockh2021_group_finalists",
       "prefab_id": "stockh2021_signature_capsule_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 5423,
+      "description_token": "#CSGO_crate_sticker_pack_singapore2026_all_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "crate_souvenirs_singapore2026_all",
+      "name_token": "#CSGO_crate_sticker_pack_singapore2026_all",
+      "prefab_id": "singapore2026_sticker_capsule_prefab_volatile volatile_pricing_souvenirs_2050",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -21574,6 +21898,42 @@
       "name": "crate_sticker_pack_shattered_web",
       "name_token": "#CSGO_crate_sticker_pack_shattered_web",
       "prefab_id": "sticker_capsule",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 5416,
+      "description_token": "#CSGO_crate_sticker_pack_singapore2026_all_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "crate_sticker_pack_singapore2026_all",
+      "name_token": "#CSGO_crate_sticker_pack_singapore2026_all",
+      "prefab_id": "singapore2026_sticker_capsule_prefab_volatile volatile_pricing_stickercap_2050",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 5417,
+      "description_token": "#CSGO_crate_sticker_pack_singapore2026_orgs_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "crate_sticker_pack_singapore2026_orgs",
+      "name_token": "#CSGO_crate_sticker_pack_singapore2026_orgs",
+      "prefab_id": "singapore2026_sticker_capsule_prefab",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -29540,6 +29900,78 @@
     },
     {
       "classname": "collectible_item",
+      "def_index": 5419,
+      "description_token": "#CSGO_CollectibleCoin_singapore2026_Champion_Desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Collectible",
+      "name": "PGL Singapore 2026 CS:GO Champion",
+      "name_token": "#CSGO_CollectibleCoin_singapore2026_Champion",
+      "prefab_id": "majors_trophy",
+      "resolution": {
+        "classname": "prefab:collectible",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:collectible",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "collectible_item",
+      "def_index": 5420,
+      "description_token": "#CSGO_CollectibleCoin_singapore2026_Finalist_Desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Collectible",
+      "name": "PGL Singapore 2026 CS:GO Finalist",
+      "name_token": "#CSGO_CollectibleCoin_singapore2026_Finalist",
+      "prefab_id": "majors_trophy",
+      "resolution": {
+        "classname": "prefab:collectible",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:collectible",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "collectible_item",
+      "def_index": 5422,
+      "description_token": "#CSGO_CollectibleCoin_singapore2026_Quarterfinalist_Desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Collectible",
+      "name": "PGL Singapore 2026 CS:GO Quarterfinalist",
+      "name_token": "#CSGO_CollectibleCoin_singapore2026_Quarterfinalist",
+      "prefab_id": "majors_trophy",
+      "resolution": {
+        "classname": "prefab:collectible",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:collectible",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "collectible_item",
+      "def_index": 5421,
+      "description_token": "#CSGO_CollectibleCoin_singapore2026_Semifinalist_Desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Collectible",
+      "name": "PGL Singapore 2026 CS:GO Semifinalist",
+      "name_token": "#CSGO_CollectibleCoin_singapore2026_Semifinalist",
+      "prefab_id": "majors_trophy",
+      "resolution": {
+        "classname": "prefab:collectible",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:collectible",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "collectible_item",
       "def_index": 979,
       "description_token": "#CSGO_CollectibleCoin_Stockh2021_Champion_Desc",
       "is_default": false,
@@ -35210,6 +35642,78 @@
     },
     {
       "classname": "collectible_item",
+      "def_index": 5412,
+      "description_token": "",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Collectible",
+      "name": "tournament_journal_singapore2026",
+      "name_token": "#CSGO_TournamentJournal_singapore2026",
+      "prefab_id": "singapore2026_tournament_journal_prefab",
+      "resolution": {
+        "classname": "prefab:fan_shield",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:fan_shield",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "collectible_item",
+      "def_index": 5415,
+      "description_token": "",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Collectible",
+      "name": "tournament_journal_singapore2026_crystal",
+      "name_token": "#CSGO_TournamentJournal_singapore2026_Crystal",
+      "prefab_id": "singapore2026_tournament_journal_prefab",
+      "resolution": {
+        "classname": "prefab:fan_shield",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:fan_shield",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "collectible_item",
+      "def_index": 5414,
+      "description_token": "",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Collectible",
+      "name": "tournament_journal_singapore2026_gold",
+      "name_token": "#CSGO_TournamentJournal_singapore2026_Gold",
+      "prefab_id": "singapore2026_tournament_journal_prefab",
+      "resolution": {
+        "classname": "prefab:fan_shield",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:fan_shield",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "collectible_item",
+      "def_index": 5413,
+      "description_token": "",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Collectible",
+      "name": "tournament_journal_singapore2026_silver",
+      "name_token": "#CSGO_TournamentJournal_singapore2026_Silver",
+      "prefab_id": "singapore2026_tournament_journal_prefab",
+      "resolution": {
+        "classname": "prefab:fan_shield",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:fan_shield",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "collectible_item",
       "def_index": 4797,
       "description_token": "",
       "is_default": false,
@@ -35776,6 +36280,60 @@
       "name": "tournament_pass_sha2024_pack",
       "name_token": "#CSGO_TournamentPass_sha2024_pack",
       "prefab_id": "sha2024_tournament_pass_prefab sha2024_tournament_steamtv_items",
+      "resolution": {
+        "classname": "prefab:csgo_tool",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:fan_token",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "tool",
+      "def_index": 5410,
+      "description_token": "#CSGO_TournamentPass_singapore2026_Desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Ticket",
+      "name": "tournament_pass_singapore2026",
+      "name_token": "#CSGO_TournamentPass_singapore2026",
+      "prefab_id": "singapore2026_tournament_pass_prefab singapore2026_tournament_steamtv_items",
+      "resolution": {
+        "classname": "prefab:csgo_tool",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:fan_token",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "tool",
+      "def_index": 5409,
+      "description_token": "",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Ticket",
+      "name": "tournament_pass_singapore2026_credits1",
+      "name_token": "#CSGO_TournamentPass_singapore2026_credits",
+      "prefab_id": "singapore2026_tournament_credits_prefab singapore2026_sellable_item1",
+      "resolution": {
+        "classname": "prefab:csgo_tool",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:season_tiers",
+        "nameToken": "prefab:singapore2026_tournament_credits_prefab"
+      }
+    },
+    {
+      "classname": "tool",
+      "def_index": 5411,
+      "description_token": "#CSGO_TournamentPass_singapore2026_pack_Desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Ticket",
+      "name": "tournament_pass_singapore2026_pack",
+      "name_token": "#CSGO_TournamentPass_singapore2026_pack",
+      "prefab_id": "singapore2026_tournament_pass_prefab singapore2026_tournament_steamtv_items",
       "resolution": {
         "classname": "prefab:csgo_tool",
         "descriptionToken": "own",
@@ -38266,6 +38824,62 @@
       "item_type_name": "#CSGO_Type_Shotgun",
       "name_token": "",
       "parent_prefab": "primary"
+    },
+    {
+      "classname": "",
+      "id": "singapore2026_sellable_item1",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "",
+      "parent_prefab": "singapore2026_sellable_item0"
+    },
+    {
+      "classname": "",
+      "id": "singapore2026_signature_capsule_prefab",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "",
+      "parent_prefab": "singapore2026_sticker_capsule_prefab"
+    },
+    {
+      "classname": "",
+      "id": "singapore2026_sticker_capsule_prefab",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "",
+      "parent_prefab": "weapon_case_base"
+    },
+    {
+      "classname": "",
+      "id": "singapore2026_sticker_capsule_prefab_volatile",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "",
+      "parent_prefab": "singapore2026_sticker_capsule_prefab"
+    },
+    {
+      "classname": "",
+      "id": "singapore2026_tournament_credits_prefab",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "#CSGO_TournamentPass_singapore2026_credits",
+      "parent_prefab": "season_tiers"
+    },
+    {
+      "classname": "",
+      "id": "singapore2026_tournament_journal_prefab",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "",
+      "parent_prefab": "fan_shield"
+    },
+    {
+      "classname": "",
+      "id": "singapore2026_tournament_pass_prefab",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "",
+      "parent_prefab": "fan_token singapore2026_sellable_item1"
     },
     {
       "classname": "",

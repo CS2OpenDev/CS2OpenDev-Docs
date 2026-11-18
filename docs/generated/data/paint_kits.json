@@ -7041,6 +7041,36 @@
       "name": "famas_corp_defense"
     },
     {
+      "def_index": 1478,
+      "description_tag": "#PaintKit_hy_ddpat_Tag",
+      "name": "hy_ddpat_knife"
+    },
+    {
+      "def_index": 1479,
+      "description_tag": "#PaintKit_hy_webs_Tag",
+      "name": "hy_webs_knife"
+    },
+    {
+      "def_index": 1480,
+      "description_tag": "#PaintKit_aq_blued_Tag",
+      "name": "aq_blued_knife"
+    },
+    {
+      "def_index": 1481,
+      "description_tag": "#PaintKit_aq_forced_Tag",
+      "name": "aq_forced_knife"
+    },
+    {
+      "def_index": 1482,
+      "description_tag": "#PaintKit_aq_oiled_Tag",
+      "name": "aq_oiled_knife"
+    },
+    {
+      "def_index": 1483,
+      "description_tag": "#PaintKit_hy_forest_boreal_Tag",
+      "name": "hy_forest_boreal_knife"
+    },
+    {
       "def_index": 9001,
       "description_tag": "",
       "name": "workshop_default"

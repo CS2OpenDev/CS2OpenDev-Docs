@@ -10099,6 +10099,12 @@
       "name": "de_vertigo_gold"
     },
     {
+      "def_index": 1696,
+      "description": "#StickerKit_desc_de_cache_gold",
+      "item_name_token": "#StickerKit_de_cache_gold",
+      "name": "de_cache_gold"
+    },
+    {
       "def_index": 1697,
       "description": "#SprayKit_desc_std_axes_crossed",
       "item_name_token": "#SprayKit_std_axes_crossed",
@@ -70733,6 +70739,4836 @@
       "description": "#StickerKit_desc_cologne2026_signature_nettik_gold",
       "item_name_token": "#StickerKit_cologne2026_signature_nettik_gold_ranking",
       "name": "cologne2026_signature_nettik_gold_ranking"
+    },
+    {
+      "def_index": 11814,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mouz",
+      "name": "singapore2026_team_mouz"
+    },
+    {
+      "def_index": 11815,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mouz_foil",
+      "name": "singapore2026_team_mouz_foil"
+    },
+    {
+      "def_index": 11816,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mouz_holo",
+      "name": "singapore2026_team_mouz_holo"
+    },
+    {
+      "def_index": 11817,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mouz_gold",
+      "name": "singapore2026_team_mouz_gold"
+    },
+    {
+      "def_index": 11818,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_vita",
+      "name": "singapore2026_team_vita"
+    },
+    {
+      "def_index": 11819,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_vita_foil",
+      "name": "singapore2026_team_vita_foil"
+    },
+    {
+      "def_index": 11820,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_vita_holo",
+      "name": "singapore2026_team_vita_holo"
+    },
+    {
+      "def_index": 11821,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_vita_gold",
+      "name": "singapore2026_team_vita_gold"
+    },
+    {
+      "def_index": 11822,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_furi",
+      "name": "singapore2026_team_furi"
+    },
+    {
+      "def_index": 11823,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_furi_foil",
+      "name": "singapore2026_team_furi_foil"
+    },
+    {
+      "def_index": 11824,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_furi_holo",
+      "name": "singapore2026_team_furi_holo"
+    },
+    {
+      "def_index": 11825,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_furi_gold",
+      "name": "singapore2026_team_furi_gold"
+    },
+    {
+      "def_index": 11826,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_aura",
+      "name": "singapore2026_team_aura"
+    },
+    {
+      "def_index": 11827,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_aura_foil",
+      "name": "singapore2026_team_aura_foil"
+    },
+    {
+      "def_index": 11828,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_aura_holo",
+      "name": "singapore2026_team_aura_holo"
+    },
+    {
+      "def_index": 11829,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_aura_gold",
+      "name": "singapore2026_team_aura_gold"
+    },
+    {
+      "def_index": 11830,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_spir",
+      "name": "singapore2026_team_spir"
+    },
+    {
+      "def_index": 11831,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_spir_foil",
+      "name": "singapore2026_team_spir_foil"
+    },
+    {
+      "def_index": 11832,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_spir_holo",
+      "name": "singapore2026_team_spir_holo"
+    },
+    {
+      "def_index": 11833,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_spir_gold",
+      "name": "singapore2026_team_spir_gold"
+    },
+    {
+      "def_index": 11834,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_bbt",
+      "name": "singapore2026_team_bbt"
+    },
+    {
+      "def_index": 11835,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_bbt_foil",
+      "name": "singapore2026_team_bbt_foil"
+    },
+    {
+      "def_index": 11836,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_bbt_holo",
+      "name": "singapore2026_team_bbt_holo"
+    },
+    {
+      "def_index": 11837,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_bbt_gold",
+      "name": "singapore2026_team_bbt_gold"
+    },
+    {
+      "def_index": 11838,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fal",
+      "name": "singapore2026_team_fal"
+    },
+    {
+      "def_index": 11839,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fal_foil",
+      "name": "singapore2026_team_fal_foil"
+    },
+    {
+      "def_index": 11840,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fal_holo",
+      "name": "singapore2026_team_fal_holo"
+    },
+    {
+      "def_index": 11841,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fal_gold",
+      "name": "singapore2026_team_fal_gold"
+    },
+    {
+      "def_index": 11842,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fut",
+      "name": "singapore2026_team_fut"
+    },
+    {
+      "def_index": 11843,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fut_foil",
+      "name": "singapore2026_team_fut_foil"
+    },
+    {
+      "def_index": 11844,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fut_holo",
+      "name": "singapore2026_team_fut_holo"
+    },
+    {
+      "def_index": 11845,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fut_gold",
+      "name": "singapore2026_team_fut_gold"
+    },
+    {
+      "def_index": 11846,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_lgcy",
+      "name": "singapore2026_team_lgcy"
+    },
+    {
+      "def_index": 11847,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_lgcy_foil",
+      "name": "singapore2026_team_lgcy_foil"
+    },
+    {
+      "def_index": 11848,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_lgcy_holo",
+      "name": "singapore2026_team_lgcy_holo"
+    },
+    {
+      "def_index": 11849,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_lgcy_gold",
+      "name": "singapore2026_team_lgcy_gold"
+    },
+    {
+      "def_index": 11850,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nemi",
+      "name": "singapore2026_team_nemi"
+    },
+    {
+      "def_index": 11851,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nemi_foil",
+      "name": "singapore2026_team_nemi_foil"
+    },
+    {
+      "def_index": 11852,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nemi_holo",
+      "name": "singapore2026_team_nemi_holo"
+    },
+    {
+      "def_index": 11853,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nemi_gold",
+      "name": "singapore2026_team_nemi_gold"
+    },
+    {
+      "def_index": 11854,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_g2",
+      "name": "singapore2026_team_g2"
+    },
+    {
+      "def_index": 11855,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_g2_foil",
+      "name": "singapore2026_team_g2_foil"
+    },
+    {
+      "def_index": 11856,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_g2_holo",
+      "name": "singapore2026_team_g2_holo"
+    },
+    {
+      "def_index": 11857,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_g2_gold",
+      "name": "singapore2026_team_g2_gold"
+    },
+    {
+      "def_index": 11858,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_one",
+      "name": "singapore2026_team_one"
+    },
+    {
+      "def_index": 11859,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_one_foil",
+      "name": "singapore2026_team_one_foil"
+    },
+    {
+      "def_index": 11860,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_one_holo",
+      "name": "singapore2026_team_one_holo"
+    },
+    {
+      "def_index": 11861,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_one_gold",
+      "name": "singapore2026_team_one_gold"
+    },
+    {
+      "def_index": 11862,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_navi",
+      "name": "singapore2026_team_navi"
+    },
+    {
+      "def_index": 11863,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_navi_foil",
+      "name": "singapore2026_team_navi_foil"
+    },
+    {
+      "def_index": 11864,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_navi_holo",
+      "name": "singapore2026_team_navi_holo"
+    },
+    {
+      "def_index": 11865,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_navi_gold",
+      "name": "singapore2026_team_navi_gold"
+    },
+    {
+      "def_index": 11866,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_astr",
+      "name": "singapore2026_team_astr"
+    },
+    {
+      "def_index": 11867,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_astr_foil",
+      "name": "singapore2026_team_astr_foil"
+    },
+    {
+      "def_index": 11868,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_astr_holo",
+      "name": "singapore2026_team_astr_holo"
+    },
+    {
+      "def_index": 11869,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_astr_gold",
+      "name": "singapore2026_team_astr_gold"
+    },
+    {
+      "def_index": 11870,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nip",
+      "name": "singapore2026_team_nip"
+    },
+    {
+      "def_index": 11871,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nip_foil",
+      "name": "singapore2026_team_nip_foil"
+    },
+    {
+      "def_index": 11872,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nip_holo",
+      "name": "singapore2026_team_nip_holo"
+    },
+    {
+      "def_index": 11873,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nip_gold",
+      "name": "singapore2026_team_nip_gold"
+    },
+    {
+      "def_index": 11874,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mngz",
+      "name": "singapore2026_team_mngz"
+    },
+    {
+      "def_index": 11875,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mngz_foil",
+      "name": "singapore2026_team_mngz_foil"
+    },
+    {
+      "def_index": 11876,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mngz_holo",
+      "name": "singapore2026_team_mngz_holo"
+    },
+    {
+      "def_index": 11877,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mngz_gold",
+      "name": "singapore2026_team_mngz_gold"
+    },
+    {
+      "def_index": 11878,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_pvis",
+      "name": "singapore2026_team_pvis"
+    },
+    {
+      "def_index": 11879,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_pvis_foil",
+      "name": "singapore2026_team_pvis_foil"
+    },
+    {
+      "def_index": 11880,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_pvis_holo",
+      "name": "singapore2026_team_pvis_holo"
+    },
+    {
+      "def_index": 11881,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_pvis_gold",
+      "name": "singapore2026_team_pvis_gold"
+    },
+    {
+      "def_index": 11882,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_hero",
+      "name": "singapore2026_team_hero"
+    },
+    {
+      "def_index": 11883,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_hero_foil",
+      "name": "singapore2026_team_hero_foil"
+    },
+    {
+      "def_index": 11884,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_hero_holo",
+      "name": "singapore2026_team_hero_holo"
+    },
+    {
+      "def_index": 11885,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_hero_gold",
+      "name": "singapore2026_team_hero_gold"
+    },
+    {
+      "def_index": 11886,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mibr",
+      "name": "singapore2026_team_mibr"
+    },
+    {
+      "def_index": 11887,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mibr_foil",
+      "name": "singapore2026_team_mibr_foil"
+    },
+    {
+      "def_index": 11888,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mibr_holo",
+      "name": "singapore2026_team_mibr_holo"
+    },
+    {
+      "def_index": 11889,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mibr_gold",
+      "name": "singapore2026_team_mibr_gold"
+    },
+    {
+      "def_index": 11890,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_faze",
+      "name": "singapore2026_team_faze"
+    },
+    {
+      "def_index": 11891,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_faze_foil",
+      "name": "singapore2026_team_faze_foil"
+    },
+    {
+      "def_index": 11892,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_faze_holo",
+      "name": "singapore2026_team_faze_holo"
+    },
+    {
+      "def_index": 11893,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_faze_gold",
+      "name": "singapore2026_team_faze_gold"
+    },
+    {
+      "def_index": 11894,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_liq",
+      "name": "singapore2026_team_liq"
+    },
+    {
+      "def_index": 11895,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_liq_foil",
+      "name": "singapore2026_team_liq_foil"
+    },
+    {
+      "def_index": 11896,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_liq_holo",
+      "name": "singapore2026_team_liq_holo"
+    },
+    {
+      "def_index": 11897,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_liq_gold",
+      "name": "singapore2026_team_liq_gold"
+    },
+    {
+      "def_index": 11898,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_eter",
+      "name": "singapore2026_team_eter"
+    },
+    {
+      "def_index": 11899,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_eter_foil",
+      "name": "singapore2026_team_eter_foil"
+    },
+    {
+      "def_index": 11900,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_eter_holo",
+      "name": "singapore2026_team_eter_holo"
+    },
+    {
+      "def_index": 11901,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_eter_gold",
+      "name": "singapore2026_team_eter_gold"
+    },
+    {
+      "def_index": 11902,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_thv",
+      "name": "singapore2026_team_thv"
+    },
+    {
+      "def_index": 11903,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_thv_foil",
+      "name": "singapore2026_team_thv_foil"
+    },
+    {
+      "def_index": 11904,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_thv_holo",
+      "name": "singapore2026_team_thv_holo"
+    },
+    {
+      "def_index": 11905,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_thv_gold",
+      "name": "singapore2026_team_thv_gold"
+    },
+    {
+      "def_index": 11906,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nine",
+      "name": "singapore2026_team_nine"
+    },
+    {
+      "def_index": 11907,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nine_foil",
+      "name": "singapore2026_team_nine_foil"
+    },
+    {
+      "def_index": 11908,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nine_holo",
+      "name": "singapore2026_team_nine_holo"
+    },
+    {
+      "def_index": 11909,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nine_gold",
+      "name": "singapore2026_team_nine_gold"
+    },
+    {
+      "def_index": 11910,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_m80",
+      "name": "singapore2026_team_m80"
+    },
+    {
+      "def_index": 11911,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_m80_foil",
+      "name": "singapore2026_team_m80_foil"
+    },
+    {
+      "def_index": 11912,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_m80_holo",
+      "name": "singapore2026_team_m80_holo"
+    },
+    {
+      "def_index": 11913,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_m80_gold",
+      "name": "singapore2026_team_m80_gold"
+    },
+    {
+      "def_index": 11914,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_dend",
+      "name": "singapore2026_team_dend"
+    },
+    {
+      "def_index": 11915,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_dend_foil",
+      "name": "singapore2026_team_dend_foil"
+    },
+    {
+      "def_index": 11916,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_dend_holo",
+      "name": "singapore2026_team_dend_holo"
+    },
+    {
+      "def_index": 11917,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_dend_gold",
+      "name": "singapore2026_team_dend_gold"
+    },
+    {
+      "def_index": 11918,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_imp",
+      "name": "singapore2026_team_imp"
+    },
+    {
+      "def_index": 11919,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_imp_foil",
+      "name": "singapore2026_team_imp_foil"
+    },
+    {
+      "def_index": 11920,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_imp_holo",
+      "name": "singapore2026_team_imp_holo"
+    },
+    {
+      "def_index": 11921,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_imp_gold",
+      "name": "singapore2026_team_imp_gold"
+    },
+    {
+      "def_index": 11922,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_wcrd",
+      "name": "singapore2026_team_wcrd"
+    },
+    {
+      "def_index": 11923,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_wcrd_foil",
+      "name": "singapore2026_team_wcrd_foil"
+    },
+    {
+      "def_index": 11924,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_wcrd_holo",
+      "name": "singapore2026_team_wcrd_holo"
+    },
+    {
+      "def_index": 11925,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_wcrd_gold",
+      "name": "singapore2026_team_wcrd_gold"
+    },
+    {
+      "def_index": 11926,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_gosh",
+      "name": "singapore2026_team_gosh"
+    },
+    {
+      "def_index": 11927,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_gosh_foil",
+      "name": "singapore2026_team_gosh_foil"
+    },
+    {
+      "def_index": 11928,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_gosh_holo",
+      "name": "singapore2026_team_gosh_holo"
+    },
+    {
+      "def_index": 11929,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_gosh_gold",
+      "name": "singapore2026_team_gosh_gold"
+    },
+    {
+      "def_index": 11930,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fq",
+      "name": "singapore2026_team_fq"
+    },
+    {
+      "def_index": 11931,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fq_foil",
+      "name": "singapore2026_team_fq_foil"
+    },
+    {
+      "def_index": 11932,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fq_holo",
+      "name": "singapore2026_team_fq_holo"
+    },
+    {
+      "def_index": 11933,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fq_gold",
+      "name": "singapore2026_team_fq_gold"
+    },
+    {
+      "def_index": 11934,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_chin",
+      "name": "singapore2026_team_chin"
+    },
+    {
+      "def_index": 11935,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_chin_foil",
+      "name": "singapore2026_team_chin_foil"
+    },
+    {
+      "def_index": 11936,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_chin_holo",
+      "name": "singapore2026_team_chin_holo"
+    },
+    {
+      "def_index": 11937,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_chin_gold",
+      "name": "singapore2026_team_chin_gold"
+    },
+    {
+      "def_index": 11938,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_lynn",
+      "name": "singapore2026_team_lynn"
+    },
+    {
+      "def_index": 11939,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_lynn_foil",
+      "name": "singapore2026_team_lynn_foil"
+    },
+    {
+      "def_index": 11940,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_lynn_holo",
+      "name": "singapore2026_team_lynn_holo"
+    },
+    {
+      "def_index": 11941,
+      "description": "#EventItemDesc_singapore2026_sticker_team",
+      "item_name_token": "#StickerKit_singapore2026_team_lynn_gold",
+      "name": "singapore2026_team_lynn_gold"
+    },
+    {
+      "def_index": 11942,
+      "description": "#EventItemDesc_singapore2026_sticker_org",
+      "item_name_token": "#StickerKit_singapore2026_team_pgl",
+      "name": "singapore2026_team_pgl"
+    },
+    {
+      "def_index": 11943,
+      "description": "#EventItemDesc_singapore2026_sticker_org",
+      "item_name_token": "#StickerKit_singapore2026_team_pgl_foil",
+      "name": "singapore2026_team_pgl_foil"
+    },
+    {
+      "def_index": 11944,
+      "description": "#EventItemDesc_singapore2026_sticker_org",
+      "item_name_token": "#StickerKit_singapore2026_team_pgl_holo",
+      "name": "singapore2026_team_pgl_holo"
+    },
+    {
+      "def_index": 11945,
+      "description": "#EventItemDesc_singapore2026_sticker_org",
+      "item_name_token": "#StickerKit_singapore2026_team_pgl_gold",
+      "name": "singapore2026_team_pgl_gold"
+    },
+    {
+      "def_index": 11946,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mouz",
+      "name": "singapore2026_team_mouz_graffiti"
+    },
+    {
+      "def_index": 11947,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_vita",
+      "name": "singapore2026_team_vita_graffiti"
+    },
+    {
+      "def_index": 11948,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_furi",
+      "name": "singapore2026_team_furi_graffiti"
+    },
+    {
+      "def_index": 11949,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_aura",
+      "name": "singapore2026_team_aura_graffiti"
+    },
+    {
+      "def_index": 11950,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_spir",
+      "name": "singapore2026_team_spir_graffiti"
+    },
+    {
+      "def_index": 11951,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_bbt",
+      "name": "singapore2026_team_bbt_graffiti"
+    },
+    {
+      "def_index": 11952,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fal",
+      "name": "singapore2026_team_fal_graffiti"
+    },
+    {
+      "def_index": 11953,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fut",
+      "name": "singapore2026_team_fut_graffiti"
+    },
+    {
+      "def_index": 11954,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_lgcy",
+      "name": "singapore2026_team_lgcy_graffiti"
+    },
+    {
+      "def_index": 11955,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nemi",
+      "name": "singapore2026_team_nemi_graffiti"
+    },
+    {
+      "def_index": 11956,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_g2",
+      "name": "singapore2026_team_g2_graffiti"
+    },
+    {
+      "def_index": 11957,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_one",
+      "name": "singapore2026_team_one_graffiti"
+    },
+    {
+      "def_index": 11958,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_navi",
+      "name": "singapore2026_team_navi_graffiti"
+    },
+    {
+      "def_index": 11959,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_astr",
+      "name": "singapore2026_team_astr_graffiti"
+    },
+    {
+      "def_index": 11960,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nip",
+      "name": "singapore2026_team_nip_graffiti"
+    },
+    {
+      "def_index": 11961,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mngz",
+      "name": "singapore2026_team_mngz_graffiti"
+    },
+    {
+      "def_index": 11962,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_pvis",
+      "name": "singapore2026_team_pvis_graffiti"
+    },
+    {
+      "def_index": 11963,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_hero",
+      "name": "singapore2026_team_hero_graffiti"
+    },
+    {
+      "def_index": 11964,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_mibr",
+      "name": "singapore2026_team_mibr_graffiti"
+    },
+    {
+      "def_index": 11965,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_faze",
+      "name": "singapore2026_team_faze_graffiti"
+    },
+    {
+      "def_index": 11966,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_liq",
+      "name": "singapore2026_team_liq_graffiti"
+    },
+    {
+      "def_index": 11967,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_eter",
+      "name": "singapore2026_team_eter_graffiti"
+    },
+    {
+      "def_index": 11968,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_thv",
+      "name": "singapore2026_team_thv_graffiti"
+    },
+    {
+      "def_index": 11969,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_nine",
+      "name": "singapore2026_team_nine_graffiti"
+    },
+    {
+      "def_index": 11970,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_m80",
+      "name": "singapore2026_team_m80_graffiti"
+    },
+    {
+      "def_index": 11971,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_dend",
+      "name": "singapore2026_team_dend_graffiti"
+    },
+    {
+      "def_index": 11972,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_imp",
+      "name": "singapore2026_team_imp_graffiti"
+    },
+    {
+      "def_index": 11973,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_wcrd",
+      "name": "singapore2026_team_wcrd_graffiti"
+    },
+    {
+      "def_index": 11974,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_gosh",
+      "name": "singapore2026_team_gosh_graffiti"
+    },
+    {
+      "def_index": 11975,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_fq",
+      "name": "singapore2026_team_fq_graffiti"
+    },
+    {
+      "def_index": 11976,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_chin",
+      "name": "singapore2026_team_chin_graffiti"
+    },
+    {
+      "def_index": 11977,
+      "description": "#EventItemDesc_singapore2026_graffiti_team",
+      "item_name_token": "#StickerKit_singapore2026_team_lynn",
+      "name": "singapore2026_team_lynn_graffiti"
+    },
+    {
+      "def_index": 11978,
+      "description": "#EventItemDesc_singapore2026_graffiti_org",
+      "item_name_token": "#StickerKit_singapore2026_team_pgl",
+      "name": "singapore2026_team_pgl_graffiti"
+    },
+    {
+      "def_index": 11979,
+      "description": "#StickerKit_desc_singapore2026_signature_pr",
+      "item_name_token": "#StickerKit_singapore2026_signature_pr",
+      "name": "singapore2026_signature_pr"
+    },
+    {
+      "def_index": 11980,
+      "description": "#StickerKit_desc_singapore2026_signature_pr_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_pr_foil",
+      "name": "singapore2026_signature_pr_foil"
+    },
+    {
+      "def_index": 11981,
+      "description": "#StickerKit_desc_singapore2026_signature_pr_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_pr_holo",
+      "name": "singapore2026_signature_pr_holo"
+    },
+    {
+      "def_index": 11982,
+      "description": "#StickerKit_desc_singapore2026_signature_pr_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_pr_gold",
+      "name": "singapore2026_signature_pr_gold"
+    },
+    {
+      "def_index": 11983,
+      "description": "#StickerKit_desc_singapore2026_signature_spinx",
+      "item_name_token": "#StickerKit_singapore2026_signature_spinx",
+      "name": "singapore2026_signature_spinx"
+    },
+    {
+      "def_index": 11984,
+      "description": "#StickerKit_desc_singapore2026_signature_spinx_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_spinx_foil",
+      "name": "singapore2026_signature_spinx_foil"
+    },
+    {
+      "def_index": 11985,
+      "description": "#StickerKit_desc_singapore2026_signature_spinx_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_spinx_holo",
+      "name": "singapore2026_signature_spinx_holo"
+    },
+    {
+      "def_index": 11986,
+      "description": "#StickerKit_desc_singapore2026_signature_spinx_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_spinx_gold",
+      "name": "singapore2026_signature_spinx_gold"
+    },
+    {
+      "def_index": 11987,
+      "description": "#StickerKit_desc_singapore2026_signature_torzsi",
+      "item_name_token": "#StickerKit_singapore2026_signature_torzsi",
+      "name": "singapore2026_signature_torzsi"
+    },
+    {
+      "def_index": 11988,
+      "description": "#StickerKit_desc_singapore2026_signature_torzsi_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_torzsi_foil",
+      "name": "singapore2026_signature_torzsi_foil"
+    },
+    {
+      "def_index": 11989,
+      "description": "#StickerKit_desc_singapore2026_signature_torzsi_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_torzsi_holo",
+      "name": "singapore2026_signature_torzsi_holo"
+    },
+    {
+      "def_index": 11990,
+      "description": "#StickerKit_desc_singapore2026_signature_torzsi_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_torzsi_gold",
+      "name": "singapore2026_signature_torzsi_gold"
+    },
+    {
+      "def_index": 11991,
+      "description": "#StickerKit_desc_singapore2026_signature_xelex",
+      "item_name_token": "#StickerKit_singapore2026_signature_xelex",
+      "name": "singapore2026_signature_xelex"
+    },
+    {
+      "def_index": 11992,
+      "description": "#StickerKit_desc_singapore2026_signature_xelex_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_xelex_foil",
+      "name": "singapore2026_signature_xelex_foil"
+    },
+    {
+      "def_index": 11993,
+      "description": "#StickerKit_desc_singapore2026_signature_xelex_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_xelex_holo",
+      "name": "singapore2026_signature_xelex_holo"
+    },
+    {
+      "def_index": 11994,
+      "description": "#StickerKit_desc_singapore2026_signature_xelex_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_xelex_gold",
+      "name": "singapore2026_signature_xelex_gold"
+    },
+    {
+      "def_index": 11995,
+      "description": "#StickerKit_desc_singapore2026_signature_xertion",
+      "item_name_token": "#StickerKit_singapore2026_signature_xertion",
+      "name": "singapore2026_signature_xertion"
+    },
+    {
+      "def_index": 11996,
+      "description": "#StickerKit_desc_singapore2026_signature_xertion_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_xertion_foil",
+      "name": "singapore2026_signature_xertion_foil"
+    },
+    {
+      "def_index": 11997,
+      "description": "#StickerKit_desc_singapore2026_signature_xertion_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_xertion_holo",
+      "name": "singapore2026_signature_xertion_holo"
+    },
+    {
+      "def_index": 11998,
+      "description": "#StickerKit_desc_singapore2026_signature_xertion_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_xertion_gold",
+      "name": "singapore2026_signature_xertion_gold"
+    },
+    {
+      "def_index": 11999,
+      "description": "#StickerKit_desc_singapore2026_signature_flamez",
+      "item_name_token": "#StickerKit_singapore2026_signature_flamez",
+      "name": "singapore2026_signature_flamez"
+    },
+    {
+      "def_index": 12000,
+      "description": "#StickerKit_desc_singapore2026_signature_flamez_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_flamez_foil",
+      "name": "singapore2026_signature_flamez_foil"
+    },
+    {
+      "def_index": 12001,
+      "description": "#StickerKit_desc_singapore2026_signature_flamez_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_flamez_holo",
+      "name": "singapore2026_signature_flamez_holo"
+    },
+    {
+      "def_index": 12002,
+      "description": "#StickerKit_desc_singapore2026_signature_flamez_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_flamez_gold",
+      "name": "singapore2026_signature_flamez_gold"
+    },
+    {
+      "def_index": 12003,
+      "description": "#StickerKit_desc_singapore2026_signature_jl",
+      "item_name_token": "#StickerKit_singapore2026_signature_jl",
+      "name": "singapore2026_signature_jl"
+    },
+    {
+      "def_index": 12004,
+      "description": "#StickerKit_desc_singapore2026_signature_jl_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_jl_foil",
+      "name": "singapore2026_signature_jl_foil"
+    },
+    {
+      "def_index": 12005,
+      "description": "#StickerKit_desc_singapore2026_signature_jl_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_jl_holo",
+      "name": "singapore2026_signature_jl_holo"
+    },
+    {
+      "def_index": 12006,
+      "description": "#StickerKit_desc_singapore2026_signature_jl_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_jl_gold",
+      "name": "singapore2026_signature_jl_gold"
+    },
+    {
+      "def_index": 12007,
+      "description": "#StickerKit_desc_singapore2026_signature_mezii",
+      "item_name_token": "#StickerKit_singapore2026_signature_mezii",
+      "name": "singapore2026_signature_mezii"
+    },
+    {
+      "def_index": 12008,
+      "description": "#StickerKit_desc_singapore2026_signature_mezii_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_mezii_foil",
+      "name": "singapore2026_signature_mezii_foil"
+    },
+    {
+      "def_index": 12009,
+      "description": "#StickerKit_desc_singapore2026_signature_mezii_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_mezii_holo",
+      "name": "singapore2026_signature_mezii_holo"
+    },
+    {
+      "def_index": 12010,
+      "description": "#StickerKit_desc_singapore2026_signature_mezii_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_mezii_gold",
+      "name": "singapore2026_signature_mezii_gold"
+    },
+    {
+      "def_index": 12011,
+      "description": "#StickerKit_desc_singapore2026_signature_ropz",
+      "item_name_token": "#StickerKit_singapore2026_signature_ropz",
+      "name": "singapore2026_signature_ropz"
+    },
+    {
+      "def_index": 12012,
+      "description": "#StickerKit_desc_singapore2026_signature_ropz_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_ropz_foil",
+      "name": "singapore2026_signature_ropz_foil"
+    },
+    {
+      "def_index": 12013,
+      "description": "#StickerKit_desc_singapore2026_signature_ropz_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_ropz_holo",
+      "name": "singapore2026_signature_ropz_holo"
+    },
+    {
+      "def_index": 12014,
+      "description": "#StickerKit_desc_singapore2026_signature_ropz_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_ropz_gold",
+      "name": "singapore2026_signature_ropz_gold"
+    },
+    {
+      "def_index": 12015,
+      "description": "#StickerKit_desc_singapore2026_signature_zywoo",
+      "item_name_token": "#StickerKit_singapore2026_signature_zywoo",
+      "name": "singapore2026_signature_zywoo"
+    },
+    {
+      "def_index": 12016,
+      "description": "#StickerKit_desc_singapore2026_signature_zywoo_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_zywoo_foil",
+      "name": "singapore2026_signature_zywoo_foil"
+    },
+    {
+      "def_index": 12017,
+      "description": "#StickerKit_desc_singapore2026_signature_zywoo_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_zywoo_holo",
+      "name": "singapore2026_signature_zywoo_holo"
+    },
+    {
+      "def_index": 12018,
+      "description": "#StickerKit_desc_singapore2026_signature_zywoo_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_zywoo_gold",
+      "name": "singapore2026_signature_zywoo_gold"
+    },
+    {
+      "def_index": 12019,
+      "description": "#StickerKit_desc_singapore2026_signature_fallen",
+      "item_name_token": "#StickerKit_singapore2026_signature_fallen",
+      "name": "singapore2026_signature_fallen"
+    },
+    {
+      "def_index": 12020,
+      "description": "#StickerKit_desc_singapore2026_signature_fallen_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_fallen_foil",
+      "name": "singapore2026_signature_fallen_foil"
+    },
+    {
+      "def_index": 12021,
+      "description": "#StickerKit_desc_singapore2026_signature_fallen_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_fallen_holo",
+      "name": "singapore2026_signature_fallen_holo"
+    },
+    {
+      "def_index": 12022,
+      "description": "#StickerKit_desc_singapore2026_signature_fallen_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_fallen_gold",
+      "name": "singapore2026_signature_fallen_gold"
+    },
+    {
+      "def_index": 12023,
+      "description": "#StickerKit_desc_singapore2026_signature_kscerato",
+      "item_name_token": "#StickerKit_singapore2026_signature_kscerato",
+      "name": "singapore2026_signature_kscerato"
+    },
+    {
+      "def_index": 12024,
+      "description": "#StickerKit_desc_singapore2026_signature_kscerato_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_kscerato_foil",
+      "name": "singapore2026_signature_kscerato_foil"
+    },
+    {
+      "def_index": 12025,
+      "description": "#StickerKit_desc_singapore2026_signature_kscerato_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_kscerato_holo",
+      "name": "singapore2026_signature_kscerato_holo"
+    },
+    {
+      "def_index": 12026,
+      "description": "#StickerKit_desc_singapore2026_signature_kscerato_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_kscerato_gold",
+      "name": "singapore2026_signature_kscerato_gold"
+    },
+    {
+      "def_index": 12027,
+      "description": "#StickerKit_desc_singapore2026_signature_molodoy",
+      "item_name_token": "#StickerKit_singapore2026_signature_molodoy",
+      "name": "singapore2026_signature_molodoy"
+    },
+    {
+      "def_index": 12028,
+      "description": "#StickerKit_desc_singapore2026_signature_molodoy_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_molodoy_foil",
+      "name": "singapore2026_signature_molodoy_foil"
+    },
+    {
+      "def_index": 12029,
+      "description": "#StickerKit_desc_singapore2026_signature_molodoy_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_molodoy_holo",
+      "name": "singapore2026_signature_molodoy_holo"
+    },
+    {
+      "def_index": 12030,
+      "description": "#StickerKit_desc_singapore2026_signature_molodoy_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_molodoy_gold",
+      "name": "singapore2026_signature_molodoy_gold"
+    },
+    {
+      "def_index": 12031,
+      "description": "#StickerKit_desc_singapore2026_signature_yekindar",
+      "item_name_token": "#StickerKit_singapore2026_signature_yekindar",
+      "name": "singapore2026_signature_yekindar"
+    },
+    {
+      "def_index": 12032,
+      "description": "#StickerKit_desc_singapore2026_signature_yekindar_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_yekindar_foil",
+      "name": "singapore2026_signature_yekindar_foil"
+    },
+    {
+      "def_index": 12033,
+      "description": "#StickerKit_desc_singapore2026_signature_yekindar_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_yekindar_holo",
+      "name": "singapore2026_signature_yekindar_holo"
+    },
+    {
+      "def_index": 12034,
+      "description": "#StickerKit_desc_singapore2026_signature_yekindar_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_yekindar_gold",
+      "name": "singapore2026_signature_yekindar_gold"
+    },
+    {
+      "def_index": 12035,
+      "description": "#StickerKit_desc_singapore2026_signature_yuurih",
+      "item_name_token": "#StickerKit_singapore2026_signature_yuurih",
+      "name": "singapore2026_signature_yuurih"
+    },
+    {
+      "def_index": 12036,
+      "description": "#StickerKit_desc_singapore2026_signature_yuurih_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_yuurih_foil",
+      "name": "singapore2026_signature_yuurih_foil"
+    },
+    {
+      "def_index": 12037,
+      "description": "#StickerKit_desc_singapore2026_signature_yuurih_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_yuurih_holo",
+      "name": "singapore2026_signature_yuurih_holo"
+    },
+    {
+      "def_index": 12038,
+      "description": "#StickerKit_desc_singapore2026_signature_yuurih_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_yuurih_gold",
+      "name": "singapore2026_signature_yuurih_gold"
+    },
+    {
+      "def_index": 12039,
+      "description": "#StickerKit_desc_singapore2026_signature_jimpphat",
+      "item_name_token": "#StickerKit_singapore2026_signature_jimpphat",
+      "name": "singapore2026_signature_jimpphat"
+    },
+    {
+      "def_index": 12040,
+      "description": "#StickerKit_desc_singapore2026_signature_jimpphat_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_jimpphat_foil",
+      "name": "singapore2026_signature_jimpphat_foil"
+    },
+    {
+      "def_index": 12041,
+      "description": "#StickerKit_desc_singapore2026_signature_jimpphat_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_jimpphat_holo",
+      "name": "singapore2026_signature_jimpphat_holo"
+    },
+    {
+      "def_index": 12042,
+      "description": "#StickerKit_desc_singapore2026_signature_jimpphat_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_jimpphat_gold",
+      "name": "singapore2026_signature_jimpphat_gold"
+    },
+    {
+      "def_index": 12043,
+      "description": "#StickerKit_desc_singapore2026_signature_kyxsan",
+      "item_name_token": "#StickerKit_singapore2026_signature_kyxsan",
+      "name": "singapore2026_signature_kyxsan"
+    },
+    {
+      "def_index": 12044,
+      "description": "#StickerKit_desc_singapore2026_signature_kyxsan_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_kyxsan_foil",
+      "name": "singapore2026_signature_kyxsan_foil"
+    },
+    {
+      "def_index": 12045,
+      "description": "#StickerKit_desc_singapore2026_signature_kyxsan_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_kyxsan_holo",
+      "name": "singapore2026_signature_kyxsan_holo"
+    },
+    {
+      "def_index": 12046,
+      "description": "#StickerKit_desc_singapore2026_signature_kyxsan_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_kyxsan_gold",
+      "name": "singapore2026_signature_kyxsan_gold"
+    },
+    {
+      "def_index": 12047,
+      "description": "#StickerKit_desc_singapore2026_signature_wicadia",
+      "item_name_token": "#StickerKit_singapore2026_signature_wicadia",
+      "name": "singapore2026_signature_wicadia"
+    },
+    {
+      "def_index": 12048,
+      "description": "#StickerKit_desc_singapore2026_signature_wicadia_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_wicadia_foil",
+      "name": "singapore2026_signature_wicadia_foil"
+    },
+    {
+      "def_index": 12049,
+      "description": "#StickerKit_desc_singapore2026_signature_wicadia_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_wicadia_holo",
+      "name": "singapore2026_signature_wicadia_holo"
+    },
+    {
+      "def_index": 12050,
+      "description": "#StickerKit_desc_singapore2026_signature_wicadia_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_wicadia_gold",
+      "name": "singapore2026_signature_wicadia_gold"
+    },
+    {
+      "def_index": 12051,
+      "description": "#StickerKit_desc_singapore2026_signature_woxic",
+      "item_name_token": "#StickerKit_singapore2026_signature_woxic",
+      "name": "singapore2026_signature_woxic"
+    },
+    {
+      "def_index": 12052,
+      "description": "#StickerKit_desc_singapore2026_signature_woxic_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_woxic_foil",
+      "name": "singapore2026_signature_woxic_foil"
+    },
+    {
+      "def_index": 12053,
+      "description": "#StickerKit_desc_singapore2026_signature_woxic_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_woxic_holo",
+      "name": "singapore2026_signature_woxic_holo"
+    },
+    {
+      "def_index": 12054,
+      "description": "#StickerKit_desc_singapore2026_signature_woxic_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_woxic_gold",
+      "name": "singapore2026_signature_woxic_gold"
+    },
+    {
+      "def_index": 12055,
+      "description": "#StickerKit_desc_singapore2026_signature_xantares",
+      "item_name_token": "#StickerKit_singapore2026_signature_xantares",
+      "name": "singapore2026_signature_xantares"
+    },
+    {
+      "def_index": 12056,
+      "description": "#StickerKit_desc_singapore2026_signature_xantares_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_xantares_foil",
+      "name": "singapore2026_signature_xantares_foil"
+    },
+    {
+      "def_index": 12057,
+      "description": "#StickerKit_desc_singapore2026_signature_xantares_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_xantares_holo",
+      "name": "singapore2026_signature_xantares_holo"
+    },
+    {
+      "def_index": 12058,
+      "description": "#StickerKit_desc_singapore2026_signature_xantares_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_xantares_gold",
+      "name": "singapore2026_signature_xantares_gold"
+    },
+    {
+      "def_index": 12059,
+      "description": "#StickerKit_desc_singapore2026_signature_donk",
+      "item_name_token": "#StickerKit_singapore2026_signature_donk",
+      "name": "singapore2026_signature_donk"
+    },
+    {
+      "def_index": 12060,
+      "description": "#StickerKit_desc_singapore2026_signature_donk_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_donk_foil",
+      "name": "singapore2026_signature_donk_foil"
+    },
+    {
+      "def_index": 12061,
+      "description": "#StickerKit_desc_singapore2026_signature_donk_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_donk_holo",
+      "name": "singapore2026_signature_donk_holo"
+    },
+    {
+      "def_index": 12062,
+      "description": "#StickerKit_desc_singapore2026_signature_donk_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_donk_gold",
+      "name": "singapore2026_signature_donk_gold"
+    },
+    {
+      "def_index": 12063,
+      "description": "#StickerKit_desc_singapore2026_signature_magixx",
+      "item_name_token": "#StickerKit_singapore2026_signature_magixx",
+      "name": "singapore2026_signature_magixx"
+    },
+    {
+      "def_index": 12064,
+      "description": "#StickerKit_desc_singapore2026_signature_magixx_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_magixx_foil",
+      "name": "singapore2026_signature_magixx_foil"
+    },
+    {
+      "def_index": 12065,
+      "description": "#StickerKit_desc_singapore2026_signature_magixx_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_magixx_holo",
+      "name": "singapore2026_signature_magixx_holo"
+    },
+    {
+      "def_index": 12066,
+      "description": "#StickerKit_desc_singapore2026_signature_magixx_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_magixx_gold",
+      "name": "singapore2026_signature_magixx_gold"
+    },
+    {
+      "def_index": 12067,
+      "description": "#StickerKit_desc_singapore2026_signature_sh1ro",
+      "item_name_token": "#StickerKit_singapore2026_signature_sh1ro",
+      "name": "singapore2026_signature_sh1ro"
+    },
+    {
+      "def_index": 12068,
+      "description": "#StickerKit_desc_singapore2026_signature_sh1ro_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_sh1ro_foil",
+      "name": "singapore2026_signature_sh1ro_foil"
+    },
+    {
+      "def_index": 12069,
+      "description": "#StickerKit_desc_singapore2026_signature_sh1ro_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_sh1ro_holo",
+      "name": "singapore2026_signature_sh1ro_holo"
+    },
+    {
+      "def_index": 12070,
+      "description": "#StickerKit_desc_singapore2026_signature_sh1ro_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_sh1ro_gold",
+      "name": "singapore2026_signature_sh1ro_gold"
+    },
+    {
+      "def_index": 12071,
+      "description": "#StickerKit_desc_singapore2026_signature_tn1r",
+      "item_name_token": "#StickerKit_singapore2026_signature_tn1r",
+      "name": "singapore2026_signature_tn1r"
+    },
+    {
+      "def_index": 12072,
+      "description": "#StickerKit_desc_singapore2026_signature_tn1r_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_tn1r_foil",
+      "name": "singapore2026_signature_tn1r_foil"
+    },
+    {
+      "def_index": 12073,
+      "description": "#StickerKit_desc_singapore2026_signature_tn1r_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_tn1r_holo",
+      "name": "singapore2026_signature_tn1r_holo"
+    },
+    {
+      "def_index": 12074,
+      "description": "#StickerKit_desc_singapore2026_signature_tn1r_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_tn1r_gold",
+      "name": "singapore2026_signature_tn1r_gold"
+    },
+    {
+      "def_index": 12075,
+      "description": "#StickerKit_desc_singapore2026_signature_zont1x",
+      "item_name_token": "#StickerKit_singapore2026_signature_zont1x",
+      "name": "singapore2026_signature_zont1x"
+    },
+    {
+      "def_index": 12076,
+      "description": "#StickerKit_desc_singapore2026_signature_zont1x_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_zont1x_foil",
+      "name": "singapore2026_signature_zont1x_foil"
+    },
+    {
+      "def_index": 12077,
+      "description": "#StickerKit_desc_singapore2026_signature_zont1x_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_zont1x_holo",
+      "name": "singapore2026_signature_zont1x_holo"
+    },
+    {
+      "def_index": 12078,
+      "description": "#StickerKit_desc_singapore2026_signature_zont1x_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_zont1x_gold",
+      "name": "singapore2026_signature_zont1x_gold"
+    },
+    {
+      "def_index": 12079,
+      "description": "#StickerKit_desc_singapore2026_signature_boombl4",
+      "item_name_token": "#StickerKit_singapore2026_signature_boombl4",
+      "name": "singapore2026_signature_boombl4"
+    },
+    {
+      "def_index": 12080,
+      "description": "#StickerKit_desc_singapore2026_signature_boombl4_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_boombl4_foil",
+      "name": "singapore2026_signature_boombl4_foil"
+    },
+    {
+      "def_index": 12081,
+      "description": "#StickerKit_desc_singapore2026_signature_boombl4_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_boombl4_holo",
+      "name": "singapore2026_signature_boombl4_holo"
+    },
+    {
+      "def_index": 12082,
+      "description": "#StickerKit_desc_singapore2026_signature_boombl4_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_boombl4_gold",
+      "name": "singapore2026_signature_boombl4_gold"
+    },
+    {
+      "def_index": 12083,
+      "description": "#StickerKit_desc_singapore2026_signature_d1ledez",
+      "item_name_token": "#StickerKit_singapore2026_signature_d1ledez",
+      "name": "singapore2026_signature_d1ledez"
+    },
+    {
+      "def_index": 12084,
+      "description": "#StickerKit_desc_singapore2026_signature_d1ledez_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_d1ledez_foil",
+      "name": "singapore2026_signature_d1ledez_foil"
+    },
+    {
+      "def_index": 12085,
+      "description": "#StickerKit_desc_singapore2026_signature_d1ledez_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_d1ledez_holo",
+      "name": "singapore2026_signature_d1ledez_holo"
+    },
+    {
+      "def_index": 12086,
+      "description": "#StickerKit_desc_singapore2026_signature_d1ledez_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_d1ledez_gold",
+      "name": "singapore2026_signature_d1ledez_gold"
+    },
+    {
+      "def_index": 12087,
+      "description": "#StickerKit_desc_singapore2026_signature_magnojez",
+      "item_name_token": "#StickerKit_singapore2026_signature_magnojez",
+      "name": "singapore2026_signature_magnojez"
+    },
+    {
+      "def_index": 12088,
+      "description": "#StickerKit_desc_singapore2026_signature_magnojez_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_magnojez_foil",
+      "name": "singapore2026_signature_magnojez_foil"
+    },
+    {
+      "def_index": 12089,
+      "description": "#StickerKit_desc_singapore2026_signature_magnojez_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_magnojez_holo",
+      "name": "singapore2026_signature_magnojez_holo"
+    },
+    {
+      "def_index": 12090,
+      "description": "#StickerKit_desc_singapore2026_signature_magnojez_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_magnojez_gold",
+      "name": "singapore2026_signature_magnojez_gold"
+    },
+    {
+      "def_index": 12091,
+      "description": "#StickerKit_desc_singapore2026_signature_s1ren",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1ren",
+      "name": "singapore2026_signature_s1ren"
+    },
+    {
+      "def_index": 12092,
+      "description": "#StickerKit_desc_singapore2026_signature_s1ren_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1ren_foil",
+      "name": "singapore2026_signature_s1ren_foil"
+    },
+    {
+      "def_index": 12093,
+      "description": "#StickerKit_desc_singapore2026_signature_s1ren_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1ren_holo",
+      "name": "singapore2026_signature_s1ren_holo"
+    },
+    {
+      "def_index": 12094,
+      "description": "#StickerKit_desc_singapore2026_signature_s1ren_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1ren_gold",
+      "name": "singapore2026_signature_s1ren_gold"
+    },
+    {
+      "def_index": 12095,
+      "description": "#StickerKit_desc_singapore2026_signature_zorte",
+      "item_name_token": "#StickerKit_singapore2026_signature_zorte",
+      "name": "singapore2026_signature_zorte"
+    },
+    {
+      "def_index": 12096,
+      "description": "#StickerKit_desc_singapore2026_signature_zorte_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_zorte_foil",
+      "name": "singapore2026_signature_zorte_foil"
+    },
+    {
+      "def_index": 12097,
+      "description": "#StickerKit_desc_singapore2026_signature_zorte_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_zorte_holo",
+      "name": "singapore2026_signature_zorte_holo"
+    },
+    {
+      "def_index": 12098,
+      "description": "#StickerKit_desc_singapore2026_signature_zorte_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_zorte_gold",
+      "name": "singapore2026_signature_zorte_gold"
+    },
+    {
+      "def_index": 12099,
+      "description": "#StickerKit_desc_singapore2026_signature_karrigan",
+      "item_name_token": "#StickerKit_singapore2026_signature_karrigan",
+      "name": "singapore2026_signature_karrigan"
+    },
+    {
+      "def_index": 12100,
+      "description": "#StickerKit_desc_singapore2026_signature_karrigan_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_karrigan_foil",
+      "name": "singapore2026_signature_karrigan_foil"
+    },
+    {
+      "def_index": 12101,
+      "description": "#StickerKit_desc_singapore2026_signature_karrigan_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_karrigan_holo",
+      "name": "singapore2026_signature_karrigan_holo"
+    },
+    {
+      "def_index": 12102,
+      "description": "#StickerKit_desc_singapore2026_signature_karrigan_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_karrigan_gold",
+      "name": "singapore2026_signature_karrigan_gold"
+    },
+    {
+      "def_index": 12103,
+      "description": "#StickerKit_desc_singapore2026_signature_kyousuke",
+      "item_name_token": "#StickerKit_singapore2026_signature_kyousuke",
+      "name": "singapore2026_signature_kyousuke"
+    },
+    {
+      "def_index": 12104,
+      "description": "#StickerKit_desc_singapore2026_signature_kyousuke_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_kyousuke_foil",
+      "name": "singapore2026_signature_kyousuke_foil"
+    },
+    {
+      "def_index": 12105,
+      "description": "#StickerKit_desc_singapore2026_signature_kyousuke_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_kyousuke_holo",
+      "name": "singapore2026_signature_kyousuke_holo"
+    },
+    {
+      "def_index": 12106,
+      "description": "#StickerKit_desc_singapore2026_signature_kyousuke_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_kyousuke_gold",
+      "name": "singapore2026_signature_kyousuke_gold"
+    },
+    {
+      "def_index": 12107,
+      "description": "#StickerKit_desc_singapore2026_signature_m0nesy",
+      "item_name_token": "#StickerKit_singapore2026_signature_m0nesy",
+      "name": "singapore2026_signature_m0nesy"
+    },
+    {
+      "def_index": 12108,
+      "description": "#StickerKit_desc_singapore2026_signature_m0nesy_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_m0nesy_foil",
+      "name": "singapore2026_signature_m0nesy_foil"
+    },
+    {
+      "def_index": 12109,
+      "description": "#StickerKit_desc_singapore2026_signature_m0nesy_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_m0nesy_holo",
+      "name": "singapore2026_signature_m0nesy_holo"
+    },
+    {
+      "def_index": 12110,
+      "description": "#StickerKit_desc_singapore2026_signature_m0nesy_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_m0nesy_gold",
+      "name": "singapore2026_signature_m0nesy_gold"
+    },
+    {
+      "def_index": 12111,
+      "description": "#StickerKit_desc_singapore2026_signature_niko",
+      "item_name_token": "#StickerKit_singapore2026_signature_niko",
+      "name": "singapore2026_signature_niko"
+    },
+    {
+      "def_index": 12112,
+      "description": "#StickerKit_desc_singapore2026_signature_niko_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_niko_foil",
+      "name": "singapore2026_signature_niko_foil"
+    },
+    {
+      "def_index": 12113,
+      "description": "#StickerKit_desc_singapore2026_signature_niko_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_niko_holo",
+      "name": "singapore2026_signature_niko_holo"
+    },
+    {
+      "def_index": 12114,
+      "description": "#StickerKit_desc_singapore2026_signature_niko_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_niko_gold",
+      "name": "singapore2026_signature_niko_gold"
+    },
+    {
+      "def_index": 12115,
+      "description": "#StickerKit_desc_singapore2026_signature_teses",
+      "item_name_token": "#StickerKit_singapore2026_signature_teses",
+      "name": "singapore2026_signature_teses"
+    },
+    {
+      "def_index": 12116,
+      "description": "#StickerKit_desc_singapore2026_signature_teses_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_teses_foil",
+      "name": "singapore2026_signature_teses_foil"
+    },
+    {
+      "def_index": 12117,
+      "description": "#StickerKit_desc_singapore2026_signature_teses_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_teses_holo",
+      "name": "singapore2026_signature_teses_holo"
+    },
+    {
+      "def_index": 12118,
+      "description": "#StickerKit_desc_singapore2026_signature_teses_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_teses_gold",
+      "name": "singapore2026_signature_teses_gold"
+    },
+    {
+      "def_index": 12119,
+      "description": "#StickerKit_desc_singapore2026_signature_cmtry",
+      "item_name_token": "#StickerKit_singapore2026_signature_cmtry",
+      "name": "singapore2026_signature_cmtry"
+    },
+    {
+      "def_index": 12120,
+      "description": "#StickerKit_desc_singapore2026_signature_cmtry_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_cmtry_foil",
+      "name": "singapore2026_signature_cmtry_foil"
+    },
+    {
+      "def_index": 12121,
+      "description": "#StickerKit_desc_singapore2026_signature_cmtry_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_cmtry_holo",
+      "name": "singapore2026_signature_cmtry_holo"
+    },
+    {
+      "def_index": 12122,
+      "description": "#StickerKit_desc_singapore2026_signature_cmtry_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_cmtry_gold",
+      "name": "singapore2026_signature_cmtry_gold"
+    },
+    {
+      "def_index": 12123,
+      "description": "#StickerKit_desc_singapore2026_signature_dem0n",
+      "item_name_token": "#StickerKit_singapore2026_signature_dem0n",
+      "name": "singapore2026_signature_dem0n"
+    },
+    {
+      "def_index": 12124,
+      "description": "#StickerKit_desc_singapore2026_signature_dem0n_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_dem0n_foil",
+      "name": "singapore2026_signature_dem0n_foil"
+    },
+    {
+      "def_index": 12125,
+      "description": "#StickerKit_desc_singapore2026_signature_dem0n_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_dem0n_holo",
+      "name": "singapore2026_signature_dem0n_holo"
+    },
+    {
+      "def_index": 12126,
+      "description": "#StickerKit_desc_singapore2026_signature_dem0n_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_dem0n_gold",
+      "name": "singapore2026_signature_dem0n_gold"
+    },
+    {
+      "def_index": 12127,
+      "description": "#StickerKit_desc_singapore2026_signature_dziugss",
+      "item_name_token": "#StickerKit_singapore2026_signature_dziugss",
+      "name": "singapore2026_signature_dziugss"
+    },
+    {
+      "def_index": 12128,
+      "description": "#StickerKit_desc_singapore2026_signature_dziugss_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_dziugss_foil",
+      "name": "singapore2026_signature_dziugss_foil"
+    },
+    {
+      "def_index": 12129,
+      "description": "#StickerKit_desc_singapore2026_signature_dziugss_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_dziugss_holo",
+      "name": "singapore2026_signature_dziugss_holo"
+    },
+    {
+      "def_index": 12130,
+      "description": "#StickerKit_desc_singapore2026_signature_dziugss_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_dziugss_gold",
+      "name": "singapore2026_signature_dziugss_gold"
+    },
+    {
+      "def_index": 12131,
+      "description": "#StickerKit_desc_singapore2026_signature_krabeni",
+      "item_name_token": "#StickerKit_singapore2026_signature_krabeni",
+      "name": "singapore2026_signature_krabeni"
+    },
+    {
+      "def_index": 12132,
+      "description": "#StickerKit_desc_singapore2026_signature_krabeni_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_krabeni_foil",
+      "name": "singapore2026_signature_krabeni_foil"
+    },
+    {
+      "def_index": 12133,
+      "description": "#StickerKit_desc_singapore2026_signature_krabeni_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_krabeni_holo",
+      "name": "singapore2026_signature_krabeni_holo"
+    },
+    {
+      "def_index": 12134,
+      "description": "#StickerKit_desc_singapore2026_signature_krabeni_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_krabeni_gold",
+      "name": "singapore2026_signature_krabeni_gold"
+    },
+    {
+      "def_index": 12135,
+      "description": "#StickerKit_desc_singapore2026_signature_xfl0ud",
+      "item_name_token": "#StickerKit_singapore2026_signature_xfl0ud",
+      "name": "singapore2026_signature_xfl0ud"
+    },
+    {
+      "def_index": 12136,
+      "description": "#StickerKit_desc_singapore2026_signature_xfl0ud_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_xfl0ud_foil",
+      "name": "singapore2026_signature_xfl0ud_foil"
+    },
+    {
+      "def_index": 12137,
+      "description": "#StickerKit_desc_singapore2026_signature_xfl0ud_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_xfl0ud_holo",
+      "name": "singapore2026_signature_xfl0ud_holo"
+    },
+    {
+      "def_index": 12138,
+      "description": "#StickerKit_desc_singapore2026_signature_xfl0ud_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_xfl0ud_gold",
+      "name": "singapore2026_signature_xfl0ud_gold"
+    },
+    {
+      "def_index": 12139,
+      "description": "#StickerKit_desc_singapore2026_signature_art",
+      "item_name_token": "#StickerKit_singapore2026_signature_art",
+      "name": "singapore2026_signature_art"
+    },
+    {
+      "def_index": 12140,
+      "description": "#StickerKit_desc_singapore2026_signature_art_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_art_foil",
+      "name": "singapore2026_signature_art_foil"
+    },
+    {
+      "def_index": 12141,
+      "description": "#StickerKit_desc_singapore2026_signature_art_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_art_holo",
+      "name": "singapore2026_signature_art_holo"
+    },
+    {
+      "def_index": 12142,
+      "description": "#StickerKit_desc_singapore2026_signature_art_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_art_gold",
+      "name": "singapore2026_signature_art_gold"
+    },
+    {
+      "def_index": 12143,
+      "description": "#StickerKit_desc_singapore2026_signature_dumau",
+      "item_name_token": "#StickerKit_singapore2026_signature_dumau",
+      "name": "singapore2026_signature_dumau"
+    },
+    {
+      "def_index": 12144,
+      "description": "#StickerKit_desc_singapore2026_signature_dumau_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_dumau_foil",
+      "name": "singapore2026_signature_dumau_foil"
+    },
+    {
+      "def_index": 12145,
+      "description": "#StickerKit_desc_singapore2026_signature_dumau_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_dumau_holo",
+      "name": "singapore2026_signature_dumau_holo"
+    },
+    {
+      "def_index": 12146,
+      "description": "#StickerKit_desc_singapore2026_signature_dumau_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_dumau_gold",
+      "name": "singapore2026_signature_dumau_gold"
+    },
+    {
+      "def_index": 12147,
+      "description": "#StickerKit_desc_singapore2026_signature_latto",
+      "item_name_token": "#StickerKit_singapore2026_signature_latto",
+      "name": "singapore2026_signature_latto"
+    },
+    {
+      "def_index": 12148,
+      "description": "#StickerKit_desc_singapore2026_signature_latto_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_latto_foil",
+      "name": "singapore2026_signature_latto_foil"
+    },
+    {
+      "def_index": 12149,
+      "description": "#StickerKit_desc_singapore2026_signature_latto_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_latto_holo",
+      "name": "singapore2026_signature_latto_holo"
+    },
+    {
+      "def_index": 12150,
+      "description": "#StickerKit_desc_singapore2026_signature_latto_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_latto_gold",
+      "name": "singapore2026_signature_latto_gold"
+    },
+    {
+      "def_index": 12151,
+      "description": "#StickerKit_desc_singapore2026_signature_n1ssim",
+      "item_name_token": "#StickerKit_singapore2026_signature_n1ssim",
+      "name": "singapore2026_signature_n1ssim"
+    },
+    {
+      "def_index": 12152,
+      "description": "#StickerKit_desc_singapore2026_signature_n1ssim_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_n1ssim_foil",
+      "name": "singapore2026_signature_n1ssim_foil"
+    },
+    {
+      "def_index": 12153,
+      "description": "#StickerKit_desc_singapore2026_signature_n1ssim_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_n1ssim_holo",
+      "name": "singapore2026_signature_n1ssim_holo"
+    },
+    {
+      "def_index": 12154,
+      "description": "#StickerKit_desc_singapore2026_signature_n1ssim_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_n1ssim_gold",
+      "name": "singapore2026_signature_n1ssim_gold"
+    },
+    {
+      "def_index": 12155,
+      "description": "#StickerKit_desc_singapore2026_signature_try",
+      "item_name_token": "#StickerKit_singapore2026_signature_try",
+      "name": "singapore2026_signature_try"
+    },
+    {
+      "def_index": 12156,
+      "description": "#StickerKit_desc_singapore2026_signature_try_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_try_foil",
+      "name": "singapore2026_signature_try_foil"
+    },
+    {
+      "def_index": 12157,
+      "description": "#StickerKit_desc_singapore2026_signature_try_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_try_holo",
+      "name": "singapore2026_signature_try_holo"
+    },
+    {
+      "def_index": 12158,
+      "description": "#StickerKit_desc_singapore2026_signature_try_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_try_gold",
+      "name": "singapore2026_signature_try_gold"
+    },
+    {
+      "def_index": 12159,
+      "description": "#StickerKit_desc_singapore2026_signature_kair0n",
+      "item_name_token": "#StickerKit_singapore2026_signature_kair0n",
+      "name": "singapore2026_signature_kair0n"
+    },
+    {
+      "def_index": 12160,
+      "description": "#StickerKit_desc_singapore2026_signature_kair0n_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_kair0n_foil",
+      "name": "singapore2026_signature_kair0n_foil"
+    },
+    {
+      "def_index": 12161,
+      "description": "#StickerKit_desc_singapore2026_signature_kair0n_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_kair0n_holo",
+      "name": "singapore2026_signature_kair0n_holo"
+    },
+    {
+      "def_index": 12162,
+      "description": "#StickerKit_desc_singapore2026_signature_kair0n_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_kair0n_gold",
+      "name": "singapore2026_signature_kair0n_gold"
+    },
+    {
+      "def_index": 12163,
+      "description": "#StickerKit_desc_singapore2026_signature_khan",
+      "item_name_token": "#StickerKit_singapore2026_signature_khan",
+      "name": "singapore2026_signature_khan"
+    },
+    {
+      "def_index": 12164,
+      "description": "#StickerKit_desc_singapore2026_signature_khan_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_khan_foil",
+      "name": "singapore2026_signature_khan_foil"
+    },
+    {
+      "def_index": 12165,
+      "description": "#StickerKit_desc_singapore2026_signature_khan_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_khan_holo",
+      "name": "singapore2026_signature_khan_holo"
+    },
+    {
+      "def_index": 12166,
+      "description": "#StickerKit_desc_singapore2026_signature_khan_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_khan_gold",
+      "name": "singapore2026_signature_khan_gold"
+    },
+    {
+      "def_index": 12167,
+      "description": "#StickerKit_desc_singapore2026_signature_robo",
+      "item_name_token": "#StickerKit_singapore2026_signature_robo",
+      "name": "singapore2026_signature_robo"
+    },
+    {
+      "def_index": 12168,
+      "description": "#StickerKit_desc_singapore2026_signature_robo_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_robo_foil",
+      "name": "singapore2026_signature_robo_foil"
+    },
+    {
+      "def_index": 12169,
+      "description": "#StickerKit_desc_singapore2026_signature_robo_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_robo_holo",
+      "name": "singapore2026_signature_robo_holo"
+    },
+    {
+      "def_index": 12170,
+      "description": "#StickerKit_desc_singapore2026_signature_robo_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_robo_gold",
+      "name": "singapore2026_signature_robo_gold"
+    },
+    {
+      "def_index": 12171,
+      "description": "#StickerKit_desc_singapore2026_signature_syph0",
+      "item_name_token": "#StickerKit_singapore2026_signature_syph0",
+      "name": "singapore2026_signature_syph0"
+    },
+    {
+      "def_index": 12172,
+      "description": "#StickerKit_desc_singapore2026_signature_syph0_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_syph0_foil",
+      "name": "singapore2026_signature_syph0_foil"
+    },
+    {
+      "def_index": 12173,
+      "description": "#StickerKit_desc_singapore2026_signature_syph0_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_syph0_holo",
+      "name": "singapore2026_signature_syph0_holo"
+    },
+    {
+      "def_index": 12174,
+      "description": "#StickerKit_desc_singapore2026_signature_syph0_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_syph0_gold",
+      "name": "singapore2026_signature_syph0_gold"
+    },
+    {
+      "def_index": 12175,
+      "description": "#StickerKit_desc_singapore2026_signature_xant3r",
+      "item_name_token": "#StickerKit_singapore2026_signature_xant3r",
+      "name": "singapore2026_signature_xant3r"
+    },
+    {
+      "def_index": 12176,
+      "description": "#StickerKit_desc_singapore2026_signature_xant3r_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_xant3r_foil",
+      "name": "singapore2026_signature_xant3r_foil"
+    },
+    {
+      "def_index": 12177,
+      "description": "#StickerKit_desc_singapore2026_signature_xant3r_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_xant3r_holo",
+      "name": "singapore2026_signature_xant3r_holo"
+    },
+    {
+      "def_index": 12178,
+      "description": "#StickerKit_desc_singapore2026_signature_xant3r_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_xant3r_gold",
+      "name": "singapore2026_signature_xant3r_gold"
+    },
+    {
+      "def_index": 12179,
+      "description": "#StickerKit_desc_singapore2026_signature_heavygod",
+      "item_name_token": "#StickerKit_singapore2026_signature_heavygod",
+      "name": "singapore2026_signature_heavygod"
+    },
+    {
+      "def_index": 12180,
+      "description": "#StickerKit_desc_singapore2026_signature_heavygod_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_heavygod_foil",
+      "name": "singapore2026_signature_heavygod_foil"
+    },
+    {
+      "def_index": 12181,
+      "description": "#StickerKit_desc_singapore2026_signature_heavygod_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_heavygod_holo",
+      "name": "singapore2026_signature_heavygod_holo"
+    },
+    {
+      "def_index": 12182,
+      "description": "#StickerKit_desc_singapore2026_signature_heavygod_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_heavygod_gold",
+      "name": "singapore2026_signature_heavygod_gold"
+    },
+    {
+      "def_index": 12183,
+      "description": "#StickerKit_desc_singapore2026_signature_hunter",
+      "item_name_token": "#StickerKit_singapore2026_signature_hunter",
+      "name": "singapore2026_signature_hunter"
+    },
+    {
+      "def_index": 12184,
+      "description": "#StickerKit_desc_singapore2026_signature_hunter_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_hunter_foil",
+      "name": "singapore2026_signature_hunter_foil"
+    },
+    {
+      "def_index": 12185,
+      "description": "#StickerKit_desc_singapore2026_signature_hunter_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_hunter_holo",
+      "name": "singapore2026_signature_hunter_holo"
+    },
+    {
+      "def_index": 12186,
+      "description": "#StickerKit_desc_singapore2026_signature_hunter_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_hunter_gold",
+      "name": "singapore2026_signature_hunter_gold"
+    },
+    {
+      "def_index": 12187,
+      "description": "#StickerKit_desc_singapore2026_signature_matys",
+      "item_name_token": "#StickerKit_singapore2026_signature_matys",
+      "name": "singapore2026_signature_matys"
+    },
+    {
+      "def_index": 12188,
+      "description": "#StickerKit_desc_singapore2026_signature_matys_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_matys_foil",
+      "name": "singapore2026_signature_matys_foil"
+    },
+    {
+      "def_index": 12189,
+      "description": "#StickerKit_desc_singapore2026_signature_matys_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_matys_holo",
+      "name": "singapore2026_signature_matys_holo"
+    },
+    {
+      "def_index": 12190,
+      "description": "#StickerKit_desc_singapore2026_signature_matys_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_matys_gold",
+      "name": "singapore2026_signature_matys_gold"
+    },
+    {
+      "def_index": 12191,
+      "description": "#StickerKit_desc_singapore2026_signature_nertz",
+      "item_name_token": "#StickerKit_singapore2026_signature_nertz",
+      "name": "singapore2026_signature_nertz"
+    },
+    {
+      "def_index": 12192,
+      "description": "#StickerKit_desc_singapore2026_signature_nertz_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_nertz_foil",
+      "name": "singapore2026_signature_nertz_foil"
+    },
+    {
+      "def_index": 12193,
+      "description": "#StickerKit_desc_singapore2026_signature_nertz_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_nertz_holo",
+      "name": "singapore2026_signature_nertz_holo"
+    },
+    {
+      "def_index": 12194,
+      "description": "#StickerKit_desc_singapore2026_signature_nertz_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_nertz_gold",
+      "name": "singapore2026_signature_nertz_gold"
+    },
+    {
+      "def_index": 12195,
+      "description": "#StickerKit_desc_singapore2026_signature_r1nkle",
+      "item_name_token": "#StickerKit_singapore2026_signature_r1nkle",
+      "name": "singapore2026_signature_r1nkle"
+    },
+    {
+      "def_index": 12196,
+      "description": "#StickerKit_desc_singapore2026_signature_r1nkle_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_r1nkle_foil",
+      "name": "singapore2026_signature_r1nkle_foil"
+    },
+    {
+      "def_index": 12197,
+      "description": "#StickerKit_desc_singapore2026_signature_r1nkle_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_r1nkle_holo",
+      "name": "singapore2026_signature_r1nkle_holo"
+    },
+    {
+      "def_index": 12198,
+      "description": "#StickerKit_desc_singapore2026_signature_r1nkle_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_r1nkle_gold",
+      "name": "singapore2026_signature_r1nkle_gold"
+    },
+    {
+      "def_index": 12199,
+      "description": "#StickerKit_desc_singapore2026_signature_artfr0st",
+      "item_name_token": "#StickerKit_singapore2026_signature_artfr0st",
+      "name": "singapore2026_signature_artfr0st"
+    },
+    {
+      "def_index": 12200,
+      "description": "#StickerKit_desc_singapore2026_signature_artfr0st_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_artfr0st_foil",
+      "name": "singapore2026_signature_artfr0st_foil"
+    },
+    {
+      "def_index": 12201,
+      "description": "#StickerKit_desc_singapore2026_signature_artfr0st_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_artfr0st_holo",
+      "name": "singapore2026_signature_artfr0st_holo"
+    },
+    {
+      "def_index": 12202,
+      "description": "#StickerKit_desc_singapore2026_signature_artfr0st_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_artfr0st_gold",
+      "name": "singapore2026_signature_artfr0st_gold"
+    },
+    {
+      "def_index": 12203,
+      "description": "#StickerKit_desc_singapore2026_signature_ax1le",
+      "item_name_token": "#StickerKit_singapore2026_signature_ax1le",
+      "name": "singapore2026_signature_ax1le"
+    },
+    {
+      "def_index": 12204,
+      "description": "#StickerKit_desc_singapore2026_signature_ax1le_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_ax1le_foil",
+      "name": "singapore2026_signature_ax1le_foil"
+    },
+    {
+      "def_index": 12205,
+      "description": "#StickerKit_desc_singapore2026_signature_ax1le_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_ax1le_holo",
+      "name": "singapore2026_signature_ax1le_holo"
+    },
+    {
+      "def_index": 12206,
+      "description": "#StickerKit_desc_singapore2026_signature_ax1le_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_ax1le_gold",
+      "name": "singapore2026_signature_ax1le_gold"
+    },
+    {
+      "def_index": 12207,
+      "description": "#StickerKit_desc_singapore2026_signature_belchonokk",
+      "item_name_token": "#StickerKit_singapore2026_signature_belchonokk",
+      "name": "singapore2026_signature_belchonokk"
+    },
+    {
+      "def_index": 12208,
+      "description": "#StickerKit_desc_singapore2026_signature_belchonokk_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_belchonokk_foil",
+      "name": "singapore2026_signature_belchonokk_foil"
+    },
+    {
+      "def_index": 12209,
+      "description": "#StickerKit_desc_singapore2026_signature_belchonokk_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_belchonokk_holo",
+      "name": "singapore2026_signature_belchonokk_holo"
+    },
+    {
+      "def_index": 12210,
+      "description": "#StickerKit_desc_singapore2026_signature_belchonokk_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_belchonokk_gold",
+      "name": "singapore2026_signature_belchonokk_gold"
+    },
+    {
+      "def_index": 12211,
+      "description": "#StickerKit_desc_singapore2026_signature_fame",
+      "item_name_token": "#StickerKit_singapore2026_signature_fame",
+      "name": "singapore2026_signature_fame"
+    },
+    {
+      "def_index": 12212,
+      "description": "#StickerKit_desc_singapore2026_signature_fame_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_fame_foil",
+      "name": "singapore2026_signature_fame_foil"
+    },
+    {
+      "def_index": 12213,
+      "description": "#StickerKit_desc_singapore2026_signature_fame_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_fame_holo",
+      "name": "singapore2026_signature_fame_holo"
+    },
+    {
+      "def_index": 12214,
+      "description": "#StickerKit_desc_singapore2026_signature_fame_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_fame_gold",
+      "name": "singapore2026_signature_fame_gold"
+    },
+    {
+      "def_index": 12215,
+      "description": "#StickerKit_desc_singapore2026_signature_nafany",
+      "item_name_token": "#StickerKit_singapore2026_signature_nafany",
+      "name": "singapore2026_signature_nafany"
+    },
+    {
+      "def_index": 12216,
+      "description": "#StickerKit_desc_singapore2026_signature_nafany_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_nafany_foil",
+      "name": "singapore2026_signature_nafany_foil"
+    },
+    {
+      "def_index": 12217,
+      "description": "#StickerKit_desc_singapore2026_signature_nafany_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_nafany_holo",
+      "name": "singapore2026_signature_nafany_holo"
+    },
+    {
+      "def_index": 12218,
+      "description": "#StickerKit_desc_singapore2026_signature_nafany_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_nafany_gold",
+      "name": "singapore2026_signature_nafany_gold"
+    },
+    {
+      "def_index": 12219,
+      "description": "#StickerKit_desc_singapore2026_signature_aleksib",
+      "item_name_token": "#StickerKit_singapore2026_signature_aleksib",
+      "name": "singapore2026_signature_aleksib"
+    },
+    {
+      "def_index": 12220,
+      "description": "#StickerKit_desc_singapore2026_signature_aleksib_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_aleksib_foil",
+      "name": "singapore2026_signature_aleksib_foil"
+    },
+    {
+      "def_index": 12221,
+      "description": "#StickerKit_desc_singapore2026_signature_aleksib_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_aleksib_holo",
+      "name": "singapore2026_signature_aleksib_holo"
+    },
+    {
+      "def_index": 12222,
+      "description": "#StickerKit_desc_singapore2026_signature_aleksib_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_aleksib_gold",
+      "name": "singapore2026_signature_aleksib_gold"
+    },
+    {
+      "def_index": 12223,
+      "description": "#StickerKit_desc_singapore2026_signature_b1t",
+      "item_name_token": "#StickerKit_singapore2026_signature_b1t",
+      "name": "singapore2026_signature_b1t"
+    },
+    {
+      "def_index": 12224,
+      "description": "#StickerKit_desc_singapore2026_signature_b1t_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_b1t_foil",
+      "name": "singapore2026_signature_b1t_foil"
+    },
+    {
+      "def_index": 12225,
+      "description": "#StickerKit_desc_singapore2026_signature_b1t_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_b1t_holo",
+      "name": "singapore2026_signature_b1t_holo"
+    },
+    {
+      "def_index": 12226,
+      "description": "#StickerKit_desc_singapore2026_signature_b1t_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_b1t_gold",
+      "name": "singapore2026_signature_b1t_gold"
+    },
+    {
+      "def_index": 12227,
+      "description": "#StickerKit_desc_singapore2026_signature_im",
+      "item_name_token": "#StickerKit_singapore2026_signature_im",
+      "name": "singapore2026_signature_im"
+    },
+    {
+      "def_index": 12228,
+      "description": "#StickerKit_desc_singapore2026_signature_im_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_im_foil",
+      "name": "singapore2026_signature_im_foil"
+    },
+    {
+      "def_index": 12229,
+      "description": "#StickerKit_desc_singapore2026_signature_im_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_im_holo",
+      "name": "singapore2026_signature_im_holo"
+    },
+    {
+      "def_index": 12230,
+      "description": "#StickerKit_desc_singapore2026_signature_im_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_im_gold",
+      "name": "singapore2026_signature_im_gold"
+    },
+    {
+      "def_index": 12231,
+      "description": "#StickerKit_desc_singapore2026_signature_makazze",
+      "item_name_token": "#StickerKit_singapore2026_signature_makazze",
+      "name": "singapore2026_signature_makazze"
+    },
+    {
+      "def_index": 12232,
+      "description": "#StickerKit_desc_singapore2026_signature_makazze_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_makazze_foil",
+      "name": "singapore2026_signature_makazze_foil"
+    },
+    {
+      "def_index": 12233,
+      "description": "#StickerKit_desc_singapore2026_signature_makazze_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_makazze_holo",
+      "name": "singapore2026_signature_makazze_holo"
+    },
+    {
+      "def_index": 12234,
+      "description": "#StickerKit_desc_singapore2026_signature_makazze_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_makazze_gold",
+      "name": "singapore2026_signature_makazze_gold"
+    },
+    {
+      "def_index": 12235,
+      "description": "#StickerKit_desc_singapore2026_signature_w0nderful",
+      "item_name_token": "#StickerKit_singapore2026_signature_w0nderful",
+      "name": "singapore2026_signature_w0nderful"
+    },
+    {
+      "def_index": 12236,
+      "description": "#StickerKit_desc_singapore2026_signature_w0nderful_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_w0nderful_foil",
+      "name": "singapore2026_signature_w0nderful_foil"
+    },
+    {
+      "def_index": 12237,
+      "description": "#StickerKit_desc_singapore2026_signature_w0nderful_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_w0nderful_holo",
+      "name": "singapore2026_signature_w0nderful_holo"
+    },
+    {
+      "def_index": 12238,
+      "description": "#StickerKit_desc_singapore2026_signature_w0nderful_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_w0nderful_gold",
+      "name": "singapore2026_signature_w0nderful_gold"
+    },
+    {
+      "def_index": 12239,
+      "description": "#StickerKit_desc_singapore2026_signature_jabbi",
+      "item_name_token": "#StickerKit_singapore2026_signature_jabbi",
+      "name": "singapore2026_signature_jabbi"
+    },
+    {
+      "def_index": 12240,
+      "description": "#StickerKit_desc_singapore2026_signature_jabbi_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_jabbi_foil",
+      "name": "singapore2026_signature_jabbi_foil"
+    },
+    {
+      "def_index": 12241,
+      "description": "#StickerKit_desc_singapore2026_signature_jabbi_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_jabbi_holo",
+      "name": "singapore2026_signature_jabbi_holo"
+    },
+    {
+      "def_index": 12242,
+      "description": "#StickerKit_desc_singapore2026_signature_jabbi_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_jabbi_gold",
+      "name": "singapore2026_signature_jabbi_gold"
+    },
+    {
+      "def_index": 12243,
+      "description": "#StickerKit_desc_singapore2026_signature_phzy",
+      "item_name_token": "#StickerKit_singapore2026_signature_phzy",
+      "name": "singapore2026_signature_phzy"
+    },
+    {
+      "def_index": 12244,
+      "description": "#StickerKit_desc_singapore2026_signature_phzy_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_phzy_foil",
+      "name": "singapore2026_signature_phzy_foil"
+    },
+    {
+      "def_index": 12245,
+      "description": "#StickerKit_desc_singapore2026_signature_phzy_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_phzy_holo",
+      "name": "singapore2026_signature_phzy_holo"
+    },
+    {
+      "def_index": 12246,
+      "description": "#StickerKit_desc_singapore2026_signature_phzy_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_phzy_gold",
+      "name": "singapore2026_signature_phzy_gold"
+    },
+    {
+      "def_index": 12247,
+      "description": "#StickerKit_desc_singapore2026_signature_ryu",
+      "item_name_token": "#StickerKit_singapore2026_signature_ryu",
+      "name": "singapore2026_signature_ryu"
+    },
+    {
+      "def_index": 12248,
+      "description": "#StickerKit_desc_singapore2026_signature_ryu_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_ryu_foil",
+      "name": "singapore2026_signature_ryu_foil"
+    },
+    {
+      "def_index": 12249,
+      "description": "#StickerKit_desc_singapore2026_signature_ryu_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_ryu_holo",
+      "name": "singapore2026_signature_ryu_holo"
+    },
+    {
+      "def_index": 12250,
+      "description": "#StickerKit_desc_singapore2026_signature_ryu_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_ryu_gold",
+      "name": "singapore2026_signature_ryu_gold"
+    },
+    {
+      "def_index": 12251,
+      "description": "#StickerKit_desc_singapore2026_signature_siuhy",
+      "item_name_token": "#StickerKit_singapore2026_signature_siuhy",
+      "name": "singapore2026_signature_siuhy"
+    },
+    {
+      "def_index": 12252,
+      "description": "#StickerKit_desc_singapore2026_signature_siuhy_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_siuhy_foil",
+      "name": "singapore2026_signature_siuhy_foil"
+    },
+    {
+      "def_index": 12253,
+      "description": "#StickerKit_desc_singapore2026_signature_siuhy_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_siuhy_holo",
+      "name": "singapore2026_signature_siuhy_holo"
+    },
+    {
+      "def_index": 12254,
+      "description": "#StickerKit_desc_singapore2026_signature_siuhy_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_siuhy_gold",
+      "name": "singapore2026_signature_siuhy_gold"
+    },
+    {
+      "def_index": 12255,
+      "description": "#StickerKit_desc_singapore2026_signature_staehr",
+      "item_name_token": "#StickerKit_singapore2026_signature_staehr",
+      "name": "singapore2026_signature_staehr"
+    },
+    {
+      "def_index": 12256,
+      "description": "#StickerKit_desc_singapore2026_signature_staehr_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_staehr_foil",
+      "name": "singapore2026_signature_staehr_foil"
+    },
+    {
+      "def_index": 12257,
+      "description": "#StickerKit_desc_singapore2026_signature_staehr_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_staehr_holo",
+      "name": "singapore2026_signature_staehr_holo"
+    },
+    {
+      "def_index": 12258,
+      "description": "#StickerKit_desc_singapore2026_signature_staehr_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_staehr_gold",
+      "name": "singapore2026_signature_staehr_gold"
+    },
+    {
+      "def_index": 12259,
+      "description": "#StickerKit_desc_singapore2026_signature_adamb",
+      "item_name_token": "#StickerKit_singapore2026_signature_adamb",
+      "name": "singapore2026_signature_adamb"
+    },
+    {
+      "def_index": 12260,
+      "description": "#StickerKit_desc_singapore2026_signature_adamb_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_adamb_foil",
+      "name": "singapore2026_signature_adamb_foil"
+    },
+    {
+      "def_index": 12261,
+      "description": "#StickerKit_desc_singapore2026_signature_adamb_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_adamb_holo",
+      "name": "singapore2026_signature_adamb_holo"
+    },
+    {
+      "def_index": 12262,
+      "description": "#StickerKit_desc_singapore2026_signature_adamb_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_adamb_gold",
+      "name": "singapore2026_signature_adamb_gold"
+    },
+    {
+      "def_index": 12263,
+      "description": "#StickerKit_desc_singapore2026_signature_krimbo",
+      "item_name_token": "#StickerKit_singapore2026_signature_krimbo",
+      "name": "singapore2026_signature_krimbo"
+    },
+    {
+      "def_index": 12264,
+      "description": "#StickerKit_desc_singapore2026_signature_krimbo_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_krimbo_foil",
+      "name": "singapore2026_signature_krimbo_foil"
+    },
+    {
+      "def_index": 12265,
+      "description": "#StickerKit_desc_singapore2026_signature_krimbo_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_krimbo_holo",
+      "name": "singapore2026_signature_krimbo_holo"
+    },
+    {
+      "def_index": 12266,
+      "description": "#StickerKit_desc_singapore2026_signature_krimbo_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_krimbo_gold",
+      "name": "singapore2026_signature_krimbo_gold"
+    },
+    {
+      "def_index": 12267,
+      "description": "#StickerKit_desc_singapore2026_signature_sjuush",
+      "item_name_token": "#StickerKit_singapore2026_signature_sjuush",
+      "name": "singapore2026_signature_sjuush"
+    },
+    {
+      "def_index": 12268,
+      "description": "#StickerKit_desc_singapore2026_signature_sjuush_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_sjuush_foil",
+      "name": "singapore2026_signature_sjuush_foil"
+    },
+    {
+      "def_index": 12269,
+      "description": "#StickerKit_desc_singapore2026_signature_sjuush_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_sjuush_holo",
+      "name": "singapore2026_signature_sjuush_holo"
+    },
+    {
+      "def_index": 12270,
+      "description": "#StickerKit_desc_singapore2026_signature_sjuush_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_sjuush_gold",
+      "name": "singapore2026_signature_sjuush_gold"
+    },
+    {
+      "def_index": 12271,
+      "description": "#StickerKit_desc_singapore2026_signature_stavn",
+      "item_name_token": "#StickerKit_singapore2026_signature_stavn",
+      "name": "singapore2026_signature_stavn"
+    },
+    {
+      "def_index": 12272,
+      "description": "#StickerKit_desc_singapore2026_signature_stavn_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_stavn_foil",
+      "name": "singapore2026_signature_stavn_foil"
+    },
+    {
+      "def_index": 12273,
+      "description": "#StickerKit_desc_singapore2026_signature_stavn_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_stavn_holo",
+      "name": "singapore2026_signature_stavn_holo"
+    },
+    {
+      "def_index": 12274,
+      "description": "#StickerKit_desc_singapore2026_signature_stavn_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_stavn_gold",
+      "name": "singapore2026_signature_stavn_gold"
+    },
+    {
+      "def_index": 12275,
+      "description": "#StickerKit_desc_singapore2026_signature_xkacpersky",
+      "item_name_token": "#StickerKit_singapore2026_signature_xkacpersky",
+      "name": "singapore2026_signature_xkacpersky"
+    },
+    {
+      "def_index": 12276,
+      "description": "#StickerKit_desc_singapore2026_signature_xkacpersky_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_xkacpersky_foil",
+      "name": "singapore2026_signature_xkacpersky_foil"
+    },
+    {
+      "def_index": 12277,
+      "description": "#StickerKit_desc_singapore2026_signature_xkacpersky_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_xkacpersky_holo",
+      "name": "singapore2026_signature_xkacpersky_holo"
+    },
+    {
+      "def_index": 12278,
+      "description": "#StickerKit_desc_singapore2026_signature_xkacpersky_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_xkacpersky_gold",
+      "name": "singapore2026_signature_xkacpersky_gold"
+    },
+    {
+      "def_index": 12279,
+      "description": "#StickerKit_desc_singapore2026_signature_910",
+      "item_name_token": "#StickerKit_singapore2026_signature_910",
+      "name": "singapore2026_signature_910"
+    },
+    {
+      "def_index": 12280,
+      "description": "#StickerKit_desc_singapore2026_signature_910_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_910_foil",
+      "name": "singapore2026_signature_910_foil"
+    },
+    {
+      "def_index": 12281,
+      "description": "#StickerKit_desc_singapore2026_signature_910_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_910_holo",
+      "name": "singapore2026_signature_910_holo"
+    },
+    {
+      "def_index": 12282,
+      "description": "#StickerKit_desc_singapore2026_signature_910_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_910_gold",
+      "name": "singapore2026_signature_910_gold"
+    },
+    {
+      "def_index": 12283,
+      "description": "#StickerKit_desc_singapore2026_signature_blitz",
+      "item_name_token": "#StickerKit_singapore2026_signature_blitz",
+      "name": "singapore2026_signature_blitz"
+    },
+    {
+      "def_index": 12284,
+      "description": "#StickerKit_desc_singapore2026_signature_blitz_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_blitz_foil",
+      "name": "singapore2026_signature_blitz_foil"
+    },
+    {
+      "def_index": 12285,
+      "description": "#StickerKit_desc_singapore2026_signature_blitz_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_blitz_holo",
+      "name": "singapore2026_signature_blitz_holo"
+    },
+    {
+      "def_index": 12286,
+      "description": "#StickerKit_desc_singapore2026_signature_blitz_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_blitz_gold",
+      "name": "singapore2026_signature_blitz_gold"
+    },
+    {
+      "def_index": 12287,
+      "description": "#StickerKit_desc_singapore2026_signature_cobra",
+      "item_name_token": "#StickerKit_singapore2026_signature_cobra",
+      "name": "singapore2026_signature_cobra"
+    },
+    {
+      "def_index": 12288,
+      "description": "#StickerKit_desc_singapore2026_signature_cobra_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_cobra_foil",
+      "name": "singapore2026_signature_cobra_foil"
+    },
+    {
+      "def_index": 12289,
+      "description": "#StickerKit_desc_singapore2026_signature_cobra_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_cobra_holo",
+      "name": "singapore2026_signature_cobra_holo"
+    },
+    {
+      "def_index": 12290,
+      "description": "#StickerKit_desc_singapore2026_signature_cobra_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_cobra_gold",
+      "name": "singapore2026_signature_cobra_gold"
+    },
+    {
+      "def_index": 12291,
+      "description": "#StickerKit_desc_singapore2026_signature_nin9",
+      "item_name_token": "#StickerKit_singapore2026_signature_nin9",
+      "name": "singapore2026_signature_nin9"
+    },
+    {
+      "def_index": 12292,
+      "description": "#StickerKit_desc_singapore2026_signature_nin9_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_nin9_foil",
+      "name": "singapore2026_signature_nin9_foil"
+    },
+    {
+      "def_index": 12293,
+      "description": "#StickerKit_desc_singapore2026_signature_nin9_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_nin9_holo",
+      "name": "singapore2026_signature_nin9_holo"
+    },
+    {
+      "def_index": 12294,
+      "description": "#StickerKit_desc_singapore2026_signature_nin9_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_nin9_gold",
+      "name": "singapore2026_signature_nin9_gold"
+    },
+    {
+      "def_index": 12295,
+      "description": "#StickerKit_desc_singapore2026_signature_techno4k",
+      "item_name_token": "#StickerKit_singapore2026_signature_techno4k",
+      "name": "singapore2026_signature_techno4k"
+    },
+    {
+      "def_index": 12296,
+      "description": "#StickerKit_desc_singapore2026_signature_techno4k_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_techno4k_foil",
+      "name": "singapore2026_signature_techno4k_foil"
+    },
+    {
+      "def_index": 12297,
+      "description": "#StickerKit_desc_singapore2026_signature_techno4k_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_techno4k_holo",
+      "name": "singapore2026_signature_techno4k_holo"
+    },
+    {
+      "def_index": 12298,
+      "description": "#StickerKit_desc_singapore2026_signature_techno4k_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_techno4k_gold",
+      "name": "singapore2026_signature_techno4k_gold"
+    },
+    {
+      "def_index": 12299,
+      "description": "#StickerKit_desc_singapore2026_signature_fl1t",
+      "item_name_token": "#StickerKit_singapore2026_signature_fl1t",
+      "name": "singapore2026_signature_fl1t"
+    },
+    {
+      "def_index": 12300,
+      "description": "#StickerKit_desc_singapore2026_signature_fl1t_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_fl1t_foil",
+      "name": "singapore2026_signature_fl1t_foil"
+    },
+    {
+      "def_index": 12301,
+      "description": "#StickerKit_desc_singapore2026_signature_fl1t_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_fl1t_holo",
+      "name": "singapore2026_signature_fl1t_holo"
+    },
+    {
+      "def_index": 12302,
+      "description": "#StickerKit_desc_singapore2026_signature_fl1t_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_fl1t_gold",
+      "name": "singapore2026_signature_fl1t_gold"
+    },
+    {
+      "def_index": 12303,
+      "description": "#StickerKit_desc_singapore2026_signature_hobbit",
+      "item_name_token": "#StickerKit_singapore2026_signature_hobbit",
+      "name": "singapore2026_signature_hobbit"
+    },
+    {
+      "def_index": 12304,
+      "description": "#StickerKit_desc_singapore2026_signature_hobbit_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_hobbit_foil",
+      "name": "singapore2026_signature_hobbit_foil"
+    },
+    {
+      "def_index": 12305,
+      "description": "#StickerKit_desc_singapore2026_signature_hobbit_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_hobbit_holo",
+      "name": "singapore2026_signature_hobbit_holo"
+    },
+    {
+      "def_index": 12306,
+      "description": "#StickerKit_desc_singapore2026_signature_hobbit_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_hobbit_gold",
+      "name": "singapore2026_signature_hobbit_gold"
+    },
+    {
+      "def_index": 12307,
+      "description": "#StickerKit_desc_singapore2026_signature_jame",
+      "item_name_token": "#StickerKit_singapore2026_signature_jame",
+      "name": "singapore2026_signature_jame"
+    },
+    {
+      "def_index": 12308,
+      "description": "#StickerKit_desc_singapore2026_signature_jame_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_jame_foil",
+      "name": "singapore2026_signature_jame_foil"
+    },
+    {
+      "def_index": 12309,
+      "description": "#StickerKit_desc_singapore2026_signature_jame_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_jame_holo",
+      "name": "singapore2026_signature_jame_holo"
+    },
+    {
+      "def_index": 12310,
+      "description": "#StickerKit_desc_singapore2026_signature_jame_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_jame_gold",
+      "name": "singapore2026_signature_jame_gold"
+    },
+    {
+      "def_index": 12311,
+      "description": "#StickerKit_desc_singapore2026_signature_xielo",
+      "item_name_token": "#StickerKit_singapore2026_signature_xielo",
+      "name": "singapore2026_signature_xielo"
+    },
+    {
+      "def_index": 12312,
+      "description": "#StickerKit_desc_singapore2026_signature_xielo_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_xielo_foil",
+      "name": "singapore2026_signature_xielo_foil"
+    },
+    {
+      "def_index": 12313,
+      "description": "#StickerKit_desc_singapore2026_signature_xielo_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_xielo_holo",
+      "name": "singapore2026_signature_xielo_holo"
+    },
+    {
+      "def_index": 12314,
+      "description": "#StickerKit_desc_singapore2026_signature_xielo_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_xielo_gold",
+      "name": "singapore2026_signature_xielo_gold"
+    },
+    {
+      "def_index": 12315,
+      "description": "#StickerKit_desc_singapore2026_signature_zweih",
+      "item_name_token": "#StickerKit_singapore2026_signature_zweih",
+      "name": "singapore2026_signature_zweih"
+    },
+    {
+      "def_index": 12316,
+      "description": "#StickerKit_desc_singapore2026_signature_zweih_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_zweih_foil",
+      "name": "singapore2026_signature_zweih_foil"
+    },
+    {
+      "def_index": 12317,
+      "description": "#StickerKit_desc_singapore2026_signature_zweih_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_zweih_holo",
+      "name": "singapore2026_signature_zweih_holo"
+    },
+    {
+      "def_index": 12318,
+      "description": "#StickerKit_desc_singapore2026_signature_zweih_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_zweih_gold",
+      "name": "singapore2026_signature_zweih_gold"
+    },
+    {
+      "def_index": 12319,
+      "description": "#StickerKit_desc_singapore2026_signature_brollan",
+      "item_name_token": "#StickerKit_singapore2026_signature_brollan",
+      "name": "singapore2026_signature_brollan"
+    },
+    {
+      "def_index": 12320,
+      "description": "#StickerKit_desc_singapore2026_signature_brollan_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_brollan_foil",
+      "name": "singapore2026_signature_brollan_foil"
+    },
+    {
+      "def_index": 12321,
+      "description": "#StickerKit_desc_singapore2026_signature_brollan_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_brollan_holo",
+      "name": "singapore2026_signature_brollan_holo"
+    },
+    {
+      "def_index": 12322,
+      "description": "#StickerKit_desc_singapore2026_signature_brollan_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_brollan_gold",
+      "name": "singapore2026_signature_brollan_gold"
+    },
+    {
+      "def_index": 12323,
+      "description": "#StickerKit_desc_singapore2026_signature_chr1zn",
+      "item_name_token": "#StickerKit_singapore2026_signature_chr1zn",
+      "name": "singapore2026_signature_chr1zn"
+    },
+    {
+      "def_index": 12324,
+      "description": "#StickerKit_desc_singapore2026_signature_chr1zn_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_chr1zn_foil",
+      "name": "singapore2026_signature_chr1zn_foil"
+    },
+    {
+      "def_index": 12325,
+      "description": "#StickerKit_desc_singapore2026_signature_chr1zn_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_chr1zn_holo",
+      "name": "singapore2026_signature_chr1zn_holo"
+    },
+    {
+      "def_index": 12326,
+      "description": "#StickerKit_desc_singapore2026_signature_chr1zn_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_chr1zn_gold",
+      "name": "singapore2026_signature_chr1zn_gold"
+    },
+    {
+      "def_index": 12327,
+      "description": "#StickerKit_desc_singapore2026_signature_martinezsa",
+      "item_name_token": "#StickerKit_singapore2026_signature_martinezsa",
+      "name": "singapore2026_signature_martinezsa"
+    },
+    {
+      "def_index": 12328,
+      "description": "#StickerKit_desc_singapore2026_signature_martinezsa_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_martinezsa_foil",
+      "name": "singapore2026_signature_martinezsa_foil"
+    },
+    {
+      "def_index": 12329,
+      "description": "#StickerKit_desc_singapore2026_signature_martinezsa_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_martinezsa_holo",
+      "name": "singapore2026_signature_martinezsa_holo"
+    },
+    {
+      "def_index": 12330,
+      "description": "#StickerKit_desc_singapore2026_signature_martinezsa_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_martinezsa_gold",
+      "name": "singapore2026_signature_martinezsa_gold"
+    },
+    {
+      "def_index": 12331,
+      "description": "#StickerKit_desc_singapore2026_signature_nilo",
+      "item_name_token": "#StickerKit_singapore2026_signature_nilo",
+      "name": "singapore2026_signature_nilo"
+    },
+    {
+      "def_index": 12332,
+      "description": "#StickerKit_desc_singapore2026_signature_nilo_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_nilo_foil",
+      "name": "singapore2026_signature_nilo_foil"
+    },
+    {
+      "def_index": 12333,
+      "description": "#StickerKit_desc_singapore2026_signature_nilo_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_nilo_holo",
+      "name": "singapore2026_signature_nilo_holo"
+    },
+    {
+      "def_index": 12334,
+      "description": "#StickerKit_desc_singapore2026_signature_nilo_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_nilo_gold",
+      "name": "singapore2026_signature_nilo_gold"
+    },
+    {
+      "def_index": 12335,
+      "description": "#StickerKit_desc_singapore2026_signature_susp",
+      "item_name_token": "#StickerKit_singapore2026_signature_susp",
+      "name": "singapore2026_signature_susp"
+    },
+    {
+      "def_index": 12336,
+      "description": "#StickerKit_desc_singapore2026_signature_susp_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_susp_foil",
+      "name": "singapore2026_signature_susp_foil"
+    },
+    {
+      "def_index": 12337,
+      "description": "#StickerKit_desc_singapore2026_signature_susp_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_susp_holo",
+      "name": "singapore2026_signature_susp_holo"
+    },
+    {
+      "def_index": 12338,
+      "description": "#StickerKit_desc_singapore2026_signature_susp_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_susp_gold",
+      "name": "singapore2026_signature_susp_gold"
+    },
+    {
+      "def_index": 12339,
+      "description": "#StickerKit_desc_singapore2026_signature_insani",
+      "item_name_token": "#StickerKit_singapore2026_signature_insani",
+      "name": "singapore2026_signature_insani"
+    },
+    {
+      "def_index": 12340,
+      "description": "#StickerKit_desc_singapore2026_signature_insani_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_insani_foil",
+      "name": "singapore2026_signature_insani_foil"
+    },
+    {
+      "def_index": 12341,
+      "description": "#StickerKit_desc_singapore2026_signature_insani_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_insani_holo",
+      "name": "singapore2026_signature_insani_holo"
+    },
+    {
+      "def_index": 12342,
+      "description": "#StickerKit_desc_singapore2026_signature_insani_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_insani_gold",
+      "name": "singapore2026_signature_insani_gold"
+    },
+    {
+      "def_index": 12343,
+      "description": "#StickerKit_desc_singapore2026_signature_lnz",
+      "item_name_token": "#StickerKit_singapore2026_signature_lnz",
+      "name": "singapore2026_signature_lnz"
+    },
+    {
+      "def_index": 12344,
+      "description": "#StickerKit_desc_singapore2026_signature_lnz_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_lnz_foil",
+      "name": "singapore2026_signature_lnz_foil"
+    },
+    {
+      "def_index": 12345,
+      "description": "#StickerKit_desc_singapore2026_signature_lnz_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_lnz_holo",
+      "name": "singapore2026_signature_lnz_holo"
+    },
+    {
+      "def_index": 12346,
+      "description": "#StickerKit_desc_singapore2026_signature_lnz_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_lnz_gold",
+      "name": "singapore2026_signature_lnz_gold"
+    },
+    {
+      "def_index": 12347,
+      "description": "#StickerKit_desc_singapore2026_signature_nqz",
+      "item_name_token": "#StickerKit_singapore2026_signature_nqz",
+      "name": "singapore2026_signature_nqz"
+    },
+    {
+      "def_index": 12348,
+      "description": "#StickerKit_desc_singapore2026_signature_nqz_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_nqz_foil",
+      "name": "singapore2026_signature_nqz_foil"
+    },
+    {
+      "def_index": 12349,
+      "description": "#StickerKit_desc_singapore2026_signature_nqz_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_nqz_holo",
+      "name": "singapore2026_signature_nqz_holo"
+    },
+    {
+      "def_index": 12350,
+      "description": "#StickerKit_desc_singapore2026_signature_nqz_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_nqz_gold",
+      "name": "singapore2026_signature_nqz_gold"
+    },
+    {
+      "def_index": 12351,
+      "description": "#StickerKit_desc_singapore2026_signature_tomaszin",
+      "item_name_token": "#StickerKit_singapore2026_signature_tomaszin",
+      "name": "singapore2026_signature_tomaszin"
+    },
+    {
+      "def_index": 12352,
+      "description": "#StickerKit_desc_singapore2026_signature_tomaszin_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_tomaszin_foil",
+      "name": "singapore2026_signature_tomaszin_foil"
+    },
+    {
+      "def_index": 12353,
+      "description": "#StickerKit_desc_singapore2026_signature_tomaszin_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_tomaszin_holo",
+      "name": "singapore2026_signature_tomaszin_holo"
+    },
+    {
+      "def_index": 12354,
+      "description": "#StickerKit_desc_singapore2026_signature_tomaszin_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_tomaszin_gold",
+      "name": "singapore2026_signature_tomaszin_gold"
+    },
+    {
+      "def_index": 12355,
+      "description": "#StickerKit_desc_singapore2026_signature_venomzera",
+      "item_name_token": "#StickerKit_singapore2026_signature_venomzera",
+      "name": "singapore2026_signature_venomzera"
+    },
+    {
+      "def_index": 12356,
+      "description": "#StickerKit_desc_singapore2026_signature_venomzera_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_venomzera_foil",
+      "name": "singapore2026_signature_venomzera_foil"
+    },
+    {
+      "def_index": 12357,
+      "description": "#StickerKit_desc_singapore2026_signature_venomzera_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_venomzera_holo",
+      "name": "singapore2026_signature_venomzera_holo"
+    },
+    {
+      "def_index": 12358,
+      "description": "#StickerKit_desc_singapore2026_signature_venomzera_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_venomzera_gold",
+      "name": "singapore2026_signature_venomzera_gold"
+    },
+    {
+      "def_index": 12359,
+      "description": "#StickerKit_desc_singapore2026_signature_frozen",
+      "item_name_token": "#StickerKit_singapore2026_signature_frozen",
+      "name": "singapore2026_signature_frozen"
+    },
+    {
+      "def_index": 12360,
+      "description": "#StickerKit_desc_singapore2026_signature_frozen_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_frozen_foil",
+      "name": "singapore2026_signature_frozen_foil"
+    },
+    {
+      "def_index": 12361,
+      "description": "#StickerKit_desc_singapore2026_signature_frozen_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_frozen_holo",
+      "name": "singapore2026_signature_frozen_holo"
+    },
+    {
+      "def_index": 12362,
+      "description": "#StickerKit_desc_singapore2026_signature_frozen_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_frozen_gold",
+      "name": "singapore2026_signature_frozen_gold"
+    },
+    {
+      "def_index": 12363,
+      "description": "#StickerKit_desc_singapore2026_signature_jboen",
+      "item_name_token": "#StickerKit_singapore2026_signature_jboen",
+      "name": "singapore2026_signature_jboen"
+    },
+    {
+      "def_index": 12364,
+      "description": "#StickerKit_desc_singapore2026_signature_jboen_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_jboen_foil",
+      "name": "singapore2026_signature_jboen_foil"
+    },
+    {
+      "def_index": 12365,
+      "description": "#StickerKit_desc_singapore2026_signature_jboen_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_jboen_holo",
+      "name": "singapore2026_signature_jboen_holo"
+    },
+    {
+      "def_index": 12366,
+      "description": "#StickerKit_desc_singapore2026_signature_jboen_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_jboen_gold",
+      "name": "singapore2026_signature_jboen_gold"
+    },
+    {
+      "def_index": 12367,
+      "description": "#StickerKit_desc_singapore2026_signature_jcobbb",
+      "item_name_token": "#StickerKit_singapore2026_signature_jcobbb",
+      "name": "singapore2026_signature_jcobbb"
+    },
+    {
+      "def_index": 12368,
+      "description": "#StickerKit_desc_singapore2026_signature_jcobbb_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_jcobbb_foil",
+      "name": "singapore2026_signature_jcobbb_foil"
+    },
+    {
+      "def_index": 12369,
+      "description": "#StickerKit_desc_singapore2026_signature_jcobbb_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_jcobbb_holo",
+      "name": "singapore2026_signature_jcobbb_holo"
+    },
+    {
+      "def_index": 12370,
+      "description": "#StickerKit_desc_singapore2026_signature_jcobbb_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_jcobbb_gold",
+      "name": "singapore2026_signature_jcobbb_gold"
+    },
+    {
+      "def_index": 12371,
+      "description": "#StickerKit_desc_singapore2026_signature_neityu",
+      "item_name_token": "#StickerKit_singapore2026_signature_neityu",
+      "name": "singapore2026_signature_neityu"
+    },
+    {
+      "def_index": 12372,
+      "description": "#StickerKit_desc_singapore2026_signature_neityu_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_neityu_foil",
+      "name": "singapore2026_signature_neityu_foil"
+    },
+    {
+      "def_index": 12373,
+      "description": "#StickerKit_desc_singapore2026_signature_neityu_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_neityu_holo",
+      "name": "singapore2026_signature_neityu_holo"
+    },
+    {
+      "def_index": 12374,
+      "description": "#StickerKit_desc_singapore2026_signature_neityu_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_neityu_gold",
+      "name": "singapore2026_signature_neityu_gold"
+    },
+    {
+      "def_index": 12375,
+      "description": "#StickerKit_desc_singapore2026_signature_twistzz",
+      "item_name_token": "#StickerKit_singapore2026_signature_twistzz",
+      "name": "singapore2026_signature_twistzz"
+    },
+    {
+      "def_index": 12376,
+      "description": "#StickerKit_desc_singapore2026_signature_twistzz_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_twistzz_foil",
+      "name": "singapore2026_signature_twistzz_foil"
+    },
+    {
+      "def_index": 12377,
+      "description": "#StickerKit_desc_singapore2026_signature_twistzz_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_twistzz_holo",
+      "name": "singapore2026_signature_twistzz_holo"
+    },
+    {
+      "def_index": 12378,
+      "description": "#StickerKit_desc_singapore2026_signature_twistzz_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_twistzz_gold",
+      "name": "singapore2026_signature_twistzz_gold"
+    },
+    {
+      "def_index": 12379,
+      "description": "#StickerKit_desc_singapore2026_signature_elige",
+      "item_name_token": "#StickerKit_singapore2026_signature_elige",
+      "name": "singapore2026_signature_elige"
+    },
+    {
+      "def_index": 12380,
+      "description": "#StickerKit_desc_singapore2026_signature_elige_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_elige_foil",
+      "name": "singapore2026_signature_elige_foil"
+    },
+    {
+      "def_index": 12381,
+      "description": "#StickerKit_desc_singapore2026_signature_elige_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_elige_holo",
+      "name": "singapore2026_signature_elige_holo"
+    },
+    {
+      "def_index": 12382,
+      "description": "#StickerKit_desc_singapore2026_signature_elige_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_elige_gold",
+      "name": "singapore2026_signature_elige_gold"
+    },
+    {
+      "def_index": 12383,
+      "description": "#StickerKit_desc_singapore2026_signature_jorko",
+      "item_name_token": "#StickerKit_singapore2026_signature_jorko",
+      "name": "singapore2026_signature_jorko"
+    },
+    {
+      "def_index": 12384,
+      "description": "#StickerKit_desc_singapore2026_signature_jorko_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_jorko_foil",
+      "name": "singapore2026_signature_jorko_foil"
+    },
+    {
+      "def_index": 12385,
+      "description": "#StickerKit_desc_singapore2026_signature_jorko_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_jorko_holo",
+      "name": "singapore2026_signature_jorko_holo"
+    },
+    {
+      "def_index": 12386,
+      "description": "#StickerKit_desc_singapore2026_signature_jorko_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_jorko_gold",
+      "name": "singapore2026_signature_jorko_gold"
+    },
+    {
+      "def_index": 12387,
+      "description": "#StickerKit_desc_singapore2026_signature_jt",
+      "item_name_token": "#StickerKit_singapore2026_signature_jt",
+      "name": "singapore2026_signature_jt"
+    },
+    {
+      "def_index": 12388,
+      "description": "#StickerKit_desc_singapore2026_signature_jt_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_jt_foil",
+      "name": "singapore2026_signature_jt_foil"
+    },
+    {
+      "def_index": 12389,
+      "description": "#StickerKit_desc_singapore2026_signature_jt_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_jt_holo",
+      "name": "singapore2026_signature_jt_holo"
+    },
+    {
+      "def_index": 12390,
+      "description": "#StickerKit_desc_singapore2026_signature_jt_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_jt_gold",
+      "name": "singapore2026_signature_jt_gold"
+    },
+    {
+      "def_index": 12391,
+      "description": "#StickerKit_desc_singapore2026_signature_malbsmd",
+      "item_name_token": "#StickerKit_singapore2026_signature_malbsmd",
+      "name": "singapore2026_signature_malbsmd"
+    },
+    {
+      "def_index": 12392,
+      "description": "#StickerKit_desc_singapore2026_signature_malbsmd_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_malbsmd_foil",
+      "name": "singapore2026_signature_malbsmd_foil"
+    },
+    {
+      "def_index": 12393,
+      "description": "#StickerKit_desc_singapore2026_signature_malbsmd_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_malbsmd_holo",
+      "name": "singapore2026_signature_malbsmd_holo"
+    },
+    {
+      "def_index": 12394,
+      "description": "#StickerKit_desc_singapore2026_signature_malbsmd_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_malbsmd_gold",
+      "name": "singapore2026_signature_malbsmd_gold"
+    },
+    {
+      "def_index": 12395,
+      "description": "#StickerKit_desc_singapore2026_signature_naf",
+      "item_name_token": "#StickerKit_singapore2026_signature_naf",
+      "name": "singapore2026_signature_naf"
+    },
+    {
+      "def_index": 12396,
+      "description": "#StickerKit_desc_singapore2026_signature_naf_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_naf_foil",
+      "name": "singapore2026_signature_naf_foil"
+    },
+    {
+      "def_index": 12397,
+      "description": "#StickerKit_desc_singapore2026_signature_naf_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_naf_holo",
+      "name": "singapore2026_signature_naf_holo"
+    },
+    {
+      "def_index": 12398,
+      "description": "#StickerKit_desc_singapore2026_signature_naf_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_naf_gold",
+      "name": "singapore2026_signature_naf_gold"
+    },
+    {
+      "def_index": 12399,
+      "description": "#StickerKit_desc_singapore2026_signature_jottaaa",
+      "item_name_token": "#StickerKit_singapore2026_signature_jottaaa",
+      "name": "singapore2026_signature_jottaaa"
+    },
+    {
+      "def_index": 12400,
+      "description": "#StickerKit_desc_singapore2026_signature_jottaaa_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_jottaaa_foil",
+      "name": "singapore2026_signature_jottaaa_foil"
+    },
+    {
+      "def_index": 12401,
+      "description": "#StickerKit_desc_singapore2026_signature_jottaaa_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_jottaaa_holo",
+      "name": "singapore2026_signature_jottaaa_holo"
+    },
+    {
+      "def_index": 12402,
+      "description": "#StickerKit_desc_singapore2026_signature_jottaaa_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_jottaaa_gold",
+      "name": "singapore2026_signature_jottaaa_gold"
+    },
+    {
+      "def_index": 12403,
+      "description": "#StickerKit_desc_singapore2026_signature_kvem",
+      "item_name_token": "#StickerKit_singapore2026_signature_kvem",
+      "name": "singapore2026_signature_kvem"
+    },
+    {
+      "def_index": 12404,
+      "description": "#StickerKit_desc_singapore2026_signature_kvem_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_kvem_foil",
+      "name": "singapore2026_signature_kvem_foil"
+    },
+    {
+      "def_index": 12405,
+      "description": "#StickerKit_desc_singapore2026_signature_kvem_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_kvem_holo",
+      "name": "singapore2026_signature_kvem_holo"
+    },
+    {
+      "def_index": 12406,
+      "description": "#StickerKit_desc_singapore2026_signature_kvem_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_kvem_gold",
+      "name": "singapore2026_signature_kvem_gold"
+    },
+    {
+      "def_index": 12407,
+      "description": "#StickerKit_desc_singapore2026_signature_mistem",
+      "item_name_token": "#StickerKit_singapore2026_signature_mistem",
+      "name": "singapore2026_signature_mistem"
+    },
+    {
+      "def_index": 12408,
+      "description": "#StickerKit_desc_singapore2026_signature_mistem_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_mistem_foil",
+      "name": "singapore2026_signature_mistem_foil"
+    },
+    {
+      "def_index": 12409,
+      "description": "#StickerKit_desc_singapore2026_signature_mistem_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_mistem_holo",
+      "name": "singapore2026_signature_mistem_holo"
+    },
+    {
+      "def_index": 12410,
+      "description": "#StickerKit_desc_singapore2026_signature_mistem_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_mistem_gold",
+      "name": "singapore2026_signature_mistem_gold"
+    },
+    {
+      "def_index": 12411,
+      "description": "#StickerKit_desc_singapore2026_signature_regali",
+      "item_name_token": "#StickerKit_singapore2026_signature_regali",
+      "name": "singapore2026_signature_regali"
+    },
+    {
+      "def_index": 12412,
+      "description": "#StickerKit_desc_singapore2026_signature_regali_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_regali_foil",
+      "name": "singapore2026_signature_regali_foil"
+    },
+    {
+      "def_index": 12413,
+      "description": "#StickerKit_desc_singapore2026_signature_regali_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_regali_holo",
+      "name": "singapore2026_signature_regali_holo"
+    },
+    {
+      "def_index": 12414,
+      "description": "#StickerKit_desc_singapore2026_signature_regali_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_regali_gold",
+      "name": "singapore2026_signature_regali_gold"
+    },
+    {
+      "def_index": 12415,
+      "description": "#StickerKit_desc_singapore2026_signature_soulfly",
+      "item_name_token": "#StickerKit_singapore2026_signature_soulfly",
+      "name": "singapore2026_signature_soulfly"
+    },
+    {
+      "def_index": 12416,
+      "description": "#StickerKit_desc_singapore2026_signature_soulfly_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_soulfly_foil",
+      "name": "singapore2026_signature_soulfly_foil"
+    },
+    {
+      "def_index": 12417,
+      "description": "#StickerKit_desc_singapore2026_signature_soulfly_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_soulfly_holo",
+      "name": "singapore2026_signature_soulfly_holo"
+    },
+    {
+      "def_index": 12418,
+      "description": "#StickerKit_desc_singapore2026_signature_soulfly_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_soulfly_gold",
+      "name": "singapore2026_signature_soulfly_gold"
+    },
+    {
+      "def_index": 12419,
+      "description": "#StickerKit_desc_singapore2026_signature_device",
+      "item_name_token": "#StickerKit_singapore2026_signature_device",
+      "name": "singapore2026_signature_device"
+    },
+    {
+      "def_index": 12420,
+      "description": "#StickerKit_desc_singapore2026_signature_device_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_device_foil",
+      "name": "singapore2026_signature_device_foil"
+    },
+    {
+      "def_index": 12421,
+      "description": "#StickerKit_desc_singapore2026_signature_device_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_device_holo",
+      "name": "singapore2026_signature_device_holo"
+    },
+    {
+      "def_index": 12422,
+      "description": "#StickerKit_desc_singapore2026_signature_device_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_device_gold",
+      "name": "singapore2026_signature_device_gold"
+    },
+    {
+      "def_index": 12423,
+      "description": "#StickerKit_desc_singapore2026_signature_gizmy",
+      "item_name_token": "#StickerKit_singapore2026_signature_gizmy",
+      "name": "singapore2026_signature_gizmy"
+    },
+    {
+      "def_index": 12424,
+      "description": "#StickerKit_desc_singapore2026_signature_gizmy_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_gizmy_foil",
+      "name": "singapore2026_signature_gizmy_foil"
+    },
+    {
+      "def_index": 12425,
+      "description": "#StickerKit_desc_singapore2026_signature_gizmy_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_gizmy_holo",
+      "name": "singapore2026_signature_gizmy_holo"
+    },
+    {
+      "def_index": 12426,
+      "description": "#StickerKit_desc_singapore2026_signature_gizmy_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_gizmy_gold",
+      "name": "singapore2026_signature_gizmy_gold"
+    },
+    {
+      "def_index": 12427,
+      "description": "#StickerKit_desc_singapore2026_signature_poiii",
+      "item_name_token": "#StickerKit_singapore2026_signature_poiii",
+      "name": "singapore2026_signature_poiii"
+    },
+    {
+      "def_index": 12428,
+      "description": "#StickerKit_desc_singapore2026_signature_poiii_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_poiii_foil",
+      "name": "singapore2026_signature_poiii_foil"
+    },
+    {
+      "def_index": 12429,
+      "description": "#StickerKit_desc_singapore2026_signature_poiii_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_poiii_holo",
+      "name": "singapore2026_signature_poiii_holo"
+    },
+    {
+      "def_index": 12430,
+      "description": "#StickerKit_desc_singapore2026_signature_poiii_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_poiii_gold",
+      "name": "singapore2026_signature_poiii_gold"
+    },
+    {
+      "def_index": 12431,
+      "description": "#StickerKit_desc_singapore2026_signature_rain",
+      "item_name_token": "#StickerKit_singapore2026_signature_rain",
+      "name": "singapore2026_signature_rain"
+    },
+    {
+      "def_index": 12432,
+      "description": "#StickerKit_desc_singapore2026_signature_rain_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_rain_foil",
+      "name": "singapore2026_signature_rain_foil"
+    },
+    {
+      "def_index": 12433,
+      "description": "#StickerKit_desc_singapore2026_signature_rain_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_rain_holo",
+      "name": "singapore2026_signature_rain_holo"
+    },
+    {
+      "def_index": 12434,
+      "description": "#StickerKit_desc_singapore2026_signature_rain_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_rain_gold",
+      "name": "singapore2026_signature_rain_gold"
+    },
+    {
+      "def_index": 12435,
+      "description": "#StickerKit_desc_singapore2026_signature_sirah",
+      "item_name_token": "#StickerKit_singapore2026_signature_sirah",
+      "name": "singapore2026_signature_sirah"
+    },
+    {
+      "def_index": 12436,
+      "description": "#StickerKit_desc_singapore2026_signature_sirah_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_sirah_foil",
+      "name": "singapore2026_signature_sirah_foil"
+    },
+    {
+      "def_index": 12437,
+      "description": "#StickerKit_desc_singapore2026_signature_sirah_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_sirah_holo",
+      "name": "singapore2026_signature_sirah_holo"
+    },
+    {
+      "def_index": 12438,
+      "description": "#StickerKit_desc_singapore2026_signature_sirah_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_sirah_gold",
+      "name": "singapore2026_signature_sirah_gold"
+    },
+    {
+      "def_index": 12439,
+      "description": "#StickerKit_desc_singapore2026_signature_dgt",
+      "item_name_token": "#StickerKit_singapore2026_signature_dgt",
+      "name": "singapore2026_signature_dgt"
+    },
+    {
+      "def_index": 12440,
+      "description": "#StickerKit_desc_singapore2026_signature_dgt_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_dgt_foil",
+      "name": "singapore2026_signature_dgt_foil"
+    },
+    {
+      "def_index": 12441,
+      "description": "#StickerKit_desc_singapore2026_signature_dgt_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_dgt_holo",
+      "name": "singapore2026_signature_dgt_holo"
+    },
+    {
+      "def_index": 12442,
+      "description": "#StickerKit_desc_singapore2026_signature_dgt_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_dgt_gold",
+      "name": "singapore2026_signature_dgt_gold"
+    },
+    {
+      "def_index": 12443,
+      "description": "#StickerKit_desc_singapore2026_signature_huasopeek",
+      "item_name_token": "#StickerKit_singapore2026_signature_huasopeek",
+      "name": "singapore2026_signature_huasopeek"
+    },
+    {
+      "def_index": 12444,
+      "description": "#StickerKit_desc_singapore2026_signature_huasopeek_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_huasopeek_foil",
+      "name": "singapore2026_signature_huasopeek_foil"
+    },
+    {
+      "def_index": 12445,
+      "description": "#StickerKit_desc_singapore2026_signature_huasopeek_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_huasopeek_holo",
+      "name": "singapore2026_signature_huasopeek_holo"
+    },
+    {
+      "def_index": 12446,
+      "description": "#StickerKit_desc_singapore2026_signature_huasopeek_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_huasopeek_gold",
+      "name": "singapore2026_signature_huasopeek_gold"
+    },
+    {
+      "def_index": 12447,
+      "description": "#StickerKit_desc_singapore2026_signature_luchov",
+      "item_name_token": "#StickerKit_singapore2026_signature_luchov",
+      "name": "singapore2026_signature_luchov"
+    },
+    {
+      "def_index": 12448,
+      "description": "#StickerKit_desc_singapore2026_signature_luchov_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_luchov_foil",
+      "name": "singapore2026_signature_luchov_foil"
+    },
+    {
+      "def_index": 12449,
+      "description": "#StickerKit_desc_singapore2026_signature_luchov_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_luchov_holo",
+      "name": "singapore2026_signature_luchov_holo"
+    },
+    {
+      "def_index": 12450,
+      "description": "#StickerKit_desc_singapore2026_signature_luchov_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_luchov_gold",
+      "name": "singapore2026_signature_luchov_gold"
+    },
+    {
+      "def_index": 12451,
+      "description": "#StickerKit_desc_singapore2026_signature_max",
+      "item_name_token": "#StickerKit_singapore2026_signature_max",
+      "name": "singapore2026_signature_max"
+    },
+    {
+      "def_index": 12452,
+      "description": "#StickerKit_desc_singapore2026_signature_max_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_max_foil",
+      "name": "singapore2026_signature_max_foil"
+    },
+    {
+      "def_index": 12453,
+      "description": "#StickerKit_desc_singapore2026_signature_max_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_max_holo",
+      "name": "singapore2026_signature_max_holo"
+    },
+    {
+      "def_index": 12454,
+      "description": "#StickerKit_desc_singapore2026_signature_max_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_max_gold",
+      "name": "singapore2026_signature_max_gold"
+    },
+    {
+      "def_index": 12455,
+      "description": "#StickerKit_desc_singapore2026_signature_meyern",
+      "item_name_token": "#StickerKit_singapore2026_signature_meyern",
+      "name": "singapore2026_signature_meyern"
+    },
+    {
+      "def_index": 12456,
+      "description": "#StickerKit_desc_singapore2026_signature_meyern_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_meyern_foil",
+      "name": "singapore2026_signature_meyern_foil"
+    },
+    {
+      "def_index": 12457,
+      "description": "#StickerKit_desc_singapore2026_signature_meyern_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_meyern_holo",
+      "name": "singapore2026_signature_meyern_holo"
+    },
+    {
+      "def_index": 12458,
+      "description": "#StickerKit_desc_singapore2026_signature_meyern_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_meyern_gold",
+      "name": "singapore2026_signature_meyern_gold"
+    },
+    {
+      "def_index": 12459,
+      "description": "#StickerKit_desc_singapore2026_signature_jba",
+      "item_name_token": "#StickerKit_singapore2026_signature_jba",
+      "name": "singapore2026_signature_jba"
+    },
+    {
+      "def_index": 12460,
+      "description": "#StickerKit_desc_singapore2026_signature_jba_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_jba_foil",
+      "name": "singapore2026_signature_jba_foil"
+    },
+    {
+      "def_index": 12461,
+      "description": "#StickerKit_desc_singapore2026_signature_jba_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_jba_holo",
+      "name": "singapore2026_signature_jba_holo"
+    },
+    {
+      "def_index": 12462,
+      "description": "#StickerKit_desc_singapore2026_signature_jba_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_jba_gold",
+      "name": "singapore2026_signature_jba_gold"
+    },
+    {
+      "def_index": 12463,
+      "description": "#StickerKit_desc_singapore2026_signature_lake",
+      "item_name_token": "#StickerKit_singapore2026_signature_lake",
+      "name": "singapore2026_signature_lake"
+    },
+    {
+      "def_index": 12464,
+      "description": "#StickerKit_desc_singapore2026_signature_lake_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_lake_foil",
+      "name": "singapore2026_signature_lake_foil"
+    },
+    {
+      "def_index": 12465,
+      "description": "#StickerKit_desc_singapore2026_signature_lake_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_lake_holo",
+      "name": "singapore2026_signature_lake_holo"
+    },
+    {
+      "def_index": 12466,
+      "description": "#StickerKit_desc_singapore2026_signature_lake_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_lake_gold",
+      "name": "singapore2026_signature_lake_gold"
+    },
+    {
+      "def_index": 12467,
+      "description": "#StickerKit_desc_singapore2026_signature_s1n",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1n",
+      "name": "singapore2026_signature_s1n"
+    },
+    {
+      "def_index": 12468,
+      "description": "#StickerKit_desc_singapore2026_signature_s1n_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1n_foil",
+      "name": "singapore2026_signature_s1n_foil"
+    },
+    {
+      "def_index": 12469,
+      "description": "#StickerKit_desc_singapore2026_signature_s1n_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1n_holo",
+      "name": "singapore2026_signature_s1n_holo"
+    },
+    {
+      "def_index": 12470,
+      "description": "#StickerKit_desc_singapore2026_signature_s1n_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1n_gold",
+      "name": "singapore2026_signature_s1n_gold"
+    },
+    {
+      "def_index": 12471,
+      "description": "#StickerKit_desc_singapore2026_signature_slaxz",
+      "item_name_token": "#StickerKit_singapore2026_signature_slaxz",
+      "name": "singapore2026_signature_slaxz"
+    },
+    {
+      "def_index": 12472,
+      "description": "#StickerKit_desc_singapore2026_signature_slaxz_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_slaxz_foil",
+      "name": "singapore2026_signature_slaxz_foil"
+    },
+    {
+      "def_index": 12473,
+      "description": "#StickerKit_desc_singapore2026_signature_slaxz_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_slaxz_holo",
+      "name": "singapore2026_signature_slaxz_holo"
+    },
+    {
+      "def_index": 12474,
+      "description": "#StickerKit_desc_singapore2026_signature_slaxz_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_slaxz_gold",
+      "name": "singapore2026_signature_slaxz_gold"
+    },
+    {
+      "def_index": 12475,
+      "description": "#StickerKit_desc_singapore2026_signature_swisher",
+      "item_name_token": "#StickerKit_singapore2026_signature_swisher",
+      "name": "singapore2026_signature_swisher"
+    },
+    {
+      "def_index": 12476,
+      "description": "#StickerKit_desc_singapore2026_signature_swisher_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_swisher_foil",
+      "name": "singapore2026_signature_swisher_foil"
+    },
+    {
+      "def_index": 12477,
+      "description": "#StickerKit_desc_singapore2026_signature_swisher_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_swisher_holo",
+      "name": "singapore2026_signature_swisher_holo"
+    },
+    {
+      "def_index": 12478,
+      "description": "#StickerKit_desc_singapore2026_signature_swisher_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_swisher_gold",
+      "name": "singapore2026_signature_swisher_gold"
+    },
+    {
+      "def_index": 12479,
+      "description": "#StickerKit_desc_singapore2026_signature_doc",
+      "item_name_token": "#StickerKit_singapore2026_signature_doc",
+      "name": "singapore2026_signature_doc"
+    },
+    {
+      "def_index": 12480,
+      "description": "#StickerKit_desc_singapore2026_signature_doc_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_doc_foil",
+      "name": "singapore2026_signature_doc_foil"
+    },
+    {
+      "def_index": 12481,
+      "description": "#StickerKit_desc_singapore2026_signature_doc_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_doc_holo",
+      "name": "singapore2026_signature_doc_holo"
+    },
+    {
+      "def_index": 12482,
+      "description": "#StickerKit_desc_singapore2026_signature_doc_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_doc_gold",
+      "name": "singapore2026_signature_doc_gold"
+    },
+    {
+      "def_index": 12483,
+      "description": "#StickerKit_desc_singapore2026_signature_gafolo",
+      "item_name_token": "#StickerKit_singapore2026_signature_gafolo",
+      "name": "singapore2026_signature_gafolo"
+    },
+    {
+      "def_index": 12484,
+      "description": "#StickerKit_desc_singapore2026_signature_gafolo_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_gafolo_foil",
+      "name": "singapore2026_signature_gafolo_foil"
+    },
+    {
+      "def_index": 12485,
+      "description": "#StickerKit_desc_singapore2026_signature_gafolo_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_gafolo_holo",
+      "name": "singapore2026_signature_gafolo_holo"
+    },
+    {
+      "def_index": 12486,
+      "description": "#StickerKit_desc_singapore2026_signature_gafolo_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_gafolo_gold",
+      "name": "singapore2026_signature_gafolo_gold"
+    },
+    {
+      "def_index": 12487,
+      "description": "#StickerKit_desc_singapore2026_signature_koala",
+      "item_name_token": "#StickerKit_singapore2026_signature_koala",
+      "name": "singapore2026_signature_koala"
+    },
+    {
+      "def_index": 12488,
+      "description": "#StickerKit_desc_singapore2026_signature_koala_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_koala_foil",
+      "name": "singapore2026_signature_koala_foil"
+    },
+    {
+      "def_index": 12489,
+      "description": "#StickerKit_desc_singapore2026_signature_koala_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_koala_holo",
+      "name": "singapore2026_signature_koala_holo"
+    },
+    {
+      "def_index": 12490,
+      "description": "#StickerKit_desc_singapore2026_signature_koala_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_koala_gold",
+      "name": "singapore2026_signature_koala_gold"
+    },
+    {
+      "def_index": 12491,
+      "description": "#StickerKit_desc_singapore2026_signature_maxxkor",
+      "item_name_token": "#StickerKit_singapore2026_signature_maxxkor",
+      "name": "singapore2026_signature_maxxkor"
+    },
+    {
+      "def_index": 12492,
+      "description": "#StickerKit_desc_singapore2026_signature_maxxkor_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_maxxkor_foil",
+      "name": "singapore2026_signature_maxxkor_foil"
+    },
+    {
+      "def_index": 12493,
+      "description": "#StickerKit_desc_singapore2026_signature_maxxkor_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_maxxkor_holo",
+      "name": "singapore2026_signature_maxxkor_holo"
+    },
+    {
+      "def_index": 12494,
+      "description": "#StickerKit_desc_singapore2026_signature_maxxkor_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_maxxkor_gold",
+      "name": "singapore2026_signature_maxxkor_gold"
+    },
+    {
+      "def_index": 12495,
+      "description": "#StickerKit_desc_singapore2026_signature_rdnzao",
+      "item_name_token": "#StickerKit_singapore2026_signature_rdnzao",
+      "name": "singapore2026_signature_rdnzao"
+    },
+    {
+      "def_index": 12496,
+      "description": "#StickerKit_desc_singapore2026_signature_rdnzao_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_rdnzao_foil",
+      "name": "singapore2026_signature_rdnzao_foil"
+    },
+    {
+      "def_index": 12497,
+      "description": "#StickerKit_desc_singapore2026_signature_rdnzao_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_rdnzao_holo",
+      "name": "singapore2026_signature_rdnzao_holo"
+    },
+    {
+      "def_index": 12498,
+      "description": "#StickerKit_desc_singapore2026_signature_rdnzao_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_rdnzao_gold",
+      "name": "singapore2026_signature_rdnzao_gold"
+    },
+    {
+      "def_index": 12499,
+      "description": "#StickerKit_desc_singapore2026_signature_chelo",
+      "item_name_token": "#StickerKit_singapore2026_signature_chelo",
+      "name": "singapore2026_signature_chelo"
+    },
+    {
+      "def_index": 12500,
+      "description": "#StickerKit_desc_singapore2026_signature_chelo_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_chelo_foil",
+      "name": "singapore2026_signature_chelo_foil"
+    },
+    {
+      "def_index": 12501,
+      "description": "#StickerKit_desc_singapore2026_signature_chelo_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_chelo_holo",
+      "name": "singapore2026_signature_chelo_holo"
+    },
+    {
+      "def_index": 12502,
+      "description": "#StickerKit_desc_singapore2026_signature_chelo_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_chelo_gold",
+      "name": "singapore2026_signature_chelo_gold"
+    },
+    {
+      "def_index": 12503,
+      "description": "#StickerKit_desc_singapore2026_signature_decenty",
+      "item_name_token": "#StickerKit_singapore2026_signature_decenty",
+      "name": "singapore2026_signature_decenty"
+    },
+    {
+      "def_index": 12504,
+      "description": "#StickerKit_desc_singapore2026_signature_decenty_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_decenty_foil",
+      "name": "singapore2026_signature_decenty_foil"
+    },
+    {
+      "def_index": 12505,
+      "description": "#StickerKit_desc_singapore2026_signature_decenty_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_decenty_holo",
+      "name": "singapore2026_signature_decenty_holo"
+    },
+    {
+      "def_index": 12506,
+      "description": "#StickerKit_desc_singapore2026_signature_decenty_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_decenty_gold",
+      "name": "singapore2026_signature_decenty_gold"
+    },
+    {
+      "def_index": 12507,
+      "description": "#StickerKit_desc_singapore2026_signature_noway",
+      "item_name_token": "#StickerKit_singapore2026_signature_noway",
+      "name": "singapore2026_signature_noway"
+    },
+    {
+      "def_index": 12508,
+      "description": "#StickerKit_desc_singapore2026_signature_noway_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_noway_foil",
+      "name": "singapore2026_signature_noway_foil"
+    },
+    {
+      "def_index": 12509,
+      "description": "#StickerKit_desc_singapore2026_signature_noway_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_noway_holo",
+      "name": "singapore2026_signature_noway_holo"
+    },
+    {
+      "def_index": 12510,
+      "description": "#StickerKit_desc_singapore2026_signature_noway_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_noway_gold",
+      "name": "singapore2026_signature_noway_gold"
+    },
+    {
+      "def_index": 12511,
+      "description": "#StickerKit_desc_singapore2026_signature_saadzin",
+      "item_name_token": "#StickerKit_singapore2026_signature_saadzin",
+      "name": "singapore2026_signature_saadzin"
+    },
+    {
+      "def_index": 12512,
+      "description": "#StickerKit_desc_singapore2026_signature_saadzin_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_saadzin_foil",
+      "name": "singapore2026_signature_saadzin_foil"
+    },
+    {
+      "def_index": 12513,
+      "description": "#StickerKit_desc_singapore2026_signature_saadzin_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_saadzin_holo",
+      "name": "singapore2026_signature_saadzin_holo"
+    },
+    {
+      "def_index": 12514,
+      "description": "#StickerKit_desc_singapore2026_signature_saadzin_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_saadzin_gold",
+      "name": "singapore2026_signature_saadzin_gold"
+    },
+    {
+      "def_index": 12515,
+      "description": "#StickerKit_desc_singapore2026_signature_vini",
+      "item_name_token": "#StickerKit_singapore2026_signature_vini",
+      "name": "singapore2026_signature_vini"
+    },
+    {
+      "def_index": 12516,
+      "description": "#StickerKit_desc_singapore2026_signature_vini_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_vini_foil",
+      "name": "singapore2026_signature_vini_foil"
+    },
+    {
+      "def_index": 12517,
+      "description": "#StickerKit_desc_singapore2026_signature_vini_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_vini_holo",
+      "name": "singapore2026_signature_vini_holo"
+    },
+    {
+      "def_index": 12518,
+      "description": "#StickerKit_desc_singapore2026_signature_vini_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_vini_gold",
+      "name": "singapore2026_signature_vini_gold"
+    },
+    {
+      "def_index": 12519,
+      "description": "#StickerKit_desc_singapore2026_signature_cxzi",
+      "item_name_token": "#StickerKit_singapore2026_signature_cxzi",
+      "name": "singapore2026_signature_cxzi"
+    },
+    {
+      "def_index": 12520,
+      "description": "#StickerKit_desc_singapore2026_signature_cxzi_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_cxzi_foil",
+      "name": "singapore2026_signature_cxzi_foil"
+    },
+    {
+      "def_index": 12521,
+      "description": "#StickerKit_desc_singapore2026_signature_cxzi_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_cxzi_holo",
+      "name": "singapore2026_signature_cxzi_holo"
+    },
+    {
+      "def_index": 12522,
+      "description": "#StickerKit_desc_singapore2026_signature_cxzi_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_cxzi_gold",
+      "name": "singapore2026_signature_cxzi_gold"
+    },
+    {
+      "def_index": 12523,
+      "description": "#StickerKit_desc_singapore2026_signature_fr3nd",
+      "item_name_token": "#StickerKit_singapore2026_signature_fr3nd",
+      "name": "singapore2026_signature_fr3nd"
+    },
+    {
+      "def_index": 12524,
+      "description": "#StickerKit_desc_singapore2026_signature_fr3nd_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_fr3nd_foil",
+      "name": "singapore2026_signature_fr3nd_foil"
+    },
+    {
+      "def_index": 12525,
+      "description": "#StickerKit_desc_singapore2026_signature_fr3nd_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_fr3nd_holo",
+      "name": "singapore2026_signature_fr3nd_holo"
+    },
+    {
+      "def_index": 12526,
+      "description": "#StickerKit_desc_singapore2026_signature_fr3nd_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_fr3nd_gold",
+      "name": "singapore2026_signature_fr3nd_gold"
+    },
+    {
+      "def_index": 12527,
+      "description": "#StickerKit_desc_singapore2026_signature_hext",
+      "item_name_token": "#StickerKit_singapore2026_signature_hext",
+      "name": "singapore2026_signature_hext"
+    },
+    {
+      "def_index": 12528,
+      "description": "#StickerKit_desc_singapore2026_signature_hext_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_hext_foil",
+      "name": "singapore2026_signature_hext_foil"
+    },
+    {
+      "def_index": 12529,
+      "description": "#StickerKit_desc_singapore2026_signature_hext_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_hext_holo",
+      "name": "singapore2026_signature_hext_holo"
+    },
+    {
+      "def_index": 12530,
+      "description": "#StickerKit_desc_singapore2026_signature_hext_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_hext_gold",
+      "name": "singapore2026_signature_hext_gold"
+    },
+    {
+      "def_index": 12531,
+      "description": "#StickerKit_desc_singapore2026_signature_nemanha",
+      "item_name_token": "#StickerKit_singapore2026_signature_nemanha",
+      "name": "singapore2026_signature_nemanha"
+    },
+    {
+      "def_index": 12532,
+      "description": "#StickerKit_desc_singapore2026_signature_nemanha_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_nemanha_foil",
+      "name": "singapore2026_signature_nemanha_foil"
+    },
+    {
+      "def_index": 12533,
+      "description": "#StickerKit_desc_singapore2026_signature_nemanha_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_nemanha_holo",
+      "name": "singapore2026_signature_nemanha_holo"
+    },
+    {
+      "def_index": 12534,
+      "description": "#StickerKit_desc_singapore2026_signature_nemanha_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_nemanha_gold",
+      "name": "singapore2026_signature_nemanha_gold"
+    },
+    {
+      "def_index": 12535,
+      "description": "#StickerKit_desc_singapore2026_signature_reck",
+      "item_name_token": "#StickerKit_singapore2026_signature_reck",
+      "name": "singapore2026_signature_reck"
+    },
+    {
+      "def_index": 12536,
+      "description": "#StickerKit_desc_singapore2026_signature_reck_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_reck_foil",
+      "name": "singapore2026_signature_reck_foil"
+    },
+    {
+      "def_index": 12537,
+      "description": "#StickerKit_desc_singapore2026_signature_reck_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_reck_holo",
+      "name": "singapore2026_signature_reck_holo"
+    },
+    {
+      "def_index": 12538,
+      "description": "#StickerKit_desc_singapore2026_signature_reck_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_reck_gold",
+      "name": "singapore2026_signature_reck_gold"
+    },
+    {
+      "def_index": 12539,
+      "description": "#StickerKit_desc_singapore2026_signature_asap",
+      "item_name_token": "#StickerKit_singapore2026_signature_asap",
+      "name": "singapore2026_signature_asap"
+    },
+    {
+      "def_index": 12540,
+      "description": "#StickerKit_desc_singapore2026_signature_asap_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_asap_foil",
+      "name": "singapore2026_signature_asap_foil"
+    },
+    {
+      "def_index": 12541,
+      "description": "#StickerKit_desc_singapore2026_signature_asap_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_asap_holo",
+      "name": "singapore2026_signature_asap_holo"
+    },
+    {
+      "def_index": 12542,
+      "description": "#StickerKit_desc_singapore2026_signature_asap_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_asap_gold",
+      "name": "singapore2026_signature_asap_gold"
+    },
+    {
+      "def_index": 12543,
+      "description": "#StickerKit_desc_singapore2026_signature_magisk",
+      "item_name_token": "#StickerKit_singapore2026_signature_magisk",
+      "name": "singapore2026_signature_magisk"
+    },
+    {
+      "def_index": 12544,
+      "description": "#StickerKit_desc_singapore2026_signature_magisk_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_magisk_foil",
+      "name": "singapore2026_signature_magisk_foil"
+    },
+    {
+      "def_index": 12545,
+      "description": "#StickerKit_desc_singapore2026_signature_magisk_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_magisk_holo",
+      "name": "singapore2026_signature_magisk_holo"
+    },
+    {
+      "def_index": 12546,
+      "description": "#StickerKit_desc_singapore2026_signature_magisk_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_magisk_gold",
+      "name": "singapore2026_signature_magisk_gold"
+    },
+    {
+      "def_index": 12547,
+      "description": "#StickerKit_desc_singapore2026_signature_mzinho",
+      "item_name_token": "#StickerKit_singapore2026_signature_mzinho",
+      "name": "singapore2026_signature_mzinho"
+    },
+    {
+      "def_index": 12548,
+      "description": "#StickerKit_desc_singapore2026_signature_mzinho_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_mzinho_foil",
+      "name": "singapore2026_signature_mzinho_foil"
+    },
+    {
+      "def_index": 12549,
+      "description": "#StickerKit_desc_singapore2026_signature_mzinho_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_mzinho_holo",
+      "name": "singapore2026_signature_mzinho_holo"
+    },
+    {
+      "def_index": 12550,
+      "description": "#StickerKit_desc_singapore2026_signature_mzinho_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_mzinho_gold",
+      "name": "singapore2026_signature_mzinho_gold"
+    },
+    {
+      "def_index": 12551,
+      "description": "#StickerKit_desc_singapore2026_signature_s1mple",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1mple",
+      "name": "singapore2026_signature_s1mple"
+    },
+    {
+      "def_index": 12552,
+      "description": "#StickerKit_desc_singapore2026_signature_s1mple_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1mple_foil",
+      "name": "singapore2026_signature_s1mple_foil"
+    },
+    {
+      "def_index": 12553,
+      "description": "#StickerKit_desc_singapore2026_signature_s1mple_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1mple_holo",
+      "name": "singapore2026_signature_s1mple_holo"
+    },
+    {
+      "def_index": 12554,
+      "description": "#StickerKit_desc_singapore2026_signature_s1mple_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_s1mple_gold",
+      "name": "singapore2026_signature_s1mple_gold"
+    },
+    {
+      "def_index": 12555,
+      "description": "#StickerKit_desc_singapore2026_signature_senzu",
+      "item_name_token": "#StickerKit_singapore2026_signature_senzu",
+      "name": "singapore2026_signature_senzu"
+    },
+    {
+      "def_index": 12556,
+      "description": "#StickerKit_desc_singapore2026_signature_senzu_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_senzu_foil",
+      "name": "singapore2026_signature_senzu_foil"
+    },
+    {
+      "def_index": 12557,
+      "description": "#StickerKit_desc_singapore2026_signature_senzu_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_senzu_holo",
+      "name": "singapore2026_signature_senzu_holo"
+    },
+    {
+      "def_index": 12558,
+      "description": "#StickerKit_desc_singapore2026_signature_senzu_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_senzu_gold",
+      "name": "singapore2026_signature_senzu_gold"
+    },
+    {
+      "def_index": 12559,
+      "description": "#StickerKit_desc_singapore2026_signature_alistair",
+      "item_name_token": "#StickerKit_singapore2026_signature_alistair",
+      "name": "singapore2026_signature_alistair"
+    },
+    {
+      "def_index": 12560,
+      "description": "#StickerKit_desc_singapore2026_signature_alistair_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_alistair_foil",
+      "name": "singapore2026_signature_alistair_foil"
+    },
+    {
+      "def_index": 12561,
+      "description": "#StickerKit_desc_singapore2026_signature_alistair_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_alistair_holo",
+      "name": "singapore2026_signature_alistair_holo"
+    },
+    {
+      "def_index": 12562,
+      "description": "#StickerKit_desc_singapore2026_signature_alistair_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_alistair_gold",
+      "name": "singapore2026_signature_alistair_gold"
+    },
+    {
+      "def_index": 12563,
+      "description": "#StickerKit_desc_singapore2026_signature_ins",
+      "item_name_token": "#StickerKit_singapore2026_signature_ins",
+      "name": "singapore2026_signature_ins"
+    },
+    {
+      "def_index": 12564,
+      "description": "#StickerKit_desc_singapore2026_signature_ins_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_ins_foil",
+      "name": "singapore2026_signature_ins_foil"
+    },
+    {
+      "def_index": 12565,
+      "description": "#StickerKit_desc_singapore2026_signature_ins_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_ins_holo",
+      "name": "singapore2026_signature_ins_holo"
+    },
+    {
+      "def_index": 12566,
+      "description": "#StickerKit_desc_singapore2026_signature_ins_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_ins_gold",
+      "name": "singapore2026_signature_ins_gold"
+    },
+    {
+      "def_index": 12567,
+      "description": "#StickerKit_desc_singapore2026_signature_jks",
+      "item_name_token": "#StickerKit_singapore2026_signature_jks",
+      "name": "singapore2026_signature_jks"
+    },
+    {
+      "def_index": 12568,
+      "description": "#StickerKit_desc_singapore2026_signature_jks_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_jks_foil",
+      "name": "singapore2026_signature_jks_foil"
+    },
+    {
+      "def_index": 12569,
+      "description": "#StickerKit_desc_singapore2026_signature_jks_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_jks_holo",
+      "name": "singapore2026_signature_jks_holo"
+    },
+    {
+      "def_index": 12570,
+      "description": "#StickerKit_desc_singapore2026_signature_jks_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_jks_gold",
+      "name": "singapore2026_signature_jks_gold"
+    },
+    {
+      "def_index": 12571,
+      "description": "#StickerKit_desc_singapore2026_signature_nettik",
+      "item_name_token": "#StickerKit_singapore2026_signature_nettik",
+      "name": "singapore2026_signature_nettik"
+    },
+    {
+      "def_index": 12572,
+      "description": "#StickerKit_desc_singapore2026_signature_nettik_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_nettik_foil",
+      "name": "singapore2026_signature_nettik_foil"
+    },
+    {
+      "def_index": 12573,
+      "description": "#StickerKit_desc_singapore2026_signature_nettik_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_nettik_holo",
+      "name": "singapore2026_signature_nettik_holo"
+    },
+    {
+      "def_index": 12574,
+      "description": "#StickerKit_desc_singapore2026_signature_nettik_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_nettik_gold",
+      "name": "singapore2026_signature_nettik_gold"
+    },
+    {
+      "def_index": 12575,
+      "description": "#StickerKit_desc_singapore2026_signature_vexite",
+      "item_name_token": "#StickerKit_singapore2026_signature_vexite",
+      "name": "singapore2026_signature_vexite"
+    },
+    {
+      "def_index": 12576,
+      "description": "#StickerKit_desc_singapore2026_signature_vexite_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_vexite_foil",
+      "name": "singapore2026_signature_vexite_foil"
+    },
+    {
+      "def_index": 12577,
+      "description": "#StickerKit_desc_singapore2026_signature_vexite_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_vexite_holo",
+      "name": "singapore2026_signature_vexite_holo"
+    },
+    {
+      "def_index": 12578,
+      "description": "#StickerKit_desc_singapore2026_signature_vexite_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_vexite_gold",
+      "name": "singapore2026_signature_vexite_gold"
+    },
+    {
+      "def_index": 12579,
+      "description": "#StickerKit_desc_singapore2026_signature_cool4st",
+      "item_name_token": "#StickerKit_singapore2026_signature_cool4st",
+      "name": "singapore2026_signature_cool4st"
+    },
+    {
+      "def_index": 12580,
+      "description": "#StickerKit_desc_singapore2026_signature_cool4st_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_cool4st_foil",
+      "name": "singapore2026_signature_cool4st_foil"
+    },
+    {
+      "def_index": 12581,
+      "description": "#StickerKit_desc_singapore2026_signature_cool4st_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_cool4st_holo",
+      "name": "singapore2026_signature_cool4st_holo"
+    },
+    {
+      "def_index": 12582,
+      "description": "#StickerKit_desc_singapore2026_signature_cool4st_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_cool4st_gold",
+      "name": "singapore2026_signature_cool4st_gold"
+    },
+    {
+      "def_index": 12583,
+      "description": "#StickerKit_desc_singapore2026_signature_fury5k",
+      "item_name_token": "#StickerKit_singapore2026_signature_fury5k",
+      "name": "singapore2026_signature_fury5k"
+    },
+    {
+      "def_index": 12584,
+      "description": "#StickerKit_desc_singapore2026_signature_fury5k_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_fury5k_foil",
+      "name": "singapore2026_signature_fury5k_foil"
+    },
+    {
+      "def_index": 12585,
+      "description": "#StickerKit_desc_singapore2026_signature_fury5k_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_fury5k_holo",
+      "name": "singapore2026_signature_fury5k_holo"
+    },
+    {
+      "def_index": 12586,
+      "description": "#StickerKit_desc_singapore2026_signature_fury5k_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_fury5k_gold",
+      "name": "singapore2026_signature_fury5k_gold"
+    },
+    {
+      "def_index": 12587,
+      "description": "#StickerKit_desc_singapore2026_signature_roux",
+      "item_name_token": "#StickerKit_singapore2026_signature_roux",
+      "name": "singapore2026_signature_roux"
+    },
+    {
+      "def_index": 12588,
+      "description": "#StickerKit_desc_singapore2026_signature_roux_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_roux_foil",
+      "name": "singapore2026_signature_roux_foil"
+    },
+    {
+      "def_index": 12589,
+      "description": "#StickerKit_desc_singapore2026_signature_roux_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_roux_holo",
+      "name": "singapore2026_signature_roux_holo"
+    },
+    {
+      "def_index": 12590,
+      "description": "#StickerKit_desc_singapore2026_signature_roux_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_roux_gold",
+      "name": "singapore2026_signature_roux_gold"
+    },
+    {
+      "def_index": 12591,
+      "description": "#StickerKit_desc_singapore2026_signature_sk0r",
+      "item_name_token": "#StickerKit_singapore2026_signature_sk0r",
+      "name": "singapore2026_signature_sk0r"
+    },
+    {
+      "def_index": 12592,
+      "description": "#StickerKit_desc_singapore2026_signature_sk0r_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_sk0r_foil",
+      "name": "singapore2026_signature_sk0r_foil"
+    },
+    {
+      "def_index": 12593,
+      "description": "#StickerKit_desc_singapore2026_signature_sk0r_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_sk0r_holo",
+      "name": "singapore2026_signature_sk0r_holo"
+    },
+    {
+      "def_index": 12594,
+      "description": "#StickerKit_desc_singapore2026_signature_sk0r_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_sk0r_gold",
+      "name": "singapore2026_signature_sk0r_gold"
+    },
+    {
+      "def_index": 12595,
+      "description": "#StickerKit_desc_singapore2026_signature_tikuak",
+      "item_name_token": "#StickerKit_singapore2026_signature_tikuak",
+      "name": "singapore2026_signature_tikuak"
+    },
+    {
+      "def_index": 12596,
+      "description": "#StickerKit_desc_singapore2026_signature_tikuak_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_tikuak_foil",
+      "name": "singapore2026_signature_tikuak_foil"
+    },
+    {
+      "def_index": 12597,
+      "description": "#StickerKit_desc_singapore2026_signature_tikuak_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_tikuak_holo",
+      "name": "singapore2026_signature_tikuak_holo"
+    },
+    {
+      "def_index": 12598,
+      "description": "#StickerKit_desc_singapore2026_signature_tikuak_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_tikuak_gold",
+      "name": "singapore2026_signature_tikuak_gold"
+    },
+    {
+      "def_index": 12599,
+      "description": "#StickerKit_desc_singapore2026_signature_c4llm3su3",
+      "item_name_token": "#StickerKit_singapore2026_signature_c4llm3su3",
+      "name": "singapore2026_signature_c4llm3su3"
+    },
+    {
+      "def_index": 12600,
+      "description": "#StickerKit_desc_singapore2026_signature_c4llm3su3_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_c4llm3su3_foil",
+      "name": "singapore2026_signature_c4llm3su3_foil"
+    },
+    {
+      "def_index": 12601,
+      "description": "#StickerKit_desc_singapore2026_signature_c4llm3su3_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_c4llm3su3_holo",
+      "name": "singapore2026_signature_c4llm3su3_holo"
+    },
+    {
+      "def_index": 12602,
+      "description": "#StickerKit_desc_singapore2026_signature_c4llm3su3_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_c4llm3su3_gold",
+      "name": "singapore2026_signature_c4llm3su3_gold"
+    },
+    {
+      "def_index": 12603,
+      "description": "#StickerKit_desc_singapore2026_signature_emiliaqaq",
+      "item_name_token": "#StickerKit_singapore2026_signature_emiliaqaq",
+      "name": "singapore2026_signature_emiliaqaq"
+    },
+    {
+      "def_index": 12604,
+      "description": "#StickerKit_desc_singapore2026_signature_emiliaqaq_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_emiliaqaq_foil",
+      "name": "singapore2026_signature_emiliaqaq_foil"
+    },
+    {
+      "def_index": 12605,
+      "description": "#StickerKit_desc_singapore2026_signature_emiliaqaq_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_emiliaqaq_holo",
+      "name": "singapore2026_signature_emiliaqaq_holo"
+    },
+    {
+      "def_index": 12606,
+      "description": "#StickerKit_desc_singapore2026_signature_emiliaqaq_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_emiliaqaq_gold",
+      "name": "singapore2026_signature_emiliaqaq_gold"
+    },
+    {
+      "def_index": 12607,
+      "description": "#StickerKit_desc_singapore2026_signature_starry",
+      "item_name_token": "#StickerKit_singapore2026_signature_starry",
+      "name": "singapore2026_signature_starry"
+    },
+    {
+      "def_index": 12608,
+      "description": "#StickerKit_desc_singapore2026_signature_starry_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_starry_foil",
+      "name": "singapore2026_signature_starry_foil"
+    },
+    {
+      "def_index": 12609,
+      "description": "#StickerKit_desc_singapore2026_signature_starry_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_starry_holo",
+      "name": "singapore2026_signature_starry_holo"
+    },
+    {
+      "def_index": 12610,
+      "description": "#StickerKit_desc_singapore2026_signature_starry_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_starry_gold",
+      "name": "singapore2026_signature_starry_gold"
+    },
+    {
+      "def_index": 12611,
+      "description": "#StickerKit_desc_singapore2026_signature_westmelon",
+      "item_name_token": "#StickerKit_singapore2026_signature_westmelon",
+      "name": "singapore2026_signature_westmelon"
+    },
+    {
+      "def_index": 12612,
+      "description": "#StickerKit_desc_singapore2026_signature_westmelon_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_westmelon_foil",
+      "name": "singapore2026_signature_westmelon_foil"
+    },
+    {
+      "def_index": 12613,
+      "description": "#StickerKit_desc_singapore2026_signature_westmelon_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_westmelon_holo",
+      "name": "singapore2026_signature_westmelon_holo"
+    },
+    {
+      "def_index": 12614,
+      "description": "#StickerKit_desc_singapore2026_signature_westmelon_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_westmelon_gold",
+      "name": "singapore2026_signature_westmelon_gold"
+    },
+    {
+      "def_index": 12615,
+      "description": "#StickerKit_desc_singapore2026_signature_z4kr",
+      "item_name_token": "#StickerKit_singapore2026_signature_z4kr",
+      "name": "singapore2026_signature_z4kr"
+    },
+    {
+      "def_index": 12616,
+      "description": "#StickerKit_desc_singapore2026_signature_z4kr_foil",
+      "item_name_token": "#StickerKit_singapore2026_signature_z4kr_foil",
+      "name": "singapore2026_signature_z4kr_foil"
+    },
+    {
+      "def_index": 12617,
+      "description": "#StickerKit_desc_singapore2026_signature_z4kr_holo",
+      "item_name_token": "#StickerKit_singapore2026_signature_z4kr_holo",
+      "name": "singapore2026_signature_z4kr_holo"
+    },
+    {
+      "def_index": 12618,
+      "description": "#StickerKit_desc_singapore2026_signature_z4kr_gold",
+      "item_name_token": "#StickerKit_singapore2026_signature_z4kr_gold",
+      "name": "singapore2026_signature_z4kr_gold"
     }
   ]
 }
