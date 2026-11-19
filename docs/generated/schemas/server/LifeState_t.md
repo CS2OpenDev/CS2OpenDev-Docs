@@ -8,7 +8,7 @@ kind: enum
 
 # LifeState_t
 
-> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26772654** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
 
 Alive/dead state of a pawn (m_lifeState).
 

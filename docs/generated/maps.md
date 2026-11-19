@@ -4,7 +4,7 @@ title: Maps
 
 # Maps & Radar Overviews
 
-> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26772654** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
 
 Maps inventory (24): `ar_baggage`, `ar_shoots`, `ar_shoots_night`, `cs_italy`, `cs_office`, `de_ancient`, `de_ancient_night`, `de_ancient_v1`, `de_ancient_v2`, `de_anubis`, `de_cache`, `de_cbble`, `de_dust`, `de_dust2`, `de_inferno`, `de_inferno_s2`, `de_mirage`, `de_nuke`, `de_overpass`, `de_overpass_2v2`, `de_train`, `de_vertigo`, `rush_001`, `workshop_preview`
 

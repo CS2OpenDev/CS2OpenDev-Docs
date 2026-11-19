@@ -4,7 +4,7 @@ title: Items & Economy
 
 # Items & Economy
 
-> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26772654** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
 
 Economy definitions extracted from the content pack's `items_game.txt`: weapon / equipment items, their prefabs, paint kits (skins), sticker kits, music kits, and the rarity / quality scales.  Name tokens (`#SFUI_*`, `#PaintKit_*`, …) resolve to display strings via the localization table.
 

@@ -5,7 +5,7 @@ module: pulsedoc_lib
 
 # Module: pulsedoc_lib
 
-> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26772654** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
 
 4 types. Each links to its own page with the full field layout.
 

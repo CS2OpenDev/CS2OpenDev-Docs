@@ -1042,7 +1042,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "f6843ab3b8a410947d34cc8fea50d3d63fcba8109d4c941a393b21631a9de6b4",
+      "sha256": "3a7521239fe9e9f20368d76db4a9e207a89c4627128467ac1ca46a51ae370730",
       "stem": "cs2_item_editor"
     },
     {
@@ -1331,7 +1331,7 @@
       ],
       "schema_module": "client",
       "schema_registration_count": 516,
-      "sha256": "39de4a6d1881ebf9726a43ffcb1e05ce12d007750053afc52eed5a97b7d21c7d",
+      "sha256": "9e0fd6aa19a8cb491c45ae5e9ce3d13716892a42c578e0c4911cf9c3ffaa67ee",
       "stem": "client"
     },
     {
@@ -1383,7 +1383,7 @@
       ],
       "schema_module": "server",
       "schema_registration_count": 766,
-      "sha256": "49be21e8c22a1ebc7da09baa77568cf69d229eae0c434c1aef5e405910d6fddd",
+      "sha256": "4983c4c6c4b2cc1ba30eb94cc58bc88e92f8ad542a7c42cad6803522a38aed16",
       "stem": "server"
     },
     {

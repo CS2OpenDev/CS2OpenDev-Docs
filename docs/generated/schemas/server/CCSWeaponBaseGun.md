@@ -8,7 +8,7 @@ kind: class
 
 # CCSWeaponBaseGun
 
-> Source: **Build 26748068** · 2026-11-18 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26772654** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
 
 Base class for CS2 firearms (extends CCSWeaponBase).  Adds zoom, burst and revolver/bolt-action state; per-weapon-type stats live in CCSWeaponBaseVData.
 

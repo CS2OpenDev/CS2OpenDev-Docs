@@ -1,5 +1,5 @@
 {
-  "build_id": "26748068",
+  "build_id": "26772654",
   "counts": {
     "classes": 3458,
     "commands": 1141,
@@ -257,8 +257,8 @@
   "note": "classes/enums/fields count distinct top-level entity names and their own declared fields; the modules[] list additionally counts client/server twin records (duplicates), so summing its per-module classes/enums can exceed the top-level totals above.",
   "platform": "windows-x86_64",
   "schema_version": "0.13.0",
-  "steam_date": "2026-11-18",
-  "steam_manifest_utc": "2026-11-18T03:20:59Z",
+  "steam_date": "2026-11-19",
+  "steam_manifest_utc": "2026-11-19T00:35:53Z",
   "tool_commit": "056455e9fe3921148e8b38581d7a7e45fd28e2cf",
   "tool_version": "0.13.0"
 }
