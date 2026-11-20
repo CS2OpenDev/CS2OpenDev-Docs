@@ -148,7 +148,7 @@
       ],
       "schema_module": "engine2",
       "schema_registration_count": 4,
-      "sha256": "604e3d5420023826991c7c0ac575229b39e505912f7ae0d5ea5b82900970f79e",
+      "sha256": "edb6ab58c84727ce6f1ec0edbffd8155c16bebeb4ec641449a7eab5d83dfea0e",
       "stem": "engine2"
     },
     {
@@ -1321,7 +1321,7 @@
     },
     {
       "export_count": 6,
-      "file_size": "39141528",
+      "file_size": "39143064",
       "path": "game/csgo/bin/win64/client.dll",
       "resolved_interfaces": [
         "Source2Client002",
@@ -1331,7 +1331,7 @@
       ],
       "schema_module": "client",
       "schema_registration_count": 516,
-      "sha256": "9e0fd6aa19a8cb491c45ae5e9ce3d13716892a42c578e0c4911cf9c3ffaa67ee",
+      "sha256": "07103341bc9e0ae2c596b2929075c5094cb397d7e370ea00986c720ed72414e1",
       "stem": "client"
     },
     {
@@ -1383,7 +1383,7 @@
       ],
       "schema_module": "server",
       "schema_registration_count": 766,
-      "sha256": "4983c4c6c4b2cc1ba30eb94cc58bc88e92f8ad542a7c42cad6803522a38aed16",
+      "sha256": "7126c11b3c56fb3237c95238b76fec4cc6e6b433c06f5818b01f4e3dc56bc7ac",
       "stem": "server"
     },
     {

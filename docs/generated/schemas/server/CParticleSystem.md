@@ -8,7 +8,7 @@ kind: class
 
 # CParticleSystem
 
-> Source: **Build 26772654** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26798866** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 3544 bytes (`0xdd8`) · **Align:** 8 · **Module:** server
 

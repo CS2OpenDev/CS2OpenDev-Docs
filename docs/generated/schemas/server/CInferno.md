@@ -8,7 +8,7 @@ kind: class
 
 # CInferno
 
-> Source: **Build 26772654** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26798866** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
 
 Entity created when a molotov or incendiary grenade detonates.  Manages an array of individual fire positions that expand and spread across the surface. Deals damage to all entities within burning fire positions each tick.
 

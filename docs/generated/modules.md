@@ -4,7 +4,7 @@ title: Modules
 
 # Binary Modules
 
-> Source: **Build 26772654** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26798866** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
 
 140 binaries read for this build, each with its SHA-256, size, export / schema-registration counts, and the engine interface versions it resolved at load.
 
@@ -137,7 +137,7 @@ title: Modules
 | `game/bin/win64/vrad3.dll` | 3268248 | 6 | 0 |  |
 | `game/bin/win64/vscript.dll` | 1352856 | 183 | 0 |  |
 | `game/bin/win64/worldrenderer.dll` | 2029720 | 6 | 4 | `WorldRendererMgr001` |
-| `game/csgo/bin/win64/client.dll` | 39141528 | 6 | 516 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
+| `game/csgo/bin/win64/client.dll` | 39143064 | 6 | 516 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
 | `game/csgo/bin/win64/host.dll` | 1388184 | 6 | 0 | `GameSystem2HostHook`, `Source2Host001` |
 | `game/csgo/bin/win64/matchmaking.dll` | 1888920 | 6 | 0 | `MATCHFRAMEWORK_001` |
 | `game/csgo/bin/win64/modtools.dll` | 17959064 | 6 | 0 | `Source2ModTools001` |

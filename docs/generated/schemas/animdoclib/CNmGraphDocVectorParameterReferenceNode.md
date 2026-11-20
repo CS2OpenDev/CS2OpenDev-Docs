@@ -8,7 +8,7 @@ kind: class
 
 # CNmGraphDocVectorParameterReferenceNode
 
-> Source: **Build 26772654** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26798866** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 312 bytes (`0x138`) · **Align:** 8 · **Module:** animdoclib
 

@@ -8,7 +8,7 @@ kind: class
 
 # CDebugSnapshotData_t
 
-> Source: **Build 26772654** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26798866** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 304 bytes (`0x130`) · **Align:** 16 · **Module:** server
 
