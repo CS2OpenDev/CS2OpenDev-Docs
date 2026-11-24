@@ -8,7 +8,7 @@ kind: class
 
 # C_OP_RenderCables
 
-> Source: **Build 26798866** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26879581** · 2026-11-23 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 5544 bytes (`0x15a8`) · **Align:** 8 · **Module:** particles
 

@@ -8,7 +8,7 @@ kind: class
 
 # ParticleNode_t
 
-> Source: **Build 26798866** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26879581** · 2026-11-23 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 36 bytes (`0x24`) · **Align:** n/a (unspecified) · **Module:** server
 

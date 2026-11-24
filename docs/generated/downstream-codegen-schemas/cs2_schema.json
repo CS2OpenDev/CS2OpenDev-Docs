@@ -1,11 +1,11 @@
 {
   "schema_format_version": "2.2",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
-  "build_id": 26798866,
+  "build_id": 26879581,
   "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-11-19",
-  "version_time": "2026-11-19T23:58:33Z",
+  "version_date": "2026-11-23",
+  "version_time": "2026-11-23T22:51:44Z",
   "classes": [
     {
       "alignment": 255,
@@ -166374,6 +166374,32 @@
           "metadata": [
             {
               "name": "MPropertyDescription",
+              "value": "Override the final duration of this clip by using a multiplier"
+            },
+            {
+              "name": "MPropertyGroupName",
+              "value": "+Import Options"
+            }
+          ],
+          "name": "m_speedScaleMode",
+          "offset": "176",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_ENUM",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "CNmClipDocument::SpeedScale_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [
+            {
+              "name": "MPropertyAttrStateCallback",
+              "value": ""
+            },
+            {
+              "name": "MPropertyDescription",
               "value": "Override the final duration of this clip in seconds (0 or a negative value means use the authored duration)"
             },
             {
@@ -166382,7 +166408,33 @@
             }
           ],
           "name": "m_flDurationOverrideSeconds",
-          "offset": "176",
+          "offset": "180",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [
+            {
+              "name": "MPropertyAttrStateCallback",
+              "value": ""
+            },
+            {
+              "name": "MPropertyDescription",
+              "value": "Override the final duration of this clip by using a multiplier"
+            },
+            {
+              "name": "MPropertyGroupName",
+              "value": "+Import Options"
+            }
+          ],
+          "name": "m_flSpeedScale",
+          "offset": "184",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -166400,7 +166452,7 @@
             }
           ],
           "name": "m_additiveType",
-          "offset": "180",
+          "offset": "188",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_ENUM",
@@ -166430,7 +166482,7 @@
             }
           ],
           "name": "m_additiveBaseFilename",
-          "offset": "184",
+          "offset": "192",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -166456,7 +166508,7 @@
             }
           ],
           "name": "m_additiveBaseFrame",
-          "offset": "192",
+          "offset": "200",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_ENUM",
@@ -166482,7 +166534,7 @@
             }
           ],
           "name": "m_nAdditiveBaseFrameIdx",
-          "offset": "196",
+          "offset": "204",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -166508,7 +166560,7 @@
             }
           ],
           "name": "m_bUseReferencePoseForSecondaryAnimAdditives",
-          "offset": "200",
+          "offset": "208",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -166534,7 +166586,7 @@
             }
           ],
           "name": "m_bonesToSampleInModelSpace",
-          "offset": "208",
+          "offset": "216",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -166557,7 +166609,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CNmClipDocument\",\n\t\"m_nVersion\": 0,\n\t\"m_sourceFilename\": \"\",\n\t\"m_animationSkeletonName\": \"\",\n\t\"m_secondaryAnimationSkeletonNames\":\n\t[\n\t],\n\t\"m_eventTracks\":\n\t[\n\t],\n\t\"m_nStartFrame\": -1,\n\t\"m_nEndFrame\": -1,\n\t\"m_flDurationOverrideSeconds\": -1.000000,\n\t\"m_additiveType\": \"None\",\n\t\"m_additiveBaseFilename\": \"\",\n\t\"m_additiveBaseFrame\": \"FirstFrame\",\n\t\"m_nAdditiveBaseFrameIdx\": -1,\n\t\"m_bUseReferencePoseForSecondaryAnimAdditives\": false,\n\t\"m_bonesToSampleInModelSpace\":\n\t[\n\t]\n}",
+          "value": "{\n\t\"_class\": \"CNmClipDocument\",\n\t\"m_nVersion\": 0,\n\t\"m_sourceFilename\": \"\",\n\t\"m_animationSkeletonName\": \"\",\n\t\"m_secondaryAnimationSkeletonNames\":\n\t[\n\t],\n\t\"m_eventTracks\":\n\t[\n\t],\n\t\"m_nStartFrame\": -1,\n\t\"m_nEndFrame\": -1,\n\t\"m_speedScaleMode\": \"None\",\n\t\"m_flDurationOverrideSeconds\": -1.000000,\n\t\"m_flSpeedScale\": 1.000000,\n\t\"m_additiveType\": \"None\",\n\t\"m_additiveBaseFilename\": \"\",\n\t\"m_additiveBaseFrame\": \"FirstFrame\",\n\t\"m_nAdditiveBaseFrameIdx\": -1,\n\t\"m_bUseReferencePoseForSecondaryAnimAdditives\": false,\n\t\"m_bonesToSampleInModelSpace\":\n\t[\n\t]\n}",
           "value_parsed": {
             "_class": "CNmClipDocument",
             "m_nVersion": 0,
@@ -166567,7 +166619,9 @@
             "m_eventTracks": [],
             "m_nStartFrame": -1,
             "m_nEndFrame": -1,
+            "m_speedScaleMode": "None",
             "m_flDurationOverrideSeconds": -1.0,
+            "m_flSpeedScale": 1.0,
             "m_additiveType": "None",
             "m_additiveBaseFilename": "",
             "m_additiveBaseFrame": "FirstFrame",
@@ -166589,7 +166643,7 @@
       ],
       "projectName": "animdoclib",
       "singleInheritanceDepth": 1,
-      "size": "248",
+      "size": "256",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/animdoclib/hierarchy/"
     },
@@ -555068,6 +555122,31 @@
       ],
       "module": "!GlobalTypes",
       "name": "CNmClipDocument::AdditiveType_t",
+      "projectName": "animdoclib",
+      "size": 1
+    },
+    {
+      "alignment": "uint8_t",
+      "flags": 41,
+      "members": [
+        {
+          "metadata": [],
+          "name": "None",
+          "value": "0"
+        },
+        {
+          "metadata": [],
+          "name": "DurationOverride",
+          "value": "1"
+        },
+        {
+          "metadata": [],
+          "name": "SpeedScale",
+          "value": "2"
+        }
+      ],
+      "module": "!GlobalTypes",
+      "name": "CNmClipDocument::SpeedScale_t",
       "projectName": "animdoclib",
       "size": 1
     },

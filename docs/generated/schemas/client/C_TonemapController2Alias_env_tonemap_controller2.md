@@ -8,7 +8,7 @@ kind: class
 
 # C_TonemapController2Alias_env_tonemap_controller2
 
-> Source: **Build 26798866** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26879581** · 2026-11-23 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 1560 bytes (`0x618`) · **Align:** 8 · **Module:** client
 

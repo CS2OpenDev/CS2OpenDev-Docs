@@ -1,13 +1,13 @@
 {
-  "build_id": "26798866",
+  "build_id": "26879581",
   "counts": {
     "classes": 3458,
     "commands": 1141,
     "convars": 4053,
     "entity_classes": 354,
-    "enums": 617,
+    "enums": 618,
     "events": 289,
-    "fields": 18699,
+    "fields": 18701,
     "game_modes": 16,
     "items": 2091,
     "maps": 24,
@@ -30,7 +30,7 @@
     },
     {
       "classes": 211,
-      "enums": 14,
+      "enums": 15,
       "module": "animdoclib"
     },
     {
@@ -257,8 +257,8 @@
   "note": "classes/enums/fields count distinct top-level entity names and their own declared fields; the modules[] list additionally counts client/server twin records (duplicates), so summing its per-module classes/enums can exceed the top-level totals above.",
   "platform": "windows-x86_64",
   "schema_version": "0.13.0",
-  "steam_date": "2026-11-19",
-  "steam_manifest_utc": "2026-11-19T23:58:33Z",
+  "steam_date": "2026-11-23",
+  "steam_manifest_utc": "2026-11-23T22:51:44Z",
   "tool_commit": "056455e9fe3921148e8b38581d7a7e45fd28e2cf",
   "tool_version": "0.13.0"
 }

@@ -3,6 +3,42 @@
   "breaking": [],
   "detail": [
     {
+      "anchor": "26798866-26879581",
+      "class_pair_candidates_count": 0,
+      "classes_added": [],
+      "classes_changed": [
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 2,
+            "META_CHANGE": 1,
+            "OFFSET_CHANGE": 7
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CNmClipDocument",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "248",
+            "to": "256"
+          },
+          "static_field_ops": 0
+        }
+      ],
+      "classes_changed_total": 1,
+      "classes_changed_truncated": false,
+      "classes_removed": [],
+      "field_move_candidates_count": 0,
+      "from_build": "26798866",
+      "from_date": "2026-11-19",
+      "to_build": "26879581",
+      "to_date": "2026-11-23"
+    },
+    {
       "anchor": "26445667-26598758",
       "class_pair_candidates_count": 0,
       "classes_added": [],
@@ -1111,41 +1147,9 @@
       "from_date": "2026-11-03",
       "to_build": "26445667",
       "to_date": "2026-11-05"
-    },
-    {
-      "anchor": "26334290-26393695",
-      "class_pair_candidates_count": 0,
-      "classes_added": [],
-      "classes_changed": [
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "ADD": 1,
-            "OFFSET_CHANGE": 4
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "server.dll/CCSGameRules",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        }
-      ],
-      "classes_changed_total": 1,
-      "classes_changed_truncated": false,
-      "classes_removed": [],
-      "field_move_candidates_count": 0,
-      "from_build": "26334290",
-      "from_date": "2026-10-30",
-      "to_build": "26393695",
-      "to_date": "2026-11-03"
     }
   ],
-  "latest_build": "26798866",
+  "latest_build": "26879581",
   "platform": "windows-x86_64",
   "schema_version": "0.13.0",
   "transitions": [
@@ -8084,6 +8088,23 @@
       "is_empty": true,
       "to_build": "26798866",
       "to_date": "2026-11-19"
+    },
+    {
+      "anchor": "26798866-26879581",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 1,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 10
+      },
+      "from_build": "26798866",
+      "from_date": "2026-11-19",
+      "is_empty": false,
+      "to_build": "26879581",
+      "to_date": "2026-11-23"
     }
   ]
 }

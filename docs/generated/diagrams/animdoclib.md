@@ -195,6 +195,7 @@ classDiagram
     CNmClipDocEventTrack *-- `CNmClipDocEventTrack::Type_t`
     CNmClipDocEvent_EntityAttribute *-- CNmClipDocEvent_EntityAttribute_Type_t
     CNmClipDocument *-- CNmClipDocEventTrack
+    CNmClipDocument *-- `CNmClipDocument::SpeedScale_t`
     CNmClipDocument *-- `CNmClipDocument::AdditiveType_t`
     CNmClipDocument *-- `CNmClipDocument::AdditiveBaseFrame_t`
     CNmGraphDocBlend1DNode *-- CNmBlendSpace1D

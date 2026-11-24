@@ -4,7 +4,7 @@ title: Schemas
 
 # Schema Reference
 
-> Source: **Build 26798866** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26879581** · 2026-11-23 · `windows-x86_64` · schema `0.13.0`
 
 Every class, struct, and enum extracted from CS2's runtime schema, organised by module. Each module page lists its types; each type has its own page carrying the full **memory layout** — field offsets, class size, and fields inherited from base classes.
 
@@ -13,7 +13,7 @@ Every class, struct, and enum extracted from CS2's runtime schema, organised by 
 | Module | Types | UML |
 |--------|-------|-----|
 | [animationsystem](schemas/animationsystem.md) | 54 | [📊 Diagram](diagrams/animationsystem.md) |
-| [animdoclib](schemas/animdoclib.md) | 225 | [📊 Diagram](diagrams/animdoclib.md) |
+| [animdoclib](schemas/animdoclib.md) | 226 | [📊 Diagram](diagrams/animdoclib.md) |
 | [animgraphdoclib](schemas/animgraphdoclib.md) | 172 | [📊 Diagram](diagrams/animgraphdoclib.md) |
 | [animgraphlib](schemas/animgraphlib.md) | 300 | [📊 Diagram](diagrams/animgraphlib.md) |
 | [animlib](schemas/animlib.md) | 229 | [📊 Diagram](diagrams/animlib.md) |

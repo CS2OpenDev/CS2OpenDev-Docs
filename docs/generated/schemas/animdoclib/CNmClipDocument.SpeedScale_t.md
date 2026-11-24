@@ -1,0 +1,21 @@
+---
+title: "CNmClipDocument::SpeedScale_t"
+module: animdoclib
+kind: enum
+---
+
+[Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmClipDocument::SpeedScale_t
+
+# CNmClipDocument::SpeedScale_t
+
+> Source: **Build 26879581** · 2026-11-23 · `windows-x86_64` · schema `0.13.0`
+
+**Kind:** enum · **Underlying:** `uint8_t` · **Module:** animdoclib
+
+## Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `None` | 0 |  |
+| `DurationOverride` | 1 |  |
+| `SpeedScale` | 2 |  |

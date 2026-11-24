@@ -4,14 +4,14 @@ title: Schema History
 
 # Schema History
 
-> Source: **Build 26798866** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26879581** · 2026-11-23 · `windows-x86_64` · schema `0.13.0`
 
 Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.md) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
 
 - **Platform:** `windows-x86_64` (the canonical render; windows is a strict **superset** in class coverage — historical Windows-only tool binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts — while shared classes differ in offsets/sizes per platform)
-- **Baseline build:** `10832117` · **Latest build:** `26798866`
+- **Baseline build:** `10832117` · **Latest build:** `26879581`
 - **Artifact schema version:** `0.13.0` (SchemaTracker's `schemas/schema_evolution.proto` family)
-- **Transitions:** 408 total, **157 with structural changes** (251 no-op builds)
+- **Transitions:** 409 total, **158 with structural changes** (251 no-op builds)
 - **Full per-field history:** the portable [`field_history.json`](downstream-codegen-schemas/field_history.json) carries first/last-seen and the type history for every `(class, field)` across all builds.  Its `[firstSeenBuild, lastSeenBuild]` interval is a presence **hull**, not continuous presence — a field can be absent for intermediate builds with no trace there; exact presence replays from the transitions below.
 
 To bring an instance captured under build *X* forward to build *Y*, apply each transition in `[X, Y)` in order.  Every op carries both endpoints, so the same chain replays backward.
@@ -35,6 +35,7 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 | Transition | Date | Classes +/−/~ | Enums +/−/~ | Field ops |
 |------------|------|---------------|-------------|-----------|
+| `26798866` → `26879581` | 2026-11-23 | 0 / 0 / 1 | 1 / 0 / 0 | 10 |
 | `26445667` → `26598758` | 2026-11-11 | 0 / 0 / 62 | 0 / 0 / 0 | 189 |
 | `26393695` → `26445667` | 2026-11-05 | 0 / 0 / 2 | 0 / 0 / 0 | 1 |
 | `26334290` → `26393695` | 2026-11-03 | 0 / 0 / 1 | 0 / 0 / 0 | 5 |
@@ -195,6 +196,16 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 ## Most recent structural changes
 
+### `26798866` → `26879581`
+
+*Steam manifests created `2026-11-19T23:58:33Z` → `2026-11-23T22:51:44Z`*
+
+**Classes changed (1):**
+
+| Class | Field ops | Layout |
+|-------|-----------|--------|
+| `!GlobalTypes/CNmClipDocument` | ＋field×2, ~meta×1, ~offset×7, meta×1 | resize 248→256 |
+
 ### `26445667` → `26598758`
 
 *Steam manifests created `2026-11-05T00:10:12Z` → `2026-11-11T18:33:14Z`*
@@ -275,13 +286,3 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 |-------|-----------|--------|
 | `server.dll/CCSPointScriptEntity` | — | resize 1640→1648 |
 | `server.dll/CChicken` | ~offset×1 | — |
-
-### `26334290` → `26393695`
-
-*Steam manifests created `2026-10-30T21:06:20Z` → `2026-11-03T00:27:26Z`*
-
-**Classes changed (1):**
-
-| Class | Field ops | Layout |
-|-------|-----------|--------|
-| `server.dll/CCSGameRules` | ＋field×1, ~offset×4 | — |

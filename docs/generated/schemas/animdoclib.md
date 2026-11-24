@@ -5,11 +5,11 @@ module: animdoclib
 
 # Module: animdoclib
 
-> Source: **Build 26798866** · 2026-11-19 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26879581** · 2026-11-23 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/animdoclib.md)
 
-225 types. Each links to its own page with the full field layout.
+226 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -37,7 +37,7 @@ module: animdoclib
 | [CNmClipDocEvent_Sound](animdoclib/CNmClipDocEvent_Sound.md) | class | 72 | 7 | [CNmClipDocEvent](animdoclib/CNmClipDocEvent.md) |
 | [CNmClipDocEvent_TargetWarp](animdoclib/CNmClipDocEvent_TargetWarp.md) | class | 32 | 2 | [CNmClipDocEvent](animdoclib/CNmClipDocEvent.md) |
 | [CNmClipDocEvent_Transition](animdoclib/CNmClipDocEvent_Transition.md) | class | 40 | 2 | [CNmClipDocEvent](animdoclib/CNmClipDocEvent.md) |
-| [CNmClipDocument](animdoclib/CNmClipDocument.md) | class | 248 | 13 | [CNmAnimDocument](animdoclib/CNmAnimDocument.md) |
+| [CNmClipDocument](animdoclib/CNmClipDocument.md) | class | 256 | 15 | [CNmAnimDocument](animdoclib/CNmAnimDocument.md) |
 | [CNmDocTool](animdoclib/CNmDocTool.md) | class | 8 | 0 |  |
 | [CNmGraphDocAndNode](animdoclib/CNmGraphDocAndNode.md) | class | 264 | 0 | [CNmGraphDocFlowNode](animdoclib/CNmGraphDocFlowNode.md) |
 | [CNmGraphDocAnimationPoseNode](animdoclib/CNmGraphDocAnimationPoseNode.md) | class | 536 | 3 | [CNmGraphDocVariationDataNode](animdoclib/CNmGraphDocVariationDataNode.md) |
@@ -228,6 +228,7 @@ module: animdoclib
 | [CNmClipDocEvent_EntityAttribute_Type_t](animdoclib/CNmClipDocEvent_EntityAttribute_Type_t.md) | enum | — | 2 |  |
 | [CNmClipDocument::AdditiveBaseFrame_t](animdoclib/CNmClipDocument.AdditiveBaseFrame_t.md) | enum | — | 3 |  |
 | [CNmClipDocument::AdditiveType_t](animdoclib/CNmClipDocument.AdditiveType_t.md) | enum | — | 5 |  |
+| [CNmClipDocument::SpeedScale_t](animdoclib/CNmClipDocument.SpeedScale_t.md) | enum | — | 3 |  |
 | [CNmGraphDocIDEventConditionNode::SearchRule_t](animdoclib/CNmGraphDocIDEventConditionNode.SearchRule_t.md) | enum | — | 3 |  |
 | [CNmGraphDocOrientationWarpNode::OffsetType_t](animdoclib/CNmGraphDocOrientationWarpNode.OffsetType_t.md) | enum | — | 2 |  |
 | [CNmGraphDocStateNode::StateType_t](animdoclib/CNmGraphDocStateNode.StateType_t.md) | enum | — | 4 |  |
